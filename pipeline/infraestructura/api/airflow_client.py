@@ -1,0 +1,39 @@
+"""
+Cliente interno para la API REST de Airflow.
+Solo esta capa habla con Airflow — las rutas no lo tocan directamente.
+"""
+import httpx
+from typing import Optional
+
+AIRFLOW_BASE_URL = "http://localhost:8080/api/v1"
+AIRFLOW_AUTH = ("admin", "admin")  # reemplazar con variables de entorno
+
+
+def trigger_dag(dag_id: str, conf: Optional[dict] = None) -> dict:
+    response = httpx.post(
+        f"{AIRFLOW_BASE_URL}/dags/{dag_id}/dagRuns",
+        json={"conf": conf or {}},
+        auth=AIRFLOW_AUTH,
+    )
+    response.raise_for_status()
+    return response.json()
+
+
+def pausar_dag(dag_id: str) -> dict:
+    response = httpx.patch(
+        f"{AIRFLOW_BASE_URL}/dags/{dag_id}",
+        json={"is_paused": True},
+        auth=AIRFLOW_AUTH,
+    )
+    response.raise_for_status()
+    return response.json()
+
+
+def get_dag_runs(dag_id: str, limit: int = 20) -> dict:
+    response = httpx.get(
+        f"{AIRFLOW_BASE_URL}/dags/{dag_id}/dagRuns",
+        params={"limit": limit, "order_by": "-start_date"},
+        auth=AIRFLOW_AUTH,
+    )
+    response.raise_for_status()
+    return response.json()

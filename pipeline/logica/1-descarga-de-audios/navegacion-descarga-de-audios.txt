@@ -1,0 +1,198 @@
+# Este archivo contiene los elementos y los pasos por los que se debe navegar para realizar el scraping de audios de mitrol
+## El scraping se hara simultaneamente en 3 PC, cada una de estas abrira una instancia de navegacion con un user y password distinto, estas credenciales estan en el archivo .env.pipeline
+
+pagina_principal=https://apps-alc.mitrol.cloud/reportes/login.aspx
+login_user_element=<input name="TboxUser" type="text" id="TboxUser" tabindex="1" class="LgIn12" autocomplete="off"> # aca debemos colocar el user 
+login_password_element=<input name="TboxPass" type="password" id="TboxPass" tabindex="2" class="LgIn12"> # aca debemos colocar el password del user
+button_iniciar_sesion_xpath=//*[@id="Btn_LogIn_lnk_Button"]
+
+
+## En este punto ya hemos iniciado sesion y se nos cargara la ventana con opciones
+
+select_grabaciones_xpath=//*[@id="tree1t46"] # esto abre un submenu donde debemos seleccionar la siguiente opcion
+select_grabaciones2_xpath=//*[@id="tree1t47"]
+
+## En este punto se nos cargara la ventana para seleccionar los filtros de los audios que queremos descargar
+### Recordemos que en este punto debemos guardar los parametros como variables en el archivo config.py para que estos puedan ser modificados desde el frontend, ademas el fronted nos debe permitir la seleccion de filtros de forma independiente para cada PC que realiza el scraping, es decir por ejemplo que cada pc descargue los audios de un rango horario asignado
+### Los parametros que debemos guardar en  config deben ser los siguientes:
+
+CANT_REGISTROS_MAX= # seleccionable desde un menu desplegable (valor por defecto, "100000")
+<select name="PEXT_MaxRow$Ddl1" id="PEXT_MaxRow_Ddl1" class="Ctrl13" onchange="SelectedItem_DdlPEXT_MaxRow();">
+		<option value="10">10</option>
+		<option value="100">100</option>
+		<option value="500">500</option>
+		<option value="1000">1000</option>
+		<option value="5000">5000</option>
+		<option selected="selected" value="15000">15000</option>
+		<option value="30000">30000</option>
+		<option value="60000">60000</option>
+		<option value="100000">100000</option>
+	</select>
+
+selec_habilitar_opciones_de_fecha_xpath=//*[@id="PEXT_FechaRango_Rad1"] # Esta opcion siempre debe seleccionarse para poder habilitar la edicion de FECHA_INICIO y FECHA_FIN
+FECHA_INICIO=  # para escribir en formato dd/mm/yyyy (valor por defecto, la fecha de hoy)
+//*[@id="PEXT_FechaRango_TBoxFch1"]
+
+FECHA_FIN=  # para escribir en formato dd/mm/yyyy (valor por defecto, la fecha de hoy)
+//*[@id="PEXT_FechaRango_TBoxFch2"]
+
+HORA_INICIO= # seleccionable desde menu desplegable (valor por defecto, las "08")
+<select name="PEXT_HIni$Ddl1" id="PEXT_HIni_Ddl1" class="Ctrl28" onchange="SelectedItem_DdlPEXT_HIni();">
+		<option value="00">00</option>
+		<option value="01">01</option>
+		<option value="02">02</option>
+		<option value="03">03</option>
+        ...
+		<option value="22">22</option>
+		<option value="23">23</option>
+	</select>
+
+HORA_FIN= # seleccionable desde menu desplegable (valor por defecto, las "22")
+<select name="PEXT_HFin$Ddl1" id="PEXT_HFin_Ddl1" class="Ctrl28" onchange="SelectedItem_DdlPEXT_HFin();">
+		<option value="00">00</option>
+		<option value="01">01</option>
+		<option value="02">02</option>
+		<option value="03">03</option>
+        ...
+		<option value="21">21</option>
+		<option value="22">22</option>
+		<option value="23">23</option>
+	</select>
+
+DURACION_MIN= # seleccionable desde menu desplegable (valor por defecto, "00")
+<select name="PEXT_MinDuracion$Ddl2" id="PEXT_MinDuracion_Ddl2" class="Ctrl28" onchange="SelectedItem_DdlPEXT_MinDuracion();">
+		<option selected="selected" value="00">00</option>
+		<option value="01">01</option>
+		<option value="02">02</option>
+		<option value="03">03</option>
+        ... 
+		<option value="56">56</option>
+		<option value="57">57</option>
+		<option value="58">58</option>
+		<option value="59">59</option>
+	</select>
+
+DURACION_MAX= # seleccionable desde menu desplegable (valor por defecto, "00")
+<select name="PEXT_MaxDuracion$Ddl2" id="PEXT_MaxDuracion_Ddl2" class="Ctrl28" onchange="SelectedItem_DdlPEXT_MaxDuracion();">
+		<option selected="selected" value="00">00</option>
+		<option value="01">01</option>
+		<option value="02">02</option>
+		<option value="03">03</option>
+        ...
+		<option value="57">57</option>
+		<option value="58">58</option>
+		<option value="59">59</option>
+	</select>
+
+CLIENTE= # para escribir solo caracteres numericos
+//*[@id="PEXT_Cliente_Tbox1"]
+
+
+## En este punto ya hemos seleccionado todos los filtros que debiamos asi que podemos hacer click en el boton de 'ejecutar reporte'
+
+button_ejecutar_reporte_xpath=//*[@id="Btn_execBotton_span_lnkBtn"]
+
+## Ahora lo que hace la pagina es cargar todos los audios que cumplan con las condiciones que hemos puesto en los filtros asi que debemos esperar a que la pagina cargue al menos el primer enlace del audio para continuar
+## La tabla que se cargara tiene la siguiente estructura : 
+{<table>
+  <thead>
+    <tr>
+      <th>inicio</th>
+      <th>audio_url</th>
+      <th>pantalla_url</th>
+      <th>id_interaccion</th>
+      <th>segmento</th>
+      <th>duracion_total</th>
+      <th>duracion_audio</th>
+      <th>id_grupo</th>
+      <th>grupo</th>
+      <th>login_id</th>
+      <th>agente</th>
+      <th>cliente</th>
+      <th>extension</th>
+      <th>id_empresa</th>
+      <th>empresa</th>
+      <th>id_campania</th>
+      <th>campania</th>
+      <th>sentido</th>
+      <th>tipificacion</th>
+      <th>clase_tipificacion</th>
+      <th>archivo</th>
+      <th>id_crm</th>
+      <th>id_tarea</th>
+      <th>id_cliente</th>
+      <th>id_lote</th>
+      <th>lote</th>
+      <th>comentario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026-04-14 10:03:23</td>
+      <td>https://...39061.wav</td>
+      <td>https://...39061.vnf</td>
+      <td>260414100310187_ACD_39061</td>
+      <td>1</td>
+      <td>00:15:07</td>
+      <td>00:15:07</td>
+      <td>57</td>
+      <td>Mendoza1</td>
+      <td>mza312</td>
+      <td>MZA 312</td>
+      <td>0261155793789</td>
+      <td>20213</td>
+      <td>1</td>
+      <td>AZO</td>
+      <td>23</td>
+      <td>MVS_MZA</td>
+      <td>Discador Predictivo</td>
+      <td>Venta</td>
+      <td>Exitoso</td>
+      <td>amza312_1_260414100310187_ACD_39061</td>
+      <td></td>
+      <td>493807653</td>
+      <td>0261155793789</td>
+      <td>8181</td>
+      <td>20260413_Mza_MIXTA_TT</td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td>2026-04-14 10:07:46</td>
+      <td>https://...45631.wav</td>
+      <td>https://...45631.vnf</td>
+      <td>260414100746442_ACD_45631</td>
+      <td>1</td>
+      <td>00:00:25</td>
+      <td>00:00:25</td>
+      <td>109</td>
+      <td>Mendoza1_CUIT</td>
+      <td>mza87</td>
+      <td>MZA 87</td>
+      <td>0111557299072</td>
+      <td>30008</td>
+      <td>1</td>
+      <td>AZO</td>
+      <td>23</td>
+      <td>MVS_MZA</td>
+      <td>Discador Predictivo</td>
+      <td>Se corta durante la conversacion</td>
+      <td>No Exitoso</td>
+      <td>amza87_1_260414100746442_ACD_45631</td>
+      <td></td>
+      <td>494982259</td>
+      <td>0111557299072</td>
+      <td>8199</td>
+      <td>20260414_Mza_MIXTA_TM</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>}
+
+## Fila que contiene los datos del audio 
+fila_xpath=//*[@id="P62add66e377d4cfd85896103e67910cd_1_10iT0"]/tbody/tr[5]
+
+## Columna con el enlace de descarga al audio 
+enlace_col_xpath=//*[@id="P62add66e377d4cfd85896103e67910cd_1_10iT0"]/tbody/tr[5]/td[3]
+
+## Con esta informacion ya es posible descargar los audios uno por uno, la cantidad total de registros cargados se encuentra en '<span id="RViewer_ctl05_ctl00_TotalPages" style="font-family:Verdana;font-size:8pt;white-space:nowrap;">1</span>'

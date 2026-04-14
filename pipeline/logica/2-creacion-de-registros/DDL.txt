@@ -1,0 +1,75 @@
+-- Ver creacion_de_tablas_postgres.py para el DDL completo y ejecutable.
+-- Este archivo es solo referencia rápida.
+
+-- ─────────────────────────────────────────────────────────────────────────────
+-- TABLA: audio_pipeline_jobs
+-- Una fila por audio. Registra el progreso a través de las 9 etapas.
+-- ─────────────────────────────────────────────────────────────────────────────
+
+-- estado_global posibles valores:
+--   pendiente | en_proceso | correcto | error | reprocesar | invalido
+--
+-- etapa_actual posibles valores:
+--   descarga | normalizacion | correccion_normalizacion |
+--   transcripcion | correccion_transcripciones |
+--   analisis | correccion_analisis | carga_datos
+
+-- JSONB etapas — ejemplo de un audio que completó todas las etapas:
+-- {
+--   "descarga": {
+--       "estado": "correcto", "fecha_inicio": "...", "fecha_fin": "...",
+--       "ubicacion": {"bucket": "modelado-de-scoring-wc", "key": "audios/uuid.wav"},
+--       "intentos": 1, "error": null
+--   },
+--   "normalizacion": {
+--       "estado": "correcto",
+--       "ubicacion": {"bucket": "modelado-de-scoring-wc", "key": "audios-raw/uuid.wav"},
+--       "intentos": 1, "error": null
+--   },
+--   "correccion_normalizacion": {
+--       "estado": "correcto",
+--       "ubicacion": {"bucket": "modelado-de-scoring-wc", "key": "audios_procesados/correcto/uuid.wav"},
+--       "score": 0.92, "intentos": 1, "error": null
+--   },
+--   "transcripcion": {
+--       "estado": "correcto",
+--       "ubicacion": {"bucket": "modelado-de-scoring-wc", "key": "transcripciones-raw/uuid.json"},
+--       "modelo": "whisperx-large-v3", "num_hablantes": 2, "intentos": 1, "error": null
+--   },
+--   "correccion_transcripciones": {
+--       "estado": "correcto",
+--       "ubicacion": {"bucket": "modelado-de-scoring-wc", "key": "transcripciones-procesadas/correcto/uuid.json"},
+--       "score": 0.88, "num_hablantes": 2, "intentos": 1, "error": null
+--   },
+--   "analisis": {
+--       "analisis_A": {
+--           "estado": "correcto",
+--           "ubicacion": {"bucket": "modelado-de-scoring-wc", "key": "analisis-raw/analisis-A/uuid.json"},
+--           "modelo": "...", "intentos": 1, "error": null
+--       },
+--       "analisis_B": { ... }
+--   },
+--   "correccion_analisis": {
+--       "analisis_A": {
+--           "estado": "correcto",
+--           "ubicacion": {"bucket": "modelado-de-scoring-wc", "key": "analisis-procesados/analisis-A/correcto/uuid.json"},
+--           "score_lead": 78, "confidence_score": 0.91, "intentos": 1, "error": null
+--       },
+--       "analisis_B": { ... }
+--   },
+--   "carga_datos": {
+--       "estado": "correcto", "intentos": 1, "error": null
+--   }
+-- }
+
+-- ─────────────────────────────────────────────────────────────────────────────
+-- TABLA: pipeline_params
+-- Una fila por etapa configurable. Los scripts leen esta tabla al inicio.
+-- Si no hay entrada, usan los defaults de su config.py local.
+-- ─────────────────────────────────────────────────────────────────────────────
+
+-- Claves (etapa):
+--   normalizacion | correccion_normalizacion |
+--   transcripcion | correccion_transcripciones |
+--   analisis_A | analisis_B |
+--   correccion_analisis_A | correccion_analisis_B

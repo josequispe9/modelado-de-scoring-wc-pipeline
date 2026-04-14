@@ -1,0 +1,64 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Entornos virtuales
+venv/
+.env/
+.venv/
+env/
+ENV/
+venv_linux/
+analisis/
+audios/
+audios_procesados/
+diarizaciones/
+transcripciones/
+.claude/
+
+
+
+# Archivos de entorno y configuración sensible
+.env*
+*.env
+
+# IDEs / editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Dependencias / builds
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Logs y bases locales
+*.log
+*.sqlite
+*.db
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Otros
+*.bak
+*.tmp
