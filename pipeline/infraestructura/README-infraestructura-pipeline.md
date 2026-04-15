@@ -1,6 +1,6 @@
 # Infraestructura del Pipeline
 
-Todo lo necesario para orquestar y controlar la ejecución del pipeline: API del dashboard, DAGs de Airflow, colas RabbitMQ y configuración de workers.
+Todo lo necesario para orquestar y controlar la ejecución del pipeline: API del dashboard, DAGs de Airflow, y configuración de workers.
 
 ---
 
@@ -9,89 +9,17 @@ Todo lo necesario para orquestar y controlar la ejecución del pipeline: API del
 ```
 infraestructura/
 ├── api/           # FastAPI que expone el pipeline al dashboard (puerto 8001)
-├── airflow/       # DAGs y docker-compose del scheduler (pendiente)
-├── rabbitmq/      # definición de colas y exchanges (pendiente)
-└── workers/       # docker-compose para levantar workers en las PCs remotas (pendiente)
+├── airflow/       # docker-compose, DAGs, init-db.sql e inicialización de BD
+└── workers/       # scripts de deploy SSH a melchor y pc-franco (pendiente)
 ```
 
----
-
-## API — puerto 8001
-
-Corre en gaspar (192.168.9.115). Es la única puerta de entrada del dashboard — nunca expone Airflow directamente.
-
-### Levantar
-
-```bash
-cd api/
-pip install -r requirements.txt
-uvicorn api.main:app --host 0.0.0.0 --port 8001
-```
-
-Requiere variable de entorno:
-```
-DATABASE_URL=postgresql://user:pass@localhost:5432/scoring
-```
-
-### Endpoints
-
-**Ejecución**
-
-| Método | Endpoint                              | Descripción                                               |
-|--------|---------------------------------------|-----------------------------------------------------------|
-| POST   | `/pipeline/ejecutar`                  | Dispara el pipeline completo                              |
-| POST   | `/pipeline/etapa/{etapa}/ejecutar`    | Dispara una etapa con filtro: `pendientes`, `reprocesar`, `todos` |
-| POST   | `/pipeline/etapa/{etapa}/pausar`      | Pausa el DAG de una etapa                                 |
-
-Etapas válidas: `descarga` · `normalizacion` · `correccion_normalizacion` · `transcripcion` · `correccion_transcripciones` · `analisis` · `correccion_analisis` · `carga_datos`
-
-Ejemplo — ejecutar solo el análisis de los pendientes:
-```bash
-curl -X POST http://192.168.9.115:8001/pipeline/etapa/analisis/ejecutar \
-     -H "Content-Type: application/json" \
-     -d '{"filtro": "pendientes"}'
-```
-
-**Estado y métricas**
-
-| Método | Endpoint                              | Descripción                                               |
-|--------|---------------------------------------|-----------------------------------------------------------|
-| GET    | `/pipeline/estado`                    | Resumen: cantidad de audios por etapa y estado            |
-| GET    | `/pipeline/metricas`                  | Totales, scores promedio, duración promedio               |
-| GET    | `/pipeline/conversaciones`            | Lista con filtros opcionales: `?estado=reprocesar&etapa=transcripcion` |
-| GET    | `/pipeline/conversaciones/{id}`       | Detalle completo de un audio incluyendo el JSONB          |
-
-**Parámetros**
-
-| Método | Endpoint                              | Descripción                                               |
-|--------|---------------------------------------|-----------------------------------------------------------|
-| GET    | `/pipeline/parametros/{clave}`        | Lee los parámetros actuales de una etapa                  |
-| PATCH  | `/pipeline/parametros/{clave}`        | Modifica los parámetros — tiene efecto en el próximo run  |
-
-Claves válidas: `normalizacion` · `correccion_normalizacion` · `transcripcion` · `correccion_transcripciones` · `analisis_A` · `analisis_B` · `correccion_analisis_A` · `correccion_analisis_B`
-
-Ejemplo — modificar parámetros de normalización:
-```bash
-curl -X PATCH http://192.168.9.115:8001/pipeline/parametros/normalizacion \
-     -H "Content-Type: application/json" \
-     -d '{"valor": {"silencio_db": -40, "min_duracion_seg": 3}}'
-```
-
-### Archivos
-
-| Archivo                   | Responsabilidad                                              |
-|---------------------------|--------------------------------------------------------------|
-| `main.py`                 | Registra los tres routers                                    |
-| `airflow_client.py`       | Única capa que habla con la API REST de Airflow              |
-| `routes/ejecucion.py`     | Endpoints de disparo y pausa de DAGs                        |
-| `routes/estado.py`        | Endpoints de consulta a `audio_pipeline_jobs`                |
-| `routes/parametros.py`    | Endpoints de lectura y escritura de `pipeline_params`        |
+Redis corre como servicio dentro del `docker-compose.yml` de `airflow/` — no tiene carpeta propia.
 
 ---
 
 ## Arquitectura distribuida
 
-Tres máquinas en LAN. Airflow distribuye tareas vía RabbitMQ: el worker libre toma el siguiente audio disponible, sin asignación fija.
+Tres máquinas Windows en LAN. Airflow corre en gaspar y distribuye trabajo a las otras PCs.
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -99,20 +27,21 @@ Tres máquinas en LAN. Airflow distribuye tareas vía RabbitMQ: el worker libre 
 │                                             │
 │  Airflow Scheduler  (decide qué ejecutar)   │
 │  Airflow Webserver  (UI en :8080)           │
-│  RabbitMQ           (broker en :5672)       │
-│  PostgreSQL         (dos roles:)            │
-│    · metadata interna de Airflow            │
-│    · tabla audio_pipeline_jobs y            │
-│      pipeline_params del proyecto           │
+│  Redis              (broker Celery)         │
+│  PostgreSQL         (dos bases de datos:)   │
+│    · airflow   — metadata interna Airflow   │
+│    · scoring   — audio_pipeline_jobs        │
+│                  pipeline_params            │
 │  Pipeline API       (dashboard en :8001)    │
 │  Airflow Worker     (también procesa)       │
 └───────────────────┬─────────────────────────┘
-                    │  RabbitMQ reparte tareas
+                    │  SSHOperator (etapa 1)
+                    │  CeleryExecutor (etapas 2–9)
          ┌──────────┼──────────┐
          ▼          ▼          ▼
-    gaspar       melchor    pc-franco
+    gaspar       melchor    pc-franco (Baltazar)
     .9.115       .9.195      .9.62
-      GPU          GPU         GPU
+    Cuenta G     Cuenta M    Cuenta B
          │          │          │
          └──────────┼──────────┘
                     ▼
@@ -125,18 +54,39 @@ Tres máquinas en LAN. Airflow distribuye tareas vía RabbitMQ: el worker libre 
 
 ### Máquinas
 
-| Rol            | Hostname  | IP            | Usuario SSH | Password SSH |
-|----------------|-----------|---------------|-------------|--------------|
-| Principal      | gaspar    | 192.168.9.115 | qjose       | —            |
-| Worker + MinIO | melchor   | 192.168.9.195 | juan-t3     | `1234`       |
-| Worker         | pc-franco | 192.168.9.62  | bases       | `ruleta`     |
+| Rol            | Hostname       | IP            | Usuario SSH   | Password SSH |
+|----------------|----------------|---------------|---------------|--------------|
+| Principal      | gaspar         | 192.168.9.115 | `airflow-ssh` | `1234`       |
+| Worker + MinIO | melchor        | 192.168.9.195 | `juan-t3`     | `1234`       |
+| Worker         | pc-franco (Baltazar) | 192.168.9.62  | `bases`  | `ruleta`     |
+
+Todas las máquinas corren **Windows** con OpenSSH Server habilitado.
+
+> **Nota gaspar — usuario `airflow-ssh`:** La cuenta principal `qjose` usa PIN de Windows (incompatible con SSH por contraseña) y está vinculada a una cuenta Microsoft (no se puede cambiar con `net user`). Por eso se usa un usuario local dedicado para SSH. Para recrearlo en gaspar:
+> ```powershell
+> net user airflow-ssh 1234 /add
+> # No agregar al grupo Administradores — el sshd_config de Windows fuerza
+> # clave SSH para ese grupo, bloqueando la autenticación por contraseña.
+>
+> # Dar acceso al proyecto y al Python del venv
+> icacls "C:\Users\qjose\Desktop\modelado de scoring WC" /grant "airflow-ssh:(OI)(CI)RX" /T
+> icacls "C:\Users\qjose\AppData\Local\Programs\Python" /grant "airflow-ssh:(OI)(CI)RX" /T
+> ```
+
+### Rutas del proyecto en cada máquina
+
+| Máquina   | Ruta                                              |
+|-----------|---------------------------------------------------|
+| gaspar    | `C:\Users\qjose\Desktop\modelado de scoring WC`   |
+| melchor   | `C:\Users\JUAN-T3\Desktop\modelado de scoring WC` |
+| pc-franco | `C:\Users\Bases\Desktop\modelado de scoring WC`   |
 
 ### Servicios
 
 | Servicio     | URL                        | Usuario    | Password   |
 |--------------|----------------------------|------------|------------|
 | Airflow UI   | http://192.168.9.115:8080  | admin      | admin      |
-| RabbitMQ UI  | http://192.168.9.115:15672 | rabbitmq   | rabbitmq   |
+| Redis        | redis://192.168.9.115:6379 | —          | —          |
 | MinIO UI     | http://192.168.9.195:9002  | minioadmin | minioadmin |
 | MinIO API    | http://192.168.9.195:9001  | minioadmin | minioadmin |
 | Pipeline API | http://192.168.9.115:8001  | —          | —          |
@@ -145,72 +95,125 @@ Tres máquinas en LAN. Airflow distribuye tareas vía RabbitMQ: el worker libre 
 
 ## Cómo levantar el sistema
 
-### 1. PC principal — gaspar
+### Primera vez
 
 ```bash
-cd airflow/
+# 1. Completar AIRFLOW__CORE__FERNET_KEY en el .env.tuberia raíz del proyecto
+python3 -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
+# Pegar el resultado en .env.tuberia como AIRFLOW__CORE__FERNET_KEY
+
+# 2. Crear las carpetas que Airflow necesita con permisos correctos
+cd pipeline/infraestructura/airflow/
+mkdir -p dags logs plugins
+
+# 3. Inicializar la base de datos de Airflow y crear el usuario admin
+docker compose up airflow-init
+
+# 4. Levantar todo
 docker compose up -d
 ```
 
-Levanta: PostgreSQL, RabbitMQ, Airflow Scheduler, Webserver, Triggerer, Worker, Pipeline API.
-
-### 2. Workers — melchor y pc-franco (desde gaspar)
+### Operación diaria
 
 ```bash
-# melchor
-sshpass -p "1234" ssh juan-t3@192.168.9.195 "mkdir C:\airflow-worker\dags 2>nul"
-sshpass -p "1234" scp workers/docker-compose.yml juan-t3@192.168.9.195:"C:/airflow-worker/docker-compose.yml"
-sshpass -p "1234" scp airflow/dags/*.py juan-t3@192.168.9.195:"C:/airflow-worker/dags/"
-sshpass -p "1234" ssh juan-t3@192.168.9.195 "cd C:\airflow-worker && docker compose up -d"
+# Levantar
+cd pipeline/infraestructura/airflow/ && docker compose up -d
 
-# pc-franco
-sshpass -p "ruleta" ssh bases@192.168.9.62 "mkdir C:\airflow-worker\dags 2>nul"
-sshpass -p "ruleta" scp workers/docker-compose.yml bases@192.168.9.62:"C:/airflow-worker/docker-compose.yml"
-sshpass -p "ruleta" scp airflow/dags/*.py bases@192.168.9.62:"C:/airflow-worker/dags/"
-sshpass -p "ruleta" ssh bases@192.168.9.62 "cd C:\airflow-worker && docker compose up -d"
-```
+# Detener
+docker compose down
 
-### 3. Sincronizar DAGs después de cambios
-
-```bash
-sshpass -p "1234"   scp airflow/dags/*.py juan-t3@192.168.9.195:"C:/airflow-worker/dags/"
-sshpass -p "ruleta" scp airflow/dags/*.py bases@192.168.9.62:"C:/airflow-worker/dags/"
-```
-
-### 4. Detener todo
-
-```bash
-# Workers
-sshpass -p "1234"   ssh juan-t3@192.168.9.195 "cd C:\airflow-worker && docker compose down"
-sshpass -p "ruleta" ssh bases@192.168.9.62    "cd C:\airflow-worker && docker compose down"
-
-# Principal
-cd airflow/ && docker compose down
+# Ver logs de un servicio
+docker compose logs -f airflow-scheduler
 ```
 
 ---
 
 ## Airflow
 
+Versión: **2.10.3** con **CeleryExecutor** + Redis.
+El scheduler encola tareas en Redis; el worker local las ejecuta. Todas las etapas usan SSHOperator para ejecutar scripts en las 3 PCs.
+
 Un solo Airflow compartido con el proyecto scraping. Los DAGs del pipeline usan el prefijo `pipeline_*`.
 
-Los DAGs se crean una vez que los scripts de `logica/` estén implementados. Ver `logica/README-logica-pipeline.md` para entender qué hace cada etapa.
+Los DAGs viven en `pipeline/infraestructura/airflow/dags/` y se montan como volumen en todos los contenedores Airflow.
+
+### Etapa 1 — Descarga (SSHOperator)
+
+La etapa 1 usa Selenium con Chrome visible para auditar el funcionamiento. Como el worker de Airflow corre en Docker (sin acceso a pantalla), la descarga **no** corre dentro del contenedor: el DAG usa `SSHOperator` para lanzar el script Python directamente en el Windows nativo de cada máquina.
+
+```
+airflow-worker (Docker, gaspar)
+    ├── SSHOperator → ssh gaspar    → python scraping_mitrol.py  [cuenta G]
+    ├── SSHOperator → ssh melchor   → python scraping_mitrol.py  [cuenta M]
+    └── SSHOperator → ssh pc-franco → python scraping_mitrol.py  [cuenta B]
+```
+
+Las tres tareas corren en **paralelo**. Cada máquina usa su propia cuenta Mitrol y sus propios parámetros (`descarga_G`, `descarga_M`, `descarga_B` en `pipeline_params`).
+
+### Etapas 2–9 — CeleryExecutor
+
+Las etapas restantes corren dentro de contenedores Docker en los workers, distribuidas por Celery + Redis según la cola correspondiente.
 
 ---
 
-## RabbitMQ — colas
+## Colas de Celery
 
-| Cola              | Workers            | Tareas                                                                      |
-|-------------------|--------------------|-----------------------------------------------------------------------------|
-| `default`         | todos              | descarga (etapa 1), creación de registros (etapa 2), carga a MongoDB (etapa 9) |
-| `gpu_normalizacion` | los 3 workers    | normalización ffmpeg (etapa 3) y corrección de normalización (etapa 4)      |
-| `gpu_whisper`     | melchor, pc-franco | transcripción WhisperX (etapa 5) y corrección de transcripciones (etapa 6)  |
-| `gpu_llm`         | melchor, pc-franco | análisis LLM (etapa 7) y corrección de análisis (etapa 8)                   |
+| Cola                | Workers            | Etapas                                                         |
+|---------------------|--------------------|----------------------------------------------------------------|
+| `default`           | todos              | creación de registros (2), carga a MongoDB (9)                 |
+| `gpu_normalizacion` | los 3              | normalización ffmpeg (3) y corrección de normalización (4)     |
+| `gpu_whisper`       | melchor, pc-franco | transcripción WhisperX (5) y corrección de transcripciones (6) |
+| `gpu_llm`           | melchor, pc-franco | análisis LLM (7) y corrección de análisis (8)                  |
 
 ---
 
-## Workers
+## API — puerto 8001
 
-Los workers solo reciben el código de las etapas que ejecutan — no el proyecto completo. El `docker-compose.yml` de `workers/` se despliega en melchor y pc-franco vía SSH desde gaspar.
+Corre en gaspar. Es la única puerta de entrada del dashboard — nunca expone Airflow directamente.
 
-Ver comandos de deploy en `README-pipeline.md`.
+### Endpoints
+
+**Ejecución**
+
+| Método | Endpoint                           | Descripción                                                         |
+|--------|------------------------------------|---------------------------------------------------------------------|
+| POST   | `/pipeline/ejecutar`               | Dispara el pipeline completo                                        |
+| POST   | `/pipeline/etapa/{etapa}/ejecutar` | Dispara una etapa con filtro: `pendientes`, `reprocesar`, `todos`   |
+| POST   | `/pipeline/etapa/{etapa}/pausar`   | Pausa el DAG de una etapa                                           |
+
+Etapas válidas: `descarga` · `normalizacion` · `correccion_normalizacion` · `transcripcion` · `correccion_transcripciones` · `analisis` · `correccion_analisis` · `carga_datos`
+
+**Estado y métricas**
+
+| Método | Endpoint                          | Descripción                                            |
+|--------|-----------------------------------|--------------------------------------------------------|
+| GET    | `/pipeline/estado`                | Resumen: cantidad de audios por etapa y estado         |
+| GET    | `/pipeline/metricas`              | Totales, scores promedio, duración promedio            |
+| GET    | `/pipeline/conversaciones`        | Lista con filtros opcionales                           |
+| GET    | `/pipeline/conversaciones/{id}`   | Detalle completo incluyendo el JSONB                   |
+
+**Parámetros**
+
+| Método | Endpoint                          | Descripción                                            |
+|--------|-----------------------------------|--------------------------------------------------------|
+| GET    | `/pipeline/parametros/{clave}`    | Lee los parámetros actuales de una etapa               |
+| PATCH  | `/pipeline/parametros/{clave}`    | Modifica los parámetros — tiene efecto en el próximo run |
+
+Claves válidas: `descarga_G` · `descarga_M` · `descarga_B` · `normalizacion` · `correccion_normalizacion` · `transcripcion` · `correccion_transcripciones` · `analisis_A` · `analisis_B` · `correccion_analisis_A` · `correccion_analisis_B`
+
+Ejemplo — modificar parámetros de descarga de melchor:
+```bash
+curl -X PATCH http://192.168.9.115:8001/pipeline/parametros/descarga_M \
+     -H "Content-Type: application/json" \
+     -d '{"valor": {"hora_inicio": "13", "hora_fin": "17", "fecha_inicio": "15/04/2026"}}'
+```
+
+### Archivos
+
+| Archivo                | Responsabilidad                                              |
+|------------------------|--------------------------------------------------------------|
+| `main.py`              | Registra los tres routers                                    |
+| `airflow_client.py`    | Única capa que habla con la API REST de Airflow              |
+| `routes/ejecucion.py`  | Endpoints de disparo y pausa de DAGs                         |
+| `routes/estado.py`     | Endpoints de consulta a `audio_pipeline_jobs`                |
+| `routes/parametros.py` | Endpoints de lectura y escritura de `pipeline_params`        |

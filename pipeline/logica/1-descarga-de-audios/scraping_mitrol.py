@@ -24,6 +24,7 @@ import os
 import time
 import logging
 import requests
+import psycopg2
 from pathlib import Path
 from datetime import datetime
 from dotenv import load_dotenv
@@ -47,7 +48,7 @@ log = logging.getLogger(__name__)
 
 # ─── Configuracion ────────────────────────────────────────────────────────────
 ROOT_DIR = Path(__file__).parents[3]
-load_dotenv(ROOT_DIR / ".env.pipeline")
+load_dotenv(ROOT_DIR / ".env.tuberia")
 
 CUENTA          = os.environ["MITROL_CUENTA"]           # "G", "M" o "B"
 MITROL_USER     = os.environ[f"mitrol_user_{CUENTA}"]
@@ -67,6 +68,40 @@ minio_client = Minio(
     secret_key=os.environ["MINIO_SECRET_KEY"],
     secure=False,
 )
+
+
+# ─── Parámetros ───────────────────────────────────────────────────────────────
+def obtener_params() -> dict:
+    """
+    Lee los parámetros desde pipeline_params en Postgres (clave: descarga_G/M/B).
+    Si no puede conectar o no existe la fila, usa config.py DEFAULTS como fallback.
+    """
+    db_url = os.getenv("SCORING_DB_URL")
+    if not db_url:
+        log.info("SCORING_DB_URL no configurado — usando DEFAULTS de config.py")
+        return DEFAULTS.copy()
+
+    clave = f"descarga_{CUENTA}"
+    try:
+        conn = psycopg2.connect(db_url)
+        cur  = conn.cursor()
+        cur.execute("SELECT valor FROM pipeline_params WHERE clave = %s", (clave,))
+        row  = cur.fetchone()
+        cur.close()
+        conn.close()
+
+        if row:
+            params = DEFAULTS.copy()
+            params.update(row[0])  # row[0] es JSONB → dict
+            log.info("Params cargados desde Postgres (clave: %s)", clave)
+            return params
+
+        log.info("Sin entrada en pipeline_params para '%s' — usando DEFAULTS", clave)
+        return DEFAULTS.copy()
+
+    except Exception as e:
+        log.warning("No se pudo leer pipeline_params: %s — usando DEFAULTS", e)
+        return DEFAULTS.copy()
 
 
 # ─── Browser ──────────────────────────────────────────────────────────────────
@@ -292,7 +327,7 @@ def ir_a_pagina_siguiente(driver: webdriver.Chrome) -> bool:
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
 def main():
-    params = DEFAULTS.copy()
+    params = obtener_params()
     driver = crear_driver()
     wait   = WebDriverWait(driver, TIMEOUT)
 
@@ -344,8 +379,11 @@ def main():
         log.error("Error inesperado: %s", e)
         raise
     finally:
-        input("Presiona ENTER para cerrar el navegador...")
-        driver.quit()
+        if os.getenv("MODO_INTERACTIVO", "0") == "1":
+            input("Presiona ENTER para cerrar el navegador...")
+            driver.quit()
+        # Modo Airflow: el navegador queda abierto para auditar.
+        # El proceso termina y Airflow marca la tarea como completada.
 
 
 if __name__ == "__main__":

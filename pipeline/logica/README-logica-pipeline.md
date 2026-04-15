@@ -32,7 +32,7 @@ Las etapas de corrección (4, 6, 8) actúan como *quality gates*: clasifican el 
 
 | # | Carpeta                          | Descripción                                                                 | Output en MinIO                                                          | Estado    |
 |---|----------------------------------|-----------------------------------------------------------------------------|--------------------------------------------------------------------------|-----------|
-| 1 | 1-descarga-de-audios/            | Scraping de Mitrol → sube WAV crudo a MinIO                                 | `audios/`                                                                | pendiente |
+| 1 | 1-descarga-de-audios/            | Scraping de Mitrol → sube WAV crudo a MinIO                                 | `audios/`                                                                | completa  |
 | 2 | 2-creacion-de-registros/         | Crea la fila inicial en `audio_pipeline_jobs` en PostgreSQL                 | —                                                                        | pendiente |
 | 3 | 3-normalizacion-de-audios/       | Normalización con ffmpeg: *silence removal*, *loudnorm*                     | `audios-raw/`                                                            | pendiente |
 | 4 | 4-correcion-de-normalizacion/    | Quality gate: scorea el audio normalizado y clasifica                       | `audios_procesados/{correcto\|reprocesar\|invalido}/`                    | pendiente |
@@ -278,9 +278,10 @@ modelado-de-scoring-wc/
 
 ```
 pipeline/logica/
-    ├── 1-descarga-de-audios/               # descarga audios desde Mitrol y los sube a MinIO (audios/)
-    │   ├── scraping_mitrol.py
-    │   └── config.py
+    ├── 1-descarga-de-audios/               # descarga audios desde Mitrol y los sube a MinIO (audios/)  [completa]
+    │   ├── scraping_mitrol.py              # script principal: login, filtros, paginación, upload a MinIO
+    │   ├── run_standalone.py              # modo interactivo para ejecutar manualmente desde la PC
+    │   └── config.py                      # parámetros por defecto (sobreescribibles desde pipeline_params)
     ├── 2-creacion-de-registros/            # crea el registro en audio_pipeline_jobs al detectar un audio nuevo
     │   ├── creacion_de_tablas_postgres.py  # DDL ejecutable: crea audio_pipeline_jobs y pipeline_params
     │   ├── creacion_de_registros.py        # inserta la fila inicial en audio_pipeline_jobs

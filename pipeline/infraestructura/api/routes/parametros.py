@@ -7,7 +7,14 @@ import os
 
 router = APIRouter()
 
-CLAVES_VALIDAS = {"limpieza", "transcripcion", "analisis"}
+CLAVES_VALIDAS = {
+    "descarga_G", "descarga_M", "descarga_B",
+    "normalizacion", "correccion_normalizacion",
+    "transcripcion", "correccion_transcripciones",
+    "analisis_A", "analisis_B",
+    "correccion_analisis_A", "correccion_analisis_B",
+}
+
 
 def get_conn():
     return psycopg2.connect(os.environ["DATABASE_URL"])
@@ -22,7 +29,7 @@ def get_parametros(clave: str):
     if clave not in CLAVES_VALIDAS:
         raise HTTPException(status_code=404, detail=f"Clave '{clave}' no existe")
     with get_conn() as conn, conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
-        cur.execute("SELECT clave, valor, updated_at FROM parametros_pipeline WHERE clave = %s", (clave,))
+        cur.execute("SELECT clave, valor, updated_at FROM pipeline_params WHERE clave = %s", (clave,))
         row = cur.fetchone()
         if not row:
             raise HTTPException(status_code=404, detail="Parámetro no encontrado")
@@ -32,15 +39,15 @@ def get_parametros(clave: str):
 @router.patch("/parametros/{clave}")
 def actualizar_parametros(clave: str, body: ActualizarParametros):
     """
-    Actualiza parámetros que los DAGs leerán en el próximo run.
-    Ejemplo: PATCH /pipeline/parametros/limpieza
-             body: {"valor": {"silencio_db": -40, "min_duracion_seg": 3}}
+    Actualiza los parámetros que los scripts leerán en el próximo run.
+    Ejemplo: PATCH /pipeline/parametros/descarga_M
+             body: {"valor": {"hora_inicio": "13", "hora_fin": "17"}}
     """
     if clave not in CLAVES_VALIDAS:
         raise HTTPException(status_code=404, detail=f"Clave '{clave}' no existe")
     with get_conn() as conn, conn.cursor() as cur:
         cur.execute("""
-            INSERT INTO parametros_pipeline (clave, valor)
+            INSERT INTO pipeline_params (clave, valor)
             VALUES (%s, %s)
             ON CONFLICT (clave) DO UPDATE
                 SET valor = EXCLUDED.valor, updated_at = now()

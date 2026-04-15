@@ -4,7 +4,7 @@ Pipeline distribuido para procesar llamadas de venta en castellano: descarga los
 
 Para el detalle de cada subcarpeta leer el README correspondiente:
 - `logica/README-logica-pipeline.md` — scripts de las 9 etapas, estructura MinIO, trazabilidad
-- `infraestructura/README-infraestructura-pipeline.md` — API, Airflow, RabbitMQ, workers
+- `infraestructura/README-infraestructura-pipeline.md` — API, Airflow, Redis, workers
 
 ---
 

@@ -1,0 +1,99 @@
+## Sobre el uso de Chrome
+cada pc tiene Chrome instalado asi que puede usar el script de selenium tranquilamente. Estoy de acuerdo con refactorizar el código del scraping al final para que sea mas automatico, debe continuar siendo visible en las 3 PC para poder auditar el funcionamiento
+
+## Sobre el frontend y los parámetros configurables
+
+desde el dashboard debemos poder configurar todos los parámetros que están en 'pipeline\logica\1-descarga-de-audios\config.py' todas las PC deben tener una configuracion de parámetros independiente de la otra. Es decir debemos tener parámetros_de_G, parametros_de_B y parametros_de_M. Recuerda que algunos parámetros son de libre input (solo limitado en el tipo de caracter) y otros son seleccionables desde un menú... aquí te dejo cuales son las opciones para que puedas replicarlas desde el fronted:
+
+"""### Los parametros que debemos guardar en  config deben ser los siguientes:
+
+CANT_REGISTROS_MAX= # seleccionable desde un menu desplegable (valor por defecto, "100000")
+<select name="PEXT_MaxRow$Ddl1" id="PEXT_MaxRow_Ddl1" class="Ctrl13" onchange="SelectedItem_DdlPEXT_MaxRow();">
+		<option value="10">10</option>
+		<option value="100">100</option>
+		<option value="500">500</option>
+		<option value="1000">1000</option>
+		<option value="5000">5000</option>
+		<option selected="selected" value="15000">15000</option>
+		<option value="30000">30000</option>
+		<option value="60000">60000</option>
+		<option value="100000">100000</option>
+	</select>
+
+selec_habilitar_opciones_de_fecha_xpath=//*[@id="PEXT_FechaRango_Rad1"] # Esta opcion siempre debe seleccionarse para poder habilitar la edicion de FECHA_INICIO y FECHA_FIN
+FECHA_INICIO=  # para escribir en formato dd/mm/yyyy (valor por defecto, la fecha de hoy)
+//*[@id="PEXT_FechaRango_TBoxFch1"]
+
+FECHA_FIN=  # para escribir en formato dd/mm/yyyy (valor por defecto, la fecha de hoy)
+//*[@id="PEXT_FechaRango_TBoxFch2"]
+
+HORA_INICIO= # seleccionable desde menu desplegable (valor por defecto, las "08")
+<select name="PEXT_HIni$Ddl1" id="PEXT_HIni_Ddl1" class="Ctrl28" onchange="SelectedItem_DdlPEXT_HIni();">
+		<option value="00">00</option>
+		<option value="01">01</option>
+		<option value="02">02</option>
+		<option value="03">03</option>
+        ...
+		<option value="22">22</option>
+		<option value="23">23</option>
+	</select>
+
+HORA_FIN= # seleccionable desde menu desplegable (valor por defecto, las "22")
+<select name="PEXT_HFin$Ddl1" id="PEXT_HFin_Ddl1" class="Ctrl28" onchange="SelectedItem_DdlPEXT_HFin();">
+		<option value="00">00</option>
+		<option value="01">01</option>
+		<option value="02">02</option>
+		<option value="03">03</option>
+        ...
+		<option value="21">21</option>
+		<option value="22">22</option>
+		<option value="23">23</option>
+	</select>
+
+DURACION_MIN= # seleccionable desde menu desplegable (valor por defecto, "00")
+<select name="PEXT_MinDuracion$Ddl2" id="PEXT_MinDuracion_Ddl2" class="Ctrl28" onchange="SelectedItem_DdlPEXT_MinDuracion();">
+		<option selected="selected" value="00">00</option>
+		<option value="01">01</option>
+		<option value="02">02</option>
+		<option value="03">03</option>
+        ... 
+		<option value="56">56</option>
+		<option value="57">57</option>
+		<option value="58">58</option>
+		<option value="59">59</option>
+	</select>
+
+DURACION_MAX= # seleccionable desde menu desplegable (valor por defecto, "00")
+<select name="PEXT_MaxDuracion$Ddl2" id="PEXT_MaxDuracion_Ddl2" class="Ctrl28" onchange="SelectedItem_DdlPEXT_MaxDuracion();">
+		<option selected="selected" value="00">00</option>
+		<option value="01">01</option>
+		<option value="02">02</option>
+		<option value="03">03</option>
+        ...
+		<option value="57">57</option>
+		<option value="58">58</option>
+		<option value="59">59</option>
+	</select>
+
+CLIENTE= # para escribir solo caracteres numericos
+//*[@id="PEXT_Cliente_Tbox1"]
+"""
+
+## Sobre las rutas de Melchor y pc-franco(Baltazar)
+Las tres pc tienen Windows (porfavor actualiza los md que consultaste) el proyecto para las demás PC debe estar en las siguientes rutas:
+pc-franco="C:\Users\Bases\Desktop\modelado de scoring WC"
+Melchor="C:\Users\JUAN-T3\Desktop\modelado de scoring WC"
+Deberas usar ssh para poder crear, copiar, mover carpetas, etc. Ya esta instalado en las demás computadoras
+
+## Sobre la ejecución del script
+No necesito automatizar la ejecución a un horario especifico todavía, por ahora activaremos el scraping manualmente y utilizaresmos curl para enviar las modificaciones de los parámetros de cada pc, si no se envían debe usar los parámetros por defecto.
+
+# REPUESTA A LAS PREGUNTAS
+1. Las tres pc son windowns… actualiza el readme porfavor
+2. Si, Chrome ya esta instalado en las 3 pc. usa el modo visible
+3. Si, Docker ya esta instalado en las 3 pc
+4. La etapa 1 corre cuando la activo
+5. Los rangos horarios son parámetro configurables (esto ya te lo detalle arriba)
+6. Las 3 pc usan una cuenta de mitrol diferente, gaspar:"G", melchor="M", pc-franco(o Baltazar)="B"
+7. definamos el modo standalone en un script separado
+
