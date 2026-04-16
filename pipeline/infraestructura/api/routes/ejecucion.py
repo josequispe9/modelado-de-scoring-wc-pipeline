@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import Literal, Optional
+import httpx
 from api import airflow_client
 
 router = APIRouter()
@@ -30,7 +31,10 @@ class FiltroEjecucion(BaseModel):
 @router.post("/ejecutar")
 def ejecutar_pipeline_completo():
     """Dispara el DAG maestro que corre todas las etapas en orden."""
-    return airflow_client.trigger_dag("pipeline_completo")
+    try:
+        return airflow_client.trigger_dag("pipeline_completo")
+    except httpx.HTTPStatusError as e:
+        raise HTTPException(status_code=e.response.status_code, detail=str(e))
 
 
 @router.post("/etapa/{etapa}/ejecutar")
@@ -41,11 +45,17 @@ def ejecutar_etapa(etapa: Etapa, body: FiltroEjecucion = FiltroEjecucion()):
     """
     dag_id = ETAPAS_DAG[etapa]
     conf = {"filtro": body.filtro, "ids": body.ids}
-    return airflow_client.trigger_dag(dag_id, conf=conf)
+    try:
+        return airflow_client.trigger_dag(dag_id, conf=conf)
+    except httpx.HTTPStatusError as e:
+        raise HTTPException(status_code=e.response.status_code, detail=str(e))
 
 
 @router.post("/etapa/{etapa}/pausar")
 def pausar_etapa(etapa: Etapa):
     """Pausa el DAG de una etapa para que no corra en el próximo schedule."""
     dag_id = ETAPAS_DAG[etapa]
-    return airflow_client.pausar_dag(dag_id)
+    try:
+        return airflow_client.pausar_dag(dag_id)
+    except httpx.HTTPStatusError as e:
+        raise HTTPException(status_code=e.response.status_code, detail=str(e))

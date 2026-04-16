@@ -83,17 +83,51 @@ Todas las máquinas corren **Windows** con OpenSSH Server habilitado.
 
 ### Servicios
 
-| Servicio     | URL                        | Usuario    | Password   |
-|--------------|----------------------------|------------|------------|
-| Airflow UI   | http://192.168.9.115:8080  | admin      | admin      |
-| Redis        | redis://192.168.9.115:6379 | —          | —          |
-| MinIO UI     | http://192.168.9.195:9002  | minioadmin | minioadmin |
-| MinIO API    | http://192.168.9.195:9001  | minioadmin | minioadmin |
-| Pipeline API | http://192.168.9.115:8001  | —          | —          |
+| Servicio     | URL                        | Usuario    | Password           |
+|--------------|----------------------------|------------|--------------------|
+| Airflow UI   | http://192.168.9.115:8080  | admin      | F9a9h2uGD3RhPHs2   |
+| Redis        | redis://192.168.9.115:6379 | —          | —                  |
+| MinIO UI     | http://192.168.9.195:9002  | minioadmin | minioadmin         |
+| MinIO API    | http://192.168.9.195:9001  | minioadmin | minioadmin         |
+| Pipeline API | http://192.168.9.115:8001  | —          | —                  |
 
 ---
 
 ## Cómo levantar el sistema
+
+### Pipeline API (puerto 8001)
+
+Corre en Windows (PowerShell) con el venv de `api/`:
+
+```powershell
+cd "pipeline\infraestructura"
+
+# Primera vez
+python -m venv api\venv
+api\venv\Scripts\activate
+pip install fastapi uvicorn httpx psycopg2-binary pydantic
+
+# Cargar variables de entorno y levantar
+Get-Content .\.env | ForEach-Object {
+    if ($_ -match "^([^#][^=]+)=(.+)$") {
+        [System.Environment]::SetEnvironmentVariable($matches[1].Trim(), $matches[2].Trim())
+    }
+}
+uvicorn api.main:app --host 0.0.0.0 --port 8001 --reload
+```
+
+Las variables que necesita el `.env` (en `pipeline/infraestructura/.env`):
+```
+DATABASE_URL=postgresql://scoring:scoring@localhost:5432/scoring
+AIRFLOW_BASE_URL=http://localhost:8080/api/v1
+AIRFLOW_USER=admin
+AIRFLOW_PASSWORD=F9a9h2uGD3RhPHs2
+```
+
+> La Pipeline API requiere que Airflow tenga habilitado el backend de autenticación básica.
+> Está configurado en el `docker-compose.yml` con `AIRFLOW__API__AUTH_BACKENDS: airflow.api.auth.backend.basic_auth`.
+
+---
 
 ### Primera vez
 

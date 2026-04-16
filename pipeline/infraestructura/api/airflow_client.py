@@ -2,11 +2,15 @@
 Cliente interno para la API REST de Airflow.
 Solo esta capa habla con Airflow — las rutas no lo tocan directamente.
 """
+import os
 import httpx
 from typing import Optional
 
-AIRFLOW_BASE_URL = "http://localhost:8080/api/v1"
-AIRFLOW_AUTH = ("admin", "admin")  # reemplazar con variables de entorno
+AIRFLOW_BASE_URL = os.environ.get("AIRFLOW_BASE_URL", "http://localhost:8080/api/v1")
+AIRFLOW_AUTH = (
+    os.environ.get("AIRFLOW_USER", "admin"),
+    os.environ.get("AIRFLOW_PASSWORD", "admin"),
+)
 
 
 def trigger_dag(dag_id: str, conf: Optional[dict] = None) -> dict:
