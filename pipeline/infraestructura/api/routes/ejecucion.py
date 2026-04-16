@@ -7,18 +7,21 @@ from api import airflow_client
 router = APIRouter()
 
 ETAPAS_DAG = {
-    "descarga":               "pipeline_descarga",
-    "limpieza":               "pipeline_limpieza",
-    "transcripcion":          "pipeline_transcripcion",
-    "correccion_transcripcion": "pipeline_correccion_transcripcion",
-    "analisis":               "pipeline_analisis",
-    "correccion_analisis":    "pipeline_correccion_analisis",
-    "carga_datos":            "pipeline_carga_datos",
+    "descarga":                "pipeline_descarga",
+    "creacion_registros":      "pipeline_creacion_registros",
+    "normalizacion":           "pipeline_normalizacion",
+    "correccion_normalizacion": "pipeline_correccion_normalizacion",
+    "transcripcion":           "pipeline_transcripcion",
+    "correccion_transcripciones": "pipeline_correccion_transcripciones",
+    "analisis":                "pipeline_analisis",
+    "correccion_analisis":     "pipeline_correccion_analisis",
+    "carga_datos":             "pipeline_carga_datos",
 }
 
 Etapa = Literal[
-    "descarga", "limpieza", "transcripcion",
-    "correccion_transcripcion", "analisis",
+    "descarga", "creacion_registros", "normalizacion",
+    "correccion_normalizacion", "transcripcion",
+    "correccion_transcripciones", "analisis",
     "correccion_analisis", "carga_datos"
 ]
 

@@ -107,25 +107,40 @@ A continuación se muestra la estructura de referencia:
 
 ```sql
 CREATE TABLE audio_pipeline_jobs (
-    id                        UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
-    numero_telefono           VARCHAR(20),
-    url_fuente                TEXT,
+    id                         UUID         PRIMARY KEY DEFAULT gen_random_uuid(),
 
-    duracion_audio_seg        INTEGER,
-    duracion_conversacion_seg INTEGER,
-    fecha_llamada             TIMESTAMPTZ,
+    -- Identificación del audio
+    nombre_archivo             VARCHAR(200) UNIQUE,     -- base sin sufijo _G/_M/_B ni .wav
+    id_interaccion             VARCHAR(100),
+    url_fuente                 TEXT,                    -- ruta MinIO del WAV
+    cuenta                     VARCHAR(1),              -- G, M o B
 
-    estado_global             VARCHAR(20)  NOT NULL DEFAULT 'pendiente'
-                                  CHECK (estado_global IN (
-                                      'pendiente', 'en_proceso', 'correcto',
-                                      'error', 'reprocesar', 'invalido'
-                                  )),
-    etapa_actual              VARCHAR(40)  NOT NULL DEFAULT 'descarga',
+    -- Metadata de la llamada (poblada en etapa 2 desde los CSV de Mitrol)
+    numero_telefono            VARCHAR(20),
+    inicio                     VARCHAR(30),             -- timestamp tal como viene de Mitrol
+    agente                     VARCHAR(100),
+    extension                  VARCHAR(20),
+    empresa                    VARCHAR(100),
+    campania                   VARCHAR(100),
+    tipificacion               VARCHAR(100),
+    clase_tipificacion         VARCHAR(100),
 
-    created_at                TIMESTAMPTZ  NOT NULL DEFAULT now(),
-    fecha_ultima_actualizacion TIMESTAMPTZ NOT NULL DEFAULT now(),
+    -- Duraciones en segundos (convertidas desde HH:MM:SS)
+    duracion_audio_seg         INTEGER,
+    duracion_conversacion_seg  INTEGER,
 
-    etapas                    JSONB        NOT NULL DEFAULT '{}'::jsonb
+    -- Control de flujo
+    estado_global              VARCHAR(20)  NOT NULL DEFAULT 'pendiente'
+                                   CHECK (estado_global IN (
+                                       'pendiente', 'en_proceso', 'correcto',
+                                       'error', 'reprocesar', 'invalido'
+                                   )),
+    etapa_actual               VARCHAR(40)  NOT NULL DEFAULT 'descarga',
+
+    created_at                 TIMESTAMPTZ  NOT NULL DEFAULT now(),
+    fecha_ultima_actualizacion TIMESTAMPTZ  NOT NULL DEFAULT now(),
+
+    etapas                     JSONB        NOT NULL DEFAULT '{}'::jsonb
 );
 ```
 
@@ -279,12 +294,12 @@ modelado-de-scoring-wc/
 ```
 pipeline/logica/
     ├── 1-descarga-de-audios/               # descarga audios desde Mitrol y los sube a MinIO (audios/)  [completa]
-    │   ├── scraping_mitrol.py              # script principal: login, filtros, paginación, upload a MinIO
+    │   ├── scraping_mitrol.py              # script principal: login, filtros, paginación, upload a MinIO + CSV de metadatos
     │   ├── run_standalone.py              # modo interactivo para ejecutar manualmente desde la PC
     │   └── config.py                      # parámetros por defecto (sobreescribibles desde pipeline_params)
-    ├── 2-creacion-de-registros/            # crea el registro en audio_pipeline_jobs al detectar un audio nuevo
+    ├── 2-creacion-de-registros/            # lista MinIO y crea filas en audio_pipeline_jobs para audios nuevos  [completa]
     │   ├── creacion_de_tablas_postgres.py  # DDL ejecutable: crea audio_pipeline_jobs y pipeline_params
-    │   ├── creacion_de_registros.py        # inserta la fila inicial en audio_pipeline_jobs
+    │   ├── creacion_de_registros.py        # lee CSVs de MinIO e inserta filas en audio_pipeline_jobs
     │   └── DDL.txt                         # referencia rapida del esquema y estructura del JSONB
     ├── 3-normalizacion-de-audios/          # normaliza el audio con ffmpeg, output a MinIO (audios-raw/)
     │   ├── preprocesar_audios.py

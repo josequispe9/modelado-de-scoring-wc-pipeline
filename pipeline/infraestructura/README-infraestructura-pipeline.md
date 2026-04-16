@@ -184,7 +184,16 @@ airflow-worker (Docker, gaspar)
 
 Las tres tareas corren en **paralelo**. Cada máquina usa su propia cuenta Mitrol y sus propios parámetros (`descarga_G`, `descarga_M`, `descarga_B` en `pipeline_params`).
 
-### Etapas 2–9 — CeleryExecutor
+### Etapa 2 — Creación de registros (SSHOperator, solo gaspar)
+
+Lista todos los WAV en MinIO (`audios/`) y lee los CSV de metadatos generados por la etapa 1 (`audios/YYYY-MM-DD/metadatos_<CUENTA>_<timestamp>.csv`). Por cada audio sin fila en `audio_pipeline_jobs`, inserta un registro con toda la metadata. Idempotente.
+
+```
+airflow-worker (Docker, gaspar)
+    └── SSHOperator → ssh gaspar → python creacion_de_registros.py
+```
+
+### Etapas 3–9 — CeleryExecutor
 
 Las etapas restantes corren dentro de contenedores Docker en los workers, distribuidas por Celery + Redis según la cola correspondiente.
 
@@ -215,7 +224,7 @@ Corre en gaspar. Es la única puerta de entrada del dashboard — nunca expone A
 | POST   | `/pipeline/etapa/{etapa}/ejecutar` | Dispara una etapa con filtro: `pendientes`, `reprocesar`, `todos`   |
 | POST   | `/pipeline/etapa/{etapa}/pausar`   | Pausa el DAG de una etapa                                           |
 
-Etapas válidas: `descarga` · `normalizacion` · `correccion_normalizacion` · `transcripcion` · `correccion_transcripciones` · `analisis` · `correccion_analisis` · `carga_datos`
+Etapas válidas: `descarga` · `creacion_registros` · `normalizacion` · `correccion_normalizacion` · `transcripcion` · `correccion_transcripciones` · `analisis` · `correccion_analisis` · `carga_datos`
 
 **Estado y métricas**
 

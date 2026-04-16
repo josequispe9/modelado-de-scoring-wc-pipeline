@@ -14,12 +14,13 @@ VITE_PIPELINE_API_URL=http://localhost:8001
 
 Las funciones de fetch viven en `src/api/pipeline.js`. Los tres grupos de endpoints que usa:
 
-| Grupo        | Uso en el frontend                                                  |
-|--------------|---------------------------------------------------------------------|
+| Grupo        | Uso en el frontend                                                                     |
+|--------------|----------------------------------------------------------------------------------------|
 | Parámetros   | `GET /pipeline/parametros/{clave}` — carga los valores al abrir cada panel de máquina |
-|              | `PATCH /pipeline/parametros/{clave}` — guarda al presionar "Guardar" |
-| Ejecución    | `POST /pipeline/etapa/{etapa}/ejecutar` — dispara el DAG desde el botón "Ejecutar" |
-| Estado       | `GET /pipeline/estado` — (pendiente de implementar en el monitoreo) |
+|              | `PATCH /pipeline/parametros/{clave}` — guarda al presionar "Guardar"                  |
+| Ejecución    | `POST /pipeline/etapa/descarga/ejecutar` — botón "Ejecutar descarga" (etapa 1)        |
+|              | `POST /pipeline/etapa/creacion_registros/ejecutar` — botón "Crear registros" (etapa 2)|
+| Estado       | `GET /pipeline/estado` — (pendiente de implementar en el monitoreo)                   |
 
 El frontend nunca habla con Airflow directamente — todo pasa por la Pipeline API.
 

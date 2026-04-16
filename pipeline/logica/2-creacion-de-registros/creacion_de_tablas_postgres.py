@@ -26,13 +26,28 @@ DATABASE_URL = os.environ["SCORING_DB_URL"]
 DDL_AUDIO_PIPELINE_JOBS = """
 CREATE TABLE IF NOT EXISTS audio_pipeline_jobs (
     id                         UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
-    numero_telefono            VARCHAR(20),
-    url_fuente                 TEXT,
 
+    -- Identificación del audio
+    nombre_archivo             VARCHAR(200) UNIQUE,     -- base sin sufijo _G/_M/_B ni .wav
+    id_interaccion             VARCHAR(100),
+    url_fuente                 TEXT,                    -- ruta MinIO del WAV
+    cuenta                     VARCHAR(1),              -- G, M o B
+
+    -- Metadata de la llamada
+    numero_telefono            VARCHAR(20),
+    inicio                     VARCHAR(30),             -- timestamp tal como viene de Mitrol
+    agente                     VARCHAR(100),
+    extension                  VARCHAR(20),
+    empresa                    VARCHAR(100),
+    campania                   VARCHAR(100),
+    tipificacion               VARCHAR(100),
+    clase_tipificacion         VARCHAR(100),
+
+    -- Duraciones en segundos (convertidas desde HH:MM:SS)
     duracion_audio_seg         INTEGER,
     duracion_conversacion_seg  INTEGER,
-    fecha_llamada              TIMESTAMPTZ,
 
+    -- Control de flujo
     estado_global              VARCHAR(20)  NOT NULL DEFAULT 'pendiente'
                                    CHECK (estado_global IN (
                                        'pendiente', 'en_proceso', 'correcto',

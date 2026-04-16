@@ -328,6 +328,37 @@ function EtapaDescarga() {
   )
 }
 
+// ── Contenido de la etapa Creación de registros ───────────────────────────────
+
+function EtapaCreacionRegistros() {
+  const [ejecutando,       setEjecutando]       = useState(false)
+  const [mensajeEjecucion, setMensajeEjecucion] = useState<string | null>(null)
+
+  const handleEjecutar = async () => {
+    setEjecutando(true)
+    setMensajeEjecucion(null)
+    try {
+      await ejecutarEtapa("creacion_registros", "pendientes")
+      setMensajeEjecucion("Ejecución iniciada")
+    } catch {
+      setMensajeEjecucion("Error al ejecutar")
+    } finally {
+      setEjecutando(false)
+    }
+  }
+
+  return (
+    <div className="flex items-center gap-3 pt-3">
+      <Button onClick={handleEjecutar} disabled={ejecutando}>
+        {ejecutando ? "Ejecutando..." : "Crear registros"}
+      </Button>
+      {mensajeEjecucion && (
+        <span className="text-xs text-muted-foreground">{mensajeEjecucion}</span>
+      )}
+    </div>
+  )
+}
+
 // ── Container colapsable genérico ──────────────────────────────────────────────
 
 function EtapaContainer({
@@ -378,7 +409,8 @@ export default function PipelineConfiguracion() {
 
       {ETAPAS.map(({ id, label }) => (
         <EtapaContainer key={id} label={label} defaultOpen={id === "descarga"}>
-          {id === "descarga" && <EtapaDescarga />}
+          {id === "descarga"           && <EtapaDescarga />}
+          {id === "creacion_registros" && <EtapaCreacionRegistros />}
         </EtapaContainer>
       ))}
     </div>

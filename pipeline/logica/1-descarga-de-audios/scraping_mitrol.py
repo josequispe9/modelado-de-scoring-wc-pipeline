@@ -19,8 +19,10 @@ Estructura de iframes (fija, no cambia entre sesiones):
     frame(2) — tabla de resultados / paginacion
 """
 
+import csv
 import io
 import os
+import re
 import time
 import logging
 import requests
@@ -58,9 +60,7 @@ MITROL_URL      = "https://apps-alc.mitrol.cloud/reportes/login.aspx"
 TIMEOUT = 60  # segundos maximos de espera por elemento
 
 # ─── MinIO ────────────────────────────────────────────────────────────────────
-MINIO_BUCKET   = "modelado-de-scoring-wc"
-FECHA_CARPETA  = datetime.now().strftime("%Y-%m-%d")
-MINIO_PREFIX   = f"audios/{FECHA_CARPETA}"
+MINIO_BUCKET = "modelado-de-scoring-wc"
 
 minio_client = Minio(
     os.environ["MINIO_ENDPOINT"],
@@ -238,27 +238,52 @@ def extraer_filas(driver: webdriver.Chrome) -> list[dict]:
 # ─── Subida a MinIO ───────────────────────────────────────────────────────────
 OMITIDO = "omitido"  # sentinel: objeto ya existe en MinIO
 
+
+def extraer_fecha_audio(nombre_base: str) -> str:
+    """
+    Extrae la fecha del nombre del archivo.
+    Busca la primera secuencia de 12+ dígitos (ej: '260414103733673') y lee YYMMDD.
+    Retorna 'YYYY-MM-DD'. Si no encuentra el patron, usa la fecha de hoy.
+    """
+    match = re.search(r"_(\d{12,})", nombre_base)
+    if match:
+        digits = match.group(1)
+        yy, mm, dd = digits[0:2], digits[2:4], digits[4:6]
+        return f"20{yy}-{mm}-{dd}"
+    return datetime.now().strftime("%Y-%m-%d")
+
+
+def audio_ya_existe(nombre_base: str, fecha_carpeta: str) -> bool:
+    """
+    Verifica si el audio ya existe en MinIO independientemente de la cuenta (_G/_M/_B).
+    Busca cualquier objeto cuyo nombre empiece con '<nombre_base>_'.
+    """
+    prefix = f"audios/{fecha_carpeta}/{nombre_base}_"
+    objects = minio_client.list_objects(MINIO_BUCKET, prefix=prefix)
+    return any(True for _ in objects)
+
+
 def subir_audio(session: requests.Session, registro: dict):
     """
     Descarga el audio desde Mitrol y lo sube a MinIO.
     Ruta destino: audios/YYYY-MM-DD/<nombre>_<CUENTA>.wav
+    La fecha se extrae del propio nombre del archivo.
+    El chequeo de duplicado ignora el sufijo _G/_M/_B.
 
     Retorna:
       str (object_name) → subido correctamente
-      OMITIDO           → ya existia en MinIO
+      OMITIDO           → ya existia en MinIO (cualquier cuenta)
       None              → error
     """
-    nombre_base = registro["archivo"] or registro["id_interaccion"]
-    nombre      = f"{nombre_base}_{CUENTA}.wav"
-    object_name = f"{MINIO_PREFIX}/{nombre}"
+    nombre_base   = registro["archivo"] or registro["id_interaccion"]
+    fecha_carpeta = extraer_fecha_audio(nombre_base)
+    nombre        = f"{nombre_base}_{CUENTA}.wav"
+    object_name   = f"audios/{fecha_carpeta}/{nombre}"
 
-    # Verificar si ya existe en MinIO
-    try:
-        minio_client.stat_object(MINIO_BUCKET, object_name)
-        log.info("Ya existe en MinIO, omitiendo: %s", nombre)
+    # Verificar si ya existe en MinIO (sin importar la cuenta que lo subió)
+    if audio_ya_existe(nombre_base, fecha_carpeta):
+        log.info("Ya existe en MinIO (cualquier cuenta), omitiendo: %s", nombre_base)
         return OMITIDO
-    except S3Error:
-        pass  # no existe, continuar con la descarga
 
     try:
         response = session.get(registro["audio_url"], stream=True, timeout=120)
@@ -291,6 +316,33 @@ def obtener_sesion_requests(driver: webdriver.Chrome) -> requests.Session:
     for cookie in driver.get_cookies():
         session.cookies.set(cookie["name"], cookie["value"])
     return session
+
+
+# ─── Metadatos CSV ────────────────────────────────────────────────────────────
+CSV_CAMPOS = ["inicio", "id_interaccion", "duracion_total", "duracion_audio",
+              "agente", "cliente", "extension", "empresa", "campania",
+              "tipificacion", "clase_tipificacion", "archivo", "cuenta"]
+_ts        = datetime.now().strftime("%Y%m%d_%H%M%S")
+TEMP_CSV   = Path(os.environ.get("TEMP", "C:\\Windows\\Temp")) / f"_temp_metadatos_{CUENTA}_{_ts}.csv"
+
+
+def subir_csv_metadatos(fecha_carpeta: str) -> None:
+    """Sube el CSV temporal a MinIO y lo borra localmente."""
+    if not TEMP_CSV.exists():
+        return
+    object_name = f"audios/{fecha_carpeta}/metadatos_{CUENTA}_{_ts}.csv"
+    with open(TEMP_CSV, "rb") as f:
+        data = f.read()
+    minio_client.put_object(
+        MINIO_BUCKET,
+        object_name,
+        io.BytesIO(data),
+        len(data),
+        content_type="text/csv",
+    )
+    log.info("Metadatos subidos a MinIO: %s", object_name)
+    TEMP_CSV.unlink()
+    log.info("Archivo temporal eliminado: %s", TEMP_CSV.name)
 
 
 # ─── Paginacion ───────────────────────────────────────────────────────────────
@@ -331,7 +383,7 @@ def main():
     driver = crear_driver()
     wait   = WebDriverWait(driver, TIMEOUT)
 
-    log.info("Destino MinIO: %s/%s/", MINIO_BUCKET, MINIO_PREFIX)
+    log.info("Destino MinIO: %s/audios/YYYY-MM-DD/ (fecha extraida de cada archivo)", MINIO_BUCKET)
 
     try:
         login(driver, wait)
@@ -342,11 +394,16 @@ def main():
         total_paginas = obtener_total_paginas(driver)
         log.info("Total de paginas: %d", total_paginas)
 
-        session     = obtener_sesion_requests(driver)
-        subidos     = 0
-        omitidos    = 0
-        errores     = 0
+        session      = obtener_sesion_requests(driver)
+        subidos      = 0
+        omitidos     = 0
+        errores      = 0
         total_audios = 0
+        fecha_carpeta_final = datetime.now().strftime("%Y-%m-%d")  # fallback para el CSV
+
+        csv_file = open(TEMP_CSV, "w", newline="", encoding="utf-8")
+        writer   = csv.DictWriter(csv_file, fieldnames=CSV_CAMPOS, extrasaction="ignore")
+        writer.writeheader()
 
         for pagina in range(1, total_paginas + 1):
             log.info("── Pagina %d/%d ──", pagina, total_paginas)
@@ -363,10 +420,16 @@ def main():
                     omitidos += 1
                 else:
                     subidos += 1
+                    fecha_carpeta_final = extraer_fecha_audio(nombre)
+
+                writer.writerow({**registro, "cuenta": CUENTA})
 
             if pagina < total_paginas and not ir_a_pagina_siguiente(driver):
                 log.error("No se pudo avanzar a pagina %d. Deteniendo.", pagina + 1)
                 break
+
+        csv_file.close()
+        subir_csv_metadatos(fecha_carpeta_final)
 
         log.info(
             "Finalizado — paginas: %d | audios: %d | subidos: %d | omitidos: %d | errores: %d",
