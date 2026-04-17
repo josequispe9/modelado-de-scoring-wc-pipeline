@@ -9,7 +9,7 @@ export default function App() {
     <BrowserRouter>
       <SidebarProvider>
         <AppSidebar />
-        <main className="flex-1 p-4">
+        <main className="flex-1 p-4 h-screen overflow-y-auto">
           <SidebarTrigger className="mb-4" />
           <Routes>
             <Route path="/" element={<Navigate to="/pipeline/monitoreo" replace />} />

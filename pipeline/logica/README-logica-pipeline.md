@@ -130,7 +130,7 @@ CREATE TABLE audio_pipeline_jobs (
     duracion_conversacion_seg  INTEGER,
 
     -- Control de flujo
-    estado_global              VARCHAR(20)  NOT NULL DEFAULT 'pendiente'
+    estado_global              VARCHAR(20)  NOT NULL DEFAULT 'correcto'
                                    CHECK (estado_global IN (
                                        'pendiente', 'en_proceso', 'correcto',
                                        'error', 'reprocesar', 'invalido'
@@ -253,38 +253,45 @@ Solo se agrega cada clave cuando la etapa comienza. Las etapas no iniciadas no e
 
 MinIO corre en `melchor` (192.168.9.195:9001). Bucket: `modelado-de-scoring-wc`. Todas las máquinas leen y escriben del mismo bucket vía boto3. Cada etapa de normalizacion, transcripcion y analisis tiene una etapa posterior de calidad donde se determina el score del procesamiento y se clasifica como correcto en el caso de que este apto para la siguiente etapa, reprocesar en caso de que se necesite un nuevo analisis variando los parametros iniciales o invalido en caso de que el archivo este corrupto o no cumpla con las condiciones para pasar a la proxima etapa a pesar de los reintentos de reprocesamiento, en esos casos los archivos se auditan manualmente.
 
+Todas las carpetas usan subcarpetas `YYYY-MM-DD/` con la fecha del propio audio (extraída del nombre del archivo), no la fecha de ejecución.
+
+> **Extensión a grupos:** La etapa 3 agrega un nivel `<grupo>/` dentro de la fecha (`YYYY-MM-DD/<grupo>/`) para separar outputs de distintas configuraciones de parámetros procesadas en paralelo. Las etapas siguientes no usan grupos por ahora, pero la estructura `YYYY-MM-DD/` deja el hueco para incorporarlo sin romper nada — bastaría agregar `YYYY-MM-DD/<grupo>/` si en el futuro se quiere comparar, por ejemplo, dos configuraciones de WhisperX o dos prompts de LLM sobre los mismos audios.
+
 ```
 modelado-de-scoring-wc/
 │
-├── audios/                              # output de 1-descarga-de-audios
+├── audios/                                      # output de 1-descarga-de-audios
+│   └── YYYY-MM-DD/nombre.wav
 │
-├── audios-raw/                          # output de 3-normalizacion-de-audios
+├── audios-raw/                                  # output de 3-normalizacion-de-audios
+│   └── YYYY-MM-DD/<grupo>/nombre_G.wav
 │
-├── audios_procesados/                   # output de 4-correcion-de-normalizacion
-│   ├── correcto/uuid.wav                # input de 5-transcripcion-de-audios
-│   ├── reprocesar/uuid.wav              # input de 3-normalizacion-de-audios
-│   └── invalido/uuid.wav
+├── audios_procesados/                           # output de 4-correcion-de-normalizacion
+│   ├── correcto/YYYY-MM-DD/nombre.wav           # input de 5-transcripcion-de-audios
+│   ├── reprocesar/YYYY-MM-DD/nombre.wav         # input de 3-normalizacion-de-audios
+│   └── invalido/YYYY-MM-DD/nombre.wav
 │
-├── transcripciones-raw/                 # output de 5-transcripcion-de-audios
+├── transcripciones-raw/                         # output de 5-transcripcion-de-audios
+│   └── YYYY-MM-DD/nombre.json
 │
-├── transcripciones-procesadas/          # output de 6-correccion-de-transcripciones
-│   ├── correcto/uuid.json               # input de 7-analisis-de-transcripciones
-│   ├── reprocesar/uuid.json             # input de 5-transcripcion-de-audios
-│   └── invalido/uuid.json
+├── transcripciones-procesadas/                  # output de 6-correccion-de-transcripciones
+│   ├── correcto/YYYY-MM-DD/nombre.json          # input de 7-analisis-de-transcripciones
+│   ├── reprocesar/YYYY-MM-DD/nombre.json        # input de 5-transcripcion-de-audios
+│   └── invalido/YYYY-MM-DD/nombre.json
 │
-├── analisis-raw/                        # output de 7-analisis-de-transcripciones
-│   ├── analisis-A/
-│   └── analisis-B/
+├── analisis-raw/                                # output de 7-analisis-de-transcripciones
+│   ├── analisis-A/YYYY-MM-DD/nombre.json
+│   └── analisis-B/YYYY-MM-DD/nombre.json
 │
-└── analisis-procesados/                 # output de 8-correccion-de-analisis
+└── analisis-procesados/                         # output de 8-correccion-de-analisis
     ├── analisis-A/
-    │   ├── correcto/uuid.json           # input de 9-carga-de-datos
-    │   ├── reprocesar/uuid.json         # input de 7-analisis-de-transcripciones
-    │   └── invalido/uuid.json
+    │   ├── correcto/YYYY-MM-DD/nombre.json      # input de 9-carga-de-datos
+    │   ├── reprocesar/YYYY-MM-DD/nombre.json    # input de 7-analisis-de-transcripciones
+    │   └── invalido/YYYY-MM-DD/nombre.json
     └── analisis-B/
-        ├── correcto/uuid.json
-        ├── reprocesar/uuid.json
-        └── invalido/uuid.json
+        ├── correcto/YYYY-MM-DD/nombre.json
+        ├── reprocesar/YYYY-MM-DD/nombre.json
+        └── invalido/YYYY-MM-DD/nombre.json
 ```
 
 ---

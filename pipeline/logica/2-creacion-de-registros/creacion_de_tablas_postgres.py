@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS audio_pipeline_jobs (
     duracion_conversacion_seg  INTEGER,
 
     -- Control de flujo
-    estado_global              VARCHAR(20)  NOT NULL DEFAULT 'pendiente'
+    estado_global              VARCHAR(20)  NOT NULL DEFAULT 'correcto'
                                    CHECK (estado_global IN (
                                        'pendiente', 'en_proceso', 'correcto',
                                        'error', 'reprocesar', 'invalido'

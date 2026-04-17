@@ -105,13 +105,15 @@ def insertar_registro(cur, nombre: str, object_key: str, meta: dict) -> None:
             nombre_archivo, id_interaccion, url_fuente, cuenta,
             numero_telefono, inicio,
             agente, extension, empresa, campania, tipificacion, clase_tipificacion,
-            duracion_audio_seg, duracion_conversacion_seg
+            duracion_audio_seg, duracion_conversacion_seg,
+            estado_global
         ) VALUES (
             %(nombre_archivo)s, %(id_interaccion)s, %(url_fuente)s, %(cuenta)s,
             %(numero_telefono)s, %(inicio)s,
             %(agente)s, %(extension)s, %(empresa)s, %(campania)s,
             %(tipificacion)s, %(clase_tipificacion)s,
-            %(duracion_audio_seg)s, %(duracion_conversacion_seg)s
+            %(duracion_audio_seg)s, %(duracion_conversacion_seg)s,
+            'correcto'
         )
         ON CONFLICT (nombre_archivo) DO NOTHING
     """, {
