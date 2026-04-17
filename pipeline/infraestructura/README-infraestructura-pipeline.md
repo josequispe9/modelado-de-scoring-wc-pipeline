@@ -211,7 +211,25 @@ airflow-worker (Docker, gaspar)
 Claves de pipeline_params: `normalizacion_G` · `normalizacion_M` · `normalizacion_B`  
 Campos del JSONB: `grupo`, `cuenta`, `params_usados`, `ubicacion`, `estado`, `intento`, `error`
 
-### Etapas 4–9 — pendientes
+### Etapa 4 — Corrección de normalización (SSHOperator, solo gaspar)
+
+Scorea cada audio normalizado usando librosa/soundfile (SNR, RMS, duración ratio). Clasifica en `correcto` / `reprocesar` / `invalido` y sube a `audios_procesados/<clasificacion>/YYYY-MM-DD/<grupo>/`. Corre solo en gaspar — no requiere GPU.
+
+```
+airflow-worker (Docker, gaspar)
+    └── SSHOperator → ssh gaspar → python correccion_normalizacion.py
+```
+
+Clave de pipeline_params: `correccion_normalizacion`  
+Campos del JSONB: `grupo`, `score`, `metricas` (snr, rms_dbfs, duracion_seg, duracion_ratio), `ubicacion`, `estado`, `intento`, `error`
+
+**Selección de ganador** — script manual (no DAG), disparado desde el dashboard o PowerShell:
+```powershell
+pipeline\venv\Scripts\python.exe pipeline\logica\4-correcion-de-normalizacion\seleccionar_ganador.py
+```
+Elige el grupo con mejor score por audio, mueve el ganador a `audios_procesados/correcto/YYYY-MM-DD/` (sin subcarpeta de grupo) y elimina los perdedores de `audios_procesados/` y `audios-raw/`.
+
+### Etapas 5–9 — pendientes
 
 ---
 

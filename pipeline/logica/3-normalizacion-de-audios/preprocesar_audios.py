@@ -192,6 +192,16 @@ def build_ffmpeg_filter(params: dict) -> str:
     return ",".join(filters)
 
 
+def obtener_duracion(wav_path: str) -> float | None:
+    """Retorna la duración en segundos del WAV, o None si no se puede leer."""
+    try:
+        import soundfile as sf
+        info = sf.info(wav_path)
+        return round(info.duration, 2)
+    except Exception:
+        return None
+
+
 def normalizar(input_path: str, output_path: str, params: dict) -> bool:
     cmd = [
         "ffmpeg",
@@ -218,7 +228,8 @@ def normalizar(input_path: str, output_path: str, params: dict) -> bool:
 # ─── Actualización de Postgres ────────────────────────────────────────────────
 def actualizar_registro(conn, audio_id: str, etapa_actual_previa: str,
                         estado: str, object_key: str | None,
-                        params: dict, error: str | None) -> None:
+                        params: dict, error: str | None,
+                        duracion_seg: float | None = None) -> None:
     """
     Agrega un intento al array etapas.normalizacion (no reemplaza intentos previos).
 
@@ -240,6 +251,7 @@ def actualizar_registro(conn, audio_id: str, etapa_actual_previa: str,
             if k in params
         },
         "ubicacion": {"bucket": MINIO_BUCKET, "key": object_key} if object_key else None,
+        "metricas":  {"duracion_seg": duracion_seg} if duracion_seg is not None else None,
         "error":    error,
     }
 
@@ -340,8 +352,10 @@ def main():
                     errores += 1
                     continue
 
+            duracion = obtener_duracion(output_tmp)
             actualizar_registro(conn, str(audio["id"]), etapa_actual_prev,
-                                "correcto", output_key, params, None)
+                                "correcto", output_key, params, None,
+                                duracion_seg=duracion)
             log.info("OK: %s", nombre)
             procesados += 1
 

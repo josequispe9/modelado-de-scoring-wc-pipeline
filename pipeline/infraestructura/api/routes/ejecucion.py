@@ -2,6 +2,9 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import Literal, Optional
 import httpx
+import subprocess
+import sys
+import os
 from api import airflow_client
 
 router = APIRouter()
@@ -52,6 +55,33 @@ def ejecutar_etapa(etapa: Etapa, body: FiltroEjecucion = FiltroEjecucion()):
         return airflow_client.trigger_dag(dag_id, conf=conf)
     except httpx.HTTPStatusError as e:
         raise HTTPException(status_code=e.response.status_code, detail=str(e))
+
+
+@router.post("/etapa/correccion_normalizacion/limpiar")
+def limpiar_audios_normalizacion():
+    """
+    Corre seleccionar_ganador.py en gaspar:
+    elige el grupo con mejor score por audio y elimina los duplicados de MinIO.
+    """
+    proyecto = os.environ.get(
+        "PROYECTO_DIR",
+        r"C:\Users\qjose\Desktop\modelado de scoring WC"
+    )
+    python = os.path.join(proyecto, r"pipeline\venv\Scripts\python.exe")
+    script = os.path.join(
+        proyecto,
+        r"pipeline\logica\4-correcion-de-normalizacion\seleccionar_ganador.py"
+    )
+    try:
+        proc = subprocess.Popen(
+            [python, script],
+            cwd=proyecto,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+        )
+        return {"status": "iniciado", "pid": proc.pid}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @router.post("/etapa/{etapa}/pausar")

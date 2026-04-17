@@ -1,0 +1,72 @@
+ Manejo de archivos en MinIO                                                                
+                                                                                             
+  Input: audios-raw/YYYY-MM-DD/<grupo>/nombre_G.wav — uno por grupo                         
+  Output etapa 4a: audios_procesados/<clasificacion>/YYYY-MM-DD/<grupo>/nombre.wav — uno por 
+  grupo (se realizo la normalizacion de los mismos audios con diferentes parametros)           
+  Output etapa 4b: audios_procesados/correcto/YYYY-MM-DD/nombre.wav — uno por audio, sin     
+  grupo (el ganador)                          
+                                                                                             
+  ---                                                       
+  Scripts                                                                                    
+                                                            
+  - config.py — umbrales de clasificación (score mínimo para correcto, reprocesar e invalido)
+   y parámetros del análisis de calidad.                    
+  - correccion_normalizacion.py — scorea cada audio normalizado por grupo, lo clasifica y lo
+  sube a audios_procesados/<clasificacion>/YYYY-MM-DD/<grupo>/.
+  - seleccionar_ganador.py — compara scores entre grupos para cada audio, marca el ganador en
+   el JSONB y elimina los descartados de MinIO.
+                                                                                             
+  ---                                                       
+  Estados en PostgreSQL                                                                      
+                                                            
+  ┌─────────────────────────────┬──────────────────────────┬─────────────────────────────┐   
+  │           Momento           │       etapa_actual       │        estado_global        │
+  ├─────────────────────────────┼──────────────────────────┼─────────────────────────────┤   
+  │ Entra a etapa 4             │ normalizacion            │ correcto                    │
+  ├─────────────────────────────┼──────────────────────────┼─────────────────────────────┤   
+  │ Mientras se evalúa          │ normalizacion            │ en_proceso                  │
+  ├─────────────────────────────┼──────────────────────────┼─────────────────────────────┤  
+  │ Primer grupo evaluado       │ correccion_normalizacion │ correcto                    │
+  ├─────────────────────────────┼──────────────────────────┼─────────────────────────────┤   
+  │ Todos los grupos reprocesar │ normalizacion            │ reprocesar                  │
+  ├─────────────────────────────┼──────────────────────────┼─────────────────────────────┤   
+  │ Algún grupo invalido        │ correccion_normalizacion │ invalido                    │   
+  │ irreversible                │                          │                             │  
+  ├─────────────────────────────┼──────────────────────────┼─────────────────────────────┤   
+  │ Ganador seleccionado        │ correccion_normalizacion │ correcto + grupo_ganador en │
+  │                             │                          │  JSONB                      │   
+  └─────────────────────────────┴──────────────────────────┴─────────────────────────────┘
+                                                                                             
+  seleccionar_ganador.py actúa sobre audios con etapa_actual='correccion_normalizacion' y sin
+   grupo_ganador aún en el JSONB.   
+
+
+ Parámetros — config.py etapa 4                                                             
+                                                                                            
+  Umbrales duros (→ invalido directo):                                                       
+  - duracion_minima_seg = 3               
+  - sample_rate_esperado = 16000              
+  - canales_esperados = 1                                                                    
+                         
+  Pesos del score:                                                                           
+  - peso_snr = 0.40                                         
+  - peso_duracion_ratio = 0.30                                                               
+  - peso_rms = 0.30                                         
+                                                                                             
+  Umbrales de clasificación:                  
+  - umbral_correcto = 0.75                                                                   
+  - umbral_reprocesar = 0.40                                
+                                                                                             
+  ---                                         
+  seleccionar_ganador.py — limpieza                                                          
+                                                            
+  Cuando se elige el ganador, el script elimina de MinIO:                                    
+                                              
+  - audios_procesados/<clasificacion>/YYYY-MM-DD/<grupo>/nombre.wav — las versiones          
+  perdedoras de audios_procesados/                          
+  - audios-raw/YYYY-MM-DD/<grupo>/nombre_G.wav — el audio normalizado de los grupos          
+  perdedores                                                                                 
+                                                                                             
+  Quedando en MinIO únicamente:                                                              
+  - audios_procesados/correcto/YYYY-MM-DD/nombre.wav — el ganador, sin subcarpeta de grupo   
+  - audios-raw/YYYY-MM-DD/<grupo_ganador>/nombre_G.wav — el normalizado del ganador         

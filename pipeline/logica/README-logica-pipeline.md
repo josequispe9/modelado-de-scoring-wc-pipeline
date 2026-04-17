@@ -33,9 +33,9 @@ Las etapas de corrección (4, 6, 8) actúan como *quality gates*: clasifican el 
 | # | Carpeta                          | Descripción                                                                 | Output en MinIO                                                          | Estado    |
 |---|----------------------------------|-----------------------------------------------------------------------------|--------------------------------------------------------------------------|-----------|
 | 1 | 1-descarga-de-audios/            | Scraping de Mitrol → sube WAV crudo a MinIO                                 | `audios/`                                                                | completa  |
-| 2 | 2-creacion-de-registros/         | Crea la fila inicial en `audio_pipeline_jobs` en PostgreSQL                 | —                                                                        | pendiente |
-| 3 | 3-normalizacion-de-audios/       | Normalización con ffmpeg: *silence removal*, *loudnorm*                     | `audios-raw/`                                                            | pendiente |
-| 4 | 4-correcion-de-normalizacion/    | Quality gate: scorea el audio normalizado y clasifica                       | `audios_procesados/{correcto\|reprocesar\|invalido}/`                    | pendiente |
+| 2 | 2-creacion-de-registros/         | Crea la fila inicial en `audio_pipeline_jobs` en PostgreSQL                 | —                                                                        | completa  |
+| 3 | 3-normalizacion-de-audios/       | Normalización con ffmpeg: *silence removal*, *loudnorm*                     | `audios-raw/`                                                            | completa  |
+| 4 | 4-correcion-de-normalizacion/    | Quality gate: scorea el audio normalizado y clasifica; selección de ganador | `audios_procesados/{correcto\|reprocesar\|invalido}/`                    | completa  |
 | 5 | 5-transcripcion-de-audios/       | WhisperX: transcripción + diarización en un solo paso                       | `transcripciones-raw/`                                                   | pendiente |
 | 6 | 6-correccion-de-transcripciones/ | Quality gate: scorea la transcripción y clasifica                           | `transcripciones-procesadas/{correcto\|reprocesar\|invalido}/`           | pendiente |
 | 7 | 7-analisis-de-transcripciones/   | Análisis con LLM en variantes independientes (A, B, …)                      | `analisis-raw/analisis-A/`, `analisis-raw/analisis-B/`                   | pendiente |
@@ -54,6 +54,19 @@ Las etapas de corrección (4, 6, 8) actúan como *quality gates*: clasifican el 
 
 **Estado global del job:**  
 `pendiente` · `en_proceso` · `correcto` · `error` · `reprocesar` · `invalido`
+
+### Flujo de estados — etapa 4
+
+| Momento | `etapa_actual` | `estado_global` |
+|---|---|---|
+| Entra a etapa 4 | `normalizacion` | `correcto` |
+| Mientras se evalúa | `normalizacion` | `en_proceso` |
+| Primer grupo evaluado | `correccion_normalizacion` | `correcto` |
+| Todos los grupos `reprocesar` | `normalizacion` | `reprocesar` |
+| Audio irrecuperable | `correccion_normalizacion` | `invalido` |
+| Ganador seleccionado | `correccion_normalizacion` | `correcto` + `grupo_ganador` en JSONB |
+
+`seleccionar_ganador.py` actúa sobre audios con `etapa_actual='correccion_normalizacion'` y sin `grupo_ganador` en el JSONB. Elimina de MinIO los audios descartados en `audios_procesados/` y en `audios-raw/`, dejando una sola versión por audio.
 
 ### Nota sobre los tipos de análisis
 
@@ -311,8 +324,10 @@ pipeline/logica/
     ├── 3-normalizacion-de-audios/          # normaliza audios con ffmpeg, output a MinIO (audios-raw/YYYY-MM-DD/<grupo>/)  [completa]
     │   ├── preprocesar_audios.py           # script principal: SELECT FOR UPDATE SKIP LOCKED, ffmpeg, upload a MinIO
     │   └── config.py                      # parámetros por defecto (sobreescribibles desde pipeline_params)
-    ├── 4-correcion-de-normalizacion/       # scorea la normalizacion y clasifica en correcto/reprocesar/invalido (audios_procesados/)
-    │   └── config.py
+    ├── 4-correcion-de-normalizacion/       # scorea la normalizacion y clasifica en correcto/reprocesar/invalido (audios_procesados/)  [completa]
+    │   ├── correccion_normalizacion.py     # script principal: descarga WAV, calcula SNR/RMS/duración, clasifica y sube a audios_procesados/
+    │   ├── seleccionar_ganador.py          # corre manualmente: elige grupo con mejor score por audio y elimina duplicados de MinIO
+    │   └── config.py                       # umbrales duros, pesos del score y umbrales de clasificación
     ├── 5-transcripcion-de-audios/          # transcribe con WhisperX, output a MinIO (transcripciones-raw/)
     │   └── config.py
     ├── 6-correccion-de-transcripciones/    # scorea la transcripcion y clasifica en correcto/reprocesar/invalido (transcripciones-procesadas/)

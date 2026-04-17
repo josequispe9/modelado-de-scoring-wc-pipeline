@@ -16,6 +16,24 @@ CLAVES_VALIDAS = {
     "correccion_analisis_A", "correccion_analisis_B",
 }
 
+DEFAULTS_POR_CLAVE = {
+    "correccion_normalizacion": {
+        "duracion_minima_seg":  3,
+        "sample_rate_esperado": 16000,
+        "canales_esperados":    1,
+        "peso_snr":             0.40,
+        "peso_duracion_ratio":  0.30,
+        "peso_rms":             0.30,
+        "snr_min":              0.0,
+        "snr_max":              40.0,
+        "rms_ref_dbfs":        -16.0,
+        "rms_tolerancia_db":    6.0,
+        "duracion_ratio_min":   0.10,
+        "umbral_correcto":      0.75,
+        "umbral_reprocesar":    0.40,
+    }
+}
+
 
 def get_conn():
     return psycopg2.connect(os.environ["DATABASE_URL"])
@@ -33,6 +51,9 @@ def get_parametros(clave: str):
         cur.execute("SELECT clave, valor, updated_at FROM pipeline_params WHERE clave = %s", (clave,))
         row = cur.fetchone()
         if not row:
+            defaults = DEFAULTS_POR_CLAVE.get(clave)
+            if defaults:
+                return {"clave": clave, "valor": defaults, "updated_at": None}
             raise HTTPException(status_code=404, detail="Parámetro no encontrado")
         return row
 
