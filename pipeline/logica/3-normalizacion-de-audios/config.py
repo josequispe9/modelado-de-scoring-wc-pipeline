@@ -1,17 +1,25 @@
 """
-parametros para la normalizacion de audios
+Parámetros por defecto para la normalización de audios.
+Estos valores pueden ser sobreescritos desde el dashboard via pipeline_params
+(claves: normalizacion_G, normalizacion_M, normalizacion_B).
 """
 
-# Parámetros de limpieza de audio
-AUDIO_PARAMS = {
-    # Detección de silencio (ajustar según necesidad)
-    'silence_threshold': '-40dB',  # Umbral de silencio (-50dB más agresivo, -30dB más conservador)
-    'silence_duration': '1',     # Duración mínima de silencio a remover (segundos)
+DEFAULTS = {
+    # Carpeta de origen: 'audios', 'reprocesar' o 'ambos'
+    "carpeta": "audios",
 
-    # Normalización de audio
-    'normalize': True,             # Activar normalización de volumen
+    # Grupo de normalización (define la subcarpeta en audios-raw/)
+    # Se sobreescribe siempre desde pipeline_params
+    "grupo": "GBM",
 
-    # Filtros adicionales
-    'noise_reduction': False,      # Reducción de ruido (más lento, usar solo si necesario)
-    'highpass_filter': False,      # Filtro pasa-altos para remover ruidos bajos
+    # Detección de silencio
+    "silence_threshold": "-40dB",   # -50dB más agresivo, -30dB más conservador
+    "silence_duration":  "1",       # duración mínima de silencio a remover (segundos)
+
+    # Normalización de volumen (loudnorm EBU R128)
+    "normalize": True,
+
+    # Filtros opcionales
+    "noise_reduction": False,       # reducción de ruido (más lento)
+    "highpass_filter": False,       # filtro pasa-altos para remover ruidos bajos (<200Hz)
 }

@@ -1,0 +1,62 @@
+Tareas de la etapa 3
+
+## Lectura de archivos
+- Esta etapa se encarga de la normalizacion de todos los audios pendientes que estan en 'modelado-de-scoring-wc/audios/' ,  'modelado-de-scoring-wc/audios_procesados/reprocesar/' o ambos
+y se guardan en modelado-de-scoring-wc/audios-raw/. El procesamiento se hara en paralelo en las 3 PC, las cuales
+cada una debera descargar el audio temporalmente desde minio para procesarlo con ffmpeg y luego guardar el audio normalizado
+Primero debes buscar en postgres que audios debes analizar teniendo en cuenta las tablas 'audio_pipeline_jobs' y tener en cuenta los parametros de 'pipeline_params' o en su defecto usar los valores predeterminados
+-  
+
+
+## Actualizacion de estados en postgres (documentacion:pipeline\logica\README-logica-pipeline.md)
+En esta etapa el script tambien debe actualizar el estado del registro asociado en la base de datos postgres, almacenando ademas los
+parametros que se utilzaron en el procesamiento, en caso de que ya tenga el campo jsonb de esta etapa deberas agregar una mas, no reemplazarla
+
+
+## Parametros configurables
+
+- Carpeta de los audios que se procesaran:
+    {'modelado-de-scoring-wc/audios/', # por defecto
+    'modelado-de-scoring-wc/audios_procesados/reprocesar/',
+    'ambos'}
+-
+- Parámetros de limpieza de audio:
+    AUDIO_PARAMS = {
+        # Detección de silencio (ajustar según necesidad)
+        'silence_threshold': '-40dB',  # Umbral de silencio (-50dB más agresivo, -30dB más conservador)
+        'silence_duration': '1',     # Duración mínima de silencio a remover (segundos)
+
+        # Normalización de audio
+        'normalize': True,             # Activar normalización de volumen
+
+        # Filtros adicionales
+        'noise_reduction': False,      # Reducción de ruido (más lento, usar solo si necesario)
+        'highpass_filter': False,      # Filtro pasa-altos para remover ruidos bajos
+    }
+
+ Desde el frontend — en la sección "3. Normalización" de PipelineConfiguracion, habría 3 paneles (G, M, B) con:
+  - Los params de ffmpeg configurables (silence removal, loudnorm, etc.)
+  - Un control de agrupación para vincular/desvincular máquinas
+
+  Al guardar, el frontend hace PATCH /pipeline/parametros/normalizacion_G (y M, B) con el JSON que incluye el
+  grupo y los params. Si G y M están vinculadas, el frontend envía el mismo payload a ambas con grupo: "GM".
+
+  ---
+  Las carpetas en MinIO — el script de normalización lee su clave (normalizacion_G), extrae el grupo del JSON y
+  escribe en:
+
+  audios-raw/
+  └── 2026-04-14/
+      └── GBM/        ← si las 3 están vinculadas
+          └── amza90_1_..._G.wav
+
+  Si las desvinculás y B tiene params propios:
+  audios-raw/
+  └── 2026-04-14/
+      ├── GM/
+      │   └── amza90_1_..._G.wav
+      └── B/
+          └── amza90_1_..._B.wav
+
+  El nombre de la carpeta lo define el campo grupo que viene de pipeline_params — no hay lógica extra, el script
+  simplemente lo usa como prefijo

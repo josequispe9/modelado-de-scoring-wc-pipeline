@@ -193,9 +193,25 @@ airflow-worker (Docker, gaspar)
     └── SSHOperator → ssh gaspar → python creacion_de_registros.py
 ```
 
-### Etapas 3–9 — CeleryExecutor
+### Etapa 3 — Normalización (SSHOperator, 3 PCs en paralelo)
 
-Las etapas restantes corren dentro de contenedores Docker en los workers, distribuidas por Celery + Redis según la cola correspondiente.
+Normaliza los audios con ffmpeg (silence removal, loudnorm, filtros opcionales). Cada PC lee su propia clave en `pipeline_params` (`normalizacion_G/M/B`) para obtener sus params y su grupo. Las PCs del mismo grupo se reparten el trabajo a demanda usando `SELECT FOR UPDATE SKIP LOCKED` — la primera en tomar un audio lo procesa, las demás lo saltean. PCs de grupos distintos pueden procesar el mismo audio con params diferentes, generando outputs comparables.
+
+```
+audios-raw/YYYY-MM-DD/<grupo>/nombre_archivo_<CUENTA>.wav
+```
+
+```
+airflow-worker (Docker, gaspar)
+    ├── SSHOperator → ssh gaspar    → python preprocesar_audios.py  [cuenta G]
+    ├── SSHOperator → ssh melchor   → python preprocesar_audios.py  [cuenta M]
+    └── SSHOperator → ssh pc-franco → python preprocesar_audios.py  [cuenta B]
+```
+
+Claves de pipeline_params: `normalizacion_G` · `normalizacion_M` · `normalizacion_B`  
+Campos del JSONB: `grupo`, `cuenta`, `params_usados`, `ubicacion`, `estado`, `intento`, `error`
+
+### Etapas 4–9 — pendientes
 
 ---
 
@@ -242,7 +258,7 @@ Etapas válidas: `descarga` · `creacion_registros` · `normalizacion` · `corre
 | GET    | `/pipeline/parametros/{clave}`    | Lee los parámetros actuales de una etapa               |
 | PATCH  | `/pipeline/parametros/{clave}`    | Modifica los parámetros — tiene efecto en el próximo run |
 
-Claves válidas: `descarga_G` · `descarga_M` · `descarga_B` · `normalizacion` · `correccion_normalizacion` · `transcripcion` · `correccion_transcripciones` · `analisis_A` · `analisis_B` · `correccion_analisis_A` · `correccion_analisis_B`
+Claves válidas: `descarga_G` · `descarga_M` · `descarga_B` · `normalizacion_G` · `normalizacion_M` · `normalizacion_B` · `correccion_normalizacion` · `transcripcion` · `correccion_transcripciones` · `analisis_A` · `analisis_B` · `correccion_analisis_A` · `correccion_analisis_B`
 
 Ejemplo — modificar parámetros de descarga de melchor:
 ```bash

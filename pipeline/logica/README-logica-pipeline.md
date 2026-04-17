@@ -301,9 +301,9 @@ pipeline/logica/
     │   ├── creacion_de_tablas_postgres.py  # DDL ejecutable: crea audio_pipeline_jobs y pipeline_params
     │   ├── creacion_de_registros.py        # lee CSVs de MinIO e inserta filas en audio_pipeline_jobs
     │   └── DDL.txt                         # referencia rapida del esquema y estructura del JSONB
-    ├── 3-normalizacion-de-audios/          # normaliza el audio con ffmpeg, output a MinIO (audios-raw/)
-    │   ├── preprocesar_audios.py
-    │   └── config.py
+    ├── 3-normalizacion-de-audios/          # normaliza audios con ffmpeg, output a MinIO (audios-raw/YYYY-MM-DD/<grupo>/)  [completa]
+    │   ├── preprocesar_audios.py           # script principal: SELECT FOR UPDATE SKIP LOCKED, ffmpeg, upload a MinIO
+    │   └── config.py                      # parámetros por defecto (sobreescribibles desde pipeline_params)
     ├── 4-correcion-de-normalizacion/       # scorea la normalizacion y clasifica en correcto/reprocesar/invalido (audios_procesados/)
     │   └── config.py
     ├── 5-transcripcion-de-audios/          # transcribe con WhisperX, output a MinIO (transcripciones-raw/)

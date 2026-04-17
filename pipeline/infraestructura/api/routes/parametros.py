@@ -9,7 +9,8 @@ router = APIRouter()
 
 CLAVES_VALIDAS = {
     "descarga_G", "descarga_M", "descarga_B",
-    "normalizacion", "correccion_normalizacion",
+    "normalizacion_G", "normalizacion_M", "normalizacion_B",
+    "correccion_normalizacion",
     "transcripcion", "correccion_transcripciones",
     "analisis_A", "analisis_B",
     "correccion_analisis_A", "correccion_analisis_B",

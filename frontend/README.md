@@ -20,6 +20,7 @@ Las funciones de fetch viven en `src/api/pipeline.js`. Los tres grupos de endpoi
 |              | `PATCH /pipeline/parametros/{clave}` — guarda al presionar "Guardar"                  |
 | Ejecución    | `POST /pipeline/etapa/descarga/ejecutar` — botón "Ejecutar descarga" (etapa 1)        |
 |              | `POST /pipeline/etapa/creacion_registros/ejecutar` — botón "Crear registros" (etapa 2)|
+|              | `POST /pipeline/etapa/normalizacion/ejecutar` — botón "Ejecutar normalización" (etapa 3)|
 | Estado       | `GET /pipeline/estado` — (pendiente de implementar en el monitoreo)                   |
 
 El frontend nunca habla con Airflow directamente — todo pasa por la Pipeline API.

@@ -11,6 +11,15 @@ import { getParametros, actualizarParametros, ejecutarEtapa } from "@/api/pipeli
 
 // ── Tipos ──────────────────────────────────────────────────────────────────────
 
+type NormalizacionParams = {
+  carpeta:           string
+  silence_threshold: string
+  silence_duration:  string
+  normalize:         boolean
+  noise_reduction:   boolean
+  highpass_filter:   boolean
+}
+
 type DescargaParams = {
   fecha_inicio: string
   fecha_fin: string
@@ -40,6 +49,25 @@ const ETAPAS = [
   { id: "analisis",                   label: "7. Análisis" },
   { id: "correccion_analisis",        label: "8. Corrección de análisis" },
   { id: "carga_datos",                label: "9. Carga de datos" },
+]
+
+// ── Constantes de normalización ───────────────────────────────────────────────
+
+const NORM_DEFAULTS: NormalizacionParams = {
+  carpeta:           "audios",
+  silence_threshold: "-40dB",
+  silence_duration:  "1",
+  normalize:         true,
+  noise_reduction:   false,
+  highpass_filter:   false,
+}
+
+const NORM_PRESETS: { label: string; grupos: Record<string, string> }[] = [
+  { label: "GBM",       grupos: { G: "GBM", M: "GBM", B: "GBM" } },
+  { label: "GM | B",    grupos: { G: "GM",  M: "GM",  B: "B"   } },
+  { label: "GB | M",    grupos: { G: "GB",  M: "M",   B: "GB"  } },
+  { label: "G | MB",    grupos: { G: "G",   M: "MB",  B: "MB"  } },
+  { label: "G | M | B", grupos: { G: "G",   M: "M",   B: "B"   } },
 ]
 
 const CANT_REGISTROS_OPCIONES = ["10", "100", "500", "1000", "5000", "15000", "30000", "60000", "100000"]
@@ -328,6 +356,248 @@ function EtapaDescarga() {
   )
 }
 
+// ── Etapa Normalización ────────────────────────────────────────────────────────
+
+function detectarPreset(grupos: Record<string, string>): number {
+  for (let i = 0; i < NORM_PRESETS.length; i++) {
+    const pg = NORM_PRESETS[i].grupos
+    if (pg.G === grupos.G && pg.M === grupos.M && pg.B === grupos.B) return i
+  }
+  return 0
+}
+
+function GrupoParamsPanel({
+  grupoNombre,
+  maquinas,
+  params,
+  onChange,
+}: {
+  grupoNombre: string
+  maquinas: string[]
+  params: NormalizacionParams
+  onChange: (p: NormalizacionParams) => void
+}) {
+  const set = (key: keyof NormalizacionParams, val: string | boolean) =>
+    onChange({ ...params, [key]: val })
+
+  return (
+    <div className="flex-1 min-w-0 border border-border rounded p-4 flex flex-col gap-3">
+      <div className="flex items-center justify-between">
+        <p className="text-sm font-medium text-foreground">Grupo {grupoNombre}</p>
+        <span className="text-xs text-muted-foreground">{maquinas.join(", ")}</span>
+      </div>
+
+      <div className="grid grid-cols-1 gap-2">
+        <div className="flex flex-col gap-1">
+          <Label className="text-xs text-muted-foreground">Carpeta origen</Label>
+          <select
+            className={selectClass}
+            value={params.carpeta}
+            onChange={(e) => set("carpeta", e.target.value)}
+          >
+            <option value="audios">audios/</option>
+            <option value="reprocesar">audios_procesados/reprocesar/</option>
+            <option value="ambos">ambos</option>
+          </select>
+        </div>
+
+        <div className="flex flex-col gap-1">
+          <Label className="text-xs text-muted-foreground">Umbral de silencio</Label>
+          <input
+            type="text"
+            className={inputClass}
+            value={params.silence_threshold}
+            onChange={(e) => set("silence_threshold", e.target.value)}
+            placeholder="-40dB"
+          />
+        </div>
+
+        <div className="flex flex-col gap-1">
+          <Label className="text-xs text-muted-foreground">Duración mín. silencio (seg)</Label>
+          <input
+            type="text"
+            className={inputClass}
+            value={params.silence_duration}
+            onChange={(e) => set("silence_duration", e.target.value)}
+            placeholder="1"
+          />
+        </div>
+
+        <div className="flex flex-col gap-2 pt-1">
+          {(["normalize", "highpass_filter", "noise_reduction"] as const).map((key) => (
+            <label key={key} className="flex items-center gap-2 text-sm text-foreground cursor-pointer">
+              <input
+                type="checkbox"
+                checked={params[key] as boolean}
+                onChange={(e) => set(key, e.target.checked)}
+              />
+              {key === "normalize"       && "Normalización de volumen (loudnorm)"}
+              {key === "highpass_filter" && "Filtro pasa-altos (>200Hz)"}
+              {key === "noise_reduction" && "Reducción de ruido (lento)"}
+            </label>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function EtapaNormalizacion() {
+  const [presetIdx,   setPresetIdx]   = useState(0)
+  const [paramsMap,   setParamsMap]   = useState<Record<string, NormalizacionParams>>({
+    GBM: { ...NORM_DEFAULTS },
+  })
+  const [guardando,   setGuardando]   = useState(false)
+  const [ejecutando,  setEjecutando]  = useState(false)
+  const [mensaje,     setMensaje]     = useState<string | null>(null)
+
+  // Cargar params desde API al montar
+  useEffect(() => {
+    Promise.all([
+      getParametros("normalizacion_G"),
+      getParametros("normalizacion_M"),
+      getParametros("normalizacion_B"),
+    ]).then(([rG, rM, rB]) => {
+      const valG = rG?.valor ?? {}
+      const valM = rM?.valor ?? {}
+      const valB = rB?.valor ?? {}
+
+      const gruposActuales = {
+        G: valG.grupo ?? "GBM",
+        M: valM.grupo ?? "GBM",
+        B: valB.grupo ?? "GBM",
+      }
+      setPresetIdx(detectarPreset(gruposActuales))
+
+      // Construir paramsMap — una entrada por grupo único
+      const map: Record<string, NormalizacionParams> = {}
+      const entries = [
+        { cuenta: "G", val: valG },
+        { cuenta: "M", val: valM },
+        { cuenta: "B", val: valB },
+      ]
+      for (const { val } of entries) {
+        const g = val.grupo ?? "GBM"
+        if (!map[g]) {
+          map[g] = { ...NORM_DEFAULTS, ...Object.fromEntries(
+            Object.entries(val).filter(([k]) => k !== "grupo")
+          ) } as NormalizacionParams
+        }
+      }
+      setParamsMap(map)
+    }).catch(() => setMensaje("Error al cargar parámetros"))
+  }, [])
+
+  const preset = NORM_PRESETS[presetIdx]
+
+  // Grupos únicos del preset actual con sus máquinas
+  const gruposUnicos = Object.entries(
+    Object.entries(preset.grupos).reduce<Record<string, string[]>>(
+      (acc, [cuenta, grupo]) => {
+        acc[grupo] = [...(acc[grupo] ?? []), cuenta]
+        return acc
+      },
+      {}
+    )
+  )
+
+  const handlePreset = (idx: number) => {
+    setPresetIdx(idx)
+    // Inicializar paramsMap para grupos nuevos con DEFAULTS
+    const nuevosGrupos = NORM_PRESETS[idx].grupos
+    const gruposNuevosUnicos = [...new Set(Object.values(nuevosGrupos))]
+    setParamsMap((prev) => {
+      const next: Record<string, NormalizacionParams> = {}
+      for (const g of gruposNuevosUnicos) {
+        next[g] = prev[g] ?? { ...NORM_DEFAULTS }
+      }
+      return next
+    })
+  }
+
+  const handleGuardar = async () => {
+    setGuardando(true)
+    setMensaje(null)
+    try {
+      await Promise.all(
+        (["G", "M", "B"] as const).map((cuenta) => {
+          const grupo  = preset.grupos[cuenta]
+          const params = paramsMap[grupo] ?? NORM_DEFAULTS
+          return actualizarParametros(`normalizacion_${cuenta}`, { grupo, ...params })
+        })
+      )
+      setMensaje("Guardado")
+    } catch {
+      setMensaje("Error al guardar")
+    } finally {
+      setGuardando(false)
+    }
+  }
+
+  const handleEjecutar = async () => {
+    setEjecutando(true)
+    setMensaje(null)
+    try {
+      await ejecutarEtapa("normalizacion", "pendientes")
+      setMensaje("Ejecución iniciada")
+    } catch {
+      setMensaje("Error al ejecutar")
+    } finally {
+      setEjecutando(false)
+    }
+  }
+
+  return (
+    <div className="flex flex-col gap-4 pt-3">
+
+      {/* Selector de preset de grupos */}
+      <div className="flex flex-col gap-1">
+        <Label className="text-xs text-muted-foreground">Configuración de grupos</Label>
+        <div className="flex gap-2 flex-wrap">
+          {NORM_PRESETS.map((p, i) => (
+            <button
+              key={p.label}
+              type="button"
+              onClick={() => handlePreset(i)}
+              className={`px-3 py-1 rounded text-xs border transition-colors ${
+                i === presetIdx
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-background text-foreground border-border hover:bg-muted"
+              }`}
+            >
+              {p.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Paneles de params por grupo */}
+      <div className="flex gap-4 flex-wrap">
+        {gruposUnicos.map(([grupo, maquinas]) => (
+          <GrupoParamsPanel
+            key={grupo}
+            grupoNombre={grupo}
+            maquinas={maquinas}
+            params={paramsMap[grupo] ?? NORM_DEFAULTS}
+            onChange={(p) => setParamsMap((prev) => ({ ...prev, [grupo]: p }))}
+          />
+        ))}
+      </div>
+
+      {/* Acciones */}
+      <div className="flex items-center gap-3 pt-1 border-t border-border">
+        <Button size="sm" onClick={handleGuardar} disabled={guardando}>
+          {guardando ? "Guardando..." : "Guardar"}
+        </Button>
+        <Button onClick={handleEjecutar} disabled={ejecutando}>
+          {ejecutando ? "Ejecutando..." : "Ejecutar normalización"}
+        </Button>
+        {mensaje && <span className="text-xs text-muted-foreground">{mensaje}</span>}
+      </div>
+    </div>
+  )
+}
+
 // ── Contenido de la etapa Creación de registros ───────────────────────────────
 
 function EtapaCreacionRegistros() {
@@ -411,6 +681,7 @@ export default function PipelineConfiguracion() {
         <EtapaContainer key={id} label={label} defaultOpen={id === "descarga"}>
           {id === "descarga"           && <EtapaDescarga />}
           {id === "creacion_registros" && <EtapaCreacionRegistros />}
+          {id === "normalizacion"      && <EtapaNormalizacion />}
         </EtapaContainer>
       ))}
     </div>
