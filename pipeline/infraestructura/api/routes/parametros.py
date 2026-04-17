@@ -19,6 +19,7 @@ CLAVES_VALIDAS = {
 DEFAULTS_POR_CLAVE = {
     "correccion_normalizacion": {
         "duracion_minima_seg":  3,
+        "duracion_maxima_seg":  1800,
         "sample_rate_esperado": 16000,
         "canales_esperados":    1,
         "peso_snr":             0.40,

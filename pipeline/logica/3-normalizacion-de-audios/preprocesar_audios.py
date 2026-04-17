@@ -145,23 +145,32 @@ def obtener_siguiente_audio(conn, carpeta: str, grupo: str) -> dict | None:
     return dict(audio) if audio else None
 
 
-def obtener_input_key(audio: dict, carpeta: str) -> str | None:
+def obtener_input_key(audio: dict, carpeta: str, grupo: str) -> str | None:
     """
     Retorna la key de MinIO del WAV a normalizar.
-    - Para audios nuevos (etapa_actual='descarga'): url_fuente
-    - Para reprocesar: etapas.correccion_normalizacion[-1].ubicacion.key
+    - Si el grupo aún no tiene entrada en etapas.normalizacion → audio nuevo → url_fuente
+    - Si carpeta='reprocesar' y hay entrada en correccion_normalizacion → reprocesar desde ahí
     """
-    if audio["etapa_actual"] == "descarga":
-        return audio["url_fuente"]
-
     etapas = audio.get("etapas") or {}
-    correccion = etapas.get("correccion_normalizacion")
-    if correccion:
-        ultimo = correccion[-1] if isinstance(correccion, list) else correccion
-        return ultimo.get("ubicacion", {}).get("key")
 
-    log.warning("Sin ubicacion en correccion_normalizacion para %s", audio["nombre_archivo"])
-    return None
+    # Verificar si este grupo ya normalizó antes (no debería pasar, pero por seguridad)
+    norm = etapas.get("normalizacion") or []
+    if not isinstance(norm, list):
+        norm = [norm]
+    grupo_ya_normalizo = any(e.get("grupo") == grupo and e.get("estado") == "correcto"
+                             for e in norm)
+
+    # Caso reprocesar: leer desde correccion_normalizacion
+    if carpeta in ("reprocesar", "ambos") and not grupo_ya_normalizo:
+        correccion = etapas.get("correccion_normalizacion")
+        if correccion:
+            ultimo = correccion[-1] if isinstance(correccion, list) else correccion
+            key = ultimo.get("ubicacion", {}).get("key")
+            if key:
+                return key
+
+    # Caso normal: audio nuevo o grupo procesando por primera vez
+    return audio["url_fuente"]
 
 
 # ─── ffmpeg ───────────────────────────────────────────────────────────────────
@@ -202,9 +211,26 @@ def obtener_duracion(wav_path: str) -> float | None:
         return None
 
 
+def _ffmpeg_exe() -> str:
+    """Retorna la ruta al ejecutable ffmpeg, buscando en ubicaciones conocidas."""
+    import shutil
+    if shutil.which("ffmpeg"):
+        return "ffmpeg"
+    candidatos = [
+        r"C:\ffmpeg.exe",
+        r"C:\Users\qjose\AppData\Local\Microsoft\WinGet\Links\ffmpeg.exe",
+        r"C:\ffmpeg\bin\ffmpeg.exe",
+        r"C:\Program Files\ffmpeg\bin\ffmpeg.exe",
+    ]
+    for c in candidatos:
+        if os.path.isfile(c):
+            return c
+    return "ffmpeg"  # fallback — fallará con error claro
+
+
 def normalizar(input_path: str, output_path: str, params: dict) -> bool:
     cmd = [
-        "ffmpeg",
+        _ffmpeg_exe(),
         "-i", input_path,
         "-af", build_ffmpeg_filter(params),
         "-ar", "16000",
@@ -310,7 +336,7 @@ def main():
 
             nombre            = audio["nombre_archivo"]
             etapa_actual_prev = audio["etapa_actual"]
-            input_key         = obtener_input_key(audio, carpeta)
+            input_key         = obtener_input_key(audio, carpeta, grupo)
 
             if not input_key:
                 log.warning("Sin input key para %s — omitiendo", nombre)

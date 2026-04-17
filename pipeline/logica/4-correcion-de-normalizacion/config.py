@@ -6,6 +6,7 @@ Todos los valores son sobreescribibles desde pipeline_params (clave: correccion_
 DEFAULTS = {
     # ── Umbrales duros (→ invalido directo) ───────────────────────────────────
     "duracion_minima_seg":   3,        # audios más cortos no son transcribibles
+    "duracion_maxima_seg":   1800,     # 30 minutos — audios más largos son sospechosos
     "sample_rate_esperado":  16000,
     "canales_esperados":     1,
 

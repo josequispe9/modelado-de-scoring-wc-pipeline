@@ -175,6 +175,9 @@ def calcular_metricas(wav_path: str, duracion_original_seg: float, params: dict)
     if duracion_seg < params["duracion_minima_seg"]:
         return {"valido": False, "motivo_invalido": f"duracion={duracion_seg:.1f}s < minimo"}
 
+    if duracion_seg > params["duracion_maxima_seg"]:
+        return {"valido": False, "motivo_invalido": f"duracion={duracion_seg:.1f}s > maximo"}
+
     # ── Carga de audio ────────────────────────────────────────────────────────
     try:
         audio, _ = librosa.load(wav_path, sr=None, mono=True)
