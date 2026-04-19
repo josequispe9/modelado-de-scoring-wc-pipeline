@@ -21,6 +21,8 @@ Las funciones de fetch viven en `src/api/pipeline.js`. Los tres grupos de endpoi
 | Ejecución    | `POST /pipeline/etapa/descarga/ejecutar` — botón "Ejecutar descarga" (etapa 1)        |
 |              | `POST /pipeline/etapa/creacion_registros/ejecutar` — botón "Crear registros" (etapa 2)|
 |              | `POST /pipeline/etapa/normalizacion/ejecutar` — botón "Ejecutar normalización" (etapa 3)|
+|              | `POST /pipeline/etapa/correccion_normalizacion/ejecutar` — botón "Ejecutar scoring" (etapa 4)|
+|              | `POST /pipeline/etapa/correccion_normalizacion/limpiar` — botón "Limpiar audios duplicados" (etapa 4)|
 | Estado       | `GET /pipeline/estado` — (pendiente de implementar en el monitoreo)                   |
 
 El frontend nunca habla con Airflow directamente — todo pasa por la Pipeline API.

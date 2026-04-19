@@ -7,7 +7,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
-import { getParametros, actualizarParametros, ejecutarEtapa } from "@/api/pipeline"
+import { getParametros, actualizarParametros, ejecutarEtapa, limpiarAudiosNormalizacion } from "@/api/pipeline"
 
 // ── Tipos ──────────────────────────────────────────────────────────────────────
 
@@ -598,6 +598,164 @@ function EtapaNormalizacion() {
   )
 }
 
+// ── Etapa Corrección de normalización ─────────────────────────────────────────
+
+type CorreccionNormParams = {
+  duracion_minima_seg:  number
+  duracion_maxima_seg:  number
+  peso_snr:             number
+  peso_duracion_ratio:  number
+  peso_rms:             number
+  snr_max:              number
+  rms_ref_dbfs:         number
+  rms_tolerancia_db:    number
+  duracion_ratio_min:   number
+  umbral_correcto:      number
+  umbral_reprocesar:    number
+}
+
+const CORR_NORM_DEFAULTS: CorreccionNormParams = {
+  duracion_minima_seg:  3,
+  duracion_maxima_seg:  1800,
+  peso_snr:             0.40,
+  peso_duracion_ratio:  0.30,
+  peso_rms:             0.30,
+  snr_max:              40,
+  rms_ref_dbfs:        -16,
+  rms_tolerancia_db:    6,
+  duracion_ratio_min:   0.10,
+  umbral_correcto:      0.75,
+  umbral_reprocesar:    0.40,
+}
+
+function EtapaCorreccionNormalizacion() {
+  const [params,     setParams]     = useState<CorreccionNormParams>(CORR_NORM_DEFAULTS)
+  const [guardando,  setGuardando]  = useState(false)
+  const [ejecutando, setEjecutando] = useState(false)
+  const [limpiando,  setLimpiando]  = useState(false)
+  const [mensaje,    setMensaje]    = useState<string | null>(null)
+
+  useEffect(() => {
+    getParametros("correccion_normalizacion")
+      .then((res: { valor?: Partial<CorreccionNormParams> }) => {
+        const v = res?.valor ?? {}
+        setParams({ ...CORR_NORM_DEFAULTS, ...v })
+      })
+      .catch(() => setMensaje("Error al cargar parámetros"))
+  }, [])
+
+  const set = (key: keyof CorreccionNormParams, val: string) =>
+    setParams((prev) => ({ ...prev, [key]: Number(val) }))
+
+  const handleGuardar = async () => {
+    setGuardando(true)
+    setMensaje(null)
+    try {
+      await actualizarParametros("correccion_normalizacion", params)
+      setMensaje("Guardado")
+    } catch {
+      setMensaje("Error al guardar")
+    } finally {
+      setGuardando(false)
+    }
+  }
+
+  const handleEjecutar = async () => {
+    setEjecutando(true)
+    setMensaje(null)
+    try {
+      await ejecutarEtapa("correccion_normalizacion", "pendientes")
+      setMensaje("Ejecución iniciada")
+    } catch {
+      setMensaje("Error al ejecutar")
+    } finally {
+      setEjecutando(false)
+    }
+  }
+
+  const handleLimpiar = async () => {
+    setLimpiando(true)
+    setMensaje(null)
+    try {
+      await limpiarAudiosNormalizacion()
+      setMensaje("Limpieza iniciada")
+    } catch {
+      setMensaje("Error al iniciar limpieza")
+    } finally {
+      setLimpiando(false)
+    }
+  }
+
+  const numInput = (key: keyof CorreccionNormParams, label: string, step = "0.01") => (
+    <div className="flex flex-col gap-1">
+      <Label className="text-xs text-muted-foreground">{label}</Label>
+      <input
+        type="number"
+        step={step}
+        className={inputClass}
+        value={params[key]}
+        onChange={(e) => set(key, e.target.value)}
+      />
+    </div>
+  )
+
+  return (
+    <div className="flex flex-col gap-4 pt-3">
+
+      <div className="grid grid-cols-2 gap-4">
+
+        {/* Umbrales duros */}
+        <div className="border border-border rounded p-4 flex flex-col gap-3">
+          <p className="text-sm font-medium text-foreground">Umbrales duros</p>
+          {numInput("duracion_minima_seg", "Duración mínima (seg)", "1")}
+          {numInput("duracion_maxima_seg", "Duración máxima (seg)", "1")}
+        </div>
+
+        {/* Pesos del score */}
+        <div className="border border-border rounded p-4 flex flex-col gap-3">
+          <p className="text-sm font-medium text-foreground">Pesos del score</p>
+          {numInput("peso_snr",            "Peso SNR")}
+          {numInput("peso_duracion_ratio", "Peso duración ratio")}
+          {numInput("peso_rms",            "Peso RMS")}
+        </div>
+
+        {/* Referencias de métricas */}
+        <div className="border border-border rounded p-4 flex flex-col gap-3">
+          <p className="text-sm font-medium text-foreground">Referencias de métricas</p>
+          {numInput("snr_max",           "SNR máximo referencia (dB)", "1")}
+          {numInput("rms_ref_dbfs",      "RMS objetivo (dBFS)", "0.5")}
+          {numInput("rms_tolerancia_db", "Tolerancia RMS (dB)", "0.5")}
+          {numInput("duracion_ratio_min","Ratio duración mínimo")}
+        </div>
+
+        {/* Umbrales de clasificación */}
+        <div className="border border-border rounded p-4 flex flex-col gap-3">
+          <p className="text-sm font-medium text-foreground">Umbrales de clasificación</p>
+          {numInput("umbral_correcto",   "Score mínimo → correcto")}
+          {numInput("umbral_reprocesar", "Score mínimo → reprocesar")}
+          <p className="text-xs text-muted-foreground">
+            Por debajo de reprocesar → inválido
+          </p>
+        </div>
+
+      </div>
+
+      <div className="flex items-center gap-3 pt-1 border-t border-border">
+        <Button size="sm" onClick={handleGuardar} disabled={guardando}>
+          {guardando ? "Guardando..." : "Guardar"}
+        </Button>
+        <Button onClick={handleEjecutar} disabled={ejecutando}>
+          {ejecutando ? "Ejecutando..." : "Ejecutar scoring"}
+        </Button>
+        <Button variant="outline" onClick={handleLimpiar} disabled={limpiando}>
+          {limpiando ? "Limpiando..." : "Limpiar audios duplicados"}
+        </Button>
+        {mensaje && <span className="text-xs text-muted-foreground">{mensaje}</span>}
+      </div>
+    </div>
+  )
+}
+
 // ── Contenido de la etapa Creación de registros ───────────────────────────────
 
 function EtapaCreacionRegistros() {
@@ -679,9 +837,10 @@ export default function PipelineConfiguracion() {
 
       {ETAPAS.map(({ id, label }) => (
         <EtapaContainer key={id} label={label} defaultOpen={id === "descarga"}>
-          {id === "descarga"           && <EtapaDescarga />}
-          {id === "creacion_registros" && <EtapaCreacionRegistros />}
-          {id === "normalizacion"      && <EtapaNormalizacion />}
+          {id === "descarga"                  && <EtapaDescarga />}
+          {id === "creacion_registros"        && <EtapaCreacionRegistros />}
+          {id === "normalizacion"             && <EtapaNormalizacion />}
+          {id === "correccion_normalizacion"  && <EtapaCorreccionNormalizacion />}
         </EtapaContainer>
       ))}
     </div>

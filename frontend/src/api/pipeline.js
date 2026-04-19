@@ -33,6 +33,9 @@ export const ejecutarEtapa = (etapa, filtro = "pendientes", ids = null) =>
 export const pausarEtapa = (etapa) =>
     fetch(`${base}/pipeline/etapa/${etapa}/pausar`, { method: "POST" }).then(r => r.json())
 
+export const limpiarAudiosNormalizacion = () =>
+    fetch(`${base}/pipeline/etapa/correccion_normalizacion/limpiar`, { method: "POST" }).then(r => r.json())
+
 // ── Parámetros ────────────────────────────────────────────────────────────────
 
 export const getParametros = (clave) =>
