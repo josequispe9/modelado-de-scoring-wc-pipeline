@@ -1,0 +1,81 @@
+en el frontend debes crear una nueva pagina pipeline/estadisticas
+(ten en cuenta que aun no tenemos listas todas las etapas, asi que proximamente agregaremos informacion de las etapas 7, 8, 9)
+quiero un formato que este mas enfocado a un perfil tecnico o a una persona que sepa de ingenieria
+alli deberas mostrar las siguientes estadisticas, los datos deben poder filtrarse por fecha, grupo de fechas, todo el historial:
+
+
+GLOBAL
+{GRAFICO DE BARRAS CON
+y:cantidad de audios,
+x_etapa1:[audios encontrados, audios descargados],
+x_etapa3:[cant procesados correctamente, cant errores],
+x_etapa4:[correctos, reprocesar, invalidos, errores],
+x_etapa5:[cant procesados correctametne, cant errores],
+x_etapa6:[correctos, reprocesar, invalidos, errores]
+}
+
+ETAPA 1
+{   - total de audios encontrados
+    - total de audios descargados
+    - distribucion duracion de audios
+}
+
+ETAPA 3
+{
+    - cant procesados correctamente
+    - cant procesados con errores
+}
+
+ETAPA 4
+{  ---
+  Estadísticas agregadas útiles para el dashboard:
+
+  Distribución de scores
+  - Histograma de scores — dónde se concentran los audios, si los umbrales tienen sentido
+
+  Causas de invalido (breakdown)
+  - "duracion < minimo" → cuántos
+  - "sample_rate incorrecto" → cuántos
+  - "score bajo" → cuántos (los que tienen score pero cayeron igual)
+
+  Por métrica:
+  - Distribución de SNR — ¿los audios tienen buena relación señal/ruido?
+  - Distribución de RMS — ¿el loudnorm está funcionando?
+  - Distribución de duration_ratio — ¿el silenceremove está cortando demasiado?
+
+  Correlación:
+  - Scatter SNR vs score — ¿cuánto pesa el SNR en el resultado final?
+  - Scatter duration_ratio vs score — idem}
+
+ETAPA 5
+{
+    - cant procesados correctamente
+    - cant procesados con errores
+}
+
+  ETAPA 6 
+  {
+      Del score determinista (guardado en JSONB como metricas):                                             
+  - Distribución de avg_logprob — calidad de la transcripción (Whisper)                                 
+  - Distribución de total_words — longitud de las conversaciones                                        
+  - Distribución de low_score_ratio — % palabras con baja confianza                                     
+  - Distribución de speaker_dominance — qué tan balanceada es la conversación                         
+  - Scatter: avg_logprob vs score_determinista
+
+  Causas de invalido determinista:
+  - num_hablantes < 2 (solo 1 hablante detectado)
+  - total_words < 20 (muy pocas palabras)
+  - avg_logprob < -0.6 (transcripción de muy baja calidad)
+  - speaker_dominance > 0.95 (un speaker habla todo)
+  - low_score_ratio > 0.25 (demasiadas palabras inciertas)
+
+  Del LLM (guardado como coherencia_llm, score_llm, score_total):
+  - Breakdown de coherencia: cuántos coherente / dudoso / incoherente
+  - Distribución de score_llm
+  - Distribución de score_total (el ponderado final)
+  - % con roles identificados (vendedor/cliente)
+
+  Combinado:
+  - Scatter score_determinista vs score_llm — ver si coinciden
+  - Distribución de score_total con líneas de umbral
+  }

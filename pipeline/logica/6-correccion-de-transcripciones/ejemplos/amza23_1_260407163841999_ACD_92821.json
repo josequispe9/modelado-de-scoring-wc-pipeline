@@ -1,0 +1,835 @@
+{
+  "segments": [
+    {
+      "start": 1.229,
+      "end": 2.349,
+      "text": " Hola, buenas tardes.",
+      "words": [
+        {
+          "word": "Hola,",
+          "start": 1.229,
+          "end": 1.389,
+          "score": 0.21,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "buenas",
+          "start": 1.409,
+          "end": 1.949,
+          "score": 0.438,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "tardes.",
+          "start": 1.969,
+          "end": 2.349,
+          "score": 0.689,
+          "speaker": "SPEAKER_00"
+        }
+      ],
+      "avg_logprob": -0.31226145857163057,
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 2.489,
+      "end": 3.79,
+      "text": "¿Me comunico con María?",
+      "words": [
+        {
+          "word": "¿Me",
+          "start": 2.489,
+          "end": 2.589,
+          "score": 0.644,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "comunico",
+          "start": 2.629,
+          "end": 2.97,
+          "score": 0.831,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "con",
+          "start": 3.03,
+          "end": 3.15,
+          "score": 0.815,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "María?",
+          "start": 3.21,
+          "end": 3.79,
+          "score": 0.88,
+          "speaker": "SPEAKER_00"
+        }
+      ],
+      "avg_logprob": -0.31226145857163057,
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 5.15,
+      "end": 5.31,
+      "text": "Sí.",
+      "words": [
+        {
+          "word": "Sí.",
+          "start": 5.15,
+          "end": 5.31,
+          "score": 0.529,
+          "speaker": "SPEAKER_01"
+        }
+      ],
+      "avg_logprob": -0.31226145857163057,
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 5.871,
+      "end": 6.611,
+      "text": "Hola, ¿qué tal?",
+      "words": [
+        {
+          "word": "Hola,",
+          "start": 5.871,
+          "end": 6.191,
+          "score": 0.775,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "¿qué",
+          "start": 6.211,
+          "end": 6.311,
+          "score": 0.56,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "tal?",
+          "start": 6.391,
+          "end": 6.611,
+          "score": 0.557,
+          "speaker": "SPEAKER_00"
+        }
+      ],
+      "avg_logprob": -0.31226145857163057,
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 6.631,
+      "end": 7.211,
+      "text": "¿Me presento?",
+      "words": [
+        {
+          "word": "¿Me",
+          "start": 6.631,
+          "end": 6.731,
+          "score": 0.591,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "presento?",
+          "start": 6.771,
+          "end": 7.211,
+          "score": 0.817,
+          "speaker": "SPEAKER_00"
+        }
+      ],
+      "avg_logprob": -0.31226145857163057,
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 7.251,
+      "end": 8.211,
+      "text": "Mi nombre es Owen.",
+      "words": [
+        {
+          "word": "Mi",
+          "start": 7.251,
+          "end": 7.311,
+          "score": 0.988,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "nombre",
+          "start": 7.351,
+          "end": 7.551,
+          "score": 0.977,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "es",
+          "start": 7.591,
+          "end": 7.631,
+          "score": 0.323,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "Owen.",
+          "start": 7.691,
+          "end": 8.211,
+          "score": 0.746,
+          "speaker": "SPEAKER_00"
+        }
+      ],
+      "avg_logprob": -0.31226145857163057,
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 8.612,
+      "end": 12.613,
+      "text": "Le llamaba el área de portabilidad Movistar, ya que tenía un descuento para su línea.",
+      "words": [
+        {
+          "word": "Le",
+          "start": 8.612,
+          "end": 8.692,
+          "score": 0.71,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "llamaba",
+          "start": 8.732,
+          "end": 9.112,
+          "score": 0.783,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "el",
+          "start": 9.152,
+          "end": 9.212,
+          "score": 0.659,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "área",
+          "start": 9.252,
+          "end": 9.392,
+          "score": 0.661,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "de",
+          "start": 9.432,
+          "end": 9.492,
+          "score": 0.692,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "portabilidad",
+          "start": 9.552,
+          "end": 10.132,
+          "score": 0.824,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "Movistar,",
+          "start": 10.152,
+          "end": 10.632,
+          "score": 0.774,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "ya",
+          "start": 10.692,
+          "end": 10.872,
+          "score": 0.444,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "que",
+          "start": 10.912,
+          "end": 10.992,
+          "score": 0.638,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "tenía",
+          "start": 11.032,
+          "end": 11.232,
+          "score": 0.525,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "un",
+          "start": 11.252,
+          "end": 11.312,
+          "score": 0.624,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "descuento",
+          "start": 11.332,
+          "end": 11.713,
+          "score": 0.741,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "para",
+          "start": 11.773,
+          "end": 11.913,
+          "score": 0.872,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "su",
+          "start": 11.993,
+          "end": 12.093,
+          "score": 0.856,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "línea.",
+          "start": 12.153,
+          "end": 12.613,
+          "score": 0.933,
+          "speaker": "SPEAKER_00"
+        }
+      ],
+      "avg_logprob": -0.31226145857163057,
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 12.993,
+      "end": 14.434,
+      "text": "Usted actualmente está en mi lado.",
+      "words": [
+        {
+          "word": "Usted",
+          "start": 12.993,
+          "end": 13.193,
+          "score": 0.67,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "actualmente",
+          "start": 13.233,
+          "end": 13.653,
+          "score": 0.787,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "está",
+          "start": 13.673,
+          "end": 13.813,
+          "score": 0.24,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "en",
+          "start": 13.873,
+          "end": 13.913,
+          "score": 0.015,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "mi",
+          "start": 13.953,
+          "end": 14.033,
+          "score": 0.277,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "lado.",
+          "start": 14.093,
+          "end": 14.434,
+          "score": 0.516,
+          "speaker": "SPEAKER_00"
+        }
+      ],
+      "avg_logprob": -0.31226145857163057,
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 15.054,
+      "end": 16.594,
+      "text": "Sí, pero te agradezco.",
+      "words": [
+        {
+          "word": "Sí,",
+          "start": 15.054,
+          "end": 15.514,
+          "score": 0.777,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "pero",
+          "start": 15.594,
+          "end": 15.734,
+          "score": 0.42,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "te",
+          "start": 15.794,
+          "end": 15.854,
+          "score": 0.324,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "agradezco.",
+          "start": 15.874,
+          "end": 16.594,
+          "score": 0.577,
+          "speaker": "SPEAKER_01"
+        }
+      ],
+      "avg_logprob": -0.31226145857163057,
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 16.614,
+      "end": 18.375,
+      "text": "Te agradezco, no me interesa.",
+      "words": [
+        {
+          "word": "Te",
+          "start": 16.614,
+          "end": 16.754,
+          "score": 0.637,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "agradezco,",
+          "start": 16.774,
+          "end": 17.214,
+          "score": 0.419,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "no",
+          "start": 17.234,
+          "end": 17.314,
+          "score": 0.488,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "me",
+          "start": 17.375,
+          "end": 17.455,
+          "score": 0.446,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "interesa.",
+          "start": 17.495,
+          "end": 18.375,
+          "score": 0.728,
+          "speaker": "SPEAKER_01"
+        }
+      ],
+      "avg_logprob": -0.31226145857163057,
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 18.395,
+      "end": 19.375,
+      "text": "Sí, en verdad.",
+      "words": [
+        {
+          "word": "Sí,",
+          "start": 18.395,
+          "end": 18.575,
+          "score": 0.294,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "en",
+          "start": 18.595,
+          "end": 18.675,
+          "score": 0.72,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "verdad.",
+          "start": 18.695,
+          "end": 19.375,
+          "score": 0.591,
+          "speaker": "SPEAKER_00"
+        }
+      ],
+      "avg_logprob": -0.31226145857163057,
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 19.395,
+      "end": 22.936,
+      "text": "¿Por qué no le interesa a tu algún problema con la compañía?",
+      "words": [
+        {
+          "word": "¿Por",
+          "start": 19.395,
+          "end": 19.995,
+          "score": 0.986,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "qué",
+          "start": 20.015,
+          "end": 20.095,
+          "score": 0.53,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "no",
+          "start": 20.155,
+          "end": 20.215,
+          "score": 0.718,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "le",
+          "start": 20.255,
+          "end": 20.316,
+          "score": 0.744,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "interesa",
+          "start": 20.376,
+          "end": 20.736,
+          "score": 0.895,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "a",
+          "start": 20.756,
+          "end": 20.776,
+          "score": 0.168,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "tu",
+          "start": 20.856,
+          "end": 20.936,
+          "score": 0.858,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "algún",
+          "start": 20.956,
+          "end": 21.156,
+          "score": 0.394,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "problema",
+          "start": 21.196,
+          "end": 21.476,
+          "score": 0.906,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "con",
+          "start": 22.096,
+          "end": 22.196,
+          "score": 0.622,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "la",
+          "start": 22.216,
+          "end": 22.276,
+          "score": 0.72,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "compañía?",
+          "start": 22.336,
+          "end": 22.936,
+          "score": 0.781,
+          "speaker": "SPEAKER_00"
+        }
+      ],
+      "avg_logprob": -0.31226145857163057,
+      "speaker": "SPEAKER_00"
+    },
+    {
+      "start": 23.036,
+      "end": 25.977,
+      "text": "Sí, sí, tuve todos los problemas que podía haber tenido.",
+      "words": [
+        {
+          "word": "Sí,",
+          "start": 23.036,
+          "end": 23.337,
+          "score": 0.549,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "sí,",
+          "start": 23.437,
+          "end": 23.537,
+          "score": 0.449,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "tuve",
+          "start": 23.577,
+          "end": 23.737,
+          "score": 0.343,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "todos",
+          "start": 23.797,
+          "end": 23.997,
+          "score": 0.782,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "los",
+          "start": 24.037,
+          "end": 24.117,
+          "score": 0.834,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "problemas",
+          "start": 24.177,
+          "end": 24.657,
+          "score": 0.734,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "que",
+          "start": 24.897,
+          "end": 25.057,
+          "score": 0.779,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "podía",
+          "start": 25.157,
+          "end": 25.457,
+          "score": 0.746,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "haber",
+          "start": 25.477,
+          "end": 25.677,
+          "score": 0.454,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "tenido.",
+          "start": 25.697,
+          "end": 25.977,
+          "score": 0.398,
+          "speaker": "SPEAKER_01"
+        }
+      ],
+      "avg_logprob": -0.31226145857163057,
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 25.997,
+      "end": 27.518,
+      "text": "Los tuve, ya me estudié, así que.",
+      "words": [
+        {
+          "word": "Los",
+          "start": 25.997,
+          "end": 26.117,
+          "score": 0.757,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "tuve,",
+          "start": 26.178,
+          "end": 26.498,
+          "score": 0.626,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "ya",
+          "start": 26.518,
+          "end": 26.638,
+          "score": 0.626,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "me",
+          "start": 26.678,
+          "end": 26.758,
+          "score": 0.54,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "estudié,",
+          "start": 26.778,
+          "end": 27.038,
+          "score": 0.285,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "así",
+          "start": 27.098,
+          "end": 27.318,
+          "score": 0.702,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "que.",
+          "start": 27.378,
+          "end": 27.518,
+          "score": 0.402,
+          "speaker": "SPEAKER_01"
+        }
+      ],
+      "avg_logprob": -0.31226145857163057,
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 28.045,
+      "end": 29.369,
+      "text": " No, no hay forma de que vuelva.",
+      "words": [
+        {
+          "word": "No,",
+          "start": 28.045,
+          "end": 28.266,
+          "score": 0.838,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "no",
+          "start": 28.286,
+          "end": 28.346,
+          "score": 0.493,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "hay",
+          "start": 28.366,
+          "end": 28.426,
+          "score": 0.499,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "forma",
+          "start": 28.527,
+          "end": 28.707,
+          "score": 0.982,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "de",
+          "start": 28.727,
+          "end": 28.787,
+          "score": 0.627,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "que",
+          "start": 28.848,
+          "end": 28.968,
+          "score": 0.39,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "vuelva.",
+          "start": 28.988,
+          "end": 29.369,
+          "score": 0.646,
+          "speaker": "SPEAKER_01"
+        }
+      ],
+      "avg_logprob": -0.335937491307656,
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 29.59,
+      "end": 30.512,
+      "text": "Te agradezco.",
+      "words": [
+        {
+          "word": "Te",
+          "start": 29.59,
+          "end": 29.71,
+          "score": 0.524,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "agradezco.",
+          "start": 29.73,
+          "end": 30.512,
+          "score": 0.818,
+          "speaker": "SPEAKER_01"
+        }
+      ],
+      "avg_logprob": -0.335937491307656,
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 30.593,
+      "end": 30.893,
+      "text": "Bien.",
+      "words": [
+        {
+          "word": "Bien.",
+          "start": 30.593,
+          "end": 30.893,
+          "score": 0.824,
+          "speaker": "SPEAKER_01"
+        }
+      ],
+      "avg_logprob": -0.335937491307656,
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 30.914,
+      "end": 31.716,
+      "text": "Hasta luego.",
+      "words": [
+        {
+          "word": "Hasta",
+          "start": 30.914,
+          "end": 31.335,
+          "score": 0.601,
+          "speaker": "SPEAKER_01"
+        },
+        {
+          "word": "luego.",
+          "start": 31.395,
+          "end": 31.716,
+          "score": 0.889,
+          "speaker": "SPEAKER_01"
+        }
+      ],
+      "avg_logprob": -0.335937491307656,
+      "speaker": "SPEAKER_01"
+    },
+    {
+      "start": 31.916,
+      "end": 32.578,
+      "text": "Hasta luego.",
+      "words": [
+        {
+          "word": "Hasta",
+          "start": 31.916,
+          "end": 32.177,
+          "score": 0.609,
+          "speaker": "SPEAKER_00"
+        },
+        {
+          "word": "luego.",
+          "start": 32.217,
+          "end": 32.578,
+          "score": 0.752,
+          "speaker": "SPEAKER_00"
+        }
+      ],
+      "avg_logprob": -0.335937491307656,
+      "speaker": "SPEAKER_00"
+    }
+  ],
+  "metadata": {
+    "modelo": "large-v2",
+    "compute_type": "int8",
+    "language": "es",
+    "min_speakers_param": 2,
+    "max_speakers_param": 2,
+    "num_hablantes_detectados": 2,
+    "num_segmentos": 19
+  }
+}

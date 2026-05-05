@@ -21,6 +21,7 @@ Estructura de iframes (fija, no cambia entre sesiones):
 
 import csv
 import io
+import json
 import os
 import re
 import time
@@ -345,6 +346,43 @@ def subir_csv_metadatos(fecha_carpeta: str) -> None:
     log.info("Archivo temporal eliminado: %s", TEMP_CSV.name)
 
 
+# ─── Stats del run ───────────────────────────────────────────────────────────
+
+def guardar_stats_run(params: dict, total_disponibles: int, subidos: int, omitidos: int, errores: int) -> None:
+    """Persiste las estadísticas del run en pipeline_params (clave: descarga_stats_G/M/B)."""
+    db_url = os.getenv("SCORING_DB_URL")
+    if not db_url:
+        return
+    clave = f"descarga_stats_{CUENTA}"
+    valor = {
+        "total_disponibles_mitrol": total_disponibles,
+        "subidos":   subidos,
+        "omitidos":  omitidos,
+        "errores":   errores,
+        "fecha_run": datetime.now().isoformat(),
+        "params_usados": {
+            "fecha_inicio":       params.get("fecha_inicio"),
+            "fecha_fin":          params.get("fecha_fin"),
+            "hora_inicio":        params.get("hora_inicio"),
+            "hora_fin":           params.get("hora_fin"),
+            "duracion_min":       params.get("duracion_min"),
+            "duracion_max":       params.get("duracion_max"),
+            "cant_registros_max": params.get("cant_registros_max"),
+        },
+    }
+    try:
+        with psycopg2.connect(db_url) as conn:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    INSERT INTO pipeline_params (clave, valor)
+                    VALUES (%s, %s::jsonb)
+                    ON CONFLICT (clave) DO UPDATE SET valor = EXCLUDED.valor
+                """, (clave, json.dumps(valor)))
+        log.info("Stats del run guardadas en pipeline_params (clave: %s)", clave)
+    except Exception as e:
+        log.warning("No se pudo guardar stats del run: %s", e)
+
+
 # ─── Paginacion ───────────────────────────────────────────────────────────────
 def obtener_total_paginas(driver: webdriver.Chrome) -> int:
     try:
@@ -432,9 +470,10 @@ def main():
         subir_csv_metadatos(fecha_carpeta_final)
 
         log.info(
-            "Finalizado — paginas: %d | audios: %d | subidos: %d | omitidos: %d | errores: %d",
+            "Finalizado — paginas: %d | disponibles: %d | subidos: %d | omitidos: %d | errores: %d",
             total_paginas, total_audios, subidos, omitidos, errores,
         )
+        guardar_stats_run(params, total_audios, subidos, omitidos, errores)
 
     except TimeoutException as e:
         log.error("Timeout esperando elemento: %s", e)

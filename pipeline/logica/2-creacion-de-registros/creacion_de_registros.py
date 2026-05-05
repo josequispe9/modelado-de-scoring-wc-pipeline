@@ -15,6 +15,7 @@ import csv
 import io
 import logging
 import os
+import random
 import re
 import psycopg2
 import psycopg2.extras
@@ -43,6 +44,27 @@ minio_client = Minio(
 
 MINIO_BUCKET = "modelado-de-scoring-wc"
 SCORING_DB_URL = os.environ["SCORING_DB_URL"]
+
+DEFAULTS = {
+    "limite": None,   # None = crear todos; número entero = muestra aleatoria
+}
+
+
+def obtener_params() -> dict:
+    try:
+        with psycopg2.connect(SCORING_DB_URL) as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    "SELECT valor FROM pipeline_params WHERE clave = 'creacion_registros'"
+                )
+                row = cur.fetchone()
+        if row and row[0]:
+            params = DEFAULTS.copy()
+            params.update(row[0])
+            return params
+    except Exception as e:
+        log.warning("No se pudo leer pipeline_params: %s — usando DEFAULTS", e)
+    return DEFAULTS.copy()
 
 
 # ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -136,6 +158,8 @@ def insertar_registro(cur, nombre: str, object_key: str, meta: dict) -> None:
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
 def main():
+    params    = obtener_params()
+    limite    = params.get("limite")
     metadatos = cargar_metadatos()
 
     # Listar todos los WAV en audios/
@@ -152,7 +176,15 @@ def main():
         if nb not in audios:
             audios[nb] = obj.object_name
 
-    log.info("Audios únicos a procesar: %d", len(audios))
+    log.info("Audios únicos disponibles: %d", len(audios))
+
+    # Aplicar límite aleatorio si está configurado
+    if limite is not None and int(limite) < len(audios):
+        items = random.sample(list(audios.items()), int(limite))
+        audios = dict(items)
+        log.info("Límite aplicado: %d audios seleccionados aleatoriamente", len(audios))
+    else:
+        log.info("Sin límite — procesando todos: %d", len(audios))
 
     creados  = 0
     omitidos = 0

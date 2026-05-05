@@ -1,14 +1,14 @@
 """
 Etapa 4b — Selección del grupo ganador.
 
-Para cada audio con etapa_actual='correccion_normalizacion' y sin grupo_ganador en el JSONB:
-  1. Compara los scores de todos los grupos evaluados
-  2. Elige el grupo con mayor score entre los clasificados como 'correcto'
+Para cada audio con etapa_actual='correccion_normalizacion' y sin ganador aún:
+  1. Verifica que todos los grupos normalizados ya tienen su score en el JSONB
+  2. Compara los scores y elige el grupo con mayor score entre los 'correcto'
      (si ninguno es correcto, elige el mejor entre 'reprocesar')
-  3. Renombra el archivo ganador en MinIO quitando la subcarpeta de grupo
-  4. Elimina de MinIO los archivos de los grupos perdedores (audios_procesados + audios-raw)
-  5. Marca grupo_ganador en el JSONB y actualiza estado_global
+  3. Elimina de MinIO los audios normalizados de los grupos perdedores (audios-raw/)
+  4. Marca ganador en etapas.correccion_normalizacion y actualiza estado_global
 
+El audio ganador permanece en audios-raw/ — no se mueve ni duplica.
 Se corre manualmente después de auditar los outputs de correccion_normalizacion.py.
 
 Uso:
@@ -19,7 +19,6 @@ Requiere:
     - pip install minio psycopg2-binary python-dotenv
 """
 
-import json
 import logging
 import os
 from datetime import datetime, timezone
@@ -58,16 +57,16 @@ minio_client = Minio(
 def obtener_audios_pendientes(conn) -> list[dict]:
     """
     Retorna todos los audios con etapa_actual='correccion_normalizacion'
-    que aún no tienen grupo_ganador en el JSONB.
+    que aún no tienen ganador en el JSONB.
     """
     query = """
         SELECT id, nombre_archivo, etapas,
-               etapas->'normalizacion'          AS normalizacion,
+               etapas->'normalizacion'           AS normalizacion,
                etapas->'correccion_normalizacion' AS correccion
         FROM audio_pipeline_jobs
         WHERE etapa_actual  = 'correccion_normalizacion'
           AND estado_global != 'en_proceso'
-          AND NOT (etapas ? 'grupo_ganador')
+          AND (etapas->'correccion_normalizacion'->>'ganador') IS NULL
         ORDER BY created_at
     """
     with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
@@ -75,38 +74,36 @@ def obtener_audios_pendientes(conn) -> list[dict]:
         return [dict(r) for r in cur.fetchall()]
 
 
+# ─── Verificación de completitud ─────────────────────────────────────────────
+def todos_los_grupos_evaluados(normalizacion: list[dict], correccion: dict) -> bool:
+    """
+    Verifica que todos los grupos con estado='correcto' en normalizacion
+    ya tienen su entrada en correccion_normalizacion.
+    """
+    grupos_norm = {e["grupo"] for e in normalizacion if e.get("estado") == "correcto"}
+    grupos_corr = {k for k in correccion if k != "ganador"}
+    return grupos_norm <= grupos_corr
+
+
 # ─── Selección del ganador ────────────────────────────────────────────────────
-def elegir_ganador(correccion: list[dict]) -> dict | None:
+def elegir_ganador(correccion: dict) -> tuple[str, dict] | None:
     """
-    Elige la entrada con mayor score.
+    Elige el grupo con mayor score.
     Prioriza 'correcto' sobre 'reprocesar'. Ignora 'invalido'.
+    Retorna (grupo, entrada) o None si no hay candidatos.
     """
-    candidatos = [e for e in correccion if e.get("estado") in ("correcto", "reprocesar")]
+    grupos = {k: v for k, v in correccion.items() if k != "ganador"}
+    candidatos = {k: v for k, v in grupos.items() if v.get("estado") in ("correcto", "reprocesar")}
     if not candidatos:
         return None
 
-    # Prefiere correctos; dentro de cada categoría, el de mayor score
-    correctos   = [e for e in candidatos if e.get("estado") == "correcto"]
-    elegibles   = correctos if correctos else candidatos
-    return max(elegibles, key=lambda e: e.get("score") or 0.0)
+    correctos = {k: v for k, v in candidatos.items() if v.get("estado") == "correcto"}
+    elegibles = correctos if correctos else candidatos
+    grupo_ganador = max(elegibles, key=lambda k: elegibles[k].get("score") or 0.0)
+    return grupo_ganador, elegibles[grupo_ganador]
 
 
 # ─── Operaciones en MinIO ─────────────────────────────────────────────────────
-def copiar_y_borrar(src_key: str, dst_key: str) -> bool:
-    """Copia src → dst dentro del mismo bucket y borra src."""
-    try:
-        minio_client.copy_object(
-            MINIO_BUCKET, dst_key,
-            f"{MINIO_BUCKET}/{src_key}"
-        )
-        minio_client.remove_object(MINIO_BUCKET, src_key)
-        log.info("Movido: %s → %s", src_key, dst_key)
-        return True
-    except S3Error as e:
-        log.error("Error moviendo %s: %s", src_key, e)
-        return False
-
-
 def borrar_objeto(key: str) -> None:
     try:
         minio_client.remove_object(MINIO_BUCKET, key)
@@ -116,98 +113,72 @@ def borrar_objeto(key: str) -> None:
 
 
 # ─── Actualización de Postgres ────────────────────────────────────────────────
-def marcar_ganador(conn, audio_id: str, ganador: dict,
-                   output_key_final: str, estado_final: str) -> None:
+def marcar_ganador(conn, audio_id: str, grupo_ganador: str, estado_final: str) -> None:
     with conn.cursor() as cur:
         cur.execute("""
             UPDATE audio_pipeline_jobs
-            SET etapas        = etapas
-                                || jsonb_build_object('grupo_ganador', %s::jsonb),
+            SET etapas        = jsonb_set(
+                                    etapas,
+                                    '{correccion_normalizacion,ganador}',
+                                    %s::jsonb
+                                ),
                 estado_global = %s
             WHERE id = %s
-        """, (
-            json.dumps({
-                "grupo":      ganador["grupo"],
-                "score":      ganador.get("score"),
-                "ubicacion":  {"bucket": MINIO_BUCKET, "key": output_key_final},
-                "fecha":      datetime.now(timezone.utc).isoformat(),
-            }),
-            estado_final,
-            audio_id,
-        ))
+        """, (f'"{grupo_ganador}"', estado_final, audio_id))
     conn.commit()
 
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
 def main():
-    procesados = 0
+    procesados  = 0
     sin_ganador = 0
+    incompletos = 0
 
     with psycopg2.connect(SCORING_DB_URL) as conn:
         audios = obtener_audios_pendientes(conn)
         log.info("Audios pendientes de selección: %d", len(audios))
 
         for audio in audios:
-            audio_id = str(audio["id"])
-            nombre   = audio["nombre_archivo"]
-            corr     = audio["correccion"] or []
-            norm     = audio["normalizacion"] or []
+            audio_id     = str(audio["id"])
+            nombre       = audio["nombre_archivo"]
+            correccion   = audio["correccion"] or {}
+            normalizacion = audio["normalizacion"] or []
 
-            if not corr:
-                log.warning("Sin entradas en correccion_normalizacion para %s — omitiendo", nombre)
+            if not isinstance(correccion, dict):
+                log.warning("Estructura inesperada en correccion_normalizacion para %s — omitiendo", nombre)
                 sin_ganador += 1
                 continue
 
-            ganador = elegir_ganador(corr)
-            if not ganador:
+            if not todos_los_grupos_evaluados(normalizacion, correccion):
+                log.info("Grupos aún pendientes de evaluación para %s — omitiendo", nombre)
+                incompletos += 1
+                continue
+
+            resultado = elegir_ganador(correccion)
+            if not resultado:
                 log.warning("Ningún grupo apto para %s — todos invalidos", nombre)
                 sin_ganador += 1
                 continue
 
-            grupo_ganador    = ganador["grupo"]
-            src_key_ganador  = ganador.get("ubicacion", {}).get("key")
-            clasificacion    = ganador.get("estado", "correcto")
-
-            if not src_key_ganador:
-                log.warning("Sin ubicacion para ganador %s [%s]", nombre, grupo_ganador)
-                sin_ganador += 1
-                continue
-
-            # Path final sin subcarpeta de grupo
-            partes         = src_key_ganador.split("/")
-            fecha_carpeta  = partes[2] if len(partes) > 3 else datetime.now().strftime("%Y-%m-%d")
-            dst_key_final  = f"audios_procesados/{clasificacion}/{fecha_carpeta}/{nombre}.wav"
+            grupo_ganador, entrada_ganadora = resultado
+            estado_final = entrada_ganadora.get("estado", "correcto")
 
             log.info("Ganador: %s → grupo=%s score=%.2f",
-                     nombre, grupo_ganador, ganador.get("score") or 0.0)
-
-            # Mover ganador a path sin grupo
-            ok = copiar_y_borrar(src_key_ganador, dst_key_final)
-            if not ok:
-                sin_ganador += 1
-                continue
-
-            # Eliminar perdedores de audios_procesados/
-            for entrada in corr:
-                if entrada["grupo"] == grupo_ganador:
-                    continue
-                key = entrada.get("ubicacion", {}).get("key")
-                if key:
-                    borrar_objeto(key)
+                     nombre, grupo_ganador, entrada_ganadora.get("score") or 0.0)
 
             # Eliminar perdedores de audios-raw/
-            grupos_norm = {e["grupo"]: e for e in norm if isinstance(e, dict)}
-            for grupo, entry in grupos_norm.items():
-                if grupo == grupo_ganador:
-                    continue
-                key = entry.get("ubicacion", {}).get("key")
+            grupos_perdedores = {k: v for k, v in correccion.items()
+                                 if k != "ganador" and k != grupo_ganador}
+            for grupo, entrada in grupos_perdedores.items():
+                key = (entrada.get("ubicacion") or {}).get("key")
                 if key:
                     borrar_objeto(key)
 
-            marcar_ganador(conn, audio_id, ganador, dst_key_final, clasificacion)
+            marcar_ganador(conn, audio_id, grupo_ganador, estado_final)
             procesados += 1
 
-    log.info("Finalizado — seleccionados: %d | sin ganador: %d", procesados, sin_ganador)
+    log.info("Finalizado — seleccionados: %d | sin ganador: %d | incompletos: %d",
+             procesados, sin_ganador, incompletos)
 
 
 if __name__ == "__main__":

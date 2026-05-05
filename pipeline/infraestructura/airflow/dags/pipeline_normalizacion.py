@@ -44,7 +44,7 @@ with DAG(
         SSHOperator(
             task_id=f"normalizacion_{cuenta}",
             ssh_conn_id=cfg["conn_id"],
-            command=f'cd /d "{cfg["ruta"]}" && "{PYTHON}" "{SCRIPT}"',
+            command=f'cd /d "{cfg["ruta"]}" && set "MITROL_CUENTA={cuenta}" && "{PYTHON}" "{SCRIPT}"',
             conn_timeout=15,
             cmd_timeout=7200,   # 2 horas máximo
         )

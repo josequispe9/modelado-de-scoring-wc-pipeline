@@ -1,15 +1,15 @@
 """
 Etapa 4 — Corrección de normalización.
 
-Para cada audio en audios-raw/ pendiente de evaluación:
-  1. Descarga el WAV desde MinIO a un archivo temporal
+Para cada audio pendiente de evaluación:
+  1. Descarga el WAV normalizado desde MinIO a un archivo temporal
   2. Valida umbrales duros (duración, sample rate, canales)
   3. Calcula métricas de calidad (SNR, duración ratio, RMS)
   4. Genera un score compuesto y clasifica: correcto / reprocesar / invalido
-  5. Sube el audio a audios_procesados/<clasificacion>/YYYY-MM-DD/<grupo>/
-  6. Actualiza audio_pipeline_jobs con el resultado en etapas.correccion_normalizacion
+  5. Actualiza audio_pipeline_jobs con el resultado en etapas.correccion_normalizacion
+     (el audio permanece en su ubicación original en MinIO, no se duplica)
 
-Corre solo en gaspar. Procesa todos los grupos (G, M, B) secuencialmente.
+Corre solo en gaspar.
 
 Uso:
     python correccion_normalizacion.py
@@ -85,8 +85,8 @@ def obtener_siguiente_audio(conn) -> dict | None:
     """
     Obtiene el siguiente (audio, grupo) pendiente de evaluación.
 
-    Un audio puede tener múltiples entradas en etapas.normalizacion (una por grupo).
-    Por cada entrada con estado='correcto' que aún no tenga su contraparte en
+    Un audio puede tener múltiples grupos en etapas.normalizacion (G, M, B).
+    Por cada grupo con estado='correcto' que aún no tenga su clave en
     etapas.correccion_normalizacion, genera una tarea de evaluación.
 
     Usa SELECT FOR UPDATE SKIP LOCKED para evitar procesamiento doble.
@@ -97,20 +97,17 @@ def obtener_siguiente_audio(conn) -> dict | None:
             apj.nombre_archivo,
             apj.etapa_actual,
             apj.etapas,
-            norm_entry.value  AS norm_entry
+            norm_entry.value AS norm_entry
         FROM audio_pipeline_jobs apj,
              jsonb_array_elements(
                COALESCE(apj.etapas->'normalizacion', '[]'::jsonb)
              ) AS norm_entry
-        WHERE apj.etapa_actual  = 'normalizacion'
-          AND apj.estado_global = 'correcto'
+        WHERE apj.etapa_actual  IN ('normalizacion', 'correccion_normalizacion')
+          AND apj.estado_global != 'en_proceso'
           AND norm_entry.value->>'estado' = 'correcto'
-          AND NOT EXISTS (
-            SELECT 1
-            FROM jsonb_array_elements(
-              COALESCE(apj.etapas->'correccion_normalizacion', '[]'::jsonb)
-            ) corr_entry
-            WHERE corr_entry.value->>'grupo' = norm_entry.value->>'grupo'
+          AND NOT (
+            COALESCE(apj.etapas->'correccion_normalizacion', '{}'::jsonb)
+            ? (norm_entry.value->>'grupo')
           )
         ORDER BY apj.created_at
         FOR UPDATE OF apj SKIP LOCKED
@@ -134,12 +131,13 @@ def calcular_snr(audio: np.ndarray) -> float:
     rms_total = np.sqrt(np.mean(audio ** 2))
     if rms_total == 0:
         return 0.0
-    # Estima ruido como el percentil 10 de frames de energía
+    # Estima ruido como el percentil 10 de frames de energía — vectorizado
     frame_size = 512
-    frames = [audio[i:i+frame_size] for i in range(0, len(audio) - frame_size, frame_size)]
-    energias = [np.sqrt(np.mean(f ** 2)) for f in frames if len(f) == frame_size]
-    if not energias:
+    n_frames = len(audio) // frame_size
+    if n_frames == 0:
         return 0.0
+    frames_matrix = audio[:n_frames * frame_size].reshape(n_frames, frame_size)
+    energias = np.sqrt(np.mean(frames_matrix ** 2, axis=1))
     ruido_rms = np.percentile(energias, 10)
     if ruido_rms == 0:
         return 40.0  # sin ruido detectable → score máximo
@@ -180,7 +178,9 @@ def calcular_metricas(wav_path: str, duracion_original_seg: float, params: dict)
 
     # ── Carga de audio ────────────────────────────────────────────────────────
     try:
-        audio, _ = librosa.load(wav_path, sr=None, mono=True)
+        audio, _ = sf.read(wav_path, dtype="float32", always_2d=False)
+        if audio.ndim > 1:
+            audio = audio.mean(axis=1)
     except Exception as e:
         return {"valido": False, "motivo_invalido": f"error cargando audio: {e}"}
 
@@ -238,21 +238,22 @@ def calcular_metricas(wav_path: str, duracion_original_seg: float, params: dict)
 # ─── Actualización de Postgres ────────────────────────────────────────────────
 def actualizar_registro(conn, audio_id: str, etapa_actual_previa: str,
                         grupo: str, clasificacion: str,
-                        object_key: str | None, metricas: dict,
-                        error: str | None) -> None:
-    intento = {
-        "grupo":       grupo,
-        "estado":      clasificacion,
-        "fecha":       datetime.now(timezone.utc).isoformat(),
-        "score":       metricas.get("score"),
+                        input_key: str | None, metricas: dict,
+                        fecha_inicio: str, error: str | None) -> None:
+    resultado_grupo = {
+        "estado":       clasificacion,
+        "fecha_inicio": fecha_inicio,
+        "fecha_fin":    datetime.now(timezone.utc).isoformat(),
+        "ubicacion":    {"bucket": MINIO_BUCKET, "key": input_key} if input_key else None,
+        "error":        error,
+        "score":        metricas.get("score"),
         "metricas": {
             "snr":            metricas.get("snr"),
             "rms_dbfs":       metricas.get("rms_dbfs"),
             "duracion_seg":   metricas.get("duracion_seg"),
             "duracion_ratio": metricas.get("duracion_ratio"),
-        },
-        "ubicacion":   {"bucket": MINIO_BUCKET, "key": object_key} if object_key else None,
-        "error":       error,
+        } if metricas.get("valido") else None,
+        "motivo_invalido": metricas.get("motivo_invalido"),
     }
 
     with conn.cursor() as cur:
@@ -261,29 +262,29 @@ def actualizar_registro(conn, audio_id: str, etapa_actual_previa: str,
             (audio_id,)
         )
         row = cur.fetchone()
-        previos = row[0] if row and row[0] else []
-        if not isinstance(previos, list):
-            previos = [previos]
-        intento["intento"] = len(previos) + 1
-        nuevos = previos + [intento]
+        correccion = row[0] if row and row[0] else {}
+        if not isinstance(correccion, dict):
+            correccion = {}
+
+        correccion[grupo] = resultado_grupo
+        if "ganador" not in correccion:
+            correccion["ganador"] = None
 
         if etapa_actual_previa == "normalizacion":
-            # Primer grupo evaluado: avanza etapa_actual
             cur.execute("""
                 UPDATE audio_pipeline_jobs
                 SET etapas        = jsonb_set(etapas, '{correccion_normalizacion}', %s::jsonb),
                     etapa_actual  = 'correccion_normalizacion',
                     estado_global = %s
                 WHERE id = %s
-            """, (json.dumps(nuevos), clasificacion, audio_id))
+            """, (json.dumps(correccion), clasificacion, audio_id))
         else:
-            # Grupos adicionales: solo agrega al JSONB
             cur.execute("""
                 UPDATE audio_pipeline_jobs
                 SET etapas        = jsonb_set(etapas, '{correccion_normalizacion}', %s::jsonb),
                     estado_global = %s
                 WHERE id = %s
-            """, (json.dumps(nuevos), clasificacion, audio_id))
+            """, (json.dumps(correccion), clasificacion, audio_id))
 
     conn.commit()
 
@@ -291,8 +292,10 @@ def actualizar_registro(conn, audio_id: str, etapa_actual_previa: str,
 # ─── Main ─────────────────────────────────────────────────────────────────────
 def main():
     params = obtener_params()
-    procesados = 0
-    errores    = 0
+    correctos   = 0
+    reprocesar  = 0
+    invalidos   = 0
+    errores     = 0
 
     with psycopg2.connect(SCORING_DB_URL) as conn:
         while True:
@@ -305,19 +308,19 @@ def main():
             etapa_actual_prev = audio["etapa_actual"]
             norm_entry        = audio["norm_entry"]
 
-            grupo      = norm_entry["grupo"]
-            input_key  = norm_entry.get("ubicacion", {}).get("key")
-
-            if not input_key:
-                log.warning("Sin ubicacion en normalizacion para %s grupo %s", nombre, grupo)
+            if not norm_entry:
+                log.warning("Sin norm_entry correcto para %s — omitiendo", nombre)
                 continue
 
-            # Fecha del audio desde el path de MinIO
-            partes        = input_key.split("/")
-            fecha_carpeta = partes[1] if len(partes) > 1 else datetime.now().strftime("%Y-%m-%d")
+            grupo     = norm_entry["grupo"]
+            input_key = norm_entry.get("ubicacion", {}).get("key")
 
-            # Duración original desde etapas.normalizacion
-            duracion_original = norm_entry.get("metricas", {}).get("duracion_seg", 0)
+            if not input_key:
+                log.warning("Sin ubicacion en normalizacion para %s [grupo=%s]", nombre, grupo)
+                continue
+
+            duracion_original = (norm_entry.get("metricas") or {}).get("duracion_seg", 0)
+            fecha_inicio      = datetime.now(timezone.utc).isoformat()
 
             log.info("Evaluando: %s [grupo=%s]", nombre, grupo)
 
@@ -329,40 +332,35 @@ def main():
                 except S3Error as e:
                     log.error("Error descargando %s: %s", input_key, e)
                     actualizar_registro(conn, audio_id, etapa_actual_prev,
-                                        grupo, "invalido", None, {}, str(e))
+                                        grupo, "invalido", None, {}, fecha_inicio, str(e))
                     errores += 1
                     continue
 
                 metricas = calcular_metricas(wav_tmp, duracion_original, params)
 
                 if not metricas["valido"]:
-                    log.warning("Invalido %s [%s]: %s", nombre, grupo, metricas["motivo_invalido"])
+                    log.warning("Invalido %s [grupo=%s]: %s", nombre, grupo, metricas["motivo_invalido"])
                     actualizar_registro(conn, audio_id, etapa_actual_prev,
-                                        grupo, "invalido", None, metricas,
-                                        metricas["motivo_invalido"])
-                    errores += 1
+                                        grupo, "invalido", input_key, metricas,
+                                        fecha_inicio, metricas["motivo_invalido"])
+                    invalidos += 1
                     continue
 
-                clasificacion = metricas["clasificacion"]
-                output_key    = f"audios_procesados/{clasificacion}/{fecha_carpeta}/{grupo}/{nombre}.wav"
-
-                try:
-                    minio_client.fput_object(MINIO_BUCKET, output_key, wav_tmp,
-                                             content_type="audio/wav")
-                except S3Error as e:
-                    log.error("Error subiendo %s: %s", output_key, e)
-                    actualizar_registro(conn, audio_id, etapa_actual_prev,
-                                        grupo, "invalido", None, metricas, str(e))
-                    errores += 1
-                    continue
-
+            clasificacion = metricas["clasificacion"]
             actualizar_registro(conn, audio_id, etapa_actual_prev,
-                                grupo, clasificacion, output_key, metricas, None)
-            log.info("OK: %s [grupo=%s score=%.2f → %s]",
-                     nombre, grupo, metricas["score"], clasificacion)
-            procesados += 1
+                                grupo, clasificacion, input_key, metricas, fecha_inicio, None)
+            log.info("OK: %s [grupo=%s score=%.2f → %s]", nombre, grupo, metricas["score"], clasificacion)
+            if clasificacion == "correcto":
+                correctos += 1
+            elif clasificacion == "reprocesar":
+                reprocesar += 1
+            else:
+                invalidos += 1
 
-    log.info("Finalizado — procesados: %d | errores: %d", procesados, errores)
+    log.info(
+        "Finalizado — correcto: %d | reprocesar: %d | invalido: %d | errores: %d",
+        correctos, reprocesar, invalidos, errores
+    )
 
 
 if __name__ == "__main__":

@@ -8,15 +8,70 @@ import os
 router = APIRouter()
 
 CLAVES_VALIDAS = {
+    "creacion_registros",
     "descarga_G", "descarga_M", "descarga_B",
     "normalizacion_G", "normalizacion_M", "normalizacion_B",
     "correccion_normalizacion",
-    "transcripcion", "correccion_transcripciones",
+    "transcripcion_G", "transcripcion_M", "transcripcion_B",
+    "correccion_transcripciones",
+    "correccion_transcripciones_llm_G",
+    "correccion_transcripciones_llm_M",
+    "correccion_transcripciones_llm_B",
+    "correccion_transcripciones_ganador",
     "analisis_A", "analisis_B",
     "correccion_analisis_A", "correccion_analisis_B",
 }
 
 DEFAULTS_POR_CLAVE = {
+    "creacion_registros": {
+        "limite": None,
+    },
+    "correccion_transcripciones": {
+        "estados":                   ["correcto"],
+        "duracion_desde":            None,
+        "duracion_hasta":            None,
+        "umbral_logprob_invalido":   -0.6,
+        "umbral_logprob_reprocesar": -0.4,
+        "umbral_words_min":          20,
+        "umbral_low_score_ratio":    0.25,
+        "umbral_speaker_dominance":  0.95,
+        "peso_logprob":              0.50,
+        "peso_words":                0.25,
+        "peso_speaker_balance":      0.25,
+        "umbral_score_correcto":     0.75,
+        "umbral_score_reprocesar":   0.40,
+    },
+    "correccion_transcripciones_llm_G": {
+        "grupo": "GBM", "estados": ["correcto"],
+        "duracion_desde": None, "duracion_hasta": None,
+        "modelo": "Qwen/Qwen2.5-3B-Instruct-AWQ",
+        "max_segmentos_inicio": 30, "max_segmentos_fin": 20,
+        "usar_llm": True,
+        "peso_score_determinista": 0.40, "peso_score_llm": 0.60,
+        "umbral_score_correcto": 0.75, "umbral_score_reprocesar": 0.40,
+    },
+    "correccion_transcripciones_llm_M": {
+        "grupo": "GBM", "estados": ["correcto"],
+        "duracion_desde": None, "duracion_hasta": None,
+        "modelo": "Qwen/Qwen2.5-3B-Instruct-AWQ",
+        "max_segmentos_inicio": 30, "max_segmentos_fin": 20,
+        "usar_llm": True,
+        "peso_score_determinista": 0.40, "peso_score_llm": 0.60,
+        "umbral_score_correcto": 0.75, "umbral_score_reprocesar": 0.40,
+    },
+    "correccion_transcripciones_llm_B": {
+        "grupo": "GBM", "estados": ["correcto"],
+        "duracion_desde": None, "duracion_hasta": None,
+        "modelo": "Qwen/Qwen2.5-3B-Instruct-AWQ",
+        "max_segmentos_inicio": 30, "max_segmentos_fin": 20,
+        "usar_llm": True,
+        "peso_score_determinista": 0.40, "peso_score_llm": 0.60,
+        "umbral_score_correcto": 0.75, "umbral_score_reprocesar": 0.40,
+    },
+    "correccion_transcripciones_ganador": {
+        "umbral_score_correcto":   0.75,
+        "umbral_score_reprocesar": 0.40,
+    },
     "correccion_normalizacion": {
         "duracion_minima_seg":  3,
         "duracion_maxima_seg":  1800,
@@ -37,7 +92,7 @@ DEFAULTS_POR_CLAVE = {
 
 
 def get_conn():
-    return psycopg2.connect(os.environ["DATABASE_URL"])
+    return psycopg2.connect(os.environ["SCORING_DB_URL"])
 
 
 class ActualizarParametros(BaseModel):

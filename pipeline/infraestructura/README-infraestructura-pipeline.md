@@ -85,7 +85,7 @@ Todas las máquinas corren **Windows** con OpenSSH Server habilitado.
 
 | Servicio     | URL                        | Usuario    | Password           |
 |--------------|----------------------------|------------|--------------------|
-| Airflow UI   | http://192.168.9.115:8080  | admin      | F9a9h2uGD3RhPHs2   |
+| Airflow UI   | http://192.168.9.115:8080  | admin      | admin123           |
 | Redis        | redis://192.168.9.115:6379 | —          | —                  |
 | MinIO UI     | http://192.168.9.195:9002  | minioadmin | minioadmin         |
 | MinIO API    | http://192.168.9.195:9001  | minioadmin | minioadmin         |
@@ -105,27 +105,36 @@ cd "pipeline\infraestructura"
 # Primera vez
 python -m venv api\venv
 api\venv\Scripts\activate
-pip install fastapi uvicorn httpx psycopg2-binary pydantic
+pip install -r api\requirements.txt
 
-# Cargar variables de entorno y levantar
-Get-Content .\.env | ForEach-Object {
-    if ($_ -match "^([^#][^=]+)=(.+)$") {
-        [System.Environment]::SetEnvironmentVariable($matches[1].Trim(), $matches[2].Trim())
-    }
-}
+# Levantar (lee .env.tuberia de la raíz del proyecto automáticamente)
 uvicorn api.main:app --host 0.0.0.0 --port 8001 --reload
 ```
 
-Las variables que necesita el `.env` (en `pipeline/infraestructura/.env`):
+Las variables que necesita el `.env.tuberia` (en la raíz del proyecto):
 ```
-DATABASE_URL=postgresql://scoring:scoring@localhost:5432/scoring
+SCORING_DB_URL=postgresql://scoring:scoring@localhost:5432/scoring
 AIRFLOW_BASE_URL=http://localhost:8080/api/v1
 AIRFLOW_USER=admin
-AIRFLOW_PASSWORD=F9a9h2uGD3RhPHs2
+AIRFLOW_PASSWORD=admin123
+MINIO_ENDPOINT=192.168.9.195:9001
+MINIO_ACCESS_KEY=minioadmin
+MINIO_SECRET_KEY=minioadmin
 ```
 
+> **Bug — `set VAR=G && cmd` en cmd.exe:** El espacio antes de `&&` se incluye en el valor (`"G "`), haciendo que `CLAVE_PARAMS = "transcripcion_G "` no encuentre nada en pipeline_params y use DEFAULTS silenciosamente. Siempre usar la forma con comillas: `set "MITROL_CUENTA=G"`. Este fix está aplicado en los DAGs de descarga, normalización y transcripción.
+>
+> **Orden crítico en `main.py`:** `load_dotenv` debe llamarse **antes** de los imports de routers. Los módulos como `airflow_client.py` leen `os.environ` en el momento del import — si `load_dotenv` va después, las variables llegan vacías y Airflow devuelve 401.
+>
+> **Patrón `_auth()`:** Las credenciales de Airflow se leen en cada llamada (`_auth()` función) en vez de una constante de módulo. Esto evita que un reinicio de uvicorn quede con credenciales stale.
+>
 > La Pipeline API requiere que Airflow tenga habilitado el backend de autenticación básica.
 > Está configurado en el `docker-compose.yml` con `AIRFLOW__API__AUTH_BACKENDS: airflow.api.auth.backend.basic_auth`.
+
+**Resetear password de Airflow** (si el contenedor fue recreado y el password cambió):
+```bash
+docker exec airflow-airflow-webserver-1 airflow users reset-password --username admin --password admin123
+```
 
 ---
 
@@ -213,7 +222,7 @@ Campos del JSONB: `grupo`, `cuenta`, `params_usados`, `ubicacion`, `estado`, `in
 
 ### Etapa 4 — Corrección de normalización (SSHOperator, solo gaspar)
 
-Scorea cada audio normalizado usando librosa/soundfile (SNR, RMS, duración ratio). Clasifica en `correcto` / `reprocesar` / `invalido` y sube a `audios_procesados/<clasificacion>/YYYY-MM-DD/<grupo>/`. Corre solo en gaspar — no requiere GPU.
+Scorea cada audio normalizado usando soundfile + numpy (SNR, RMS, duración ratio). Clasifica en `correcto` / `reprocesar` / `invalido`. La clasificación vive solo en Postgres — no se crean archivos nuevos en MinIO. Corre solo en gaspar — no requiere GPU.
 
 ```
 airflow-worker (Docker, gaspar)
@@ -223,13 +232,110 @@ airflow-worker (Docker, gaspar)
 Clave de pipeline_params: `correccion_normalizacion`  
 Campos del JSONB: `grupo`, `score`, `metricas` (snr, rms_dbfs, duracion_seg, duracion_ratio), `ubicacion`, `estado`, `intento`, `error`
 
-**Selección de ganador** — script manual (no DAG), disparado desde el dashboard o PowerShell:
+**Selección de ganador** — script manual (no DAG), disparado desde el dashboard (botón "Limpiar audios") o PowerShell:
 ```powershell
 pipeline\venv\Scripts\python.exe pipeline\logica\4-correcion-de-normalizacion\seleccionar_ganador.py
 ```
-Elige el grupo con mejor score por audio, mueve el ganador a `audios_procesados/correcto/YYYY-MM-DD/` (sin subcarpeta de grupo) y elimina los perdedores de `audios_procesados/` y `audios-raw/`.
+Elige el grupo con mejor score por audio, borra de MinIO los audios de los grupos perdedores. El ganador queda en `audios-raw/` en su ubicación original.
 
-### Etapas 5–9 — pendientes
+**Resetear resultados** — disponible desde el dashboard (botón "Resetear resultados") o via API:
+```bash
+curl -X POST http://192.168.9.115:8001/pipeline/etapa/correccion_normalizacion/resetear
+```
+Borra la clave `correccion_normalizacion` del JSONB y devuelve los audios a `etapa_actual='normalizacion'` para poder volver a correr la etapa con nuevos parámetros.
+
+### Etapa 5 — Transcripción (SSHOperator, 3 PCs en paralelo)
+
+Transcribe los audios ganadores de la etapa 4 con WhisperX (transcripción + alineación + diarización). Cada PC lee su clave en `pipeline_params` (`transcripcion_G/M/B`) y usa su propio venv GPU (`env-gpu-transcripciones`). Las PCs del mismo grupo se reparten el trabajo a demanda con `SELECT FOR UPDATE SKIP LOCKED`.
+
+```
+airflow-worker (Docker, gaspar)
+    ├── SSHOperator → ssh gaspar    → python transcribir_audios.py  [cuenta G, venv D:\env-gpu-transcripciones]
+    ├── SSHOperator → ssh melchor   → python transcribir_audios.py  [cuenta M, venv E:\env-gpu-transcripciones]
+    └── SSHOperator → ssh pc-franco → python transcribir_audios.py  [cuenta B, venv J:\env-gpu-transcripciones]
+```
+
+Claves de pipeline_params: `transcripcion_G` · `transcripcion_M` · `transcripcion_B`  
+Campos del JSONB: array de intentos con `grupo`, `cuenta`, `modelo`, `params_usados`, `ubicacion`, `metricas` (num_segmentos, num_hablantes), `estado`, `intento`, `error`
+
+Grupos usan la misma nomenclatura que etapa 3: `GBM`, `GM`, `GB`, `G`, `MB`, `M`, `B`. Seleccionables desde el dashboard con los mismos presets.
+
+**Modelos por PC:**
+
+| PC       | VRAM  | Modelo     | compute_type |
+|----------|-------|------------|--------------|
+| Gaspar   | 8 GB  | `large-v2` | `int8`       |
+| Melchor  | 10 GB | `large-v3` | `int8`       |
+| Baltazar | 8 GB  | `large-v2` | `int8`       |
+
+**Prerrequisito — ffmpeg en PATH para `airflow-ssh`:**
+
+WhisperX llama a ffmpeg via subprocess. ffmpeg instalado con WinGet solo queda en el perfil del usuario que lo instaló. El DAG agrega el bin al PATH explícitamente y `airflow-ssh` necesita permisos:
+```powershell
+icacls "C:\Users\qjose\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe" /grant "airflow-ssh:(OI)(CI)RX" /T
+```
+
+**Estado — operativa en las 3 PCs**
+
+Gaspar, Melchor y Baltazar corren el script en paralelo. Requiere `env-gpu-transcripciones` instalado en cada PC (ver `pipeline/logica/5-transcripcion-de-audios/reporte-gpu2.md`) y el script `transcribir_audios.py` + `config.py` en `pipeline\logica\5-transcripcion-de-audios\` de cada máquina.
+
+> **Nota Baltazar SSH:** la conexión `ssh_pc_franco` usa usuario `bases` con password `ruleta`. Confirmar en Airflow UI → Admin → Connections que el password coincida con el usuario Windows de Baltazar — ya resuelto.
+
+**Prerrequisito — ganador seteado:**
+
+`seleccionar_ganador.py` debe haber corrido para que los audios tengan `etapas.correccion_normalizacion.ganador` seteado. Si es null, el script skipea el audio sin marcarlo como error.
+
+**Resetear resultados de transcripción:**
+```sql
+UPDATE audio_pipeline_jobs
+SET etapas        = etapas - 'transcripcion',
+    etapa_actual  = 'correccion_normalizacion',
+    estado_global = 'reprocesar'
+WHERE etapa_actual  = 'transcripcion'
+  AND estado_global = 'error';
+```
+
+**Estabilidad VRAM:** `batch_size=4` en WhisperX + `gc.collect()` y `torch.cuda.empty_cache()` después de cada audio (éxito y error). Sin esto el proceso crashea con `0xC0000005` tras ~14 audios y requiere reinicio de la máquina.
+
+**DAG:** `pipeline/infraestructura/airflow/dags/pipeline_transcripcion.py`  
+`cmd_timeout=14400` (4 horas — transcribir es lento)
+
+---
+
+### Etapa 6 — Corrección de transcripciones (SSHOperator, 3 pasos)
+
+Tres DAGs separados, cada uno disparable desde el dashboard de forma independiente:
+
+**`pipeline_correccion_determinista`** — solo gaspar, sin GPU:
+```
+airflow-worker (Docker, gaspar)
+    └── SSHOperator → ssh gaspar → python correccion_determinista.py
+```
+Evalúa avg_logprob, total_words, low_score_ratio y speaker_dominance. Clasifica en `correcto` / `reprocesar` / `invalido`. Clave: `correccion_transcripciones`. `cmd_timeout=1800`.
+
+**`pipeline_correccion_llm`** — 3 PCs en paralelo, requiere GPU:
+```
+airflow-worker (Docker, gaspar)
+    ├── SSHOperator → ssh gaspar    → python correccion_llm.py  [cuenta G, venv D:\env-gpu-analisis]
+    ├── SSHOperator → ssh melchor   → python correccion_llm.py  [cuenta M, venv E:\env-gpu-analisis]
+    └── SSHOperator → ssh pc-franco → python correccion_llm.py  [cuenta B, venv J:\env-gpu-analisis]
+```
+Calcula score_llm (coherencia + roles) y score_total. Guarda score_determinista, score_llm, score_total, coherencia_llm, vendedor, cliente y metricas en el JSONB. Termina con `os._exit(0)` para evitar el leak de nanobind/xgrammar que marcaba la tarea como fallida en Airflow. Claves: `correccion_transcripciones_llm_G/M/B`. `cmd_timeout=3600`.
+
+**`pipeline_seleccionar_ganador_transcripciones`** — solo gaspar:
+```
+airflow-worker (Docker, gaspar)
+    └── SSHOperator → ssh gaspar → python seleccionar_ganador.py  [etapa 6]
+```
+Elige el grupo con mejor score_total, borra JSONs de los perdedores de MinIO, escribe `ganador` en el JSONB. `cmd_timeout=1800`.
+
+**Operaciones de mantenimiento** — disponibles desde el dashboard:
+- **"Limpiar transcripciones"** — `POST /pipeline/etapa/correccion_transcripciones/limpiar` → dispara `pipeline_seleccionar_ganador_transcripciones`
+- **"Resetear resultados"** — `POST /pipeline/etapa/correccion_transcripciones/resetear` → borra `correccion_transcripciones` del JSONB
+
+---
+
+### Etapas 7–9 — pendientes
 
 ---
 
@@ -252,22 +358,44 @@ Corre en gaspar. Es la única puerta de entrada del dashboard — nunca expone A
 
 **Ejecución**
 
-| Método | Endpoint                           | Descripción                                                         |
-|--------|------------------------------------|---------------------------------------------------------------------|
-| POST   | `/pipeline/ejecutar`               | Dispara el pipeline completo                                        |
-| POST   | `/pipeline/etapa/{etapa}/ejecutar` | Dispara una etapa con filtro: `pendientes`, `reprocesar`, `todos`   |
-| POST   | `/pipeline/etapa/{etapa}/pausar`   | Pausa el DAG de una etapa                                           |
+| Método | Endpoint                                              | Descripción                                                         |
+|--------|-------------------------------------------------------|---------------------------------------------------------------------|
+| POST   | `/pipeline/ejecutar`                                  | Dispara el pipeline completo                                        |
+| POST   | `/pipeline/etapa/{etapa}/ejecutar`                    | Dispara una etapa con filtro: `pendientes`, `reprocesar`, `todos`   |
+| POST   | `/pipeline/etapa/{etapa}/pausar`                      | Pausa el DAG de una etapa                                           |
+| POST   | `/pipeline/etapa/correccion_normalizacion/limpiar`      | Dispara DAG `pipeline_seleccionar_ganador`: elige ganador y borra perdedores de MinIO     |
+| POST   | `/pipeline/etapa/correccion_normalizacion/resetear`     | Borra resultados de etapa 4 del JSONB, vuelve audios a normalizacion                     |
+| POST   | `/pipeline/etapa/correccion_transcripciones/limpiar`    | Dispara DAG `pipeline_seleccionar_ganador_transcripciones`: elige ganador de etapa 6     |
+| POST   | `/pipeline/etapa/correccion_transcripciones/resetear`   | Borra resultados de etapa 6 del JSONB                                                    |
 
 Etapas válidas: `descarga` · `creacion_registros` · `normalizacion` · `correccion_normalizacion` · `transcripcion` · `correccion_transcripciones` · `analisis` · `correccion_analisis` · `carga_datos`
 
 **Estado y métricas**
 
-| Método | Endpoint                          | Descripción                                            |
-|--------|-----------------------------------|--------------------------------------------------------|
-| GET    | `/pipeline/estado`                | Resumen: cantidad de audios por etapa y estado         |
-| GET    | `/pipeline/metricas`              | Totales, scores promedio, duración promedio            |
-| GET    | `/pipeline/conversaciones`        | Lista con filtros opcionales                           |
-| GET    | `/pipeline/conversaciones/{id}`   | Detalle completo incluyendo el JSONB                   |
+| Método | Endpoint                              | Descripción                                                                         |
+|--------|---------------------------------------|-------------------------------------------------------------------------------------|
+| GET    | `/pipeline/estado`                    | Resumen: cantidad de audios por etapa y estado                                      |
+| GET    | `/pipeline/metricas`                  | Totales, scores promedio, duración promedio                                         |
+| GET    | `/pipeline/conversaciones`            | Lista con filtros opcionales                                                        |
+| GET    | `/pipeline/conversaciones/{id}`       | Detalle completo incluyendo el JSONB                                                |
+| GET    | `/pipeline/audio/{identificador}`     | Info completa de un audio por UUID o nombre_archivo, con ubicaciones MinIO por etapa|
+| GET    | `/pipeline/audio/descargar`           | Stream de un archivo de MinIO (`?bucket=&key=&inline=true` para reproducción)       |
+| GET    | `/pipeline/audios/aleatorios`         | Muestra aleatoria con filtros: etapa, estado, cuenta, fecha, hora, n                |
+
+> **Nota de orden de rutas:** `/pipeline/audio/descargar` debe estar definido **antes** de `/pipeline/audio/{identificador}` en `routes/estado.py` para que FastAPI no interprete "descargar" como un path parameter.
+
+**Estadísticas**
+
+| Método | Endpoint                              | Descripción                                                                              |
+|--------|---------------------------------------|------------------------------------------------------------------------------------------|
+| GET    | `/pipeline/estadisticas/global`       | Distribución de audios por etapa y estado — acepta `fecha_desde` y `fecha_hasta`        |
+| GET    | `/pipeline/estadisticas/etapa1`       | Total de audios y distribución de duración                                               |
+| GET    | `/pipeline/estadisticas/etapa3`       | Conteos correcto / solo_errores de normalización                                         |
+| GET    | `/pipeline/estadisticas/etapa4`       | Conteos, scores, SNR, RMS, duracion_ratio, causas de invalido, umbrales desde Postgres   |
+| GET    | `/pipeline/estadisticas/etapa5`       | Conteos correcto / error de transcripción                                                |
+| GET    | `/pipeline/estadisticas/etapa6`       | Conteos, coherencia LLM, causas de invalido, distribuciones de métricas, umbrales       |
+
+Todos los endpoints filtran por fecha de la llamada (`to_date(left(split_part(nombre_archivo,'_',3),6),'YYMMDD')`). Los umbrales de etapa 4 y 6 se leen en tiempo real desde `pipeline_params`.
 
 **Parámetros**
 
@@ -276,7 +404,7 @@ Etapas válidas: `descarga` · `creacion_registros` · `normalizacion` · `corre
 | GET    | `/pipeline/parametros/{clave}`    | Lee los parámetros actuales de una etapa               |
 | PATCH  | `/pipeline/parametros/{clave}`    | Modifica los parámetros — tiene efecto en el próximo run |
 
-Claves válidas: `descarga_G` · `descarga_M` · `descarga_B` · `normalizacion_G` · `normalizacion_M` · `normalizacion_B` · `correccion_normalizacion` · `transcripcion` · `correccion_transcripciones` · `analisis_A` · `analisis_B` · `correccion_analisis_A` · `correccion_analisis_B`
+Claves válidas: `descarga_G` · `descarga_M` · `descarga_B` · `normalizacion_G` · `normalizacion_M` · `normalizacion_B` · `correccion_normalizacion` · `transcripcion_G` · `transcripcion_M` · `transcripcion_B` · `correccion_transcripciones` · `analisis_A` · `analisis_B` · `correccion_analisis_A` · `correccion_analisis_B`
 
 Ejemplo — modificar parámetros de descarga de melchor:
 ```bash
@@ -287,10 +415,12 @@ curl -X PATCH http://192.168.9.115:8001/pipeline/parametros/descarga_M \
 
 ### Archivos
 
-| Archivo                | Responsabilidad                                              |
-|------------------------|--------------------------------------------------------------|
-| `main.py`              | Registra los tres routers                                    |
-| `airflow_client.py`    | Única capa que habla con la API REST de Airflow              |
-| `routes/ejecucion.py`  | Endpoints de disparo y pausa de DAGs                         |
-| `routes/estado.py`     | Endpoints de consulta a `audio_pipeline_jobs`                |
-| `routes/parametros.py` | Endpoints de lectura y escritura de `pipeline_params`        |
+| Archivo                    | Responsabilidad                                                                    |
+|----------------------------|------------------------------------------------------------------------------------|
+| `main.py`                  | Registra los cuatro routers; `load_dotenv` va antes de los imports de routers      |
+| `airflow_client.py`        | Única capa que habla con la API REST de Airflow; usa `_auth()` función (no constante)|
+| `routes/ejecucion.py`      | Endpoints de disparo, pausa y reset de DAGs                                        |
+| `routes/estado.py`         | Endpoints de consulta, detalle de audio, stream MinIO y muestra aleatoria          |
+| `routes/parametros.py`     | Endpoints de lectura y escritura de `pipeline_params`                              |
+| `routes/estadisticas.py`   | Endpoints de estadísticas por etapa; lee umbrales en tiempo real desde `pipeline_params` |
+| `requirements.txt`         | Dependencias: `fastapi`, `uvicorn`, `httpx`, `psycopg2-binary`, `pydantic`, `minio`|

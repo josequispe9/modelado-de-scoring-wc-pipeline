@@ -94,39 +94,49 @@ def obtener_siguiente_audio(conn, carpeta: str, grupo: str) -> dict | None:
     grupo ya completó.
 
     Criterios según carpeta:
-      - 'audios':     etapa_actual='descarga'     y estado_global='correcto'
-      - 'reprocesar': etapa_actual='normalizacion' y estado_global='reprocesar'
+      - 'audios':     etapa_actual='descarga'                y estado_global='correcto'
+      - 'reprocesar': etapa_actual='correccion_normalizacion' y estado_global='reprocesar'
       - 'ambos':      unión de los dos anteriores
     Siempre incluye audios que otro grupo ya procesó (etapa_actual='normalizacion',
     estado_global='correcto') pero que mi grupo aún no tiene en el JSONB.
     """
-    condiciones = []
+    # Condiciones para audios nuevos (aplica filtro NOT EXISTS — grupo aún no procesó)
+    cond_nuevos = []
     if carpeta in ("audios", "ambos"):
-        condiciones.append("(etapa_actual = 'descarga' AND estado_global = 'correcto')")
-    if carpeta in ("reprocesar", "ambos"):
-        condiciones.append("(etapa_actual = 'normalizacion' AND estado_global = 'reprocesar')")
-
-    if not condiciones:
-        log.warning("Carpeta '%s' no reconocida — usando 'audios'", carpeta)
-        condiciones = ["(etapa_actual = 'descarga' AND estado_global = 'correcto')"]
-
+        cond_nuevos.append("(etapa_actual = 'descarga' AND estado_global = 'correcto')")
     # Otro grupo ya procesó este audio pero el mío todavía no
-    condiciones.append("(etapa_actual = 'normalizacion' AND estado_global = 'correcto')")
+    cond_nuevos.append("(etapa_actual = 'normalizacion' AND estado_global = 'correcto')")
 
-    where = " OR ".join(condiciones)
+    if not cond_nuevos and carpeta not in ("reprocesar", "ambos"):
+        log.warning("Carpeta '%s' no reconocida — usando 'audios'", carpeta)
+        cond_nuevos = ["(etapa_actual = 'descarga' AND estado_global = 'correcto')"]
+
+    bloque_nuevos = f"""
+        (
+            ({" OR ".join(cond_nuevos)})
+            AND NOT EXISTS (
+                SELECT 1
+                FROM jsonb_array_elements(
+                    COALESCE(etapas->'normalizacion', '[]'::jsonb)
+                ) elem
+                WHERE elem->>'grupo'  = %(grupo)s
+                  AND elem->>'estado' = 'correcto'
+            )
+        )
+    """
+
+    # Condición reprocesar: sin filtro NOT EXISTS (ya tienen normalizacion correcto)
+    bloque_reprocesar = """
+        (etapa_actual = 'correccion_normalizacion' AND estado_global = 'reprocesar')
+    """ if carpeta in ("reprocesar", "ambos") else "FALSE"
 
     query = f"""
         SELECT id, nombre_archivo, url_fuente, etapa_actual, etapas
         FROM audio_pipeline_jobs
-        WHERE ({where})
-          AND estado_global != 'en_proceso'
-          AND NOT EXISTS (
-            SELECT 1
-            FROM jsonb_array_elements(
-              COALESCE(etapas->'normalizacion', '[]'::jsonb)
-            ) elem
-            WHERE elem->>'grupo'  = %(grupo)s
-              AND elem->>'estado' = 'correcto'
+        WHERE estado_global != 'en_proceso'
+          AND (
+            {bloque_nuevos}
+            OR {bloque_reprocesar}
           )
         ORDER BY created_at
         FOR UPDATE SKIP LOCKED
@@ -145,32 +155,50 @@ def obtener_siguiente_audio(conn, carpeta: str, grupo: str) -> dict | None:
     return dict(audio) if audio else None
 
 
-def obtener_input_key(audio: dict, carpeta: str, grupo: str) -> str | None:
+def obtener_input_key(audio: dict) -> str:
     """
-    Retorna la key de MinIO del WAV a normalizar.
-    - Si el grupo aún no tiene entrada en etapas.normalizacion → audio nuevo → url_fuente
-    - Si carpeta='reprocesar' y hay entrada en correccion_normalizacion → reprocesar desde ahí
+    Retorna la key del WAV original en MinIO (url_fuente).
+    Para reprocesar siempre se vuelve al audio original, no al ya normalizado.
     """
-    etapas = audio.get("etapas") or {}
-
-    # Verificar si este grupo ya normalizó antes (no debería pasar, pero por seguridad)
-    norm = etapas.get("normalizacion") or []
-    if not isinstance(norm, list):
-        norm = [norm]
-    grupo_ya_normalizo = any(e.get("grupo") == grupo and e.get("estado") == "correcto"
-                             for e in norm)
-
-    # Caso reprocesar: leer desde correccion_normalizacion
-    if carpeta in ("reprocesar", "ambos") and not grupo_ya_normalizo:
-        correccion = etapas.get("correccion_normalizacion")
-        if correccion:
-            ultimo = correccion[-1] if isinstance(correccion, list) else correccion
-            key = ultimo.get("ubicacion", {}).get("key")
-            if key:
-                return key
-
-    # Caso normal: audio nuevo o grupo procesando por primera vez
     return audio["url_fuente"]
+
+
+def limpiar_correccion_grupo(conn, audio_id: str, grupo: str) -> None:
+    """
+    Elimina la entrada del grupo en correccion_normalizacion para que stage 4
+    pueda re-evaluar el audio después de la nueva normalización.
+    También elimina el intento previo de normalizacion de este grupo.
+    """
+    with conn.cursor() as cur:
+        # Borra la clave del grupo en correccion_normalizacion
+        cur.execute("""
+            UPDATE audio_pipeline_jobs
+            SET etapas = jsonb_set(
+                etapas,
+                '{correccion_normalizacion}',
+                (COALESCE(etapas->'correccion_normalizacion', '{}'::jsonb) - %s)
+            )
+            WHERE id = %s
+        """, (grupo, audio_id))
+
+        # Reemplaza el array normalizacion filtrando el intento previo de este grupo
+        cur.execute("""
+            UPDATE audio_pipeline_jobs
+            SET etapas = jsonb_set(
+                etapas,
+                '{normalizacion}',
+                COALESCE(
+                    (
+                        SELECT jsonb_agg(elem)
+                        FROM jsonb_array_elements(etapas->'normalizacion') elem
+                        WHERE elem->>'grupo' != %s
+                    ),
+                    '[]'::jsonb
+                )
+            )
+            WHERE id = %s
+        """, (grupo, audio_id))
+    conn.commit()
 
 
 # ─── ffmpeg ───────────────────────────────────────────────────────────────────
@@ -336,11 +364,13 @@ def main():
 
             nombre            = audio["nombre_archivo"]
             etapa_actual_prev = audio["etapa_actual"]
-            input_key         = obtener_input_key(audio, carpeta, grupo)
+            input_key         = obtener_input_key(audio)
 
-            if not input_key:
-                log.warning("Sin input key para %s — omitiendo", nombre)
-                continue
+            # Si es reprocesar, limpiar resultados previos del grupo para que
+            # stage 4 pueda re-evaluar después de la nueva normalización
+            if carpeta in ("reprocesar", "ambos") and etapa_actual_prev == "correccion_normalizacion":
+                limpiar_correccion_grupo(conn, str(audio["id"]), grupo)
+                log.info("Limpiando resultados previos de %s [grupo=%s] para reprocesar", nombre, grupo)
 
             partes        = input_key.split("/")
             fecha_carpeta = partes[1] if len(partes) > 1 else datetime.now().strftime("%Y-%m-%d")

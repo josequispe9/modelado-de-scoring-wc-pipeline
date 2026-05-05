@@ -3,6 +3,7 @@ import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/AppSidebar'
 import PipelineMonitoreo from '@/pages/pipeline/PipelineMonitoreo'
 import PipelineConfiguracion from '@/pages/pipeline/PipelineConfiguracion'
+import PipelineEstadisticas from '@/pages/pipeline/PipelineEstadisticas'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
             <Route path="/" element={<Navigate to="/pipeline/monitoreo" replace />} />
             <Route path="/pipeline/monitoreo" element={<PipelineMonitoreo />} />
             <Route path="/pipeline/configuracion" element={<PipelineConfiguracion />} />
+            <Route path="/pipeline/estadisticas" element={<PipelineEstadisticas />} />
           </Routes>
         </main>
       </SidebarProvider>

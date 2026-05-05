@@ -104,19 +104,34 @@ CREATE TABLE IF NOT EXISTS pipeline_params (
 );
 
 INSERT INTO pipeline_params (clave, valor) VALUES
-    ('descarga_G',                 '{}'),
-    ('descarga_M',                 '{}'),
-    ('descarga_B',                 '{}'),
-    ('normalizacion_G',            '{}'),
-    ('normalizacion_M',            '{}'),
-    ('normalizacion_B',            '{}'),
-    ('correccion_normalizacion',   '{}'),
-    ('transcripcion',              '{}'),
-    ('correccion_transcripciones', '{}'),
-    ('analisis_A',                 '{}'),
-    ('analisis_B',                 '{}'),
-    ('correccion_analisis_A',      '{}'),
-    ('correccion_analisis_B',      '{}')
+    -- Etapa 2 — creación de registros
+    ('creacion_registros',                  '{}'),
+    -- Etapa 1 — descarga (una por PC)
+    ('descarga_G',                          '{}'),
+    ('descarga_M',                          '{}'),
+    ('descarga_B',                          '{}'),
+    -- Etapa 3 — normalización (una por PC)
+    ('normalizacion_G',                     '{}'),
+    ('normalizacion_M',                     '{}'),
+    ('normalizacion_B',                     '{}'),
+    -- Etapa 4 — corrección de normalización (compartida)
+    ('correccion_normalizacion',            '{}'),
+    ('correccion_normalizacion_ganador',    '{}'),
+    -- Etapa 5 — transcripción (una por PC)
+    ('transcripcion_G',                     '{}'),
+    ('transcripcion_M',                     '{}'),
+    ('transcripcion_B',                     '{}'),
+    -- Etapa 6 — corrección de transcripciones (una por PC + ganador)
+    ('correccion_transcripciones_llm_G',    '{}'),
+    ('correccion_transcripciones_llm_M',    '{}'),
+    ('correccion_transcripciones_llm_B',    '{}'),
+    ('correccion_transcripciones_ganador',  '{}'),
+    -- Etapa 7 — análisis (una por tipo de análisis)
+    ('analisis_A',                          '{}'),
+    ('analisis_B',                          '{}'),
+    -- Etapa 8 — corrección de análisis (una por tipo)
+    ('correccion_analisis_A',               '{}'),
+    ('correccion_analisis_B',               '{}')
 ON CONFLICT (clave) DO NOTHING;
 """
 

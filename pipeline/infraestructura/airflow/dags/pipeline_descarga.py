@@ -37,9 +37,9 @@ SCRIPT = r"pipeline\logica\1-descarga-de-audios\scraping_mitrol.py"
 PYTHON = r"pipeline\venv\Scripts\python.exe"
 
 
-def cmd_descarga(ruta: str) -> str:
+def cmd_descarga(ruta: str, cuenta: str) -> str:
     """Comando Windows (cmd.exe) para correr el script con el venv de cada PC."""
-    return f'cd /d "{ruta}" && "{PYTHON}" "{SCRIPT}"'
+    return f'cd /d "{ruta}" && set "MITROL_CUENTA={cuenta}" && "{PYTHON}" "{SCRIPT}"'
 
 
 # ─── DAG ─────────────────────────────────────────────────────────────────────
@@ -57,7 +57,7 @@ with DAG(
         SSHOperator(
             task_id=f"descarga_{cuenta}",
             ssh_conn_id=cfg["conn_id"],
-            command=cmd_descarga(cfg["ruta"]),
+            command=cmd_descarga(cfg["ruta"], cuenta),
             conn_timeout=15,
             cmd_timeout=7200,         # 2 horas máximo por descarga
         )
