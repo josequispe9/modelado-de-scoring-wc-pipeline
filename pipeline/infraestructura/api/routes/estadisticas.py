@@ -49,22 +49,75 @@ def estadisticas_global(
     fecha_desde: Optional[str] = Query(None),
     fecha_hasta: Optional[str] = Query(None),
 ):
+    """
+    Cuenta cuántos audios PASARON por cada etapa (presencia en JSONB),
+    no dónde están ahora. Esto evita que las etapas iniciales queden vacías
+    cuando todos los audios ya avanzaron.
+
+    - descarga / normalizacion: estado del propio campo en etapas
+    - correccion_normalizacion: estado_global de audios que tienen esa clave
+    - transcripcion: estado del último elemento del array
+    - correccion_transcripciones: estado_global de audios que tienen esa clave
+    """
     and_fecha, params = fecha_conds(fecha_desde, fecha_hasta)
+
+    # params se repite una vez por cada bloque del UNION ALL que usa {and_fecha}
+    all_params = params * 5
+
     query = f"""
-        SELECT etapa_actual, estado_global, COUNT(*) AS cantidad
-        FROM audio_pipeline_jobs
-        WHERE 1=1 {and_fecha}
-        GROUP BY etapa_actual, estado_global
-        ORDER BY etapa_actual, estado_global
+        SELECT etapa, estado, COUNT(*) AS cantidad
+        FROM (
+            -- Descarga: etapas={{}} por diseño — toda fila = audio descargado correctamente
+            SELECT 'descarga' AS etapa, 'correcto' AS estado
+            FROM audio_pipeline_jobs
+            WHERE 1=1 {and_fecha}
+
+            UNION ALL
+
+            -- Normalizacion: array de intentos por grupo — tomamos el último
+            SELECT 'normalizacion',
+                   etapas->'normalizacion'->-1->>'estado'
+            FROM audio_pipeline_jobs
+            WHERE etapas ? 'normalizacion'
+              AND jsonb_array_length(etapas->'normalizacion') > 0
+              {and_fecha}
+
+            UNION ALL
+
+            -- Correccion normalizacion
+            SELECT 'correccion_normalizacion', estado_global
+            FROM audio_pipeline_jobs
+            WHERE etapas ? 'correccion_normalizacion' {and_fecha}
+
+            UNION ALL
+
+            -- Transcripcion: array de intentos, tomamos el último
+            SELECT 'transcripcion',
+                   etapas->'transcripcion'->-1->>'estado'
+            FROM audio_pipeline_jobs
+            WHERE etapas ? 'transcripcion'
+              AND jsonb_array_length(etapas->'transcripcion') > 0
+              {and_fecha}
+
+            UNION ALL
+
+            -- Correccion transcripciones
+            SELECT 'correccion_transcripciones', estado_global
+            FROM audio_pipeline_jobs
+            WHERE etapas ? 'correccion_transcripciones' {and_fecha}
+        ) sub
+        WHERE estado IS NOT NULL
+        GROUP BY etapa, estado
+        ORDER BY etapa, estado
     """
     with get_conn() as conn, conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
-        cur.execute(query, params)
+        cur.execute(query, all_params)
         rows = cur.fetchall()
 
     result: dict = {}
     for row in rows:
-        etapa  = row["etapa_actual"]
-        estado = row["estado_global"]
+        etapa  = row["etapa"]
+        estado = row["estado"]
         if etapa not in result:
             result[etapa] = {}
         result[etapa][estado] = row["cantidad"]

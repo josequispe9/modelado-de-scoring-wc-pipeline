@@ -62,3 +62,7 @@ Thumbs.db
 # Otros
 *.bak
 *.tmp
+
+# TXT en scripts_aux
+bases/scripts_aux/**/*.txt
+bases/scripts_aux/info_tramites_encontrados/
