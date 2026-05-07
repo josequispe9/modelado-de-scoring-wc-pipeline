@@ -18,6 +18,10 @@ DEFAULTS = {
     "umbral_words_min":          20,      # total de palabras mínimas
     "umbral_low_score_ratio":    0.25,    # % palabras con score < 0.15
     "umbral_speaker_dominance":  0.95,    # un speaker ocupa > 95% de segmentos
+    # num_hablantes < 2 solo es invalido si la duración también es corta.
+    # Llamadas largas con 1 hablante pueden ser válidas (monólogo de venta).
+    # None → el filtro de num_hablantes aplica siempre sin importar duración.
+    "umbral_duracion_un_hablante": 10,    # seg: si dur < este valor y hablantes < 2 → invalido
 
     # Umbral de reprocesamiento (por encima del duro pero sin garantía)
     "umbral_logprob_reprocesar": -0.4,

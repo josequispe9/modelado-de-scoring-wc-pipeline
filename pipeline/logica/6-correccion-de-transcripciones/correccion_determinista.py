@@ -176,7 +176,7 @@ def calcular_metricas(data: dict) -> dict:
     }
 
 
-def clasificar(metricas: dict, params: dict) -> tuple[float, str, str | None]:
+def clasificar(metricas: dict, params: dict, duracion_seg: float | None = None) -> tuple[float, str, str | None]:
     """
     Aplica filtros duros y calcula score compuesto.
 
@@ -189,8 +189,11 @@ def clasificar(metricas: dict, params: dict) -> tuple[float, str, str | None]:
     num_hablantes     = metricas["num_hablantes"]
 
     # ── Filtros duros ─────────────────────────────────────────────────────────
+    umbral_dur_un_hablante = params.get("umbral_duracion_un_hablante")
     if num_hablantes < 2:
-        return 0.0, "invalido", f"num_hablantes={num_hablantes} < 2"
+        if umbral_dur_un_hablante is None or (duracion_seg is not None and duracion_seg < umbral_dur_un_hablante):
+            dur_str = f" dur={duracion_seg:.1f}s" if duracion_seg is not None else ""
+            return 0.0, "invalido", f"num_hablantes={num_hablantes} < 2{dur_str}"
 
     if total_words < params["umbral_words_min"]:
         return 0.0, "invalido", f"total_words={total_words} < {params['umbral_words_min']}"
@@ -198,7 +201,7 @@ def clasificar(metricas: dict, params: dict) -> tuple[float, str, str | None]:
     if avg_logprob < params["umbral_logprob_invalido"]:
         return 0.0, "invalido", f"avg_logprob={avg_logprob:.3f} < {params['umbral_logprob_invalido']}"
 
-    if speaker_dominance > params["umbral_speaker_dominance"]:
+    if num_hablantes >= 2 and speaker_dominance > params["umbral_speaker_dominance"]:
         return 0.0, "invalido", f"speaker_dominance={speaker_dominance:.3f} > {params['umbral_speaker_dominance']}"
 
     if low_score_ratio > params["umbral_low_score_ratio"]:
@@ -339,7 +342,8 @@ def main():
                     continue
 
             metricas = calcular_metricas(data)
-            score, clasificacion, motivo = clasificar(metricas, params)
+            duracion_seg = audio.get("duracion_conversacion_seg")
+            score, clasificacion, motivo = clasificar(metricas, params, duracion_seg)
 
             if motivo:
                 log.warning("Invalido %s [grupo=%s]: %s", nombre, grupo, motivo)

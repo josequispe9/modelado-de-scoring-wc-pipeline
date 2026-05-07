@@ -14,7 +14,7 @@ import os
 
 router = APIRouter()
 
-FECHA_EXPR = "to_date(left(split_part(nombre_archivo, '_', 3), 6), 'YYMMDD')"
+FECHA_EXPR = "CASE WHEN left(split_part(nombre_archivo, '_', 3), 6) ~ '^\\d{6}$' THEN to_date(left(split_part(nombre_archivo, '_', 3), 6), 'YYMMDD') ELSE NULL END"
 
 
 def get_conn():
@@ -84,8 +84,19 @@ def estadisticas_global(
 
             UNION ALL
 
-            -- Correccion normalizacion
-            SELECT 'correccion_normalizacion', estado_global
+            -- Correccion normalizacion: estado del ganador si existe, sino estado_global
+            SELECT 'correccion_normalizacion',
+                   CASE
+                     WHEN etapas->'correccion_normalizacion' ? 'ganador'
+                          AND etapas->'correccion_normalizacion'->>'ganador' IS NOT NULL
+                     THEN 'correcto'
+                     ELSE (
+                       SELECT kv.value->>'estado'
+                       FROM jsonb_each(etapas->'correccion_normalizacion') kv
+                       WHERE kv.key != 'ganador'
+                       LIMIT 1
+                     )
+                   END
             FROM audio_pipeline_jobs
             WHERE etapas ? 'correccion_normalizacion' {and_fecha}
 
@@ -222,6 +233,7 @@ def estadisticas_etapa4(
     fecha_hasta: Optional[str] = Query(None),
 ):
     and_fecha, params = fecha_conds(fecha_desde, fecha_hasta)
+    RANGOS_ORDEN = ["< 10s", "10-30s", "30-60s", "1-5 min", "> 5 min"]
     with get_conn() as conn:
         p = get_params(conn, "correccion_normalizacion")
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
@@ -240,6 +252,27 @@ def estadisticas_etapa4(
                   {and_fecha}
             """, params)
             rows = [dict(r) for r in cur.fetchall()]
+
+        with conn.cursor() as cur:
+            cur.execute(f"""
+                SELECT
+                    CASE
+                        WHEN COALESCE(duracion_conversacion_seg, duracion_audio_seg, 0) < 10  THEN '< 10s'
+                        WHEN COALESCE(duracion_conversacion_seg, duracion_audio_seg, 0) < 30  THEN '10-30s'
+                        WHEN COALESCE(duracion_conversacion_seg, duracion_audio_seg, 0) < 60  THEN '30-60s'
+                        WHEN COALESCE(duracion_conversacion_seg, duracion_audio_seg, 0) < 300 THEN '1-5 min'
+                        ELSE '> 5 min'
+                    END AS rango,
+                    COUNT(*) AS cantidad
+                FROM audio_pipeline_jobs
+                WHERE (etapas -> 'correccion_normalizacion') IS NOT NULL
+                  AND (etapas -> 'correccion_normalizacion') != '{{}}'::jsonb
+                  {and_fecha}
+                GROUP BY 1
+                ORDER BY MIN(COALESCE(duracion_conversacion_seg, duracion_audio_seg, 0))
+            """, params)
+            dist_raw = {r[0]: r[1] for r in cur.fetchall()}
+    distribucion_duracion = {k: dist_raw.get(k, 0) for k in RANGOS_ORDEN}
 
     conteos       = {"correcto": 0, "reprocesar": 0, "invalido": 0}
     scores        = []
@@ -286,14 +319,15 @@ def estadisticas_etapa4(
             scatter_dur.append({"x": r["duracion_ratio"], "y": r["score"]})
 
     return {
-        "conteos":           conteos,
-        "scores":            scores,
-        "snr":               snr_vals,
-        "rms_dbfs":          rms_vals,
-        "duracion_ratio":    dur_ratio,
-        "causas_invalido":   causas,
-        "scatter_snr_score": scatter_snr,
-        "scatter_dur_score": scatter_dur,
+        "conteos":              conteos,
+        "scores":               scores,
+        "snr":                  snr_vals,
+        "rms_dbfs":             rms_vals,
+        "duracion_ratio":       dur_ratio,
+        "causas_invalido":      causas,
+        "scatter_snr_score":    scatter_snr,
+        "scatter_dur_score":    scatter_dur,
+        "distribucion_duracion": distribucion_duracion,
         "umbrales": {
             "correcto":   p.get("umbral_correcto",   0.75),
             "reprocesar": p.get("umbral_reprocesar", 0.40),

@@ -75,15 +75,16 @@ type DatosEtapa1 = {
 }
 type DatosEtapa3 = { correctos: number; solo_errores: number }
 type DatosEtapa4 = {
-  conteos:           { correcto: number; reprocesar: number; invalido: number }
-  scores:            number[]
-  snr:               number[]
-  rms_dbfs:          number[]
-  duracion_ratio:    number[]
-  causas_invalido:   Record<string, number>
-  scatter_snr_score: { x: number; y: number }[]
-  scatter_dur_score: { x: number; y: number }[]
-  umbrales:          { correcto: number; reprocesar: number }
+  conteos:               { correcto: number; reprocesar: number; invalido: number }
+  scores:                number[]
+  snr:                   number[]
+  rms_dbfs:              number[]
+  duracion_ratio:        number[]
+  causas_invalido:       Record<string, number>
+  scatter_snr_score:     { x: number; y: number }[]
+  scatter_dur_score:     { x: number; y: number }[]
+  distribucion_duracion: Record<string, number>
+  umbrales:              { correcto: number; reprocesar: number }
 }
 type DatosEtapa5 = { correcto: number; error: number }
 type DatosEtapa6 = {
@@ -470,6 +471,32 @@ function SeccionEtapa4({ datos }: { datos: DatosEtapa4 | null }) {
           xbins={{ size: 0.05 }}
           xaxis={{ title: { text: "ratio", font: { size: 10 } }, range: [0, 1] }}
         />
+        <div className="flex flex-col gap-2">
+          <span className="text-xs text-slate-500 font-medium">Fig. 9 — Distribución de duración del audio original</span>
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="border-b border-slate-200">
+                <th className="text-left py-1 px-2 text-slate-500 font-medium">Rango</th>
+                <th className="text-right py-1 px-2 text-slate-500 font-medium">Cantidad</th>
+                <th className="text-right py-1 px-2 text-slate-500 font-medium">%</th>
+              </tr>
+            </thead>
+            <tbody>
+              {(() => {
+                const totalDur = Object.values(datos.distribucion_duracion).reduce((a, b) => a + b, 0)
+                return Object.entries(datos.distribucion_duracion).map(([rango, cant]) => (
+                  <tr key={rango} className="border-b border-slate-100">
+                    <td className="py-1 px-2 font-mono text-slate-700">{rango}</td>
+                    <td className="py-1 px-2 text-right text-slate-700">{cant.toLocaleString()}</td>
+                    <td className="py-1 px-2 text-right text-slate-500">
+                      {totalDur ? ((cant / totalDur) * 100).toFixed(1) + "%" : "—"}
+                    </td>
+                  </tr>
+                ))
+              })()}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div className="grid grid-cols-2 gap-x-8">
