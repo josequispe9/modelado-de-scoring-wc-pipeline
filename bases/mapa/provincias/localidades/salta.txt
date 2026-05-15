@@ -1,0 +1,162 @@
+Acoyte	Localidad	Santa Victoria	79	111	60	58
+Aguaray	Localidad	General José de San Martín	6.502	8.059	10.410	11.887
+Aguas Blancas	Localidad	Orán	1.044	1.403	2.395	3.361
+Alemanía	Localidad	Guachipas	...	...	...	34
+Almirante Brown	Localidad	Rosario de la Frontera	...	...	...	52
+Alto de la Sierra	Localidad	Rivadavia	...	781	450	2.263
+Amblayo	Localidad	San Carlos	...	...	...	116
+Ampascachi	Localidad	La Viña	339	185	118	63
+Angastaco	Localidad	San Carlos	628	881	823	760
+Animaná	Localidad	San Carlos	927	1.187	1.276	1.622
+Antilla	Localidad	Rosario de la Frontera	516	619	542	657
+Apolinario Saravia	Localidad	Anta	3.877	5.596	6.730	9.480
+Barrio Finca la Maroma	Localidad	Chicoana	...	...	69	83
+Barrio la Rotonda	Localidad	Chicoana	...	...	989	1.899
+Barrio Retoños de Colón	Localidad	Rosario de Lerma	...	...	...	116
+Betania	Localidad	General Güemes	...	...	...	390
+Cabeza de Buey	Localidad	General Güemes	...	...	...	160
+Cabra Corral	Localidad	La Viña	59	25	27	48
+Cachi	Localidad	Cachi	1.434	2.189	2.616	4.978
+Cafayate	Localidad	Cafayate	7.115	10.714	13.698	16.836
+Campichuelo	Localidad	General José de San Martín	205	227	340	334
+Campo Durán	Localidad	General José de San Martín	470	568	620	803
+Campo La Cruz	Localidad	Santa Victoria	...	136	195	476
+Campo La Paz	Localidad	Santa Victoria	...	...	...	33
+Campo Quijano	Localidad	Rosario de Lerma	5.125	7.274	8.929	13.370
+Campo Santo	Localidad	General Güemes	3.702	4.878	5.868	7.150
+Capiazuti	Localidad	General José de San Martín	236	472	231	329
+Capitán Juan Pagé	Localidad	Rivadavia	238	227	213	441
+Caraparí	Localidad	General José de San Martín	...	...	...	308
+Carboncito	Localidad	General José de San Martín	274	406	531	612
+Ceibalito	Localidad	Anta	170	157	176	204
+Centro 25 de Junio	Localidad	Anta	907	806	877	800
+Cerro Negro	Localidad	La Poma	...	...	...	104
+Chicoana	Localidad	Chicoana	2.345	3.396	4.202	5.420
+Cielos del Sur	Localidad	Cerrillos	...	...	...	552
+Cobos	Localidad	Capital	...	...	...	596
+Cobos	Localidad	General Güemes	594	721	895	362
+Cobres	Localidad	La Poma	56	112	143	168
+Colonia Santa Rosa	Localidad	Orán	7.845	14.019	15.562	17.785
+Copo Quile	Localidad	Rosario de la Frontera	293	438	487	627
+Coronel Cornejo	Localidad	General José de San Martín	1.494	2.267	2.672	2.598
+Coronel Juan Solá	Localidad	Rivadavia	2.467	3.678	4.714	5.876
+Coronel Moldes	Localidad	La Viña	2.611	3.369	4.116	5.177
+Coronel Mollinedo	Localidad	Anta	825	981	1.061	1.228
+Coronel Olleros	Localidad	Anta	259	337	432	394
+Coropampa	Localidad	Guachipas	...	...	...	115
+Cortaderas	Localidad	Iruya	...	...	...	273
+Cuesta Azul	Localidad	Santa Victoria	...	...	...	71
+Dragones	Localidad	General José de San Martín	906	1.399	1.779	2.330
+El Bordo	Localidad	General Güemes	3.775	4.913	5.833	7.213
+El Carmen	Localidad	La Viña	...	...	...	16
+El Carril	Localidad	Chicoana	5.401	8.329	9.658	13.124
+El Galpón	Localidad	Metán	3.836	5.142	5.675	7.275
+El Jardín	Localidad	La Candelaria	557	1.022	1.221	1.564
+El Mollar (Barrio Santa Teresita)	Localidad	Chicoana	...	...	721	928
+El Mollar	Localidad	Chicoana	...	...	...	48
+El Naranjo	Localidad	Rosario de la Frontera	183	233	161	163
+El Potrero (Apeadero Cochabamba)	Localidad	Rosario de la Frontera	316	432	462	687
+El Préstamo	Localidad	La Viña	...	...	...	52
+El Pucará	Localidad	Rosario de Lerma	...	...	...	281
+El Quebrachal	Localidad	Anta	3.058	4.945	6.536	8.445
+El Sauce	Localidad	General Güemes	...	...	...	222
+El Tabacal	Localidad	Orán	1.112	1.157	1.143	669
+El Tala	Localidad	La Candelaria	1.889	2.329	2.632	3.487
+El Tunal	Localidad	Metán	453	470	518	726
+Embarcación	Localidad	General José de San Martín	13.078	18.027	20.843	23.696
+Gaona	Localidad	Anta	1.463	1.792	1.883	2.171
+General Ballivián	Localidad	General José de San Martín	1.049	1.591	2.071	2.373
+General Güemes	Localidad	General Güemes	22.180	27.917	31.494	38.048
+General Mosconi (incl. Campamento Vespucio, Misión El Cruce)	Localidad	General José de San Martín	12.750	15.656	18.155	15.612
+General Pizarro	Localidad	Anta	806	1.042	1.604	3.905
+Guachipas	Localidad	Guachipas	928	1.710	2.073	2.574
+Hickman	Localidad	General José de San Martín	380	675	805	1.110
+Hipólito Yrigoyen	Localidad	Orán	8.473	8.755	10.196	12.134
+Hito 1	Localidad	Rivadavia	...	...	62	643
+Iruya	Localidad	Iruya	581	1.070	1.523	2.009
+Isla de Cañas	Localidad	Iruya	727	1.150	1.295	1.548
+Joaquín V. González	Localidad	Anta	9.139	13.376	16.329	18.926
+La Caldera	Localidad	La Caldera	806	1.565	2.186	3.572
+La Calderilla	Localidad	La Caldera	...	...	...	141
+La Candelaria	Localidad	La Candelaria	242	479	649	854
+La Merced	Localidad	Cerrillos	3.594	5.084	7.708	10.704
+La Merced	Localidad	Rivadavia	...	...	...	2.430
+La Merced del Encón	Localidad	Rosario de Lerma	...	...	1.031	4.594
+La Pedrera	Localidad	Cerrillos	...	...	...	103
+La Poma	Localidad	La Poma	357	615	614	814
+La Puerta	Localidad	Molinos	...	265	386	453
+La Silleta	Localidad	Rosario de Lerma	680	1.256	1.402	1.800
+Las Lajitas	Localidad	Anta	3.941	7.688	9.887	13.322
+Las Palmas	Localidad	Cerrillos	...	...	...	531
+La Unión	Localidad	Rivadavia	731	1.283	2.353	3.547
+La Viña	Localidad	La Viña	1.237	1.667	1.825	2.172
+Lizoite	Localidad	Santa Victoria	...	...	...	53
+Los Baños	Localidad	Rosario de la Frontera	...	...	...	83
+Los Blancos	Localidad	Rivadavia	899	1.025	1.073	1.385
+Los Naranjos	Localidad	Orán	...	...	...	147
+Los Toldos	Localidad	Santa Victoria	833	757	1.002	1.096
+Luis Burela	Localidad	Anta	460	665	1.070	1.720
+Lumbreras	Localidad	Metán	369	452	297	603
+Macapillo	Localidad	Anta	228	155	90	90
+Mecoyita	Localidad	Santa Victoria	...	...	...	6
+Misión Chaqueña	Localidad	General José de San Martín	825	1.096	1.302	1.410
+Misión Kilómetro 6	Localidad	General José de San Martín	...	946	1.281	964
+Misión La Paz	Localidad	Rivadavia	...	...	...	990
+Molinos	Localidad	Molinos	507	927	1.183	1.262
+Nazareno	Localidad	Santa Victoria	401	786	916	1.142
+Nuestra Señora de Talavera	Localidad	Anta	755	1.163	1.328	1.406
+Olacapato	Localidad	Los Andes	...	186	218	199
+Pacará	Localidad	General José de San Martín	...	148	217	361
+Padre Lozano	Localidad	General José de San Martín	412	452	513	909
+Palermo Oeste	Localidad	Cachi	...	...	...	304
+Payogasta	Localidad	Cachi	407	404	532	878
+Pichanal	Localidad	Orán	10.895	18.773	22.439	28.017
+Piquete Cabado	Localidad	Anta	517	610	681	561
+Piquirenda	Localidad	General José de San Martín	403	505	505	753
+Pluma de Pato	Localidad	Rivadavia	389	220	529	440
+Poscaya	Localidad	Santa Victoria	...	382	367	384
+Profesor Salvador Mazza	Localidad	General José de San Martín	9.387	16.068	18.899	25.328
+Pueblo Viejo	Localidad	Iruya	168	189	155	229
+Río Blanquito	Localidad	Orán	...	...	...	351
+Río del Valle	Localidad	Anta	580	641	758	899
+Río Piedras	Localidad	Metán	708	1.148	1.420	1.900
+Rivadavia	Localidad	Rivadavia	953	1.608	2.155	3.299
+Rodeo Colorado	Localidad	Iruya	...	...	...	8
+Rosario de la Frontera	Localidad	Rosario de la Frontera	18.125	22.218	24.140	29.336
+Rosario de Lerma	Localidad	Rosario de Lerma	13.156	17.874	20.795	26.086
+Saladillo	Localidad	La Viña	...	...	...	34
+Salar de Pocitos	Localidad	Los Andes	...	...	...	54
+Salta	Localidad	Capital	367.550	462.051	520.683	589.558
+San Agustín	Localidad	Cerrillos	659	691	743	1.610
+San Antonio de los Cobres	Localidad	Los Andes	3.155	4.274	4.763	6.137
+San Carlos (incl. El Barrial)	Localidad	San Carlos	1.844	2.290	2.646	3.051
+San Felipe	Localidad	Rosario de la Frontera	128	112	80	107
+San Isidro	Localidad	Iruya	...	...	...	195
+San José de Escalchi	Localidad	Cachi	...	...	...	79
+San José de los Cerrillos (Cerrillos; incl. Villa Los Álamos, El Congreso, Las Tunas)	Localidad	Cerrillos	8.545	11.279	20.456	37.950
+San José de Metán (incl. Metán Viejo)	Localidad	Metán	23.510	27.899	28.672	34.601
+San José de Orquera	Localidad	Metán	207	184	155	259
+San Lorenzo (incl. Atocha, La Ciénaga y Barrio San Rafael, Las Costas)	Localidad	Capital	3.529	8.194	13.518	31.589
+San Lorenzo	Localidad	Rosario de la Frontera	...	...	...	391
+San Marcos	Localidad	Santa Victoria	...	133	171	206
+San Ramón de la Nueva Orán	Localidad	Orán	50.739	66.915	76.070	86.867
+Santa María	Localidad	Rivadavia	...	994	587	1.475
+Santa María de Yariguarenda	Localidad	General José de San Martín	...	...	...	348
+Santa Rosa	Localidad	Rivadavia	279	386	432	683
+Santa Rosa de los Pastos Grandes	Localidad	Los Andes	...	136	168	2
+Santa Victoria	Localidad	Santa Victoria	667	1.188	1.151	1.288
+Santa Victoria Este	Localidad	Rivadavia	878	1.283	1.809	3.101
+Seclantás	Localidad	Molinos	183	306	560	778
+Talapampa	Localidad	La Viña	...	325	341	370
+Tartagal	Localidad	General José de San Martín	43.586	55.606	63.196	71.519
+Terrazas del Río	Localidad	Cerrillos	...	...	...	102
+Tobantirenda	Localidad	General José de San Martín	451	434	849	827
+Tolar Grande	Localidad	Los Andes	120	119	230	321
+Tolloche	Localidad	Anta	188	181	197	135
+Tolombón	Localidad	Cafayate	59	255	300	264
+Tranquitas	Localidad	General José de San Martín	...	503	1.052	686
+Urundel	Localidad	Orán	2.127	2.874	2.920	3.588
+Vaqueros	Localidad	La Caldera	1.877	2.980	4.575	7.324
+Villa Sarmiento	Localidad	Cerrillos	...	...	...	355
+Yacuy	Localidad	General José de San Martín	971	1.318	1.686	2.099
+Zanja Honda	Localidad	General José de San Martín	...	...	...	553

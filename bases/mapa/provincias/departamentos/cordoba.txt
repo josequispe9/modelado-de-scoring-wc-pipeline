@@ -1,0 +1,27 @@
+Calamuchita	Departamento	38.804	45.418	54.730	75.911
+Capital	Departamento	1.179.372	1.284.582	1.329.604	1.505.250
+Colón	Departamento	125.402	171.067	225.151	295.725
+Cruz del Eje	Departamento	48.650	52.172	58.759	67.112
+General Roca	Departamento	32.866	33.323	35.645	36.242
+General San Martín	Departamento	105.161	116.107	127.454	154.269
+Ischilín	Departamento	28.339	30.105	31.312	36.074
+Juárez Celman	Departamento	51.490	55.348	61.078	68.631
+Marcos Juárez	Departamento	97.595	99.761	104.205	107.764
+Minas	Departamento	4.800	4.881	4.727	4.870
+Pocho	Departamento	5.057	5.132	5.380	5.123
+Presidente Roque Sáenz Peña	Departamento	34.495	34.647	36.282	37.726
+Punilla	Departamento	121.215	155.124	178.401	221.273
+Río Cuarto	Departamento	217.876	229.728	246.393	279.923
+Río Primero	Departamento	37.386	42.429	46.675	58.428
+Río Seco	Departamento	10.595	12.635	13.242	15.302
+Río Segundo	Departamento	84.393	95.803	103.718	113.950
+San Alberto	Departamento	25.104	32.395	37.004	42.166
+San Javier	Departamento	42.569	48.951	53.520	63.377
+San Justo	Departamento	176.697	190.182	206.307	230.339
+Santa María	Departamento	69.470	86.083	98.188	144.829
+Sobremonte	Departamento	4.196	4.531	4.591	4.503
+Tercero Arriba	Departamento	103.716	107.460	109.554	120.918
+Totoral	Departamento	13.827	16.479	18.556	22.495
+Tulumba	Departamento	11.291	12.211	12.673	14.134
+Unión	Departamento	96.317	100.247	105.727	114.571
+Córdoba	Provincia	2.766.683	3.066.801	3.308.876	3.840.905

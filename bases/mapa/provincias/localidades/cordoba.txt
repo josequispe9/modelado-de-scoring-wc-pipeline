@@ -1,0 +1,534 @@
+Achiras	Localidad	Río Cuarto	2.123	2.173	2.287	2.845
+Adelia María	Localidad	Río Cuarto	5.294	6.434	7.586	7.971
+Agua de las Piedras	Localidad	Totoral	...	...	...	94
+Agua de Oro	Localidad	Colón	923	1.553	1.918	3.086
+Alcira (Gigena)	Localidad	Río Cuarto	4.948	5.489	5.919	6.584
+Aldea Santa María	Localidad	Unión	129	111	201	156
+Alejandro Roca (Est. Alejandro)	Localidad	Juárez Celman	4.023	4.724	5.298	5.957
+Alejo Ledesma	Localidad	Marcos Juárez	3.177	3.310	3.299	3.517
+Alicia	Localidad	San Justo	2.417	2.758	3.305	3.307
+Almafuerte	Localidad	Tercero Arriba	9.274	10.534	11.422	12.934
+Alpa Corral (incl. Villa Santa Eugenia)	Localidad	Río Cuarto	...	759	938	1.226
+Alta Gracia (incl. El Potrerillo)	Localidad	Santa María	37.248	42.538	48.225	60.162
+Altautina	Localidad	San Alberto	...	...	...	42
+Alto Alegre	Localidad	Unión	592	709	816	1.021
+Alto de los Quebrachos	Localidad	Cruz del Eje	...	99	161	134
+Altos de Chipión	Localidad	San Justo	1.228	1.512	1.718	2.032
+Amboy	Localidad	Calamuchita	168	168	183	337
+Ambul	Localidad	San Alberto	394	449	386	625
+Ana Zumarán	Localidad	Unión	...	52	98	188
+Anisacate (incl. Costa Azul)	Localidad	Santa María	1.226	2.114	3.192	7.813
+Arias	Localidad	Marcos Juárez	6.356	6.928	7.075	7.507
+Arroyito	Localidad	San Justo	15.786	19.577	22.147	27.109
+Arroyo Algodón	Localidad	General San Martín	485	643	677	970
+Arroyo Cabral	Localidad	General San Martín	2.320	2.727	2.654	3.199
+Arroyo de Los Patos	Localidad	San Alberto	27	435	545	1.356
+Arroyo San Antonio	Localidad	Calamuchita	8	11	...	26
+Ascochinga	Localidad	Colón	458	470	394	411
+Assunta	Localidad	Juárez Celman	80	58	73	75
+Atahona	Localidad	Río Primero	79	112	88	125
+Ausonia	Localidad	General San Martín	571	743	1.046	1.044
+Avellaneda	Localidad	Ischilín	261	280	282	406
+Bajo de Corrales	Localidad	San Alberto	...	...	...	138
+Ballesteros	Localidad	Unión	3.310	3.649	3.928	4.675
+Ballesteros Sud	Localidad	Unión	393	502	532	664
+Balnearia	Localidad	San Justo	4.783	5.585	6.105	6.747
+Bañado de Soto	Localidad	Cruz del Eje	...	205	466	735
+Barrio Gilbert (1° de Mayo)	Localidad	Santa María	268	1.142	1.277	4.251
+Bell Ville	Localidad	Unión	29.793	32.066	33.835	37.302
+Bengolea	Localidad	Juárez Celman	825	812	915	995
+Benjamín Gould	Localidad	Unión	629	788	699	815
+Berrotarán	Localidad	Río Cuarto	6.187	6.446	6.869	7.394
+Bialet Massé	Localidad	Punilla	2.523	4.543	5.425	9.753
+Boca del Río	Localidad	San Javier	...	...	...	84
+Bouwer	Localidad	Santa María	301	625	841	987
+Brinkmann	Localidad	San Justo	6.652	8.237	9.890	11.241
+Buchardo (Hipólito Bouchard)	Localidad	General Roca	1.666	1.756	1.778	1.942
+Bulnes	Localidad	Río Cuarto	802	974	1.051	1.073
+Cabalango	Localidad	Punilla	63	136	336	600
+Calchín	Localidad	Río Segundo	1.707	2.038	2.435	2.911
+Calchín Oeste	Localidad	Río Segundo	613	697	759	838
+Camilo Aldao	Localidad	Marcos Juárez	5.121	4.895	5.197	4.889
+Caminiaga	Localidad	Sobremonte	304	315	282	272
+Cañada del Sauce	Localidad	Calamuchita	53	62	61	129
+Cañada de Luque	Localidad	Totoral	692	1.054	1.154	1.214
+Cañada de Machado	Localidad	Río Primero	150	171	178	141
+Cañada de Río Pinto	Localidad	Ischilín	128	135	134	223
+Cañada de Salas	Localidad	Pocho	...	...	...	43
+Canals	Localidad	Unión	7.558	8.343	8.645	8.272
+Candelaria Sud	Localidad	Totoral	...	129	115	110
+Capilla del Carmen	Localidad	Río Segundo	113	200	328	476
+Capilla del Monte	Localidad	Punilla	7.620	9.085	11.181	12.820
+Capilla de los Remedios	Localidad	Río Primero	524	771	797	1.186
+Capilla de Romero	Localidad	San Javier	...	...	...	215
+Capilla de Sitón	Localidad	Totoral	238	365	550	555
+Capitán General Bernardo O'Higgins	Localidad	Marcos Juárez	279	270	483	530
+Carnerillo	Localidad	Juárez Celman	1.450	1.575	1.867	2.658
+Carrilobo	Localidad	Río Segundo	1.400	1.522	1.763	1.540
+Casa Grande	Localidad	Punilla	399	538	672	1.365
+Caseros Centro	Localidad	Santa María	203	177	243	263
+Caseros Este	Localidad	Santa María	...	...	...	128
+Cavanagh	Localidad	Marcos Juárez	1.100	1.150	1.202	1.276
+Cerro Colorado	Localidad	Río Seco	75	259	225	251
+Cerro Negro	Localidad	Ischilín	...	...	...	10
+Chaján	Localidad	Río Cuarto	484	634	767	604
+Chalacea	Localidad	Río Primero	97	164	179	165
+Chañar Viejo	Localidad	Río Seco	36	91	150	144
+Chancaní	Localidad	Pocho	129	116	422	537
+Characato	Localidad	Cruz del Eje	...	...	...	36
+Charbonier (incl. Barrio Santa Isabel, Quebrada de Luna)	Localidad	Punilla	216	286	431	598
+Charras	Localidad	Juárez Celman	871	1.001	1.088	1.270
+Chazón	Localidad	General San Martín	953	1.010	1.061	1.203
+Chilibroste	Localidad	Unión	492	460	576	885
+Chucul	Localidad	Río Cuarto	176	236	304	510
+Chuña	Localidad	Ischilín	376	437	550	667
+Chuña Huasi	Localidad	Sobremonte	...	23	17	24
+Churqui Cañada	Localidad	Tulumba	...	77	48	34
+Ciénaga de Allende	Localidad	San Alberto	...	...	...	3
+Ciénaga del Coro	Localidad	Minas	266	314	303	370
+Cintra	Localidad	Unión	1.034	1.054	1.182	1.681
+Colazo	Localidad	Río Segundo	1.212	1.548	1.598	1.478
+Colonia 10 de Julio	Localidad	San Justo	49	61	73	81
+Colonia Almada	Localidad	Tercero Arriba	372	519	495	511
+Colonia Anita	Localidad	San Justo	...	23	8	9
+Colonia Barge	Localidad	Marcos Juárez	140	149	153	412
+Colonia Bismarck	Localidad	Unión	254	285	373	420
+Colonia Bremen	Localidad	Unión	108	166	117	260
+Colonia Caroya	Localidad	Colón	9.294	13.806	16.168	24.197
+Colonia Hogar	Localidad	Totoral	...	...	...	41
+Colonia Italiana	Localidad	Marcos Juárez	375	450	738	707
+Colonia Iturraspe	Localidad	San Justo	...	...	6	19
+Colonia Las Cuatro Esquinas	Localidad	Río Primero	...	83	107	84
+Colonia Las Pichanas	Localidad	San Justo	...	56	117	187
+Colonia Marina	Localidad	San Justo	822	934	1.153	1.257
+Colonia Prosperidad	Localidad	San Justo	217	283	314	320
+Colonia San Bartolomé	Localidad	San Justo	793	1.104	1.291	1.401
+Colonia San Pedro	Localidad	San Justo	26	27	106	103
+Colonia Santa María	Localidad	San Justo	28	32	63	37
+Colonia Santa Rita	Localidad	General San Martín	...	...	...	55
+Colonia Tirolesa (incl. Estación Colonia Tirolesa, Santa Elena)	Localidad	Colón	...	1.818	2.901	6.293
+Colonia Valtelina	Localidad	San Justo	126	165	190	249
+Colonia Veinticinco	Localidad	Marcos Juárez	23	10	17	39
+Colonia Vicente Agüero	Localidad	Colón	129	107	123	355
+Colonia Videla	Localidad	Río Segundo	...	71	78	88
+Colonia Vignaud	Localidad	San Justo	616	664	722	638
+Comechingones (Pueblo Comechingones)	Localidad	Río Primero	185	240	287	313
+Conlara	Localidad	San Javier	126	84	153	341
+Copacabana	Localidad	Ischilín	...	104	74	180
+Córdoba	Localidad	Capital	1.160.019	1.272.334	1.317.298	1.493.668
+Coronel Baigorria	Localidad	Río Cuarto	1.147	1.334	1.456	1.811
+Coronel Moldes	Localidad	Río Cuarto	7.695	8.104	9.005	9.504
+Corral de Bustos Ifflinger	Localidad	Marcos Juárez	9.389	9.882	10.407	11.045
+Corralito	Localidad	San Javier	...	...	...	196
+Corralito	Localidad	Tercero Arriba	1.923	1.873	1.727	1.895
+Cosquín	Localidad	Punilla	16.866	19.070	19.458	25.031
+Costa Sacate	Localidad	Río Segundo	1.036	1.288	1.480	1.479
+Cruz Alta	Localidad	Marcos Juárez	6.713	6.862	7.200	7.335
+Cruz de Caña	Localidad	Cruz del Eje	...	45	130	237
+Cruz del Eje	Localidad	Cruz del Eje	26.881	28.166	30.680	34.317
+Cuatro Vientos	Localidad	Río Cuarto	...	...	...	106
+Cuesta Blanca	Localidad	Punilla	151	268	510	610
+Dalmacio Vélez	Localidad	Tercero Arriba	1.099	1.344	1.497	1.880
+Deán Funes	Localidad	Ischilín	18.773	20.164	21.211	25.262
+De la Serna	Localidad	General Roca	...	...	...	24
+Del Campillo	Localidad	General Roca	2.811	3.155	3.412	3.622
+Despeñaderos	Localidad	Santa María	4.728	5.645	5.758	7.556
+Devoto	Localidad	San Justo	5.008	5.597	6.057	7.036
+Diego de Rojas	Localidad	Río Primero	184	308	509	542
+Dique Chico	Localidad	Santa María	32	100	167	462
+El Alcalde (Est. Tala Norte)	Localidad	Río Primero	87	102	79	82
+El Arañado	Localidad	San Justo	1.186	1.395	1.746	1.463
+El Bañado	Localidad	San Alberto	...	...	...	61
+El Brete	Localidad	Cruz del Eje	571	831	1.749	1.686
+El Chacho	Localidad	Minas	183	146	154	121
+El Corcovado (- El Torreón)	Localidad	Calamuchita	...	309	417	809
+El Crispín	Localidad	Río Primero	96	199	212	230
+El Durazno	Localidad	Calamuchita	...	...	100	169
+Elena	Localidad	Río Cuarto	2.670	2.815	2.985	3.342
+El Fortín	Localidad	San Justo	923	974	1.648	1.585
+El Fuertecito	Localidad	San Justo	219	336	297	654
+El Manzano (incl. Canteras El Sauce)	Localidad	Colón	1.244	1.158	1.182	1.767
+El Rastreador	Localidad	Juárez Celman	72	83	85	131
+El Rodeo	Localidad	Tulumba	...	129	134	170
+El Tío	Localidad	San Justo	1.259	1.510	1.903	2.371
+El Tuscal	Localidad	Tulumba	...	85	79	76
+Embalse	Localidad	Calamuchita	6.450	7.415	8.793	9.300
+Embalse Ingeniero Reolín	Localidad	Calamuchita	...	...	...	13
+Esquina	Localidad	Río Primero	247	203	184	186
+Estación Lecueder	Localidad	General Roca	21	26	72	26
+Estación Luxardo	Localidad	San Justo	66	107	105	138
+Estancia de Guadalupe	Localidad	Minas	126	157	140	187
+Estancia Vieja	Localidad	Punilla	318	494	909	2.357
+Etruria	Localidad	General San Martín	3.327	3.788	4.070	4.585
+Eufrasio Loza	Localidad	Río Seco	120	182	166	155
+Falda del Cañete	Localidad	Santa María	29	15	29	51
+Falda del Carmen (incl. Valle Alegre)	Localidad	Santa María	288	449	664	1.959
+Falda del Carmen Norte	Localidad	Santa María	...	...	...	18
+Finca del Sol (- San Francisco - Catalina Norte)	Localidad	Colón	...	...	...	194
+Freyre	Localidad	San Justo	5.165	5.906	6.620	7.630
+General Baldissera	Localidad	Marcos Juárez	2.052	2.133	2.387	2.289
+General Cabrera	Localidad	Juárez Celman	8.894	10.351	11.734	14.309
+General Deheza	Localidad	Juárez Celman	7.690	9.537	11.061	12.613
+General Fotheringham	Localidad	Tercero Arriba	270	407	313	337
+General Levalle	Localidad	Presidente Roque Sáenz Peña	4.943	5.492	5.697	5.739
+General Paunero	Localidad	Río Cuarto	...	...	...	59
+General Paz	Localidad	Colón	1.214	1.500	1.925	2.436
+General Roca	Localidad	Marcos Juárez	2.446	2.597	2.777	2.856
+Guanaco Muerto	Localidad	Cruz del Eje	...	258	320	342
+Guasapampa	Localidad	Minas	...	163	129	171
+Guatimozín	Localidad	Marcos Juárez	2.577	2.524	2.428	2.485
+Guayascate	Localidad	Tulumba	...	...	...	42
+Gutemberg	Localidad	Río Seco	515	444	542	639
+Hernando	Localidad	Tercero Arriba	10.203	10.486	10.109	11.695
+Huanchilla	Localidad	Juárez Celman	944	1.020	1.131	1.106
+Huascha	Localidad	Ischilín	...	...	...	44
+Huerta Grande	Localidad	Punilla	4.920	5.630	5.925	7.819
+Huinca Renancó	Localidad	General Roca	8.682	8.637	9.426	9.564
+Idiazábal	Localidad	Unión	1.427	1.567	1.513	1.661
+Impira	Localidad	Río Segundo	196	158	163	175
+Inriville	Localidad	Marcos Juárez	3.815	3.778	3.709	3.735
+Intiyaco	Localidad	Calamuchita	...	...	...	65
+Ischilín	Localidad	Ischilín	...	...	...	28
+Isla Verde	Localidad	Marcos Juárez	4.126	4.245	4.361	4.327
+Italó	Localidad	General Roca	956	1.139	1.090	1.114
+Jaime Peter	Localidad	Ischilín	...	...	...	42
+James Craik	Localidad	Tercero Arriba	3.920	4.560	5.110	5.982
+Jesús María	Localidad	Colón	22.150	26.825	31.602	36.343
+José de la Quintana	Localidad	Santa María	...	...	419	749
+Jovita (Santa Magdalena)	Localidad	General Roca	3.283	4.059	4.740	5.036
+Justiniano Posse	Localidad	Unión	6.788	7.406	8.499	9.545
+Kilómetro 658	Localidad	Río Primero	263	323	365	475
+Kilómetro 691	Localidad	Río Primero	...	...	...	304
+La Argentina	Localidad	Minas	...	...	...	38
+La Batea	Localidad	Cruz del Eje	...	81	96	77
+La Boca del Río	Localidad	Santa María	...	66	80	36
+Laborde	Localidad	Unión	5.039	5.492	5.943	6.519
+Laboulaye	Localidad	Presidente Roque Sáenz Peña	18.803	19.908	20.534	22.465
+La Calera	Localidad	Colón	17.791	25.655	31.972	45.480
+La Cantera	Localidad	Ischilín	...	...	...	5
+La Carlota	Localidad	Juárez Celman	10.241	11.490	12.537	14.381
+La Carolina El Potosí	Localidad	Río Cuarto	158	165	165	186
+La Cautiva	Localidad	Río Cuarto	663	685	969	851
+La Cesira	Localidad	Presidente Roque Sáenz Peña	831	1.140	1.318	1.315
+La Costa	Localidad	Río Seco	...	...	...	65
+La Cruz	Localidad	Calamuchita	1.290	1.420	1.363	1.739
+La Cumbre	Localidad	Punilla	6.536	7.235	7.544	7.127
+La Cumbrecita	Localidad	Calamuchita	367	345	549	710
+La Curva	Localidad	San Justo	...	...	...	186
+La Estancia (Villa La Merced)	Localidad	Calamuchita	...	...	...	149
+La Falda	Localidad	Punilla	13.998	15.112	16.335	16.654
+La Francia	Localidad	San Justo	3.135	3.503	3.720	4.019
+La Gilda	Localidad	Río Cuarto	80	70	101	50
+La Granja (incl. Los Molles, Corral Quemado)	Localidad	Colón	1.382	2.108	2.772	4.280
+Laguna Larga	Localidad	Río Segundo	6.191	7.137	7.437	7.854
+La Higuera	Localidad	Cruz del Eje	160	399	404	586
+La Laguna	Localidad	General San Martín	1.202	1.336	1.482	1.583
+La Lagunilla	Localidad	Santa María	...	...	...	22
+La Paisanita	Localidad	Santa María	60	67	60	179
+La Palestina	Localidad	General San Martín	433	549	502	618
+La Pampa	Localidad	Totoral	270	443	874	869
+La Paquita	Localidad	San Justo	665	849	947	1.117
+La Para	Localidad	Río Primero	2.263	3.021	3.404	4.235
+La Paz (incl. Cruz Caña, La Ramada, Las Chacras, Loma Bola, Quebracho Ladeado)	Localidad	San Javier	1.561	1.923	2.553	5.422
+La Playa	Localidad	Minas	124	193	207	225
+La Playosa	Localidad	General San Martín	1.844	2.376	2.672	3.060
+La Población	Localidad	San Javier	376	475	504	724
+La Posta	Localidad	Río Primero	133	180	234	318
+La Puerta	Localidad	Colón	158	246	323	407
+La Puerta	Localidad	Río Primero	1.441	1.943	2.185	2.770
+La Quinta	Localidad	Río Primero	38	70	150	162
+La Rancherita y Las Cascadas	Localidad	Santa María	25	53	129	221
+La Rinconada	Localidad	Río Seco	...	93	106	255
+Las Acequias	Localidad	Río Cuarto	1.984	2.116	2.201	2.530
+Las Albahacas	Localidad	Río Cuarto	183	292	287	321
+Las Arrias	Localidad	Tulumba	617	874	1.104	1.447
+Las Bajadas	Localidad	Calamuchita	...	168	141	188
+Las Caleras	Localidad	Calamuchita	207	167	192	223
+Las Calles (incl. El Huayco)	Localidad	San Alberto	333	658	453	667
+Las Cañadas	Localidad	Cruz del Eje	...	35	149	8
+Las Chacras	Localidad	Colón	...	...	...	344
+La Serranita	Localidad	Santa María	229	417	430	544
+Las Gramillas	Localidad	Río Primero	69	56	109	121
+Las Higueras	Localidad	Río Cuarto	4.498	5.282	6.038	9.981
+Las Isletillas	Localidad	Tercero Arriba	134	168	152	262
+Las Jarillas	Localidad	Punilla	9	40	103	103
+Las Junturas	Localidad	Río Segundo	1.461	1.541	1.748	1.934
+Las Mojarras	Localidad	General San Martín	74	54	60	53
+Las Palmas	Localidad	Pocho	...	61	43	108
+Las Peñas	Localidad	Totoral	970	1.564	1.590	1.907
+Las Peñas Sud	Localidad	Río Cuarto	148	139	145	166
+Las Perdices	Localidad	Tercero Arriba	4.052	4.615	5.084	5.347
+Las Playas	Localidad	Cruz del Eje	...	738	937	1.048
+Las Rabonas	Localidad	San Alberto	240	715	591	901
+Las Saladas	Localidad	Río Primero	127	205	134	158
+Las Tapias	Localidad	San Javier	1.374	1.300	719	2.651
+Las Varas	Localidad	San Justo	861	1.017	1.320	1.418
+Las Varillas	Localidad	San Justo	13.688	14.649	16.238	18.631
+Las Vertientes	Localidad	Punilla	...	...	...	73
+Las Vertientes	Localidad	Río Cuarto	671	762	766	983
+La Tordilla	Localidad	San Justo	939	1.138	1.257	1.487
+La Travesía	Localidad	San Javier	295	235	168	473
+Leguizamón	Localidad	Presidente Roque Sáenz Peña	35	57	53	35
+Leones	Localidad	Marcos Juárez	9.442	9.971	10.391	11.374
+Los Cedros	Localidad	Santa María	338	873	1.069	1.589
+Los Cerrillos	Localidad	San Javier	1.390	2.455	2.283	2.545
+Los Chañaritos	Localidad	Cruz del Eje	...	206	311	451
+Los Chañaritos	Localidad	Río Segundo	115	165	219	252
+Los Cisnes	Localidad	Juárez Celman	487	469	559	677
+Los Cocos	Localidad	Punilla	782	1.035	1.242	1.391
+Los Cóndores	Localidad	Calamuchita	2.642	2.720	2.879	3.374
+Los Espinillos	Localidad	Santa María	...	...	...	316
+Los Hornillos (incl. Dos Arroyos, El Pantanillo)	Localidad	San Javier	580	810	1.074	1.785
+Los Hoyos	Localidad	Río Seco	...	221	194	265
+Los Mistoles	Localidad	Totoral	139	151	175	114
+Los Molinos	Localidad	Calamuchita	162	552	260	362
+Los Morteritos	Localidad	San Alberto	...	...	...	27
+Los Pozos	Localidad	Ischilín	38	34	91	8
+Los Reartes (incl. Capilla Vieja)	Localidad	Calamuchita	213	504	1.260	2.945
+Los Sauces	Localidad	Cruz del Eje	...	...	...	188
+Los Surgentes	Localidad	Marcos Juárez	2.565	2.804	2.752	2.831
+Los Talares	Localidad	Pocho	...	28	157	35
+Los Talas de Anisacate	Localidad	Santa María	...	...	...	679
+Los Zorros	Localidad	Tercero Arriba	446	469	508	496
+Lozada	Localidad	Santa María	729	877	1.013	1.147
+Luca	Localidad	General San Martín	388	527	563	649
+Lucio V. Mansilla	Localidad	Tulumba	822	851	782	921
+Luque	Localidad	Río Segundo	3.967	5.242	6.253	7.034
+Lutti	Localidad	Calamuchita	...	10	20	6
+Luyaba	Localidad	San Javier	571	760	727	985
+Malagueño (incl. La Perla, San Nicolás, Yocsina)	Localidad	Santa María	8.319	9.485	10.750	21.336
+Malena	Localidad	Río Cuarto	129	208	368	369
+Mallín	Localidad	Punilla	14	4	6	58
+Malvinas Argentinas	Localidad	Colón	5.160	8.628	12.187	15.964
+Manfredi	Localidad	Río Segundo	751	848	961	1.121
+Maquinista Gallini	Localidad	Río Primero	63	63	69	93
+Marcos Juárez	Localidad	Marcos Juárez	22.433	24.226	27.004	28.548
+Marull	Localidad	San Justo	1.404	1.765	1.791	2.008
+Matorrales	Localidad	Río Segundo	695	883	972	1.012
+Mattaldi	Localidad	General Roca	1.523	1.714	1.797	1.825
+Mayu Sumaj	Localidad	Punilla	560	874	1.259	2.870
+Media Naranja	Localidad	Cruz del Eje	235	846	800	1.014
+Melo	Localidad	Presidente Roque Sáenz Peña	963	970	1.198	1.155
+Mendiolaza	Localidad	Colón	1.536	4.204	10.271	14.624
+Mi Granja	Localidad	Colón	516	713	1.739	2.268
+Mina Clavero	Localidad	San Alberto	5.097	6.855	8.487	11.201
+Miramar de Ansenuza	Localidad	San Justo	1.800	1.979	2.023	2.720
+Monte Buey	Localidad	Marcos Juárez	4.910	5.497	6.217	7.109
+Monte Cristo	Localidad	Río Primero	4.152	6.914	9.254	13.458
+Monte de los Gauchos	Localidad	Río Cuarto	376	492	675	847
+Monte del Rosario	Localidad	Río Primero	130	133	114	123
+Monte Leña	Localidad	Unión	255	332	384	558
+Monte Maíz	Localidad	Unión	6.439	6.920	7.325	8.410
+Monte Ralo	Localidad	Santa María	390	404	518	574
+Morrison	Localidad	Unión	3.074	3.245	3.345	3.944
+Morteros	Localidad	San Justo	13.254	15.129	16.890	20.558
+Mussi	Localidad	San Alberto	39	22	21	36
+Negro Huasi	Localidad	Cruz del Eje	...	...	...	58
+Nicolás Bruzzone	Localidad	General Roca	...	186	209	365
+Noetinger	Localidad	Unión	4.372	4.508	4.709	5.637
+Nono (incl. San Huberto)	Localidad	San Alberto	588	920	1.314	2.043
+Obispo Trejo	Localidad	Río Primero	1.194	1.911	2.420	2.836
+Olaeta	Localidad	Juárez Celman	471	559	619	669
+Oliva	Localidad	Tercero Arriba	10.698	11.629	11.672	12.890
+Olivares de San Nicolás	Localidad	Ischilín	289	466	541	332
+Onagoity	Localidad	General Roca	72	74	54	51
+Oncativo	Localidad	Río Segundo	11.532	12.660	13.180	14.551
+Ordóñez	Localidad	Unión	2.278	2.328	2.609	2.897
+Pacheco de Melo	Localidad	Juárez Celman	...	35	60	138
+Pampa Alta	Localidad	Santa María	...	...	...	29
+Pampayasta Norte	Localidad	Tercero Arriba	94	63	79	172
+Pampayasta Sud	Localidad	Tercero Arriba	713	1.051	1.208	1.363
+Panaholma	Localidad	San Alberto	50	78	136	174
+Parador De La Montaña	Localidad	Calamuchita	...	...	...	61
+Parque Calmayo	Localidad	Calamuchita	38	72	44	107
+Parque Norte (- Guiñazú Norte)	Localidad	Colón	3.631	4.939	5.710	5.250
+Pascanas	Localidad	Unión	2.199	2.567	2.763	2.744
+Pasco	Localidad	General San Martín	867	1.072	1.178	1.582
+Paso Cabral	Localidad	Calamuchita	...	...	...	19
+Paso del Durazno	Localidad	Juárez Celman	...	63	12	12
+Paso del Durazno	Localidad	Río Cuarto	...	29	32	26
+Paso Viejo	Localidad	Cruz del Eje	116	1.091	1.033	1.135
+Pilar	Localidad	Río Segundo	9.172	12.488	14.735	18.455
+Pincén	Localidad	General Roca	205	202	254	214
+Piquillín	Localidad	Río Primero	1.033	1.170	1.347	1.601
+Plaza Colazo	Localidad	Río Segundo	...	...	...	60
+Plaza de Mercedes	Localidad	Río Primero	21	52	67	56
+Plaza Luxardo	Localidad	San Justo	58	67	90	53
+Plaza San Francisco	Localidad	San Justo	205	204	284	591
+Porteña	Localidad	San Justo	4.181	4.624	5.337	6.143
+Potrerillo	Localidad	Santa María	...	...	...	34
+Potrero de Garay	Localidad	Santa María	135	503	1.017	1.761
+Pozo del Molle	Localidad	Río Segundo	4.593	5.429	5.680	5.253
+Pozo Nuevo	Localidad	Sobremonte	91	181	130	268
+Pueblo Italiano	Localidad	Unión	1.154	1.470	1.654	1.812
+Puerto Muchita	Localidad	Calamuchita	...	...	...	14
+Puesto de Castro	Localidad	Río Seco	93	164	166	218
+Punta de Agua	Localidad	Río Primero	...	...	...	45
+Punta del Agua	Localidad	Tercero Arriba	117	147	175	237
+Quebracho Herrado	Localidad	San Justo	291	317	364	432
+Quilino (incl. Villa Quilino)	Localidad	Ischilín	3.743	4.534	5.095	6.271
+Rafael García	Localidad	Santa María	418	525	555	627
+Ramón J. Cárcano	Localidad	Unión	65	61	57	39
+Ranqueles	Localidad	General Roca	...	50	46	56
+Rayo Cortado	Localidad	Río Seco	326	282	675	821
+Reducción	Localidad	Juárez Celman	1.442	1.467	1.732	1.881
+Rincón	Localidad	Río Segundo	243	357	517	610
+Río Bamba	Localidad	Presidente Roque Sáenz Peña	97	88	103	99
+Río Ceballos (incl. Pajas Blancas, Barrio Nuevo Rio Ceballos)	Localidad	Colón	12.802	16.741	19.884	26.692
+Río Cuarto	Localidad	Río Cuarto	134.355	144.021	157.010	179.979
+Río de los Sauces	Localidad	Calamuchita	822	888	1.001	1.249
+Río Primero	Localidad	Río Primero	4.757	6.259	7.044	11.574
+Río Segundo	Localidad	Río Segundo	15.746	18.155	19.713	22.171
+Río Tercero	Localidad	Tercero Arriba	42.657	44.715	46.421	52.977
+Rosales	Localidad	Presidente Roque Sáenz Peña	455	511	525	482
+Rosario del Saladillo	Localidad	Tulumba	...	136	178	183
+Rumi Huasi	Localidad	Minas	...	...	...	61
+Sacanta	Localidad	San Justo	2.421	2.791	3.117	3.351
+Sagrada Familia	Localidad	Río Primero	63	71	84	72
+Saira	Localidad	Marcos Juárez	842	803	789	887
+Saladillo	Localidad	Marcos Juárez	183	175	174	230
+Saldán	Localidad	Colón	1.868	2.099	10.605	12.672
+Salsacate (incl. Taninga)	Localidad	Pocho	1.174	1.372	1.404	1.684
+Salsipuedes	Localidad	Colón	4.087	6.411	9.612	15.560
+Sampacho	Localidad	Río Cuarto	7.160	7.238	7.716	8.479
+Sanabria	Localidad	General San Martín	36	57	77	131
+San Agustín	Localidad	Calamuchita	2.284	2.870	3.317	3.879
+San Antonio de Arredondo	Localidad	Punilla	703	2.325	3.653	5.786
+San Antonio de Litín	Localidad	Unión	1.002	1.240	1.268	1.782
+San Bartolomé	Localidad	Río Cuarto	...	...	...	22
+San Basilio	Localidad	Río Cuarto	2.510	2.882	3.160	3.978
+San Carlos Minas	Localidad	Minas	888	1.215	1.311	1.943
+San Clemente	Localidad	Santa María	78	173	134	106
+San Esteban	Localidad	Punilla	598	657	852	1.132
+San Francisco	Localidad	San Justo	55.764	58.779	61.750	68.314
+San Francisco del Chañar	Localidad	Sobremonte	1.712	2.067	2.256	2.908
+San Gerónimo	Localidad	Pocho	95	73	85	54
+San Gerónimo Sur	Localidad	Pocho	...	...	...	60
+San Ignacio (Loteo San Javier)	Localidad	Calamuchita	132	155	140	128
+San Ignacio (Loteo Vélez Crespo)	Localidad	Calamuchita	...	...	...	29
+San Javier y Yacanto	Localidad	San Javier	785	1.100	1.210	2.636
+San Joaquín	Localidad	Presidente Roque Sáenz Peña	90	159	140	153
+San José	Localidad	San Javier	618	1.106	967	2.330
+San José de la Dormida	Localidad	Tulumba	1.894	3.272	4.472	5.727
+San José de las Salinas	Localidad	Tulumba	515	653	662	830
+San Lorenzo	Localidad	San Alberto	324	746	122	2.083
+San Marcos Sierra (incl. El Rincón, La Banda)	Localidad	Cruz del Eje	1.027	1.293	1.632	3.034
+San Marcos Sud	Localidad	Unión	2.469	2.696	3.093	3.470
+San Martín	Localidad	San Alberto	61	175	225	258
+San Pedro (incl. Los Callejones)	Localidad	San Alberto	2.712	3.456	3.844	4.110
+San Pedro	Localidad	Santa María	...	...	...	7
+San Pedro de Gutemberg	Localidad	Río Seco	...	128	124	151
+San Pedro de Toyos	Localidad	Ischilín	73	51	56	44
+San Pedro Norte	Localidad	Tulumba	283	333	317	536
+San Roque	Localidad	Punilla	364	832	1.126	2.369
+San Severo	Localidad	Unión	26	49	20	28
+Santa Ana	Localidad	Cruz del Eje	...	...	...	99
+Santa Catalina (Holmberg)	Localidad	Río Cuarto	3.035	3.449	3.860	5.012
+Santa Catalina	Localidad	Totoral	61	87	74	122
+Santa Elena	Localidad	Río Seco	85	161	219	273
+Santa Eufemia	Localidad	Juárez Celman	1.974	2.179	2.401	2.663
+Santa María de Punilla	Localidad	Punilla	6.119	7.306	9.526	11.617
+Santa Rosa de Calamuchita	Localidad	Calamuchita	7.806	9.686	12.395	18.680
+Santiago Temple	Localidad	Río Segundo	1.718	2.358	2.779	3.265
+San Vicente	Localidad	Ischilín	...	...	...	17
+San Vicente	Localidad	San Alberto	193	692	658	700
+San Vicente	Localidad	Tulumba	...	...	...	28
+Sarmiento	Localidad	Totoral	740	872	1.288	1.278
+Saturnino María Laspiur	Localidad	San Justo	2.176	2.316	2.496	2.776
+Sauce Arriba	Localidad	San Alberto	465	639	471	671
+Sebastián Elcano	Localidad	Río Seco	1.502	2.042	2.481	3.185
+Seeber	Localidad	San Justo	357	539	582	780
+Segunda Usina	Localidad	Calamuchita	106	104	118	145
+Serrano	Localidad	Presidente Roque Sáenz Peña	2.107	2.670	3.162	3.421
+Serrezuela	Localidad	Cruz del Eje	2.019	2.291	2.441	2.648
+Silvio Pellico	Localidad	General San Martín	279	360	386	519
+Simbolar	Localidad	Totoral	217	307	340	430
+Sinsacate	Localidad	Totoral	314	791	1.317	2.540
+Socavones	Localidad	Santa María	322	259	263	639
+Solar de los Molinos	Localidad	Calamuchita	202	252	127	148
+Suco	Localidad	Río Cuarto	290	291	292	374
+Tala Cañada	Localidad	Pocho	137	176	183	216
+Tala Huasi	Localidad	Punilla	37	146	131	177
+Talaini	Localidad	Minas	...	96	112	91
+Tancacha	Localidad	Tercero Arriba	4.953	5.184	5.298	5.650
+Tanti	Localidad	Punilla	3.323	4.579	6.554	10.889
+Tercera Usina	Localidad	Calamuchita	...	...	...	95
+Ticino	Localidad	General San Martín	1.314	1.895	2.188	2.566
+Tinoco	Localidad	Colón	90	92	169	235
+Tío Pujio	Localidad	General San Martín	2.015	2.383	2.655	3.480
+Toledo	Localidad	Santa María	1.725	3.046	3.843	5.220
+Toro Pujio	Localidad	San Justo	68	146	173	168
+Tosno	Localidad	Minas	43	56	94	92
+Tosquita	Localidad	Río Cuarto	378	382	414	603
+Tránsito	Localidad	San Justo	2.099	2.444	2.886	3.446
+Tuclame	Localidad	Cruz del Eje	530	611	907	971
+Ucacha	Localidad	Juárez Celman	4.777	4.747	5.136	5.885
+Unquillo (incl. Las Corzuelas)	Localidad	Colón	11.693	15.369	18.155	24.901
+Valle de Anisacate	Localidad	Santa María	...	234	487	1.811
+Valle Hermoso	Localidad	Punilla	4.640	5.421	6.187	7.189
+Viamonte	Localidad	Unión	1.423	1.598	1.583	1.694
+Vicuña Mackenna	Localidad	Río Cuarto	7.181	8.994	10.021	11.664
+Villa Albertina	Localidad	Ischilín	...	...	...	63
+Villa Allende (incl. Country San Isidro, Country Chacras de la Villa)	Localidad	Colón	16.025	21.885	27.925	36.516
+Villa Alpina	Localidad	Calamuchita	16	48	154	168
+Villa Amancay	Localidad	Calamuchita	344	362	426	819
+Villa Ascasubi	Localidad	Tercero Arriba	1.781	2.081	2.260	2.700
+Villa Berna	Localidad	Calamuchita	77	91	135	174
+Villa Candelaria	Localidad	Río Seco	...	219	246	335
+Villa Carlos Paz	Localidad	Punilla	40.912	56.407	62.423	71.181
+Villa Cerro Azul	Localidad	Colón	119	190	253	492
+Villa Ciudad de América (Loteo Diego de Rojas)	Localidad	Santa María	235	622	679	1.090
+Villa Ciudad Parque Los Reartes	Localidad	Calamuchita	...	...	506	2.129
+Villa Colimba	Localidad	Ischilín	...	...	...	20
+Villa Concepción del Tío	Localidad	San Justo	1.377	1.585	1.848	2.405
+Villa Corazón de María	Localidad	Colón	...	...	66	44
+Villa Cura Brochero	Localidad	San Alberto	3.158	4.707	6.351	8.194
+Villa de Las Rosas (incl. Los Molles, Quebrada de los Pozos)	Localidad	San Javier	1.897	3.179	3.685	5.549
+Villa del Dique	Localidad	Calamuchita	2.310	2.829	3.236	5.032
+Villa del Prado	Localidad	Santa María	567	1.044	1.476	4.002
+Villa del Rosario	Localidad	Río Segundo	11.564	13.741	15.313	17.496
+Villa del Totoral	Localidad	Totoral	5.279	7.110	8.211	10.761
+Villa del Tránsito	Localidad	San Justo	153	194	227	373
+Villa de María	Localidad	Río Seco	2.355	3.819	4.648	6.035
+Villa de María Este	Localidad	Río Seco	...	...	...	49
+Villa de Pocho	Localidad	Pocho	138	188	171	262
+Villa de Soto	Localidad	Cruz del Eje	6.027	7.303	9.628	10.366
+Villa Dolores	Localidad	San Javier	26.244	28.009	29.854	32.980
+Villa El Chacay	Localidad	Río Cuarto	37	99	81	82
+Villa Elisa	Localidad	Marcos Juárez	...	18	26	42
+Villa El Tala	Localidad	Calamuchita	1	2	4	8
+Villa Flor Serrana	Localidad	Punilla	12	45	50	72
+Villa Fontana	Localidad	Río Primero	635	744	938	1.074
+Villa General Belgrano	Localidad	Calamuchita	4.557	5.888	7.795	11.190
+Villa Giardino	Localidad	Punilla	3.313	4.679	6.702	7.283
+Villa Gutiérrez	Localidad	Ischilín	128	197	236	257
+Villa Huidobro	Localidad	General Roca	4.891	5.155	5.656	6.315
+Villa La Bolsa	Localidad	Santa María	317	753	995	1.444
+Villa Lago Azul	Localidad	Punilla	20	169	108	201
+Villa La Ribera	Localidad	Calamuchita	11	22	6	152
+Villa La Viña	Localidad	San Javier	91	56	34	55
+Villa Los Aromos	Localidad	Santa María	107	724	1.364	1.538
+Villa Los Llanos (- Juárez Celman)	Localidad	Colón	1.301	3.941	5.973	8.117
+Villa Los Patos	Localidad	Unión	17	42	26	25
+Villa María (incl. Villa Albertina)	Localidad	General San Martín	64.630	72.308	79.481	95.909
+Villa Nueva	Localidad	General San Martín	13.890	16.481	18.818	25.961
+Villa Oeste	Localidad	General San Martín	16	50	55	69
+Villa Parque Santa Ana (incl. Campos del Virrey)	Localidad	Santa María	1.133	1.759	2.679	5.431
+Villa Parque Síquiman	Localidad	Punilla	447	816	1.738	3.551
+Villa Quillinzo	Localidad	Calamuchita	21	42	54	329
+Villa Rafael Benegas	Localidad	San Alberto	...	...	...	10
+Villa Río Icho Cruz	Localidad	Punilla	646	1.145	1.864	2.814
+Villa Rossi	Localidad	Presidente Roque Sáenz Peña	409	500	508	526
+Villa Rumipal	Localidad	Calamuchita	1.608	1.922	2.246	3.201
+Villa San Esteban	Localidad	San Justo	70	66	82	85
+Villa San Isidro	Localidad	Santa María	590	849	483	607
+Villa Santa Cruz del Lago	Localidad	Punilla	863	1.637	2.282	3.466
+Villa Santa Rosa (Santa Rosa de Río Primero)	Localidad	Río Primero	5.298	6.788	7.761	9.179
+Villa Sarmiento	Localidad	General Roca	207	332	373	403
+Villa Sarmiento	Localidad	San Alberto	3.194	4.104	5.207	4.727
+Villa Tulumba	Localidad	Tulumba	1.064	1.161	1.474	1.521
+Villa Valeria	Localidad	General Roca	2.190	2.525	2.978	3.480
+Villa Yacanto (Yacanto de Calamuchita)	Localidad	Calamuchita	322	370	1.097	2.725
+Wallala	Localidad	Punilla	...	...	...	4
+Washington	Localidad	Río Cuarto	511	546	608	550
+Wenceslao Escalante	Localidad	Unión	1.462	1.549	1.504	1.488

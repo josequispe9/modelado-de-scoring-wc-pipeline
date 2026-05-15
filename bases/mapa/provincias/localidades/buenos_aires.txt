@@ -1,0 +1,621 @@
+12 de Octubre	Localidad	Nueve de Julio	375	254	219	265
+16 de Julio	Localidad	Azul	158	151	111	115
+17 de Agosto	Localidad	Puán	394	362	319	329
+25 de Mayo (Villa Veinticinco de Mayo)	Localidad	Veinticinco de Mayo	20.555	22.581	23.408	23.814
+30 de Agosto (Treinta de Agosto)	Localidad	Trenque Lauquen	3.565	4.204	4.777	5.339
+9 de Julio (Nueve de Julio)	Localidad	Nueve de Julio	30.804	34.858	37.060	42.098
+Abbott	Localidad	Monte	495	511	603	640
+Acceso a Lima	Localidad	Zárate	...	...	...	315
+Acevedo	Localidad	Pergamino	1.562	1.558	1.499	1.642
+Achupallas (Villa Grisolía)	Localidad	Alberti	138	112	112	138
+Adela	Localidad	Chascomús	...	...	...	19
+Adolfo Gonzales Chaves (Est. Chaves)	Localidad	Adolfo Gonzales Chaves	8.748	8.613	9.066	9.787
+Aero Country Club	Localidad	General Rodríguez	...	...	...	128
+Agustina	Localidad	Junín	341	376	155	392
+Agustín Mosconi	Localidad	Veinticinco de Mayo	264	310	280	260
+Agustín Roca	Localidad	Junín	877	955	331	1.428
+Alberdi Viejo	Localidad	Leandro N. Alem	402	336	318	402
+Alberti (Est. Andrés Vaccarezza)	Localidad	Alberti	7.009	7.493	8.260	9.254
+Almirante Brown (Adrogué)	Localidad	Almirante Brown	449.018	514.491	552.139	583.209
+Altamirano	Localidad	Brandsen	268	258	215	254
+Álvarez de Toledo	Localidad	Saladillo	234	232	213	287
+Álvarez Jonte	Localidad	Punta Indio	36	40	38	90
+América	Localidad	Rivadavia	9.025	10.361	11.685	13.619
+Andant	Localidad	Daireaux	58	40	42	19
+Antonio Carboni	Localidad	Lobos	296	310	295	328
+Aparicio	Localidad	Coronel Dorrego	167	111	80	81
+Arboledas	Localidad	Daireaux	470	599	632	680
+Arenas Verdes	Localidad	Lobería	...	20	12	26
+Arenaza	Localidad	Lincoln	1.128	1.311	1.328	1.563
+Argerich	Localidad	Villarino	116	102	80	66
+Ariel	Localidad	Azul	51	62	16	82
+Arrecifes (incl. Todd)	Localidad	Arrecifes	21.697	25.062	27.132	30.397
+Arribeños	Localidad	General Arenales	2.784	2.794	2.910	3.081
+Arroyo Corto	Localidad	Saavedra	483	500	514	689
+Arroyo Dulce	Localidad	Salto	1.643	1.620	1.715	1.938
+Arroyo Venado	Localidad	Guaminí	99	66	56	90
+Asamblea	Localidad	Bragado	...	...	7	26
+Ascensión	Localidad	General Arenales	3.937	4.109	4.179	4.620
+Atalaya	Localidad	Magdalena	394	720	720	1.561
+Avellaneda	Localidad	Avellaneda	344.991	328.980	342.677	366.117
+Ayacucho	Localidad	Ayacucho	14.903	16.444	17.364	18.916
+Azcuénaga	Localidad	San Andrés de Giles	350	357	312	389
+Azopardo	Localidad	Puán	135	92	95	85
+Azucena	Localidad	Tandil	...	...	...	75
+Azul	Localidad	Azul	48.795	53.054	55.728	64.886
+Bahía Blanca	Localidad	Bahía Blanca	260.096	274.509	291.327	323.357
+Bahía San Blas	Localidad	Patagones	175	463	611	952
+Baigorrita	Localidad	General Viamonte	1.698	1.862	1.848	2.833
+Bajo Hondo	Localidad	Coronel de Marina Leonardo Rosales	185	165	164	165
+Balcarce	Localidad	Balcarce	31.807	35.150	38.376	44.409
+Balneario Cochicó	Localidad	Guaminí	...	...	...	34
+Balneario Los Ángeles	Localidad	Necochea	...	...	...	45
+Balneario Orense	Localidad	Tres Arroyos	31	49	77	103
+Balneario San Cayetano	Localidad	San Cayetano	11	28	46	44
+Balneario Sauce Grande	Localidad	Monte Hermoso	84	177	118	490
+Banderaló	Localidad	General Villegas	1.154	1.315	1.339	1.424
+Baradero	Localidad	Baradero	23.690	24.901	28.537	35.389
+Barrio Cerrado La Mata	Localidad	Tandil	...	...	...	60
+Barrio El Boquerón	Localidad	General Pueyrredón	333	416	509	624
+Barrio El Mangrullo	Localidad	Zárate	...	...	...	219
+Barrio El Mirador	Localidad	Brandsen	...	...	226	305
+Barrio El Taladro	Localidad	Cañuelas	120	134	155	449
+Barrio Las Golondrinas	Localidad	Brandsen	...	213	383	581
+Barrio Lisandro de La Torre y Santa Marta	Localidad	Marcos Paz	...	...	...	1.584
+Barrio Lomas Altas	Localidad	Chascomús	...	...	61	494
+Barrio Los Bosquecitos	Localidad	Brandsen	...	55	124	276
+Barrio Los Pioneros (Barrio Tavella)	Localidad	Campana	73	675	1.823	1.776
+Barrio Parque Las Acacias	Localidad	Brandsen	...	142	229	771
+Barrio Ruta 24 Km 23,5	Localidad	General Rodríguez	...	...	...	486
+Barrio Santa Paula	Localidad	General Pueyrredón	475	568	644	989
+Barrio Santa Rosa	Localidad	Marcos Paz	...	...	...	175
+Bartolomé Bavio (General Mansilla)	Localidad	Magdalena	1.329	1.684	2.022	2.558
+Base Aeronaval Punta Indio	Localidad	Punta Indio	...	...	...	196
+Bayauca	Localidad	Lincoln	638	591	541	516
+Bellocq	Localidad	Carlos Casares	479	497	542	534
+Benítez	Localidad	Chivilcoy	...	...	68	99
+Benito Juárez (Est. Juárez)	Localidad	Benito Juárez	13.245	13.868	14.279	15.777
+Berazategui	Localidad	Berazategui	244.083	286.735	324.156	358.328
+Berdier	Localidad	Salto	174	161	177	203
+Berisso	Localidad	Berisso	73.033	78.988	87.698	99.943
+Bermúdez	Localidad	Lincoln	...	91	72	86
+Berutti	Localidad	Trenque Lauquen	947	874	1.098	972
+Blancagrande	Localidad	Olavarría	98	85	65	99
+Blaquier	Localidad	Florentino Ameghino	699	676	676	810
+Bocayuva	Localidad	Pellegrini	58	102	83	239
+Bordenave	Localidad	Puán	851	824	852	705
+Bragado	Localidad	Bragado	31.224	32.830	33.222	38.794
+Brandsen (Coronel Brandsen)	Localidad	Brandsen	12.957	16.732	19.881	24.487
+Cabildo	Localidad	Bahía Blanca	2.212	2.125	2.046	2.305
+Cacharí	Localidad	Azul	3.074	2.968	2.960	3.903
+Cadret	Localidad	Carlos Casares	219	232	214	187
+Calderón	Localidad	Coronel de Marina Leonardo Rosales	...	...	...	69
+Campana (incl. Chacras del Río Luján, Alto Los Cardales)	Localidad	Campana	68.513	80.831	90.725	104.235
+Camping Magdalena	Localidad	Magdalena	...	...	...	92
+Campos de Roca (- Posada de Los Lagos)	Localidad	Brandsen	...	...	249	637
+Cañada Seca	Localidad	General Villegas	635	743	718	773
+Cañuelas (incl. Alejandro Petión, Vicente Casares)	Localidad	Cañuelas	20.797	27.883	33.520	41.801
+Capilla del Señor (Est. Capilla)	Localidad	Exaltación de la Cruz	6.173	8.044	9.244	11.191
+Capitán Castro	Localidad	Pehuajó	40	29	49	44
+Capitán Sarmiento	Localidad	Capitán Sarmiento Carlos	9.642	11.316	13.088	14.887
+Cardenal Cagliero	Localidad	Patagones	145	113	89	99
+Carhué	Localidad	Adolfo Alsina	8.545	8.584	9.660	9.503
+Carlos Beguerie	Localidad	Roque Pérez	393	354	399	347
+Carlos Casares	Localidad	Carlos Casares	15.200	17.155	18.347	19.397
+Carlos Keen	Localidad	Luján	418	506	557	995
+Carlos María Naón	Localidad	Nueve de Julio	652	551	497	444
+Carlos Salas	Localidad	Lincoln	325	261	234	150
+Carlos Tejedor	Localidad	Carlos Tejedor	4.798	5.127	5.178	6.671
+Carmen de Areco	Localidad	Carmen de Areco	9.593	12.008	12.775	15.900
+Carmen de Patagones	Localidad	Patagones	17.075	18.189	20.533	25.982
+Casalins	Localidad	Pila	...	50	66	77
+Casbas	Localidad	Guaminí	3.926	4.108	4.450	4.888
+Cascada	Localidad	Coronel Suárez	24	16	11	19
+Castelli	Localidad	Castelli	5.180	6.402	6.859	7.935
+Castilla	Localidad	Chacabuco	861	827	689	672
+Cazón	Localidad	Saladillo	283	240	209	248
+Centinela del Mar	Localidad	General Alvarado	...	...	1	5
+Centro Guerrero	Localidad	Castelli	108	129	114	239
+Cerro de la Gloria	Localidad	Castelli	...	...	107	91
+Chacabuco	Localidad	Chacabuco	30.535	34.958	38.418	46.440
+Chacras de La Trinidad	Localidad	Cañuelas	...	...	...	24
+Chacras del Paraná	Localidad	Zárate	...	...	...	125
+Chacras de Olivia	Localidad	Zárate	...	...	...	26
+Chacras de Villa Espil	Localidad	San Andrés de Giles	...	...	...	65
+Chapadmalal	Localidad	General Pueyrredón	1.239	1.971	4.112	3.959
+Chapalcó	Localidad	Villarino	...	...	...	50
+Chas	Localidad	General Belgrano	...	...	...	86
+Chascomús (incl. Barrio San Cayetano)	Localidad	Chascomús	25.264	30.670	33.607	39.947
+Chasicó	Localidad	Tornquist	185	209	203	227
+Chiclana (San Esteban)	Localidad	Pehuajó	80	110	92	125
+Chillar	Localidad	Azul	3.032	3.332	3.083	3.453
+Chivilcoy	Localidad	Chivilcoy	47.671	52.938	58.152	65.575
+Claraz	Localidad	Necochea	720	733	639	657
+Claromecó	Localidad	Tres Arroyos	1.017	1.947	2.081	2.442
+Club de Campo Los Puentes	Localidad	Luján	...	...	302	710
+Club de Pesca Pigüé	Localidad	Tornquist	...	...	...	10
+Club de Pesca Saavedra	Localidad	Saavedra	...	...	...	6
+Colón	Localidad	Colón	17.885	21.396	23.206	26.067
+Colonia Mauricio	Localidad	Carlos Casares	...	20	8	22
+Colonia Nievas	Localidad	Olavarría	37	14	10	18
+Colonia San Adolfo	Localidad	Villarino	155	109	109	99
+Colonia San Martín	Localidad	Saavedra	...	137	92	80
+Colonia San Miguel	Localidad	Olavarría	595	588	902	370
+Colonia San Miguel Arcángel	Localidad	Adolfo Alsina	621	649	563	553
+Colonia Seré	Localidad	Carlos Tejedor	645	641	726	898
+Comandante Nicanor Otamendi	Localidad	General Alvarado	5.616	5.977	6.623	6.991
+Comodoro Py	Localidad	Bragado	702	651	634	403
+Conesa	Localidad	San Nicolás	2.162	2.047	2.066	2.337
+Copetonas	Localidad	Tres Arroyos	233	1.196	1.017	1.128
+Coronel Boerr	Localidad	Las Flores	20	34	15	18
+Coronel Charlone	Localidad	General Villegas	1.332	1.403	1.348	1.430
+Coronel Dorrego	Localidad	Coronel Dorrego	11.418	11.644	11.510	11.850
+Coronel Granada (Villa Francia)	Localidad	General Pinto	1.000	1.150	1.176	1.307
+Coronel Martínez de Hoz (Ap. Kilómetro 322)	Localidad	Lincoln	926	941	1.041	995
+Coronel Mom (Villa Ortiz)	Localidad	Alberti	892	857	815	1.057
+Coronel Pringles (Est. Pringles)	Localidad	Coronel Pringles	18.303	20.605	20.263	21.555
+Coronel Seguí	Localidad	Alberti	138	148	146	206
+Coronel Suárez (incl. San José, Santa Trinidad)	Localidad	Coronel Suárez	24.173	26.374	27.329	32.525
+Coronel Vidal	Localidad	Mar Chiquita	5.760	6.320	6.611	7.575
+Costa Esmeralda	Localidad	La Costa	...	...	...	476
+Country Club Los Médanos	Localidad	Villarino	...	...	61	57
+Cristiano Muerto	Localidad	San Cayetano	...	...	...	11
+Crotto	Localidad	Tapalqué	152	191	247	230
+Cucullú	Localidad	San Andrés de Giles	344	435	551	692
+Curamalal (Cura Malal)	Localidad	Coronel Suárez	124	104	95	124
+Curarú	Localidad	Carlos Tejedor	402	448	422	501
+Daireaux	Localidad	Daireaux	9.830	10.932	12.122	13.914
+Darregueira	Localidad	Puán	5.388	5.389	5.547	6.221
+De Bary	Localidad	Pellegrini	125	101	63	176
+De la Canal	Localidad	Tandil	85	62	57	57
+De la Garma	Localidad	Adolfo Gonzales Chaves	1.789	1.801	1.625	1.903
+Del Carril	Localidad	Saladillo	1.146	1.228	1.270	1.225
+Delfín Huergo	Localidad	Adolfo Alsina	36	37	14	22
+Del Valle	Localidad	Veinticinco de Mayo	896	836	899	744
+Dennehy (Marcelino Ugarte)	Localidad	Nueve de Julio	146	147	76	131
+Diego Gaynor	Localidad	Exaltación de la Cruz	241	198	236	384
+Divisadero	Localidad	General Juan Madariaga	...	...	...	83
+Dolores	Localidad	Dolores	22.060	24.120	25.940	30.372
+Domselaar	Localidad	San Vicente	...	...	...	4.814
+Don Cipriano	Localidad	Chascomús	...	...	...	32
+D'Orbigny	Localidad	Coronel Suárez	47	49	20	17
+Dudignac	Localidad	Nueve de Julio	2.506	2.542	2.670	2.924
+Dufaur	Localidad	Saavedra	227	206	182	182
+Duggan	Localidad	San Antonio de Areco	559	573	573	939
+Eduardo O'Brien (General O'Brien)	Localidad	Bragado	2.245	2.266	2.488	2.978
+El Chajá	Localidad	Exaltación de la Cruz	...	...	...	64
+El Destino	Localidad	Lezama	...	...	...	24
+El Divisorio	Localidad	Coronel Pringles	17	22	46	10
+El Dorado	Localidad	Leandro N. Alem	334	316	318	321
+El Lauquen - Principado	Localidad	San Vicente	...	...	...	1.149
+El Malacate	Localidad	Exaltación de la Cruz	...	...	...	377
+El Marquesado	Localidad	General Pueyrredón	86	200	196	657
+El Paraíso	Localidad	Ramallo	308	401	423	482
+El Pensamiento	Localidad	Coronel Pringles	23	26	12	4
+El Perdido (Est. José A. Guisasola)	Localidad	Coronel Dorrego	965	939	919	925
+El Salvaje	Localidad	Villa Gesell	...	...	...	9
+El Socorro (Villa Angélica)	Localidad	Pergamino	1.187	1.194	1.144	1.099
+El Trigo	Localidad	Las Flores	31	52	43	64
+El Triunfo	Localidad	Lincoln	1.725	1.560	1.543	1.558
+Elvira	Localidad	Lobos	213	170	133	185
+Emilio Ayarza	Localidad	Chivilcoy	121	129	87	70
+Emilio V. Bunge	Localidad	General Villegas	1.298	1.595	1.986	2.502
+Energía	Localidad	Necochea	...	...	63	52
+Ensenada	Localidad	Ensenada	48.010	51.322	56.463	63.978
+Erézcano	Localidad	San Nicolás	464	499	434	507
+Erize (Villa Castelar)	Localidad	Puán	50	17	31	28
+Ernestina	Localidad	Veinticinco de Mayo	253	222	145	184
+Escobar (Belén de Escobar)	Localidad	Escobar	121.833	173.155	212.208	254.682
+Espartillar	Localidad	Adolfo Alsina	33	42	21	16
+Espartillar	Localidad	Saavedra	866	871	785	839
+Espigas	Localidad	Olavarría	441	523	492	451
+Estación Arenales	Localidad	General Arenales	59	83	90	64
+Estancia Las Lilas	Localidad	Luján	...	...	...	151
+Esteban Agustín Gascón (- Villa Margarita)	Localidad	Adolfo Alsina	136	100	104	119
+Esteban Echeverría (Monte Grande)	Localidad	Esteban Echeverría	196.875	243.186	300.745	337.880
+Estela	Localidad	Puán	11	11	2	8
+Ezeiza	Localidad	Ezeiza	74.144	118.072	162.475	198.620
+Facundo Quiroga (Alfredo Demarchi)	Localidad	Nueve de Julio	1.891	1.999	1.853	1.830
+Faro	Localidad	Coronel Dorrego	26	33	20	23
+Felipe Solá	Localidad	Puán	353	663	626	593
+Ferré (- La Trinidad)	Localidad	General Arenales	1.953	2.036	2.312	2.683
+Florencio Varela	Localidad	Florencio Varela	250.167	342.924	426.005	488.103
+Florentino Ameghino	Localidad	Florentino Ameghino	5.197	6.217	7.225	9.099
+Fontezuela	Localidad	Pergamino	...	253	365	404
+Fortín Acha	Localidad	Leandro N. Alem	89	93	103	82
+Fortín Olavarría	Localidad	Rivadavia	882	1.005	1.086	1.386
+Fortín Tiburcio	Localidad	Junín	362	414	257	604
+Francisco A. Berra	Localidad	Monte	...	...	...	120
+Francisco Madero	Localidad	Pehuajó	1.480	1.428	1.389	1.551
+Franklin	Localidad	San Andrés de Giles	75	71	87	72
+French (Manuel B. Gonnet)	Localidad	Nueve de Julio	804	813	748	774
+Fulton	Localidad	Tandil	...	...	...	69
+Gahan	Localidad	Salto	644	641	648	733
+Gardey	Localidad	Tandil	481	521	532	810
+Garré	Localidad	Guaminí	724	697	1.036	845
+Garré Norte	Localidad	Trenque Lauquen	...	...	...	143
+General Alvear	Localidad	General Alvear	6.473	9.548	9.812	9.209
+General Arenales	Localidad	General Arenales	3.539	3.973	4.321	4.938
+General Belgrano	Localidad	General Belgrano	11.643	13.516	15.394	19.056
+General Conesa	Localidad	Tordillo	787	1.209	1.302	2.190
+General Daniel Cerri (Est. General Cerri)	Localidad	Bahía Blanca	5.789	6.515	6.745	7.704
+General Guido	Localidad	General Guido	1.044	1.149	1.291	1.647
+General Juan Madariaga	Localidad	General Juan Madariaga	14.717	16.763	18.089	21.461
+General La Madrid	Localidad	General La Madrid	6.944	7.923	8.073	9.400
+General Las Heras (incl. General Hornos)	Localidad	General Las Heras	7.816	9.910	11.525	14.155
+General Lavalle	Localidad	General Lavalle	1.153	1.472	1.827	2.445
+General Pinto	Localidad	General Pinto	5.713	6.154	6.557	8.002
+General Pirán	Localidad	Mar Chiquita	2.701	2.896	2.934	3.211
+General Rivas	Localidad	Suipacha	407	472	478	542
+General Rodríguez	Localidad	General Rodríguez	41.900	64.302	85.315	141.090
+General Rojo	Localidad	San Nicolás	2.531	2.466	2.464	2.325
+General San Martín	Localidad	General San Martín	406.809	403.107	414.196	444.503
+General Villegas (Est. Villegas)	Localidad	General Villegas	13.084	16.270	18.275	22.474
+Germania (Est. Mayor José Orellano)	Localidad	General Pinto	1.373	1.433	1.397	1.554
+Girodías	Localidad	Trenque Lauquen	179	179	161	173
+Gobernador Castro	Localidad	San Pedro	2.127	2.604	2.607	2.882
+Gobernador Udaondo	Localidad	Cañuelas	211	277	330	420
+Gobernador Ugarte	Localidad	Veinticinco de Mayo	592	561	547	529
+Goldney	Localidad	Mercedes	...	...	85	132
+Gómez	Localidad	Brandsen	211	335	362	436
+González Moreno	Localidad	Rivadavia	1.492	1.663	1.610	2.130
+Gorchs	Localidad	General Belgrano	...	258	338	345
+Gorostiaga	Localidad	Chivilcoy	367	386	324	280
+Goyena	Localidad	Saavedra	673	553	516	486
+Guaminí	Localidad	Guaminí	2.733	2.704	2.845	3.001
+Guanaco (San Bernardo)	Localidad	Pehuajó	278	265	282	375
+Guerrico	Localidad	Pergamino	719	794	774	864
+Günther	Localidad	General Pinto	...	...	23	32
+Hale	Localidad	Bolívar	302	206	211	244
+Henderson	Localidad	Hipólito Yrigoyen	7.789	7.856	8.645	9.781
+Herrera Vegas	Localidad	Hipólito Yrigoyen	100	120	115	99
+Hilario Ascasubi	Localidad	Villarino	1.442	2.533	3.427	4.204
+Hinojo	Localidad	Olavarría	3.481	3.654	3.841	4.206
+Hortensia	Localidad	Carlos Casares	216	211	224	179
+Huanguelén	Localidad	Coronel Suárez	4.968	4.896	5.020	4.898
+Hurlingham	Localidad	Hurlingham	166.935	172.245	181.241	185.361
+Indio Rico	Localidad	Coronel Pringles	1.008	1.165	1.054	1.147
+Inés Indart	Localidad	Salto	1.008	1.002	911	1.008
+Ingeniero Moneta	Localidad	San Pedro	...	...	20	54
+Ingeniero Thompson	Localidad	Tres Lomas	199	159	150	169
+Inocencio Sosa	Localidad	Pehuajó	...	...	31	21
+Irala	Localidad	Bragado	391	370	400	506
+Iraola	Localidad	Tandil	...	...	...	35
+Irene	Localidad	Coronel Dorrego	37	36	13	38
+Iriarte (Colonia San Ricardo)	Localidad	General Pinto	878	809	811	845
+Irineo Portela	Localidad	Baradero	415	449	379	533
+Isla Martín García (Martín García)	Localidad	La Plata	...	...	...	109
+Ituzaingó	Localidad	Ituzaingó	142.317	158.121	167.824	177.983
+Jeppener	Localidad	Brandsen	1.691	2.142	2.496	2.793
+Jorge Born (Tomás Jofré)	Localidad	Mercedes	147	153	191	264
+José B. Casas	Localidad	Patagones	254	38	40	35
+José C. Paz	Localidad	José C. Paz	186.681	230.208	265.981	326.527
+José Juan Almeyra	Localidad	Navarro	244	230	207	224
+Juan A. de la Peña	Localidad	Pergamino	240	233	211	328
+Juan A. Pradere	Localidad	Patagones	364	413	521	1.042
+Juan Bautista Alberdi (Est. Alberdi)	Localidad	Leandro N. Alem	3.413	3.430	3.404	3.491
+Juan Cousté (Est. Algarrobo)	Localidad	Villarino	1.790	1.814	1.993	2.014
+Juan Eulogio Barra	Localidad	Adolfo Gonzales Chaves	224	252	212	293
+Juan Francisco Ibarra	Localidad	Bolívar	64	39	33	29
+Juan F. Salaberry (Máximo Fernández)	Localidad	Bragado	28	43	4	17
+Juan José Paso	Localidad	Pehuajó	2.016	2.296	2.176	1.988
+Juan Nepomuceno Fernández	Localidad	Necochea	2.771	2.886	2.721	2.821
+Julio Arditi	Localidad	Magdalena	...	...	...	53
+Junín	Localidad	Junín	75.079	82.495	87.739	95.385
+Kilómetro 314	Localidad	La Costa	...	...	...	13
+La Angelita	Localidad	General Arenales	311	304	265	348
+La Armonía	Localidad	Mar Chiquita	52	105	172	294
+Labardén	Localidad	General Guido	685	819	799	999
+La Beba	Localidad	Rojas	77	63	37	55
+La Carreta	Localidad	Trenque Lauquen	47	52	45	18
+La Catalina	Localidad	Luján	...	...	...	54
+La Choza	Localidad	General Las Heras	54	46	41	38
+La Colina	Localidad	General La Madrid	740	713	663	565
+La Constancia	Localidad	Ayacucho	58	55	49	126
+La Delfina	Localidad	General Viamonte	38	35	26	44
+La Federala	Localidad	Lobos	...	...	...	31
+Lago Parque La Salada	Localidad	Villarino	...	...	...	313
+Laguna Alsina (Est. Bonifacio)	Localidad	Guaminí	1.720	1.589	1.677	1.767
+Laguna Vitel	Localidad	Chascomús	...	...	41	44
+La Invencible	Localidad	Salto	119	88	77	117
+La Larga	Localidad	Daireaux	104	85	53	81
+La Limpia	Localidad	Bragado	75	37	38	87
+La Luisa	Localidad	Capitán Sarmiento Carlos	239	232	230	263
+La Macarena	Localidad	Exaltación de la Cruz	...	...	...	77
+La Manuela	Localidad	Daireaux	...	51	...	12
+La Matanza (San Justo)	Localidad	La Matanza	1.120.088	1.253.921	1.775.272	1.837.168
+La Niña (La Aurora)	Localidad	Nueve de Julio	556	587	531	499
+Lanús	Localidad	Lanús	468.561	453.082	459.263	460.081
+La Pala	Localidad	Adolfo Alsina	80	25	27	52
+Laplacette	Localidad	Junín	121	93	22	58
+La Plata (incl. Lomas de Copello, Ruta Sol)	Localidad	La Plata	522.204	565.404	646.235	755.233
+Laprida	Localidad	Laprida	7.431	8.178	8.840	9.320
+La Rica	Localidad	Chivilcoy	169	157	118	93
+Lartigau	Localidad	Coronel Pringles	46	32	22	6
+Las Armas	Localidad	Maipú	425	438	365	547
+Las Bahamas	Localidad	Ramallo	56	24	31	20
+Las Carabelas	Localidad	Rojas	1.082	1.106	1.107	1.198
+Las Encadenadas	Localidad	Saavedra	...	...	9	48
+Las Flores	Localidad	Las Flores	18.716	20.722	21.455	25.075
+Las Marianas	Localidad	Navarro	543	471	485	556
+Las Martinetas	Localidad	General La Madrid	292	247	215	211
+La Sofía	Localidad	Carlos Casares	45	13	12	32
+Las Toscas	Localidad	Lincoln	396	470	485	470
+Las Vizcachas	Localidad	Exaltación de la Cruz	...	...	...	86
+La Violeta	Localidad	Pergamino	1.039	1.004	1.041	798
+La Viruta	Localidad	Punta Indio	...	...	...	63
+Leandro N. Alem	Localidad	Leandro N. Alem	2.518	2.541	2.468	2.510
+Leubucó	Localidad	Adolfo Alsina	...	...	...	30
+Lezama (Manuel J. Cobo)	Localidad	Lezama	3.755	4.111	4.647	5.515
+Líbano	Localidad	General La Madrid	264	272	292	302
+Licenciado Matienzo	Localidad	Lobería	94	87	76	77
+Lima	Localidad	Zárate	6.651	8.375	10.219	13.871
+Lincoln	Localidad	Lincoln	24.397	26.919	28.051	32.773
+Lobería	Localidad	Lobería	10.919	12.199	13.005	14.215
+Lobos	Localidad	Lobos	22.851	26.937	29.868	35.719
+Loma Escondida	Localidad	Luján	...	...	...	138
+Lomas de Zamora	Localidad	Lomas de Zamora	574.330	591.345	616.279	685.644
+Loma Verde	Localidad	General Paz	449	596	657	885
+López	Localidad	Benito Juárez	166	163	138	163
+López Lecube	Localidad	Puán	55	26	32	23
+Los Ángeles	Localidad	Chacabuco	95	77	54	65
+Los Cardales	Localidad	Exaltación de la Cruz	3.528	5.342	7.174	10.347
+Los Eucaliptus	Localidad	Coronel Dorrego	...	...	...	76
+Los Indios	Localidad	Rojas	105	88	66	79
+Los Naranjos	Localidad	Magdalena	55	86	115	183
+Los Pinos	Localidad	Balcarce	455	464	337	369
+Los Toldos	Localidad	General Viamonte	12.191	13.462	14.496	17.752
+Lucas Monteverde	Localidad	Veinticinco de Mayo	49	30	63	80
+Luján	Localidad	Luján	70.114	83.582	97.363	100.541
+Magdala	Localidad	Pehuajó	289	224	195	294
+Magdalena	Localidad	Magdalena	7.649	9.294	11.093	15.338
+Maipú	Localidad	Maipú	8.036	8.865	8.883	9.966
+Malvinas Argentinas (Los Polvorines)	Localidad	Malvinas Argentinas	239.113	290.691	322.375	349.401
+Manuel Ocampo	Localidad	Pergamino	1.089	1.210	1.078	1.310
+Mar Chiquita	Localidad	Mar Chiquita	162	394	487	893
+Marcos Paz	Localidad	Marcos Paz	25.146	39.231	50.569	61.494
+Mar de Cobo	Localidad	Mar Chiquita	121	406	760	1.602
+Mar del Plata (incl. Batán, Estación Chapadmalal)	Localidad	General Pueyrredón	520.412	552.871	605.122	644.234
+Mar del Sur	Localidad	General Alvarado	310	393	453	937
+Mar del Tuyú (- Mar de Ajó - San Bernardo)	Localidad	La Costa	30.492	48.975	57.325	83.016
+María Ignacia (Est. Vela)	Localidad	Tandil	1.778	1.822	1.948	1.927
+Mariano Benítez	Localidad	Pergamino	198	190	168	155
+Mariano H. Alfonzo (Est. San Patricio)	Localidad	Pergamino	1.005	929	993	1.057
+Marisol (Balneario Marisol)	Localidad	Coronel Dorrego	18	60	158	215
+Martín Colman	Localidad	Rauch	...	...	...	38
+Massey (Est. Elordi)	Localidad	General Villegas	67	76	63	133
+Mauricio Hirsch	Localidad	Carlos Casares	69	92	76	91
+Máximo Paz (- Barrio Belgrano)	Localidad	Cañuelas	4.146	5.565	7.311	14.278
+Mayor Buratovich	Localidad	Villarino	3.663	4.268	5.372	6.162
+Maza	Localidad	Adolfo Alsina	1.564	1.705	1.748	1.902
+Mechita	Localidad	Alberti	448	438	412	654
+Mechita (Est. Mecha)	Localidad	Bragado	1.580	1.422	1.414	1.461
+Mechongué	Localidad	General Alvarado	1.398	1.374	1.307	1.287
+Médanos	Localidad	Villarino	4.755	5.447	5.245	5.998
+Mercedes (incl. Gowland)	Localidad	Mercedes	48.316	53.255	57.854	67.252
+Merlo	Localidad	Merlo	390.042	468.745	527.658	581.484
+Micaela Cascallares (Est. Cascallares)	Localidad	Tres Arroyos	671	662	567	400
+Miramar	Localidad	General Alvarado	19.569	24.317	29.433	34.380
+Miranda	Localidad	Rauch	...	...	...	54
+Mira Pampa	Localidad	Rivadavia	50	54	40	53
+Moctezuma	Localidad	Carlos Casares	375	445	471	435
+Monasterio	Localidad	Lezama	...	...	...	19
+Mones Cazón	Localidad	Pehuajó	1.766	1.830	1.764	1.898
+Montecarlo	Localidad	Pinamar	...	...	...	2
+Monte Hermoso	Localidad	Monte Hermoso	3.514	5.394	6.351	7.844
+Moquehuá	Localidad	Chivilcoy	1.543	2.223	2.130	2.404
+Morea	Localidad	Nueve de Julio	369	416	347	339
+Moreno	Localidad	Moreno	285.643	379.300	452.505	575.758
+Morón	Localidad	Morón	334.301	309.380	321.109	329.517
+Morse	Localidad	Junín	1.161	1.126	563	789
+Napaleofú	Localidad	Balcarce	260	377	374	494
+Navarro	Localidad	Navarro	8.862	11.562	13.224	16.649
+Necochea (- Quequén)	Localidad	Necochea	73.331	80.029	84.784	94.057
+Nicanor Olivera (Est. La Dulce)	Localidad	Necochea	2.013	1.978	2.131	2.087
+Norberto de la Riestra	Localidad	Veinticinco de Mayo	3.460	4.020	4.524	5.206
+Norumbega	Localidad	Nueve de Julio	63	62	57	12
+Nueva Plata	Localidad	Pehuajó	235	208	206	189
+Obligado	Localidad	San Pedro	199	192	261	319
+Ochandio	Localidad	San Cayetano	153	82	51	44
+O'Higgins	Localidad	Chacabuco	1.379	1.331	1.206	894
+Olascoaga	Localidad	Bragado	112	100	127	62
+Olavarría (incl. Villa Alfredo Fortabat)	Localidad	Olavarría	79.493	87.382	93.339	106.900
+Oliden	Localidad	Brandsen	123	152	183	242
+Olivera	Localidad	Luján	1.184	1.538	1.926	2.749
+Ordoqui	Localidad	Carlos Casares	178	182	174	137
+Orense	Localidad	Tres Arroyos	2.188	2.176	2.063	2.180
+Oriente	Localidad	Coronel Dorrego	2.140	1.976	1.778	1.543
+Palemón Huergo	Localidad	Chivilcoy	...	...	...	52
+Paraje La Agraria	Localidad	Junín	...	...	40	20
+Paraje la Ruta	Localidad	Coronel Dorrego	...	...	10	6
+Paraná de las Palmas	Localidad	Escobar	...	...	...	179
+Pardo	Localidad	Las Flores	112	175	159	193
+Parish	Localidad	Azul	...	...	...	41
+Pasman	Localidad	Coronel Suárez	231	208	165	192
+Pasteur	Localidad	Lincoln	1.914	1.993	1.962	1.977
+Patricios	Localidad	Nueve de Julio	815	743	745	860
+Paula	Localidad	Bolívar	61	34	40	60
+Pavón (- Barrio El Remanso - Barrio Los Pinos)	Localidad	Exaltación de la Cruz	3.133	5.607	9.458	15.466
+Pavón	Localidad	General Lavalle	...	762	942	1.637
+Pearson	Localidad	Colón	295	261	257	257
+Pedernales	Localidad	Veinticinco de Mayo	1.258	1.369	1.432	1.606
+Pedro Luro	Localidad	Villarino	4.205	6.626	9.494	11.114
+Pehuajó	Localidad	Pehuajó	27.685	29.639	31.533	36.507
+Pehuen Có	Localidad	Coronel de Marina Leonardo Rosales	237	674	681	838
+Pelicurá	Localidad	Tornquist	...	...	...	28
+Pellegrini	Localidad	Pellegrini	4.572	5.031	5.115	6.213
+Pérez Millán	Localidad	Ramallo	3.125	3.633	4.570	5.137
+Pergamino	Localidad	Pergamino	79.240	85.487	91.399	102.182
+Pichincha	Localidad	General Villegas	18	24	18	22
+Piedritas	Localidad	General Villegas	1.407	1.822	2.160	2.636
+Pieres	Localidad	Lobería	36	35	36	22
+Pigüé	Localidad	Saavedra	12.627	13.822	14.383	15.905
+Pila	Localidad	Pila	1.426	2.085	2.502	3.594
+Pilar	Localidad	Pilar	136.569	226.517	296.826	393.614
+Pinamar	Localidad	Pinamar	10.242	20.592	25.397	39.218
+Pinzón	Localidad	Pergamino	448	454	393	423
+Pipinas	Localidad	Punta Indio	1.172	1.020	954	1.055
+Pirovano	Localidad	Bolívar	1.760	1.536	1.551	1.404
+Pla	Localidad	Alberti	297	237	192	319
+Plomer	Localidad	General Las Heras	148	144	198	235
+Polvaredas	Localidad	Saladillo	376	413	392	401
+Pontaut	Localidad	General La Madrid	97	90	68	75
+Porvenir	Localidad	Florentino Ameghino	124	163	156	192
+Presidente Perón (Guernica)	Localidad	Presidente Perón	40.566	59.738	80.824	101.994
+Puán	Localidad	Puán	4.380	4.735	4.743	5.383
+Pueblo Doyle	Localidad	San Pedro	467	474	528	749
+Pueblo Gouin	Localidad	Carmen de Areco	134	134	122	137
+Pueblo Nuevo	Localidad	Laprida	21	86	36	29
+Pueblo San Jorge	Localidad	Laprida	255	267	248	298
+Puente Urquiza	Localidad	Zárate	...	...	...	193
+Puerto Panal	Localidad	Zárate	...	...	...	141
+Punta Alta (incl. Villa General Arias, Pago Chico)	Localidad	Coronel de Marina Leonardo Rosales	58.389	59.426	60.487	64.244
+Punta Indio	Localidad	Punta Indio	328	666	569	1.084
+Punta Médanos	Localidad	La Costa	...	...	...	5
+Quebradas	Localidad	Baradero	...	...	...	23
+Quenumá	Localidad	Salliqueló	611	683	653	576
+Quilmes	Localidad	Quilmes	511.234	518.788	582.943	631.774
+Rafael Obligado	Localidad	Rojas	954	935	901	750
+Ramallo (incl. Villa Ramallo)	Localidad	Ramallo	20.095	21.480	24.599	29.964
+Ramón Biaus	Localidad	Chivilcoy	245	223	179	192
+Ramón Santamarina	Localidad	Necochea	606	473	430	427
+Ramos Otero	Localidad	Balcarce	113	92	95	75
+Rancagua	Localidad	Pergamino	613	683	695	820
+Ranchos	Localidad	General Paz	6.190	7.333	7.916	10.674
+Rauch	Localidad	Rauch	10.279	11.483	12.705	14.793
+Rawson	Localidad	Chacabuco	2.225	2.184	2.123	1.849
+Recalde	Localidad	Olavarría	252	297	385	346
+Reta	Localidad	Tres Arroyos	166	289	495	395
+Río Tala	Localidad	San Pedro	1.145	1.681	1.814	2.261
+Rivera	Localidad	Adolfo Alsina	3.036	3.016	3.217	3.448
+Roberto Cano	Localidad	Rojas	56	31	23	32
+Roberts	Localidad	Lincoln	2.719	2.939	2.982	2.532
+Rojas	Localidad	Rojas	17.202	18.741	19.766	22.106
+Roosevelt	Localidad	Rivadavia	340	288	239	267
+Roque Pérez	Localidad	Roque Pérez	6.030	8.354	10.358	12.273
+Rosas	Localidad	Las Flores	...	...	...	47
+Ruta 9 Km 107	Localidad	Zárate	...	...	...	51
+Saavedra	Localidad	Saavedra	2.248	2.107	2.276	2.050
+Saforcada	Localidad	Junín	301	407	431	805
+Saladillo	Localidad	Saladillo	19.094	23.313	26.763	30.378
+Salazar	Localidad	Daireaux	1.527	1.850	1.924	2.358
+Saldungaray	Localidad	Tornquist	1.210	1.292	1.351	1.754
+Salliqueló	Localidad	Salliqueló	7.006	7.522	7.617	8.456
+Salto	Localidad	Salto	20.949	23.816	27.466	34.034
+Salvador María ( - Laguna de Lobos)	Localidad	Lobos	841	1.144	1.339	1.847
+San Agustín	Localidad	Balcarce	524	539	498	520
+San Andrés de Giles	Localidad	San Andrés de Giles	11.345	13.941	16.243	19.362
+San Antonio de Areco	Localidad	San Antonio de Areco	15.396	17.764	19.768	22.909
+San Carlos de Bolívar (Est. Bolívar)	Localidad	Bolívar	23.113	24.094	26.242	31.618
+San Cayetano	Localidad	San Cayetano	6.141	6.757	7.354	8.227
+San Clemente del Tuyú	Localidad	La Costa	7.987	11.174	12.126	16.642
+San Emilio	Localidad	General Viamonte	210	209	142	272
+San Enrique	Localidad	Veinticinco de Mayo	171	331	279	115
+San Fernando	Localidad	San Fernando	141.063	148.064	160.284	168.882
+San Francisco de Bellocq	Localidad	Tres Arroyos	678	547	523	614
+San Germán	Localidad	Puán	184	171	152	142
+San Isidro	Localidad	San Isidro	299.023	291.505	292.878	295.978
+San Manuel	Localidad	Lobería	1.266	1.120	1.126	1.232
+San Mauricio	Localidad	Rivadavia	39	28	18	44
+San Mayol	Localidad	Tres Arroyos	91	89	63	477
+San Miguel	Localidad	San Miguel	212.692	253.086	276.190	327.650
+San Miguel del Monte (Est. Monte)	Localidad	Monte	10.777	13.384	17.005	21.794
+San Nicolás de los Arroyos (incl. La Emilia)	Localidad	San Nicolás	124.910	130.829	138.927	159.978
+San Pedro	Localidad	San Pedro	36.841	42.151	47.452	56.471
+San Román	Localidad	Coronel Dorrego	47	68	38	62
+San Sebastián	Localidad	Chivilcoy	167	153	166	133
+Sansinena	Localidad	Rivadavia	483	468	522	473
+Santa Clara del Mar	Localidad	Mar Chiquita	2.999	5.204	7.713	16.629
+Santa Coloma	Localidad	Baradero	141	169	203	284
+Santa Eleodora	Localidad	General Villegas	322	250	293	272
+Santa Lucía	Localidad	San Pedro	2.141	2.352	2.360	2.655
+Santa Luisa	Localidad	Olavarría	84	98	40	59
+Santa María	Localidad	Coronel Suárez	1.640	1.665	1.832	1.742
+Santa Regina	Localidad	General Villegas	564	533	554	433
+Santa Rita - San Lucas	Localidad	San Vicente	...	...	...	1.003
+Santa Rosa (Barrio San Esteban - Barrio Los Pozos)	Localidad	Cañuelas	1.620	3.771	5.297	8.449
+Santo Domingo	Localidad	Maipú	133	137	95	81
+Santo Tomás	Localidad	Carlos Casares	...	...	27	28
+San Vicente	Localidad	San Vicente	32.155	42.707	58.165	90.021
+Sarasa	Localidad	Colón	91	95	71	74
+Sevigné	Localidad	Dolores	278	286	286	392
+Sierra Chica	Localidad	Olavarría	2.854	3.305	4.812	3.031
+Sierra de la Ventana	Localidad	Tornquist	895	1.514	2.165	2.649
+Sierra de los Padres (incl. Barrio La Gloria)	Localidad	General Pueyrredón	1.612	2.556	4.664	7.033
+Sierras Bayas	Localidad	Olavarría	3.909	3.929	3.849	3.877
+Smith	Localidad	Carlos Casares	491	506	465	557
+Solanet	Localidad	Ayacucho	...	52	47	51
+Sol de Mayo	Localidad	Rojas	...	...	20	85
+Solís	Localidad	San Andrés de Giles	678	862	1.001	1.645
+Stroeder	Localidad	Patagones	1.968	1.975	1.998	2.117
+Suipacha	Localidad	Suipacha	5.909	7.149	8.403	9.609
+Sundblad	Localidad	Rivadavia	57	96	63	71
+Tamangueyú	Localidad	Lobería	303	409	438	475
+Tandil	Localidad	Tandil	91.101	101.010	116.916	138.549
+Tapalqué	Localidad	Tapalqué	5.715	6.605	7.444	9.408
+Tedín Uriburu	Localidad	Benito Juárez	185	158	157	153
+Teniente Origone	Localidad	Villarino	168	148	145	129
+Tigre	Localidad	Tigre	254.723	296.189	370.913	439.067
+Timote	Localidad	Carlos Tejedor	518	509	526	535
+Tornquist	Localidad	Tornquist	5.635	6.066	6.473	7.508
+Torres	Localidad	Exaltación de la Cruz	...	...	...	138
+Torres	Localidad	Luján	1.312	1.727	2.664	2.466
+Trenque Lauquen	Localidad	Trenque Lauquen	25.903	30.764	33.442	39.975
+Tres Algarrobos (Est. Cuenca)	Localidad	Carlos Tejedor	2.820	2.994	3.201	4.008
+Tres Arroyos	Localidad	Tres Arroyos	44.923	45.986	46.867	52.199
+Tres de Febrero (Caseros)	Localidad	Tres de Febrero	349.376	336.467	340.071	362.319
+Tres Lomas	Localidad	Tres Lomas	6.416	6.685	8.061	8.405
+Tres Picos	Localidad	Tornquist	101	98	82	112
+Tres Sargentos	Localidad	Carmen de Areco	410	324	391	456
+Triunvirato	Localidad	Lincoln	...	...	76	63
+Trongé	Localidad	Trenque Lauquen	...	...	23	20
+Udaquiola	Localidad	Ayacucho	...	66	91	121
+Urdampilleta	Localidad	Bolívar	2.922	2.524	2.643	1.399
+Uribelarrea	Localidad	Cañuelas	835	1.147	1.282	1.660
+Urquiza (Juan Anchorena)	Localidad	Pergamino	1.059	1.028	976	1.122
+Vagues	Localidad	San Antonio de Areco	...	...	...	78
+Valdés	Localidad	Veinticinco de Mayo	414	519	579	354
+Vásquez	Localidad	Adolfo Gonzales Chaves	55	35	43	56
+Vedia	Localidad	Leandro N. Alem	7.242	8.089	8.827	9.595
+Velloso	Localidad	Tapalqué	120	107	127	152
+Verónica	Localidad	Punta Indio	5.138	5.772	6.546	8.541
+Vicente López (Olivos)	Localidad	Vicente López	289.505	274.082	269.420	280.541
+Vieytes	Localidad	Magdalena	248	295	287	402
+Villa Alsina (Est. Alsina)	Localidad	Baradero	1.037	1.184	1.488	1.471
+Villa Cacique ( - Barker)	Localidad	Benito Juárez	3.876	3.238	3.930	3.230
+Villa Esperanza	Localidad	San Nicolás	261	357	386	433
+Villa Espil	Localidad	San Andrés de Giles	91	167	157	411
+Villa General Savio (Est. Sánchez)	Localidad	Ramallo	873	1.073	1.511	2.663
+Villa Gesell (incl. Mar Azul)	Localidad	Villa Gesell	15.647	24.082	31.390	37.286
+Villa Iris	Localidad	Puán	2.048	1.950	1.858	1.824
+Villa La Arcadia (Villa Arcadia)	Localidad	Coronel Suárez	254	305	434	627
+Villa Laguna La Brava	Localidad	Balcarce	49	174	115	122
+Villa Lía	Localidad	San Antonio de Areco	833	962	1.182	1.416
+Villalonga	Localidad	Patagones	2.657	3.705	4.517	5.987
+Villa Lynch Pueyrredón	Localidad	Bolívar	25	9	62	2
+Villa Manuel Pomar (El Arbolito)	Localidad	Colón	308	236	199	265
+Villa Manuel Pomar	Localidad	Rojas	81	47	52	62
+Villa María	Localidad	Alberti	46	21	24	30
+Villa Moll (Est. Moll)	Localidad	Navarro	593	612	592	597
+Villanueva (- Río Salado)	Localidad	General Paz	472	632	802	915
+Villa Parque Girado	Localidad	Chascomús	...	75	93	107
+Villa Robles	Localidad	La Costa	...	...	...	35
+Villa Roch	Localidad	Tordillo	...	61	...	83
+Villa Rodríguez (Est. Barrow)	Localidad	Tres Arroyos	39	38	17	48
+Villa Roth (Est. Ingeniero Balbín)	Localidad	General Pinto	96	76	38	68
+Villars	Localidad	General Las Heras	764	892	1.147	1.848
+Villars	Localidad	Marcos Paz	...	...	...	39
+Villa Ruiz	Localidad	San Andrés de Giles	348	465	477	453
+Villa Saboya	Localidad	General Villegas	418	327	331	301
+Villa San José	Localidad	Pergamino	...	152	145	184
+Villa Sauze	Localidad	General Villegas	615	581	423	427
+Villa Serrana La Gruta	Localidad	Tornquist	8	41	52	196
+Villa Ventana	Localidad	Tornquist	100	446	609	952
+Viña	Localidad	Arrecifes	457	483	464	515
+Vivoratá	Localidad	Mar Chiquita	833	792	956	1.122
+Warnes	Localidad	Bragado	473	465	437	523
+Yutuyaco	Localidad	Adolfo Alsina	27	19	16	29
+Zapiola	Localidad	Lobos	...	...	...	287
+Zárate (incl. Country Club El Casco, Escalada)	Localidad	Zárate	80.260	88.880	99.187	114.905
+Zavalía	Localidad	General Viamonte	405	324	327	304
+Zenón Videla Dorna	Localidad	Monte	244	64	76	33

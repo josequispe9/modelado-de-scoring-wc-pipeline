@@ -1,0 +1,17 @@
+Cochinoca	Departamento	9.859	12.111	12.656	15.054
+Doctor Manuel Belgrano	Departamento	184.920	238.012	265.249	320.990
+El Carmen	Departamento	62.291	84.667	97.039	122.366
+Humahuaca	Departamento	18.183	16.765	17.366	20.914
+Ledesma	Departamento	68.869	75.716	81.790	94.252
+Palpalá	Departamento	43.521	48.199	52.631	65.541
+Rinconada	Departamento	3.076	2.298	2.488	1.802
+San Antonio	Departamento	2.704	3.698	4.466	6.729
+San Pedro	Departamento	66.130	71.037	75.037	88.241
+Santa Bárbara	Departamento	15.607	17.115	17.730	20.499
+Santa Catalina	Departamento	3.176	3.140	2.800	2.646
+Susques	Departamento	2.846	3.628	3.791	4.098
+Tilcara	Departamento	8.463	10.403	12.349	14.721
+Tumbaya	Departamento	4.175	4.553	4.658	5.381
+Valle Grande	Departamento	1.976	2.386	2.451	2.509
+Yavi	Departamento	16.533	18.160	20.806	25.868
+Jujuy	Provincia	512.329	611.888	673.307	811.611

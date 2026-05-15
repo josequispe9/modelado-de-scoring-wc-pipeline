@@ -1,0 +1,49 @@
+{
+  "audio_id": "1d82efe7-0784-4222-94be-9b9d1ede8f9a",
+  "nombre_archivo": "amza99_1_260406163013259_ACD_17113",
+  "metadata_llamada": {
+    "agente": "MZA 99",
+    "campania": "MVS_MZA",
+    "empresa": "AZO",
+    "duracion_seg": 57,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola, buenas tardes."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hablo con Gabriel."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Después del tono, deja tu mensaje."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Para finalizar, cortá o marca la tecla numeral para más opciones."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "bien la de la de la de la de la de"
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "No, y me busco después del trono, me falta un mensaje y eso."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.4772,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T14:59:27.920061+00:00"
+  }
+}

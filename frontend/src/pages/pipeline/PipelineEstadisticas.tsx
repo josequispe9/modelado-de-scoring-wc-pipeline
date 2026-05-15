@@ -9,6 +9,7 @@ import {
   getEstadisticasEtapa4,
   getEstadisticasEtapa5,
   getEstadisticasEtapa6,
+  getCalendarioAudios,
 } from "@/api/pipeline"
 
 const Plot = createPlotlyComponent(Plotly)
@@ -88,18 +89,23 @@ type DatosEtapa4 = {
 }
 type DatosEtapa5 = { correcto: number; error: number }
 type DatosEtapa6 = {
-  conteos:           { correcto: number; reprocesar: number; invalido: number }
-  coherencia:        Record<string, number>
+  conteos:           { correcto: number; reprocesar: number; invalido: number; pendiente: number; sin_datos: number }
   causas_invalido:   Record<string, number>
-  avg_logprob:       number[]
-  total_words:       number[]
-  low_score_ratio:   number[]
-  speaker_dominance: number[]
-  score_llm:         number[]
-  score_total:       number[]
-  scatter_det_llm:   { x: number; y: number }[]
-  pct_roles:         number
-  umbrales:          { correcto: number; reprocesar: number }
+  avg_logprob:       { correcto: number; reprocesar: number; invalido: number }
+  total_words:       { correcto: number; reprocesar: number; invalido: number }
+  low_score_ratio:   { correcto: number; reprocesar: number; invalido: number }
+  speaker_dominance: { correcto: number; reprocesar: number; invalido: number }
+  score_determinista: { bins: number[]; counts: number[] }
+  umbrales:          { umbral_score_correcto: number; umbral_score_reprocesar: number }
+}
+
+type DiaCal = { fecha: string; cantidad: number }
+type DatosCalendario = {
+  dias: DiaCal[]
+  total: number
+  dias_con_datos: number
+  fecha_min: string
+  fecha_max: string
 }
 
 // ── Helpers de fecha ──────────────────────────────────────────────────────────
@@ -341,7 +347,6 @@ function SeccionGlobal({ datos }: { datos: DatosGlobal | null }) {
 
 function SeccionEtapa1({ datos }: { datos: DatosEtapa1 | null }) {
   if (!datos) return null
-  const run = datos.ultimo_run
   return (
     <div className="flex flex-col gap-6">
       <div className="flex gap-0 flex-wrap">
@@ -349,17 +354,6 @@ function SeccionEtapa1({ datos }: { datos: DatosEtapa1 | null }) {
         <Metrica label="Descargados correctamente" valor={datos.descargados} />
         <Metrica label="Errores de descarga"    valor={datos.errores_descarga} />
       </div>
-      {run.disponibles_mitrol > 0 && (
-        <div className="flex flex-col gap-2">
-          <p className="text-xs text-muted-foreground">Último run de descarga</p>
-          <div className="flex gap-0 flex-wrap">
-            <Metrica label="Disponibles en Mitrol" valor={run.disponibles_mitrol} sub="con los filtros aplicados" />
-            <Metrica label="Subidos"   valor={run.subidos}  />
-            <Metrica label="Omitidos"  valor={run.omitidos} sub="ya existían en MinIO" />
-            <Metrica label="Errores"   valor={run.errores}  />
-          </div>
-        </div>
-      )}
       <div className="grid grid-cols-2 gap-x-8">
         <Hist
           data={datos.duraciones}
@@ -533,59 +527,66 @@ function SeccionEtapa6({ datos }: { datos: DatosEtapa6 | null }) {
   if (!datos) return null
 
   const total = datos.conteos.correcto + datos.conteos.reprocesar + datos.conteos.invalido
-  const umb6  = datos.umbrales ?? { correcto: 0.75, reprocesar: 0.40 }
-
-  const cohKeys    = Object.keys(datos.coherencia)
-  const cohColors  = cohKeys.map(k =>
-    k === "coherente" ? C.correcto : k === "incoherente" ? C.invalido : C.reprocesar
-  )
+  const umb   = datos.umbrales ?? { umbral_score_correcto: 0.75, umbral_score_reprocesar: 0.40 }
+  const umbCor = umb.umbral_score_correcto
+  const umbRep = umb.umbral_score_reprocesar
 
   const shapeRep: Partial<Plotly.Shape> = {
-    type: "line", x0: umb6.reprocesar, x1: umb6.reprocesar, y0: 0, y1: 1,
+    type: "line", x0: umbRep, x1: umbRep, y0: 0, y1: 1,
     xref: "x", yref: "paper",
     line: { color: C.reprocesar, width: 1.5, dash: "dot" },
   }
   const shapeCor: Partial<Plotly.Shape> = {
-    type: "line", x0: umb6.correcto, x1: umb6.correcto, y0: 0, y1: 1,
+    type: "line", x0: umbCor, x1: umbCor, y0: 0, y1: 1,
     xref: "x", yref: "paper",
     line: { color: C.correcto, width: 1.5, dash: "dot" },
   }
 
+  const det = datos.score_determinista
+  const hasDet = det?.bins?.length && det?.counts?.length
+
+  // Tabla de métricas por estado
+  const metricasFilas: { label: string; key: keyof Omit<DatosEtapa6, "conteos" | "causas_invalido" | "score_determinista" | "umbrales"> }[] = [
+    { label: "avg_logprob",       key: "avg_logprob"       },
+    { label: "total_words",       key: "total_words"       },
+    { label: "low_score_ratio",   key: "low_score_ratio"   },
+    { label: "speaker_dominance", key: "speaker_dominance" },
+  ]
+
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex gap-0">
+      {/* Conteos */}
+      <div className="flex gap-0 flex-wrap">
         <Metrica label="Correcto"   valor={datos.conteos.correcto}
           sub={total ? `${((datos.conteos.correcto / total) * 100).toFixed(1)}%` : undefined} />
         <Metrica label="Reprocesar" valor={datos.conteos.reprocesar}
           sub={total ? `${((datos.conteos.reprocesar / total) * 100).toFixed(1)}%` : undefined} />
         <Metrica label="Inválido"   valor={datos.conteos.invalido}
           sub={total ? `${((datos.conteos.invalido / total) * 100).toFixed(1)}%` : undefined} />
-        <Metrica
-          label="Roles identificados"
-          valor={`${(datos.pct_roles * 100).toFixed(1)}%`}
-          sub="vendedor + cliente"
-        />
+        <Metrica label="Pendiente"  valor={datos.conteos.pendiente} />
+        <Metrica label="Umbral correcto"   valor={umbCor} sub={`score ≥ ${umbCor} → correcto`} />
+        <Metrica label="Umbral reprocesar" valor={umbRep} sub={`score ≥ ${umbRep} → reprocesar`} />
       </div>
 
       <div className="grid grid-cols-2 gap-x-8 gap-y-8">
 
-        {/* Pie coherencia */}
-        <Figure label="Fig. 9 — Coherencia LLM" height={220}>
-          {!cohKeys.length ? <SinDatos /> : (
+        {/* Histograma score determinista — bins pre-calculados */}
+        <Figure label={`Fig. 9 — Score determinista (umbrales: reprocesar=${umbRep} · correcto=${umbCor})`} height={220}>
+          {!hasDet ? <SinDatos /> : (
             <Plot
               data={[{
-                type:    "pie",
-                labels:  cohKeys,
-                values:  cohKeys.map(k => datos.coherencia[k]),
-                marker:  { colors: cohColors, line: { color: "#ffffff", width: 1 } },
-                textinfo: "label+percent",
-                textfont: { size: 10, color: FONT_COLOR },
-                hole:    0.4,
+                type:    "bar",
+                x:       det.bins,
+                y:       det.counts,
+                marker:  { color: C.a },
+                width:   det.bins.length > 1 ? (det.bins[1] - det.bins[0]) * 0.9 : 0.09,
               }]}
               layout={{
                 ...BASE_LAYOUT,
-                margin:     { t: 16, r: 16, b: 16, l: 16 },
-                showlegend: false,
+                xaxis:   { ...AXIS_STYLE, title: { text: "score", font: { size: 10 } }, range: [0, 1] },
+                yaxis:   { ...AXIS_STYLE, title: { text: "n", font: { size: 10 } } },
+                shapes:  [shapeRep, shapeCor],
+                bargap:  0.05,
               }}
               config={BASE_CONFIG}
               style={PLOT_STYLE}
@@ -598,58 +599,250 @@ function SeccionEtapa6({ datos }: { datos: DatosEtapa6 | null }) {
           label="Fig. 10 — Causas de clasificación inválida"
           color={C.invalido}
         />
-
-        <Hist
-          data={datos.avg_logprob}
-          label="Fig. 11 — avg_logprob (confianza Whisper)"
-          color={C.b}
-          xaxis={{ title: { text: "logprob", font: { size: 10 } } }}
-        />
-        <Hist
-          data={datos.total_words}
-          label="Fig. 12 — Total de palabras por transcripción"
-          color={C.a}
-          xaxis={{ title: { text: "palabras", font: { size: 10 } } }}
-        />
-        <Hist
-          data={datos.low_score_ratio}
-          label="Fig. 13 — Low score ratio (palabras de baja confianza)"
-          color={C.d}
-          xbins={{ size: 0.05 }}
-          xaxis={{ title: { text: "ratio", font: { size: 10 } }, range: [0, 1] }}
-        />
-        <Hist
-          data={datos.speaker_dominance}
-          label="Fig. 14 — Speaker dominance"
-          color={C.c}
-          xbins={{ size: 0.05 }}
-          xaxis={{ title: { text: "dominance", font: { size: 10 } }, range: [0, 1] }}
-        />
-        <Hist
-          data={datos.score_llm}
-          label="Fig. 15 — Score LLM"
-          color={C.b}
-          xbins={{ size: 0.05 }}
-          xaxis={{ title: { text: "score", font: { size: 10 } }, range: [0, 1] }}
-        />
-        <Hist
-          data={datos.score_total}
-          label={`Fig. 16 — Score total (umbrales: reprocesar=${umb6.reprocesar} · correcto=${umb6.correcto})`}
-          color={C.a}
-          xbins={{ size: 0.05 }}
-          xaxis={{ title: { text: "score", font: { size: 10 } }, range: [0, 1] }}
-          shapes={[shapeRep, shapeCor]}
-        />
       </div>
 
-      <div className="grid grid-cols-2 gap-x-8">
-        <Scatter
-          puntos={datos.scatter_det_llm}
-          label="Fig. 17 — Score determinista vs Score LLM"
-          xLabel="score determinista"
-          yLabel="score LLM"
-          color={C.b}
-        />
+      {/* Tabla de métricas promedio por estado */}
+      <div>
+        <FigureLabel>Fig. 11 — Métricas promedio por estado (Whisper)</FigureLabel>
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="border-b border-border">
+              <th className="text-left py-1 px-2 text-muted-foreground font-medium">Métrica</th>
+              <th className="text-right py-1 px-2 text-muted-foreground font-medium">Correcto</th>
+              <th className="text-right py-1 px-2 text-muted-foreground font-medium">Reprocesar</th>
+              <th className="text-right py-1 px-2 text-muted-foreground font-medium">Inválido</th>
+            </tr>
+          </thead>
+          <tbody>
+            {metricasFilas.map(({ label, key }) => {
+              const obj = datos[key] as { correcto: number; reprocesar: number; invalido: number }
+              return (
+                <tr key={key} className="border-b border-border/40">
+                  <td className="py-1 px-2 font-mono text-foreground">{label}</td>
+                  <td className="py-1 px-2 text-right tabular-nums text-foreground">{obj?.correcto?.toFixed(3) ?? "—"}</td>
+                  <td className="py-1 px-2 text-right tabular-nums text-foreground">{obj?.reprocesar?.toFixed(3) ?? "—"}</td>
+                  <td className="py-1 px-2 text-right tabular-nums text-foreground">{obj?.invalido?.toFixed(3) ?? "—"}</td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
+// ── Calendario tipo GitHub ────────────────────────────────────────────────────
+
+function colorCelda(cantidad: number): string {
+  if (cantidad === 0) return "#f1f5f9"        // slate-100
+  if (cantidad <= 10)  return "#b8d0e8"       // steel blue cuartil 1
+  if (cantidad <= 50)  return "#7aafd4"       // cuartil 2
+  if (cantidad <= 150) return "#4a7fa5"       // cuartil 3 — color base del proyecto
+  return "#2d5a7a"                            // cuartil 4
+}
+
+const DIAS_SEMANA = ["Lun", "", "Mié", "", "Vie", "", ""]
+const NOMBRES_MES = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
+
+function CalendarioGitHub({ dias }: { dias: DiaCal[] }) {
+  // Construir mapa fecha → cantidad
+  const mapa = new Map<string, number>()
+  for (const d of dias) mapa.set(d.fecha, d.cantidad)
+
+  // Helper: fecha local como YYYY-MM-DD (evita el desfase UTC en zonas negativas como ART)
+  const isoLocal = (d: Date) =>
+    `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
+
+  // Calcular 52 semanas hacia atrás desde hoy, arrancando en lunes (semana laboral AR)
+  const hoyDate = new Date()
+  const diasDesdeHoy = (hoyDate.getDay() + 6) % 7 // 0=lun … 6=dom
+  const lunes = new Date(hoyDate)
+  lunes.setDate(hoyDate.getDate() - diasDesdeHoy)
+
+  // Inicio: 51 semanas hacia atrás desde el lunes actual
+  const inicioSemana = new Date(lunes)
+  inicioSemana.setDate(lunes.getDate() - 51 * 7)
+
+  // Construir array de semanas. Cada semana: 7 días (lun a dom)
+  const semanas: { fecha: string; cantidad: number }[][] = []
+  for (let s = 0; s < 52; s++) {
+    const semana: { fecha: string; cantidad: number }[] = []
+    for (let d = 0; d < 7; d++) {
+      const fecha = new Date(inicioSemana)
+      fecha.setDate(inicioSemana.getDate() + s * 7 + d)
+      const iso = isoLocal(fecha)
+      semana.push({ fecha: iso, cantidad: mapa.get(iso) ?? 0 })
+    }
+    semanas.push(semana)
+  }
+
+  // Calcular labels de meses: dónde aparece cada mes nuevo
+  const labelsMes: { col: number; mes: string }[] = []
+  let mesActual = -1
+  for (let s = 0; s < semanas.length; s++) {
+    const mes = new Date(semanas[s][1].fecha).getMonth() // usar martes para evitar borde
+    if (mes !== mesActual) {
+      labelsMes.push({ col: s, mes: NOMBRES_MES[mes] })
+      mesActual = mes
+    }
+  }
+
+  // Tooltip state
+  const [tooltip, setTooltip] = useState<{ x: number; y: number; texto: string } | null>(null)
+
+  const CELL = 12
+  const GAP  = 2
+  const paso  = CELL + GAP
+
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="overflow-x-auto">
+        <div style={{ display: "inline-block", position: "relative" }}>
+          {/* Labels de meses */}
+          <div style={{ display: "flex", paddingLeft: 28, marginBottom: 4, position: "relative", height: 14 }}>
+            {labelsMes.map(({ col, mes }) => (
+              <span
+                key={`${col}-${mes}`}
+                style={{
+                  position: "absolute",
+                  left: 28 + col * paso,
+                  fontSize: 10,
+                  color: "#64748b",
+                  whiteSpace: "nowrap",
+                  lineHeight: 1,
+                }}
+              >
+                {mes}
+              </span>
+            ))}
+          </div>
+
+          {/* Grid principal */}
+          <div style={{ display: "flex", gap: GAP, alignItems: "flex-start" }}>
+            {/* Eje Y */}
+            <div style={{ display: "flex", flexDirection: "column", gap: GAP, marginTop: 0 }}>
+              {DIAS_SEMANA.map((lbl, i) => (
+                <div
+                  key={i}
+                  style={{
+                    height: CELL,
+                    width: 24,
+                    fontSize: 9,
+                    color: "#94a3b8",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "flex-end",
+                    paddingRight: 3,
+                    userSelect: "none",
+                  }}
+                >
+                  {lbl}
+                </div>
+              ))}
+            </div>
+
+            {/* Semanas */}
+            {semanas.map((semana, si) => (
+              <div key={si} style={{ display: "flex", flexDirection: "column", gap: GAP }}>
+                {semana.map((dia, di) => (
+                  <div
+                    key={di}
+                    style={{
+                      width: CELL,
+                      height: CELL,
+                      borderRadius: 2,
+                      backgroundColor: colorCelda(dia.cantidad),
+                      cursor: dia.cantidad > 0 ? "default" : "default",
+                      flexShrink: 0,
+                    }}
+                    onMouseEnter={e => {
+                      const rect = (e.target as HTMLElement).getBoundingClientRect()
+                      setTooltip({
+                        x: rect.left + window.scrollX + CELL / 2,
+                        y: rect.top  + window.scrollY - 6,
+                        texto: `${dia.fecha} · ${dia.cantidad} audio${dia.cantidad !== 1 ? "s" : ""}`,
+                      })
+                    }}
+                    onMouseLeave={() => setTooltip(null)}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
+
+          {/* Leyenda */}
+          <div style={{ display: "flex", alignItems: "center", gap: 4, marginTop: 8, paddingLeft: 28 }}>
+            <span style={{ fontSize: 9, color: "#94a3b8" }}>Menos</span>
+            {[0, 5, 30, 100, 200].map(v => (
+              <div
+                key={v}
+                style={{
+                  width: CELL,
+                  height: CELL,
+                  borderRadius: 2,
+                  backgroundColor: colorCelda(v),
+                  flexShrink: 0,
+                }}
+              />
+            ))}
+            <span style={{ fontSize: 9, color: "#94a3b8" }}>Más</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Tooltip via fixed positioning */}
+      {tooltip && (
+        <div
+          style={{
+            position: "fixed",
+            left: tooltip.x,
+            top: tooltip.y,
+            transform: "translate(-50%, -100%)",
+            background: "#1e293b",
+            color: "#f8fafc",
+            fontSize: 11,
+            padding: "3px 8px",
+            borderRadius: 4,
+            pointerEvents: "none",
+            zIndex: 9999,
+            whiteSpace: "nowrap",
+          }}
+        >
+          {tooltip.texto}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function SeccionCalendario({ datos }: { datos: DatosCalendario | null }) {
+  if (!datos) return null
+
+  const promedio = datos.dias_con_datos > 0
+    ? (datos.total / datos.dias_con_datos).toFixed(1)
+    : "—"
+
+  // Día más activo
+  const diaMasActivo = datos.dias.reduce<DiaCal | null>(
+    (max, d) => (!max || d.cantidad > max.cantidad ? d : max),
+    null
+  )
+
+  return (
+    <div className="flex flex-col gap-6">
+      <CalendarioGitHub dias={datos.dias} />
+      <div className="flex gap-0 flex-wrap">
+        <Metrica label="Total audios"       valor={datos.total.toLocaleString()} />
+        <Metrica label="Días con datos"     valor={datos.dias_con_datos} />
+        <Metrica label="Promedio / día activo" valor={promedio} sub="audios por día con al menos 1 llamada" />
+        {diaMasActivo && (
+          <Metrica
+            label="Fecha más activa"
+            valor={diaMasActivo.cantidad.toLocaleString()}
+            sub={diaMasActivo.fecha}
+          />
+        )}
       </div>
     </div>
   )
@@ -706,25 +899,28 @@ export default function PipelineEstadisticas() {
   const [loading,    setLoading]    = useState(false)
   const [error,      setError]      = useState<string | null>(null)
 
-  const [global, setGlobal] = useState<DatosGlobal | null>(null)
-  const [etapa1, setEtapa1] = useState<DatosEtapa1 | null>(null)
-  const [etapa3, setEtapa3] = useState<DatosEtapa3 | null>(null)
-  const [etapa4, setEtapa4] = useState<DatosEtapa4 | null>(null)
-  const [etapa5, setEtapa5] = useState<DatosEtapa5 | null>(null)
-  const [etapa6, setEtapa6] = useState<DatosEtapa6 | null>(null)
+  const [global,     setGlobal]     = useState<DatosGlobal | null>(null)
+  const [etapa1,     setEtapa1]     = useState<DatosEtapa1 | null>(null)
+  const [etapa3,     setEtapa3]     = useState<DatosEtapa3 | null>(null)
+  const [etapa4,     setEtapa4]     = useState<DatosEtapa4 | null>(null)
+  const [etapa5,     setEtapa5]     = useState<DatosEtapa5 | null>(null)
+  const [etapa6,     setEtapa6]     = useState<DatosEtapa6 | null>(null)
+  const [calendario, setCalendario] = useState<DatosCalendario | null>(null)
 
   const fetchTodo = useCallback(async (d: string, h: string) => {
     setLoading(true); setError(null)
     try {
-      const [g, e1, e3, e4, e5, e6] = await Promise.all([
+      const [g, e1, e3, e4, e5, e6, cal] = await Promise.all([
         getEstadisticasGlobal(d, h),
         getEstadisticasEtapa1(d, h),
         getEstadisticasEtapa3(d, h),
         getEstadisticasEtapa4(d, h),
         getEstadisticasEtapa5(d, h),
         getEstadisticasEtapa6(d, h),
+        getCalendarioAudios(d, h),
       ])
       setGlobal(g); setEtapa1(e1); setEtapa3(e3); setEtapa4(e4); setEtapa5(e5); setEtapa6(e6)
+      setCalendario(cal)
     } catch (e) {
       setError(e instanceof Error ? e.message : "error")
     } finally {
@@ -753,14 +949,23 @@ export default function PipelineEstadisticas() {
 
       {error && <p className="text-xs text-muted-foreground font-mono">Error: {error}</p>}
 
-      {!global && !loading && (
+      {!global && !calendario && !loading && (
         <p className="text-sm text-muted-foreground">
           Seleccioná un rango de fechas y presioná <em>Aplicar</em>.
         </p>
       )}
 
-      {global && (
+      {(global || calendario) && (
         <>
+          <section className="flex flex-col gap-4">
+            <SeccionHeader
+              n="§ —"
+              titulo="Cobertura de audios"
+              desc="Audios registrados en PostgreSQL por fecha de llamada."
+            />
+            <SeccionCalendario datos={calendario} />
+          </section>
+
           <section className="flex flex-col gap-4">
             <SeccionHeader
               n="§ 0"
@@ -798,7 +1003,7 @@ export default function PipelineEstadisticas() {
             <SeccionHeader
               n="§ 6"
               titulo="Etapa 6 — Control de calidad de transcripción"
-              desc="Score combinado: determinista (avg_logprob, words, speaker balance) + LLM (coherencia, roles)."
+              desc="Score determinista: avg_logprob, total words, low score ratio, speaker dominance."
             />
             <SeccionEtapa6 datos={etapa6} />
           </section>

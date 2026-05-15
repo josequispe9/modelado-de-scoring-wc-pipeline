@@ -1,0 +1,182 @@
+25 de Mayo (Villa Veinticinco de Mayo)	Localidad	San Rafael	1.440	1.585	1.450	2.087
+3 de Mayo	Localidad	Lavalle	464	614	516	1.384
+Agrelo	Localidad	Luján de Cuyo	749	1.880	2.147	5.598
+Agua Escondida	Localidad	Malargüe	198	116	443	404
+Alto Salvador	Localidad	San Martín	...	237	...	400
+Alto Salvador Sur	Localidad	San Martín	...	...	...	362
+Alto Verde	Localidad	San Martín	1.154	1.440	1.627	2.431
+Andrade	Localidad	Rivadavia	...	196	216	450
+Bardas Blancas	Localidad	Malargüe	...	63	...	197
+Barrancas	Localidad	Maipú	...	167	194	658
+Barrio 12 de Octubre	Localidad	Santa Rosa	...	224	177	868
+Barrio 9 de Julio	Localidad	Maipú	...	...	...	5.685
+Barrio Alto del Olvido	Localidad	Lavalle	...	249	266	501
+Barrio Belgrano Norte	Localidad	Tupungato	...	230	1.392	1.266
+Barrio Carrasco	Localidad	San Carlos	...	...	135	111
+Barrio Chivilcoy	Localidad	San Martín	276	197	403	315
+Barrio Cooperativa Eléctrica	Localidad	Rivadavia	...	...	...	972
+Barrio Cooperativa Los Campamentos	Localidad	Rivadavia	...	268	267	483
+Barrio Cooperativa Reducción	Localidad	Rivadavia	...	...	...	228
+Barrio El Carmen	Localidad	Lavalle	...	...	...	112
+Barrio El Cepillo	Localidad	San Carlos	...	98	109	175
+Barrio El Nevado	Localidad	San Rafael	156	117	160	180
+Barrio Emanuel	Localidad	San Martín	...	82	75	417
+Barrio Empleados de Comercio	Localidad	San Rafael	...	211	208	804
+Barrio Intendencia	Localidad	San Rafael	...	124	120	387
+Barrio Jesús de Nazaret	Localidad	Maipú	...	363	399	884
+Barrio Jocolí II	Localidad	Lavalle	...	102	163	873
+Barrio José Hernández	Localidad	Tupungato	...	...	...	1.520
+Barrio la Estación	Localidad	San Martín	...	...	111	115
+Barrio Lagunas de Bartoluzzi	Localidad	Lavalle	...	63	290	104
+Barrio La Palmera	Localidad	Lavalle	...	90	136	339
+Barrio La Pega	Localidad	Lavalle	...	268	392	979
+Barrio Los Charabones	Localidad	San Martín	...	101	227	286
+Barrio Los Jarilleros	Localidad	Lavalle	...	511	831	615
+Barrio Los Olivos	Localidad	Lavalle	...	357	73	274
+Barrio María Auxiliadora	Localidad	Santa Rosa	...	71	94	356
+Barrio Molina Cabrera	Localidad	Santa Rosa	...	343	239	547
+Barrio Nuestra Señora de Fátima	Localidad	San Martín	...	...	203	668
+Barrio Nueva California Sur	Localidad	San Martín	...	...	...	443
+Barrio Perdriel IV	Localidad	Luján de Cuyo	...	339	371	177
+Barrio Rivadavia	Localidad	Rivadavia	495	433	408	912
+Barrio San Cayetano	Localidad	Tunuyán	...	156	161	130
+Barrio Santa María	Localidad	Lavalle	...	...	...	305
+Barrio Santa Rita	Localidad	Lavalle	...	...	...	25
+Barrio Virgen del Rosario	Localidad	Lavalle	...	...	211	707
+Bowen	Localidad	General Alvear	3.974	4.562	4.939	6.005
+Cacheuta	Localidad	Las Heras	...	...	...	19
+Cacheuta	Localidad	Luján de Cuyo	70	76	636	229
+Campo Los Andes	Localidad	Tunuyán	878	530	538	558
+Canalejas	Localidad	General Alvear	...	...	...	38
+Capilla San Expedito	Localidad	San Martín	...	...	...	300
+Capitán Montoya	Localidad	San Rafael	323	360	362	1.734
+Carmensa	Localidad	General Alvear	926	923	941	1.307
+Chapanay	Localidad	San Martín	686	1.242	1.486	1.771
+Chilecito	Localidad	San Carlos	554	828	1.033	1.364
+Chivilcoy	Localidad	San Martín	311	425	550	697
+Colonia Italia	Localidad	Lavalle	...	...	...	202
+Colonia Las Rosas	Localidad	Tunuyán	760	945	2.169	3.645
+Colonia Segovia	Localidad	Guaymallén	1.136	3.229	4.271	8.885
+Cordón del Plata	Localidad	Tupungato	509	1.305	1.713	4.624
+Costa de Araujo	Localidad	Lavalle	1.871	2.629	2.816	5.306
+Costa Flores	Localidad	Luján de Cuyo	...	418	297	2.345
+Cruz de Piedra	Localidad	Maipú	575	775	1.536	8.504
+Cuadro Benegas	Localidad	San Rafael	426	1.122	1.253	2.533
+Desaguadero	Localidad	La Paz	...	559	424	863
+El Algarrobo	Localidad	Tunuyán	...	...	...	793
+El Carrizal	Localidad	Luján de Cuyo	176	319	344	1.596
+El Ceibo	Localidad	General Alvear	...	...	...	159
+El Chilcal	Localidad	Lavalle	...	...	...	727
+El Espino	Localidad	San Martín	...	...	376	993
+El Manzano	Localidad	Malargüe	...	...	...	80
+El Manzano	Localidad	Tunuyán	6	34	26	170
+El Mirador	Localidad	Rivadavia	732	775	783	1.131
+El Nihuil	Localidad	San Rafael	1.495	847	1.030	1.327
+El Paramillo	Localidad	Lavalle	...	77	90	134
+El Pedregal	Localidad	Maipú	...	215	232	257
+El Peral	Localidad	Tupungato	...	366	541	1.331
+El Ramblón	Localidad	San Martín	...	...	159	544
+El Ramblón	Localidad	Santa Rosa	...	...	...	174
+El Salto	Localidad	Luján de Cuyo	115	361	297	794
+El Sosneado	Localidad	San Rafael	...	91	65	174
+El Toledano Norte	Localidad	San Rafael	...	...	...	820
+El Tropezón	Localidad	San Rafael	330	355	462	750
+El Vergel	Localidad	Lavalle	...	229	362	356
+El Zampal	Localidad	Tupungato	...	...	177	221
+Fray Luis Beltrán	Localidad	Maipú	2.564	4.210	4.735	7.813
+General Alvear	Localidad	General Alvear	23.699	26.342	29.909	35.626
+Godoy Cruz	Localidad	Godoy Cruz	179.553	182.563	191.299	194.044
+Goudge	Localidad	San Rafael	1.479	1.818	2.126	2.948
+Guaymallén (Villa Nueva)	Localidad	Guaymallén	200.447	223.365	252.618	279.304
+Ingeniero Giagnoni	Localidad	Junín	466	587	594	1.283
+Ingeniero Gustavo André	Localidad	Lavalle	121	324	288	460
+Jaime Prats	Localidad	San Rafael	314	388	419	463
+Jocolí	Localidad	Las Heras	...	414	804	1.640
+Jocolí	Localidad	Lavalle	...	402	684	224
+Jocolí Viejo	Localidad	Lavalle	167	402	422	1.304
+Junín	Localidad	Junín	4.495	6.084	6.324	10.442
+La Arboleda	Localidad	Tupungato	...	198	540	287
+La Arboleda Sur	Localidad	Tupungato	...	...	...	347
+La Asunción	Localidad	Lavalle	...	...	...	229
+La Central	Localidad	Rivadavia	755	823	802	1.161
+La Colonia	Localidad	Junín	6.757	9.282	9.403	11.245
+La Consulta	Localidad	San Carlos	6.069	7.354	8.241	9.563
+La Dormida	Localidad	Santa Rosa	1.953	2.075	2.270	3.533
+La Esperanza	Localidad	Rivadavia	210	227	200	620
+La Florida	Localidad	Rivadavia	1.097	1.622	1.518	1.558
+La Junta	Localidad	Malargüe	...	...	...	111
+La Libertad	Localidad	Rivadavia	686	629	582	1.029
+La Llave Nueva	Localidad	San Rafael	441	462	499	783
+La Paz	Localidad	La Paz	5.575	7.059	7.872	9.559
+La Primavera	Localidad	Guaymallén	522	639	1.164	2.134
+La Riojita	Localidad	Tunuyán	...	...	...	124
+Las Catitas	Localidad	Santa Rosa	2.714	3.060	3.621	4.884
+Las Chimbas	Localidad	San Martín	...	...	...	392
+Las Compuertas (incl. Blanco Encalada)	Localidad	Luján de Cuyo	620	1.418	1.382	958
+Las Cuevas	Localidad	Las Heras	56	7	8	1
+Las Heras	Localidad	Las Heras	145.680	169.320	189.067	215.609
+Las Leñas	Localidad	Malargüe	261	75	9	15
+Las Malvinas	Localidad	San Rafael	192	232	232	264
+Las Vegas	Localidad	Luján de Cuyo	140	390	450	705
+Las Violetas	Localidad	Lavalle	...	69	87	389
+Los Árboles	Localidad	Rivadavia	103	391	362	894
+Los Barriales	Localidad	Junín	2.194	3.872	4.572	6.517
+Los Campamentos	Localidad	Rivadavia	1.002	1.057	1.062	1.504
+Los Compartos	Localidad	General Alvear	...	401	439	381
+Los Corralitos	Localidad	Guaymallén	701	1.044	942	6.928
+Los Penitentes	Localidad	Las Heras	7	16	2	22
+Los Sauces	Localidad	Tunuyán	289	449	661	864
+Loteo Moyano	Localidad	Tupungato	...	...	...	828
+Luján de Cuyo	Localidad	Luján de Cuyo	54.210	73.058	82.615	116.763
+Maipú	Localidad	Maipú	71.603	89.433	106.662	127.657
+Malargüe	Localidad	Malargüe	15.344	18.077	21.619	27.355
+Mayor Drummond Este	Localidad	Luján de Cuyo	...	...	...	1.934
+Medrano	Localidad	Junín	518	811	817	1.403
+Medrano	Localidad	Rivadavia	1.526	1.748	1.598	1.992
+Mendoza	Localidad	Capital	121.620	110.993	114.893	123.516
+Montecaseros	Localidad	San Martín	735	1.017	1.106	1.135
+Monte Comán	Localidad	San Rafael	3.915	3.712	3.529	3.617
+Mundo Nuevo	Localidad	Junín	...	...	...	275
+Mundo Nuevo	Localidad	Rivadavia	317	278	295	475
+Nueva California (Est. Moluches)	Localidad	San Martín	267	238	208	467
+Pareditas	Localidad	San Carlos	691	1.254	1.021	2.450
+Perdriel	Localidad	Luján de Cuyo	4.437	7.181	8.531	19.321
+Phillips	Localidad	Junín	315	690	894	1.203
+Pobre Diablo	Localidad	San Rafael	...	609	526	2.197
+Polvaredas	Localidad	Las Heras	174	185	128	137
+Potrerillos	Localidad	Luján de Cuyo	38	0	292	656
+Puente de Hierro	Localidad	Guaymallén	2.992	6.290	7.524	11.683
+Puente del Inca	Localidad	Las Heras	128	132	126	135
+Punta del Agua	Localidad	San Rafael	...	247	382	346
+Punta de Vacas	Localidad	Las Heras	135	47	18	58
+Rama Caída	Localidad	San Rafael	903	901	850	2.697
+Ranquil Norte	Localidad	Malargüe	...	...	...	158
+Real del Padre	Localidad	San Rafael	2.451	3.345	3.635	4.004
+Reducción de Abajo	Localidad	Rivadavia	312	439	490	660
+Rivadavia	Localidad	Rivadavia	21.770	26.792	31.038	34.830
+Rodeo del Medio	Localidad	Maipú	6.268	9.120	12.327	18.574
+Rodríguez Peña	Localidad	Junín	181	351	751	1.735
+Russell	Localidad	Maipú	709	1.983	1.416	3.470
+Salto de las Rosas	Localidad	San Rafael	858	1.059	1.343	4.505
+San Carlos (incl. Eugenio Bustos)	Localidad	San Carlos	6.196	7.235	9.477	13.678
+San José	Localidad	Tupungato	896	1.487	1.445	3.564
+San Martín (- La Colonia)	Localidad	San Martín	64.773	70.380	79.476	94.252
+San Rafael (incl. Barrio Campos El Toledano)	Localidad	San Rafael	94.651	107.080	118.965	139.191
+San Roque (incl. Villa Teresa)	Localidad	Maipú	2.065	3.664	5.409	10.199
+Santa María de Oro	Localidad	Rivadavia	616	741	609	1.703
+Santa Rosa	Localidad	Santa Rosa	1.526	1.929	2.509	2.496
+Tres Esquinas	Localidad	San Carlos	...	...	...	759
+Tres Porteñas	Localidad	San Martín	1.560	2.160	2.545	3.310
+Tunuyán	Localidad	Tunuyán	20.260	25.170	28.859	38.367
+Tupungato	Localidad	Tupungato	8.163	11.687	13.218	16.893
+Ugarteche	Localidad	Luján de Cuyo	1.194	3.660	4.561	10.826
+Uspallata	Localidad	Las Heras	2.932	3.437	3.810	5.791
+Villa Antigua	Localidad	La Paz	205	281	311	359
+Villa Arroyo Grande	Localidad	Tunuyán	...	...	...	104
+Villa Atuel	Localidad	San Rafael	165	294	3.311	3.531
+Villa Atuel Norte	Localidad	San Rafael	165	294	271	270
+Villa Clarita	Localidad	Las Heras	...	...	...	517
+Villa El Chacón	Localidad	San Carlos	...	...	...	639
+Villa Seca	Localidad	Tunuyán	...	...	...	701
+Villa Tulumaya	Localidad	Lavalle	5.584	7.005	7.870	12.373
+Vista Flores	Localidad	Tunuyán	2.514	3.482	4.358	5.967

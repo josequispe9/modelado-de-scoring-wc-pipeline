@@ -106,6 +106,7 @@ def obtener_siguiente_audio(conn, params: dict) -> dict | None:
             apj.etapa_actual,
             apj.etapas,
             apj.duracion_conversacion_seg,
+            apj.duracion_audio_seg,
             tr_entry.value AS tr_entry
         FROM audio_pipeline_jobs apj,
              jsonb_array_elements(
@@ -167,28 +168,45 @@ def calcular_metricas(data: dict) -> dict:
 
     num_hablantes = metadata.get("num_hablantes_detectados", len(set(speaker_ids)))
 
+    # Suma de duración de todos los segmentos transcriptos (end - start)
+    duracion_segmentos_seg = sum(
+        s.get("end", 0.0) - s.get("start", 0.0)
+        for s in segments
+    )
+
     return {
-        "avg_logprob":       round(avg_logprob, 4),
-        "total_words":       total_words,
-        "low_score_ratio":   round(low_score_ratio, 4),
-        "speaker_dominance": round(speaker_dominance, 4),
-        "num_hablantes":     num_hablantes,
+        "avg_logprob":            round(avg_logprob, 4),
+        "total_words":            total_words,
+        "low_score_ratio":        round(low_score_ratio, 4),
+        "speaker_dominance":      round(speaker_dominance, 4),
+        "num_hablantes":          num_hablantes,
+        "duracion_segmentos_seg": round(duracion_segmentos_seg, 2),
     }
 
 
-def clasificar(metricas: dict, params: dict, duracion_seg: float | None = None) -> tuple[float, str, str | None]:
+def clasificar(metricas: dict, params: dict, duracion_seg: float | None = None,
+               duracion_audio_seg: float | None = None) -> tuple[float, str, str | None]:
     """
     Aplica filtros duros y calcula score compuesto.
 
     Retorna (score, clasificacion, motivo_invalido).
     """
-    avg_logprob       = metricas["avg_logprob"]
-    total_words       = metricas["total_words"]
-    low_score_ratio   = metricas["low_score_ratio"]
-    speaker_dominance = metricas["speaker_dominance"]
-    num_hablantes     = metricas["num_hablantes"]
+    avg_logprob            = metricas["avg_logprob"]
+    total_words            = metricas["total_words"]
+    low_score_ratio        = metricas["low_score_ratio"]
+    speaker_dominance      = metricas["speaker_dominance"]
+    num_hablantes          = metricas["num_hablantes"]
+    duracion_segmentos_seg = metricas.get("duracion_segmentos_seg", 0.0)
 
     # ── Filtros duros ─────────────────────────────────────────────────────────
+
+    # Audio cruzado: la suma de duración de segmentos es menor al umbral % del audio
+    umbral_ratio = params.get("umbral_ratio_audio_cruzado", 0.60)
+    if duracion_audio_seg and duracion_audio_seg > 0:
+        ratio = duracion_segmentos_seg / duracion_audio_seg
+        if ratio < umbral_ratio:
+            return 0.0, "invalido", f"audio cruzado (ratio={ratio:.2f} < {umbral_ratio})"
+
     umbral_dur_un_hablante = params.get("umbral_duracion_un_hablante")
     if num_hablantes < 2:
         if umbral_dur_un_hablante is None or (duracion_seg is not None and duracion_seg < umbral_dur_un_hablante):
@@ -342,8 +360,11 @@ def main():
                     continue
 
             metricas = calcular_metricas(data)
-            duracion_seg = audio.get("duracion_conversacion_seg")
-            score, clasificacion, motivo = clasificar(metricas, params, duracion_seg)
+            duracion_seg       = audio.get("duracion_conversacion_seg")
+            duracion_audio_seg = audio.get("duracion_audio_seg")
+            score, clasificacion, motivo = clasificar(
+                metricas, params, duracion_seg, duracion_audio_seg
+            )
 
             if motivo:
                 log.warning("Invalido %s [grupo=%s]: %s", nombre, grupo, motivo)

@@ -1,0 +1,8 @@
+Corpen Aike	Departamento	7.045	7.942	11.093	15.171
+Deseado	Departamento	56.879	72.953	107.630	126.743
+Güer Aike	Departamento	79.032	92.878	113.267	137.895
+Lago Argentino	Departamento	3.940	7.500	18.864	25.586
+Lago Buenos Aires	Departamento	4.975	6.223	8.750	12.606
+Magallanes	Departamento	5.314	6.536	9.202	12.911
+Río Chico	Departamento	2.654	2.926	5.158	6.314
+Santa Cruz	Provincia	159.839	196.958	273.964	337.226

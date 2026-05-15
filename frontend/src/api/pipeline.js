@@ -23,15 +23,18 @@ export const getConversacion = (id) =>
 export const ejecutarPipeline = () =>
     fetch(`${base}/pipeline/ejecutar`, { method: "POST" }).then(r => r.json())
 
-export const ejecutarEtapa = (etapa, filtro = "pendientes", ids = null) =>
+export const ejecutarEtapa = (etapa, filtro = "pendientes", ids = null, cuentas = null) =>
     fetch(`${base}/pipeline/etapa/${etapa}/ejecutar`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ filtro, ids }),
+        body: JSON.stringify({ filtro, ids, ...(cuentas ? { cuentas } : {}) }),
     }).then(r => r.json())
 
 export const pausarEtapa = (etapa) =>
     fetch(`${base}/pipeline/etapa/${etapa}/pausar`, { method: "POST" }).then(r => r.json())
+
+export const cancelarEtapa = (etapa) =>
+    fetch(`${base}/pipeline/etapa/${etapa}/cancelar`, { method: "POST" }).then(r => r.json())
 
 export const limpiarAudiosNormalizacion = () =>
     fetch(`${base}/pipeline/etapa/correccion_normalizacion/limpiar`, { method: "POST" }).then(r => r.json())
@@ -117,4 +120,11 @@ export const getAudiosAleatorios = (filtros = {}) => {
         if (!r.ok) throw new Error("Error al buscar audios")
         return r.json()
     })
+}
+
+export const getCalendarioAudios = (fechaDesde, fechaHasta) => {
+    const params = new URLSearchParams()
+    if (fechaDesde) params.append("fecha_desde", fechaDesde)
+    if (fechaHasta) params.append("fecha_hasta", fechaHasta)
+    return fetch(`${base}/pipeline/estadisticas/calendario${params.toString() ? "?" + params : ""}`).then(r => r.json())
 }

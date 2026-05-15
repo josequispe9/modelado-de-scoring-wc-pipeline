@@ -1,0 +1,28 @@
+Aguirre	Departamento	5.936	7.035	7.610	8.970
+Alberdi	Departamento	10.633	15.617	17.252	20.104
+Atamisqui	Departamento	9.251	9.809	10.923	14.903
+Avellaneda	Departamento	18.239	19.348	20.763	25.476
+Banda	Departamento	104.287	128.387	142.279	170.651
+Belgrano	Departamento	5.909	7.950	9.243	10.813
+Capital	Departamento	201.894	244.567	267.125	330.112
+Choya	Departamento	30.691	33.720	34.667	43.736
+Copo	Departamento	19.220	26.984	31.404	35.741
+Figueroa	Departamento	16.040	17.495	17.820	20.270
+General Taboada	Departamento	29.400	36.683	38.105	46.508
+Guasayán	Departamento	6.882	7.404	7.602	9.255
+Jiménez	Departamento	12.324	13.170	14.352	18.625
+Juan Felipe Ibarra	Departamento	14.351	16.937	18.051	20.589
+Loreto	Departamento	14.904	17.442	20.036	24.060
+Mitre	Departamento	1.894	1.813	1.890	1.440
+Moreno	Departamento	21.746	28.053	32.130	40.460
+Ojo de Agua	Departamento	11.818	13.352	14.008	15.116
+Pellegrini	Departamento	16.061	19.517	20.514	26.193
+Quebrachos	Departamento	9.475	11.331	10.568	12.354
+Río Hondo	Departamento	45.051	50.781	54.867	66.761
+Rivadavia	Departamento	4.763	4.916	5.015	5.315
+Robles	Departamento	32.567	40.060	44.415	54.015
+Salavina	Departamento	9.100	10.664	11.217	12.787
+San Martín	Departamento	8.555	9.148	9.831	11.848
+Sarmiento	Departamento	4.149	4.669	4.607	5.038
+Silípica	Departamento	6.848	7.605	7.712	9.766
+Santiago del Estero	Provincia	671.988	804.457	874.006	1.060.906

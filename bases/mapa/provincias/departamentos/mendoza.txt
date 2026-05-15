@@ -1,0 +1,19 @@
+Capital	Departamento	121.620	110.993	115.041	127.160
+General Alvear	Departamento	42.338	44.147	46.429	52.584
+Godoy Cruz	Departamento	179.588	182.977	191.903	195.159
+Guaymallén	Departamento	221.904	251.339	283.803	321.966
+Junín	Departamento	28.418	35.045	37.859	46.604
+La Paz	Departamento	8.009	9.560	10.012	12.086
+Las Heras	Departamento	156.545	182.962	203.666	234.401
+Lavalle	Departamento	26.967	32.129	36.738	47.167
+Luján de Cuyo	Departamento	79.952	104.470	119.888	175.056
+Maipú	Departamento	125.331	153.600	172.332	219.402
+Malargüe	Departamento	21.743	23.020	27.660	32.717
+Rivadavia	Departamento	47.033	52.567	56.373	63.724
+San Carlos	Departamento	24.140	28.341	32.631	39.869
+San Martín	Departamento	98.294	108.448	118.220	139.792
+San Rafael	Departamento	158.266	173.571	188.018	215.020
+Santa Rosa	Departamento	14.241	15.818	16.374	19.382
+Tunuyán	Departamento	35.721	42.125	49.458	60.171
+Tupungato	Departamento	22.371	28.539	32.524	41.280
+Mendoza	Provincia	1.412.481	1.579.651	1.738.929	2.043.540

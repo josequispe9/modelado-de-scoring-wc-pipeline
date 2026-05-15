@@ -1,0 +1,89 @@
+{
+  "audio_id": "d4a9e81e-cd98-489e-91a2-1def66c2002d",
+  "nombre_archivo": "amza15_1_260407164755246_ACD_06603",
+  "metadata_llamada": {
+    "agente": "MZA 15",
+    "campania": "MVS_MZA",
+    "empresa": "AZO",
+    "duracion_seg": 36,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola, buenas tardes."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Sí."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "¿Qué tal, mi nombre es Sofía, me comunico desde el área de beneficios de Movistar."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "¿Cómo estás?"
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Bien."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Te hablo porque tenemos un 75% de cuenta para tu línea."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Tengo entendido que estás con Claro Fabian, ¿correcto?"
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Sí."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Genial."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Más o menos, ¿cuántos días utilizas con Claro Fabian, recordás?"
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Veintipico."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Veintipico."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Bien, me suena que por esos gigas se está sobrando algo de 30.000 pesos, ¿estás correcto?"
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "No."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "11.000."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Bien, perfecto."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.5477,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T14:58:27.744115+00:00"
+  }
+}

@@ -1,0 +1,41 @@
+# =============================================================================
+# inputs4-rellamado.txt — Detectar clientes hartos de recibir llamadas (rellamados)
+# =============================================================================
+
+[pasada_rellamado]
+descripcion = Detectar si el cliente expresa que ya lo llamaron antes y está cansado/harto.
+segmento = inicio_30
+min_turnos = 2
+max_tokens = 80
+contexto = transcripcion,dominio
+schema = {"type":"object","properties":{"es_rellamado":{"type":"string","enum":["si","no"]},"frase_detectada":{"type":["string","null"]}},"required":["es_rellamado","frase_detectada"]}
+few_shot =
+Conversación: DESCONOCIDO: Hola, buenas tardes. DESCONOCIDO: Sí, me llaman como 10, 20 veces por día. DESCONOCIDO: Por favor, que estoy ocupada.
+Respuesta: {"es_rellamado": "si", "frase_detectada": "me llaman como 10, 20 veces por día"}
+
+Conversación: DESCONOCIDO: Te pido por favor que no me llamen más, ya no sé cómo pedírselos, en serio. DESCONOCIDO: Es agotador pedirles que no me llamen más.
+Respuesta: {"es_rellamado": "si", "frase_detectada": "ya no sé cómo pedírselos"}
+
+Conversación: DESCONOCIDO: Demasiado, y ya pedí mil veces si me pueden sacar del sistema, por favor.
+Respuesta: {"es_rellamado": "si", "frase_detectada": "ya pedí mil veces si me pueden sacar del sistema"}
+
+Conversación: DESCONOCIDO: Ayer me llamaron y ya les dije que no me voy a pasar, que no me pasen más.
+Respuesta: {"es_rellamado": "si", "frase_detectada": "ayer me llamaron y ya les dije que no"}
+
+Conversación: DESCONOCIDO: Me llaman de Movistar un promedio de dos, tres veces por día. No sé de qué forma pedirles que no llamen.
+Respuesta: {"es_rellamado": "si", "frase_detectada": "no sé de qué forma pedirles que no llamen"}
+
+Conversación: DESCONOCIDO: Hola, ¿hablo con María? DESCONOCIDO: Sí, ¿quién habla? DESCONOCIDO: Mi nombre es Brisa, llamo de Movistar. DESCONOCIDO: No me interesa, gracias.
+Respuesta: {"es_rellamado": "no", "frase_detectada": null}
+
+Conversación: DESCONOCIDO: Hola, ¿cómo estás? DESCONOCIDO: Bien. DESCONOCIDO: Te llamo de Movistar para ofrecerte un plan. DESCONOCIDO: No, ya tengo Claro y estoy conforme.
+Respuesta: {"es_rellamado": "no", "frase_detectada": null}
+
+Conversación: DESCONOCIDO: Hola, buenas. DESCONOCIDO: Sí. DESCONOCIDO: ¿Actualmente estás en Claro? DESCONOCIDO: Sí. DESCONOCIDO: Te quería ofrecer portabilidad a Movistar.
+Respuesta: {"es_rellamado": "no", "frase_detectada": null}
+prompt =
+Determina si el cliente expresa que ya lo llamaron antes y está cansado o harto de recibir tantas llamadas.
+Responde "si" si el cliente menciona que lo llaman repetidamente, que ya pidió que lo saquen de la lista, que no sabe cómo pedir que no lo llamen más, o que ya les dijo en llamadas anteriores que no le interesa.
+Responde "no" si el cliente simplemente rechaza la oferta actual sin mencionar llamadas previas.
+Si respondés "si", copiá la frase exacta del cliente que lo demuestra. Si no hay frase clara, respondé "no".
+conversaciones_dir = ejemplos_transcripciones

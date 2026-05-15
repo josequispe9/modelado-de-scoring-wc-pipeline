@@ -1,0 +1,33 @@
+{
+  "audio_id": "0feec86e-7636-4375-9519-05c90c2960c9",
+  "nombre_archivo": "amza90_1_260414195342562_MIT_01984",
+  "metadata_llamada": {
+    "agente": "MZA 90",
+    "campania": "MVS_MZA_FIBRA_OUT",
+    "empresa": "AZO",
+    "duracion_seg": 31,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Bienvenido al buzón de voz claro de María Natalia Dvorsky."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Después del tono, deja tu mensaje."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.3078,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T14:59:31.285463+00:00"
+  }
+}

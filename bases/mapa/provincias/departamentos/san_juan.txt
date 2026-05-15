@@ -1,0 +1,20 @@
+Albardón	Departamento	16.645	20.413	23.888	31.284
+Angaco	Departamento	7.323	7.570	8.125	10.176
+Calingasta	Departamento	7.667	8.176	8.588	11.034
+Capital	Departamento	119.423	112.778	109.123	115.390
+Caucete	Departamento	28.159	33.609	38.343	44.047
+Chimbas	Departamento	52.263	73.829	87.258	105.627
+Iglesia	Departamento	5.626	6.737	9.099	8.845
+Jáchal	Departamento	19.955	21.018	21.730	25.297
+Nueve de Julio (9 de Julio)	Departamento	5.972	7.652	9.307	12.514
+Pocito	Departamento	30.597	40.969	53.162	72.915
+Rawson	Departamento	90.174	107.740	114.368	136.617
+Rivadavia	Departamento	56.986	76.150	82.641	101.666
+San Martín	Departamento	9.154	10.140	11.115	15.037
+Santa Lucía	Departamento	38.086	43.565	48.087	62.729
+Sarmiento	Departamento	15.932	19.092	22.131	27.188
+Ullum	Departamento	3.173	4.490	4.886	6.454
+Valle Fértil	Departamento	5.633	6.864	7.222	8.526
+Veinticinco de Mayo (25 de Mayo)	Departamento	13.042	15.193	17.119	20.824
+Zonda	Departamento	2.905	4.038	4.863	6.683
+San Juan	Provincia	528.715	620.023	681.055	822.853

@@ -7,7 +7,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
-import { getParametros, actualizarParametros, ejecutarEtapa, limpiarAudiosNormalizacion, resetearCorreccionNormalizacion, limpiarTranscripciones, resetearCorreccionTranscripciones } from "@/api/pipeline"
+import { getParametros, actualizarParametros, ejecutarEtapa, cancelarEtapa, limpiarAudiosNormalizacion, resetearCorreccionNormalizacion, limpiarTranscripciones, resetearCorreccionTranscripciones } from "@/api/pipeline"
 
 // ── Tipos ──────────────────────────────────────────────────────────────────────
 
@@ -322,6 +322,7 @@ function MaquinaPanel({ label, clave }: { label: string; clave: string }) {
 
 function EtapaDescarga() {
   const [ejecutando,        setEjecutando]        = useState(false)
+  const [cancelando,        setCancelando]        = useState(false)
   const [mensajeEjecucion,  setMensajeEjecucion]  = useState<string | null>(null)
 
   const handleEjecutar = async () => {
@@ -337,6 +338,19 @@ function EtapaDescarga() {
     }
   }
 
+  const handleCancelar = async () => {
+    setCancelando(true)
+    setMensajeEjecucion(null)
+    try {
+      const res = await cancelarEtapa("descarga")
+      setMensajeEjecucion(res.cancelado ? "Cancelado" : res.mensaje)
+    } catch {
+      setMensajeEjecucion("Error al cancelar")
+    } finally {
+      setCancelando(false)
+    }
+  }
+
   return (
     <div className="flex flex-col gap-4 pt-3">
       <div className="flex gap-4 flex-wrap">
@@ -347,6 +361,9 @@ function EtapaDescarga() {
       <div className="flex items-center gap-3 pt-1 border-t border-border">
         <Button onClick={handleEjecutar} disabled={ejecutando}>
           {ejecutando ? "Ejecutando..." : "Ejecutar descarga"}
+        </Button>
+        <Button variant="outline" onClick={handleCancelar} disabled={cancelando}>
+          {cancelando ? "Cancelando..." : "Cancelar"}
         </Button>
         {mensajeEjecucion && (
           <span className="text-xs text-muted-foreground">{mensajeEjecucion}</span>
@@ -447,8 +464,10 @@ function EtapaNormalizacion() {
   const [paramsMap,   setParamsMap]   = useState<Record<string, NormalizacionParams>>({
     GBM: { ...NORM_DEFAULTS },
   })
+  const [instanciasPorPC, setInstanciasPorPC] = useState<Record<"G"|"M"|"B", number>>({ G: 1, M: 1, B: 1 })
   const [guardando,   setGuardando]   = useState(false)
   const [ejecutando,  setEjecutando]  = useState(false)
+  const [cancelando,  setCancelando]  = useState(false)
   const [mensaje,     setMensaje]     = useState<string | null>(null)
 
   // Cargar params desde API al montar
@@ -485,6 +504,11 @@ function EtapaNormalizacion() {
         }
       }
       setParamsMap(map)
+      setInstanciasPorPC({
+        G: Number(valG.num_instancias ?? 1),
+        M: Number(valM.num_instancias ?? 1),
+        B: Number(valB.num_instancias ?? 1),
+      })
     }).catch(() => setMensaje("Error al cargar parámetros"))
   }, [])
 
@@ -523,7 +547,7 @@ function EtapaNormalizacion() {
         (["G", "M", "B"] as const).map((cuenta) => {
           const grupo  = preset.grupos[cuenta]
           const params = paramsMap[grupo] ?? NORM_DEFAULTS
-          return actualizarParametros(`normalizacion_${cuenta}`, { grupo, ...params })
+          return actualizarParametros(`normalizacion_${cuenta}`, { grupo, ...params, num_instancias: instanciasPorPC[cuenta] })
         })
       )
       setMensaje("Guardado")
@@ -544,6 +568,19 @@ function EtapaNormalizacion() {
       setMensaje("Error al ejecutar")
     } finally {
       setEjecutando(false)
+    }
+  }
+
+  const handleCancelar = async () => {
+    setCancelando(true)
+    setMensaje(null)
+    try {
+      const res = await cancelarEtapa("normalizacion")
+      setMensaje(res.cancelado ? "Cancelado" : res.mensaje)
+    } catch {
+      setMensaje("Error al cancelar")
+    } finally {
+      setCancelando(false)
     }
   }
 
@@ -584,6 +621,29 @@ function EtapaNormalizacion() {
         ))}
       </div>
 
+      {/* Instancias por máquina */}
+      <div className="flex flex-col gap-1">
+        <Label className="text-xs text-muted-foreground">Instancias en paralelo por máquina</Label>
+        <div className="flex gap-4">
+          {(["G", "M", "B"] as const).map((cuenta) => (
+            <div key={cuenta} className="flex flex-col gap-1">
+              <Label className="text-xs text-muted-foreground">
+                {cuenta === "G" ? "Gaspar" : cuenta === "M" ? "Melchor" : "Baltazar"}
+              </Label>
+              <select
+                className={selectClass}
+                value={instanciasPorPC[cuenta]}
+                onChange={(e) => setInstanciasPorPC((prev) => ({ ...prev, [cuenta]: Number(e.target.value) }))}
+              >
+                {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
+                  <option key={n} value={n}>{n}</option>
+                ))}
+              </select>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Acciones */}
       <div className="flex items-center gap-3 pt-1 border-t border-border">
         <Button size="sm" onClick={handleGuardar} disabled={guardando}>
@@ -591,6 +651,9 @@ function EtapaNormalizacion() {
         </Button>
         <Button onClick={handleEjecutar} disabled={ejecutando}>
           {ejecutando ? "Ejecutando..." : "Ejecutar normalización"}
+        </Button>
+        <Button variant="outline" onClick={handleCancelar} disabled={cancelando}>
+          {cancelando ? "Cancelando..." : "Cancelar"}
         </Button>
         {mensaje && <span className="text-xs text-muted-foreground">{mensaje}</span>}
       </div>
@@ -629,18 +692,21 @@ const CORR_NORM_DEFAULTS: CorreccionNormParams = {
 }
 
 function EtapaCorreccionNormalizacion() {
-  const [params,     setParams]     = useState<CorreccionNormParams>(CORR_NORM_DEFAULTS)
+  const [params,        setParams]        = useState<CorreccionNormParams>(CORR_NORM_DEFAULTS)
+  const [numInstancias, setNumInstancias] = useState<number>(1)
   const [guardando,   setGuardando]   = useState(false)
   const [ejecutando,  setEjecutando]  = useState(false)
+  const [cancelando,  setCancelando]  = useState(false)
   const [limpiando,   setLimpiando]   = useState(false)
   const [reseteando,  setReseteando]  = useState(false)
   const [mensaje,     setMensaje]     = useState<string | null>(null)
 
   useEffect(() => {
     getParametros("correccion_normalizacion")
-      .then((res: { valor?: Partial<CorreccionNormParams> }) => {
+      .then((res: { valor?: Partial<CorreccionNormParams> & { num_instancias?: number } }) => {
         const v = res?.valor ?? {}
         setParams({ ...CORR_NORM_DEFAULTS, ...v })
+        setNumInstancias(Number(v.num_instancias ?? 1))
       })
       .catch(() => setMensaje("Error al cargar parámetros"))
   }, [])
@@ -652,7 +718,7 @@ function EtapaCorreccionNormalizacion() {
     setGuardando(true)
     setMensaje(null)
     try {
-      await actualizarParametros("correccion_normalizacion", params)
+      await actualizarParametros("correccion_normalizacion", { ...params, num_instancias: numInstancias })
       setMensaje("Guardado")
     } catch {
       setMensaje("Error al guardar")
@@ -671,6 +737,19 @@ function EtapaCorreccionNormalizacion() {
       setMensaje("Error al ejecutar")
     } finally {
       setEjecutando(false)
+    }
+  }
+
+  const handleCancelar = async () => {
+    setCancelando(true)
+    setMensaje(null)
+    try {
+      const res = await cancelarEtapa("correccion_normalizacion")
+      setMensaje(res.cancelado ? "Cancelado" : res.mensaje)
+    } catch {
+      setMensaje("Error al cancelar")
+    } finally {
+      setCancelando(false)
     }
   }
 
@@ -724,6 +803,18 @@ function EtapaCorreccionNormalizacion() {
           <p className="text-sm font-medium text-foreground">Umbrales duros</p>
           {numInput("duracion_minima_seg", "Duración mínima (seg)", "1")}
           {numInput("duracion_maxima_seg", "Duración máxima (seg)", "1")}
+          <div className="flex flex-col gap-1">
+            <Label className="text-xs text-muted-foreground">Instancias en paralelo (Gaspar)</Label>
+            <select
+              className={selectClass}
+              value={numInstancias}
+              onChange={(e) => setNumInstancias(Number(e.target.value))}
+            >
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
+                <option key={n} value={n}>{n}</option>
+              ))}
+            </select>
+          </div>
         </div>
 
         {/* Pesos del score */}
@@ -761,6 +852,9 @@ function EtapaCorreccionNormalizacion() {
         </Button>
         <Button onClick={handleEjecutar} disabled={ejecutando}>
           {ejecutando ? "Ejecutando..." : "Ejecutar scoring"}
+        </Button>
+        <Button variant="outline" onClick={handleCancelar} disabled={cancelando}>
+          {cancelando ? "Cancelando..." : "Cancelar"}
         </Button>
         <Button variant="outline" onClick={handleLimpiar} disabled={limpiando}>
           {limpiando ? "Limpiando..." : "Limpiar audios duplicados"}
@@ -967,9 +1061,18 @@ function EtapaTranscripcion() {
   const [paramsMap,  setParamsMap]  = useState<Record<string, TranscripcionParams>>({
     GBM: { ...TRANSCRIPCION_DEFAULTS },
   })
+  const [cuentasActivas, setCuentasActivas] = useState<Set<string>>(new Set(["G", "M", "B"]))
   const [guardando,  setGuardando]  = useState(false)
   const [ejecutando, setEjecutando] = useState(false)
+  const [cancelando, setCancelando] = useState(false)
   const [mensaje,    setMensaje]    = useState<string | null>(null)
+
+  const toggleCuenta = (c: string) =>
+    setCuentasActivas((prev) => {
+      const next = new Set(prev)
+      next.has(c) ? next.delete(c) : next.add(c)
+      return next
+    })
 
   useEffect(() => {
     Promise.all([
@@ -1054,12 +1157,27 @@ function EtapaTranscripcion() {
     setEjecutando(true)
     setMensaje(null)
     try {
-      await ejecutarEtapa("transcripcion", "pendientes")
-      setMensaje("Ejecución iniciada")
+      const cuentas = cuentasActivas.size < 3 ? [...cuentasActivas] : null
+      await ejecutarEtapa("transcripcion", "pendientes", null, cuentas)
+      const pcs = cuentas ? cuentas.join(", ") : "G, M, B"
+      setMensaje(`Ejecución iniciada (${pcs})`)
     } catch {
       setMensaje("Error al ejecutar")
     } finally {
       setEjecutando(false)
+    }
+  }
+
+  const handleCancelar = async () => {
+    setCancelando(true)
+    setMensaje(null)
+    try {
+      const res = await cancelarEtapa("transcripcion")
+      setMensaje(res.cancelado ? "Cancelado" : (res.mensaje ?? "Sin ejecución activa"))
+    } catch {
+      setMensaje("Error al cancelar")
+    } finally {
+      setCancelando(false)
     }
   }
 
@@ -1100,13 +1218,33 @@ function EtapaTranscripcion() {
         ))}
       </div>
 
+      {/* Máquinas a usar */}
+      <div className="flex flex-col gap-1">
+        <Label className="text-xs text-muted-foreground">Máquinas a ejecutar</Label>
+        <div className="flex gap-4">
+          {(["G", "M", "B"] as const).map((c) => (
+            <label key={c} className="flex items-center gap-2 text-sm text-foreground cursor-pointer">
+              <input
+                type="checkbox"
+                checked={cuentasActivas.has(c)}
+                onChange={() => toggleCuenta(c)}
+              />
+              {c === "G" ? "Gaspar" : c === "M" ? "Melchor" : "Baltazar"}
+            </label>
+          ))}
+        </div>
+      </div>
+
       {/* Acciones */}
       <div className="flex items-center gap-3 pt-1 border-t border-border">
         <Button size="sm" onClick={handleGuardar} disabled={guardando}>
           {guardando ? "Guardando..." : "Guardar"}
         </Button>
-        <Button onClick={handleEjecutar} disabled={ejecutando}>
+        <Button onClick={handleEjecutar} disabled={ejecutando || cuentasActivas.size === 0}>
           {ejecutando ? "Ejecutando..." : "Ejecutar transcripción"}
+        </Button>
+        <Button variant="outline" onClick={handleCancelar} disabled={cancelando}>
+          {cancelando ? "Cancelando..." : "Cancelar"}
         </Button>
         {mensaje && <span className="text-xs text-muted-foreground">{mensaje}</span>}
       </div>
@@ -1214,11 +1352,13 @@ type CorrTranscrDetParams = {
   umbral_words_min:          number
   umbral_low_score_ratio:    number
   umbral_speaker_dominance:  number
+  umbral_ratio_audio_cruzado: number
   peso_logprob:              number
   peso_words:                number
   peso_speaker_balance:      number
   umbral_score_correcto:     number
   umbral_score_reprocesar:   number
+  num_instancias:            number
 }
 
 const CORR_TRANSCR_DET_DEFAULTS: CorrTranscrDetParams = {
@@ -1229,181 +1369,25 @@ const CORR_TRANSCR_DET_DEFAULTS: CorrTranscrDetParams = {
   umbral_words_min:          20,
   umbral_low_score_ratio:    0.25,
   umbral_speaker_dominance:  0.95,
+  umbral_ratio_audio_cruzado: 0.40,
   peso_logprob:              0.50,
   peso_words:                0.25,
   peso_speaker_balance:      0.25,
   umbral_score_correcto:     0.75,
   umbral_score_reprocesar:   0.40,
-}
-
-// ── Params LLM ──────────────────────────────────────────────────────────────
-
-type CorrTranscrLLMParams = {
-  grupo:                   string
-  modelo:                  string
-  max_segmentos_inicio:    number
-  max_segmentos_fin:       number
-  usar_llm:                boolean
-  duracion_desde:          number | null
-  duracion_hasta:          number | null
-  peso_score_determinista: number
-  peso_score_llm:          number
-  umbral_score_correcto:   number
-  umbral_score_reprocesar: number
-}
-
-const CORR_TRANSCR_LLM_DEFAULTS: CorrTranscrLLMParams = {
-  grupo:                   "GBM",
-  modelo:                  "Qwen/Qwen2.5-3B-Instruct-AWQ",
-  max_segmentos_inicio:    30,
-  max_segmentos_fin:       20,
-  usar_llm:                true,
-  duracion_desde:          null,
-  duracion_hasta:          null,
-  peso_score_determinista: 0.40,
-  peso_score_llm:          0.60,
-  umbral_score_correcto:   0.75,
-  umbral_score_reprocesar: 0.40,
-}
-
-// ── Params ganador ──────────────────────────────────────────────────────────
-
-type CorrTranscrGanadorParams = {
-  umbral_score_correcto:   number
-  umbral_score_reprocesar: number
-}
-
-const CORR_TRANSCR_GANADOR_DEFAULTS: CorrTranscrGanadorParams = {
-  umbral_score_correcto:   0.75,
-  umbral_score_reprocesar: 0.40,
-}
-
-const MODELOS_LLM = [
-  "Qwen/Qwen2.5-3B-Instruct-AWQ",
-  "Qwen/Qwen2.5-3B-Instruct",
-  "Qwen/Qwen2.5-7B-Instruct-AWQ",
-  "Qwen/Qwen2.5-7B-Instruct",
-  "microsoft/Phi-3-mini-4k-instruct",
-]
-
-const CT_PRESETS = TRANSCRIPCION_PRESETS   // reutiliza los mismos grupos GBM
-
-function detectarPresetCT(grupos: Record<string, string>): number {
-  for (let i = 0; i < CT_PRESETS.length; i++) {
-    const pg = CT_PRESETS[i].grupos
-    if (pg.G === grupos.G && pg.M === grupos.M && pg.B === grupos.B) return i
-  }
-  return -1
-}
-
-function GrupoLLMPanel({
-  cuenta,
-  params,
-  onChange,
-}: {
-  cuenta: string
-  params: CorrTranscrLLMParams
-  onChange: (key: keyof CorrTranscrLLMParams, val: string | boolean | null) => void
-}) {
-  return (
-    <div className="border border-border rounded p-4 flex flex-col gap-3">
-      <div className="flex flex-col gap-1">
-        <Label className="text-xs text-muted-foreground">Modelo LLM</Label>
-        <select
-          className={inputClass}
-          value={params.modelo}
-          onChange={(e) => onChange("modelo", e.target.value)}
-        >
-          {MODELOS_LLM.map((m) => <option key={m} value={m}>{m.split("/")[1]}</option>)}
-        </select>
-      </div>
-
-      <div className="grid grid-cols-2 gap-3">
-        <div className="flex flex-col gap-1">
-          <Label className="text-xs text-muted-foreground">Segmentos inicio</Label>
-          <input type="number" step="1" className={inputClass}
-            value={params.max_segmentos_inicio}
-            onChange={(e) => onChange("max_segmentos_inicio", e.target.value)} />
-        </div>
-        <div className="flex flex-col gap-1">
-          <Label className="text-xs text-muted-foreground">Segmentos fin</Label>
-          <input type="number" step="1" className={inputClass}
-            value={params.max_segmentos_fin}
-            onChange={(e) => onChange("max_segmentos_fin", e.target.value)} />
-        </div>
-        <div className="flex flex-col gap-1">
-          <Label className="text-xs text-muted-foreground">Duración desde (seg)</Label>
-          <input type="number" step="1" className={inputClass}
-            value={params.duracion_desde ?? ""}
-            placeholder="sin límite"
-            onChange={(e) => onChange("duracion_desde", e.target.value === "" ? null : e.target.value)} />
-        </div>
-        <div className="flex flex-col gap-1">
-          <Label className="text-xs text-muted-foreground">Duración hasta (seg)</Label>
-          <input type="number" step="1" className={inputClass}
-            value={params.duracion_hasta ?? ""}
-            placeholder="sin límite"
-            onChange={(e) => onChange("duracion_hasta", e.target.value === "" ? null : e.target.value)} />
-        </div>
-        <div className="flex flex-col gap-1">
-          <Label className="text-xs text-muted-foreground">Peso score determinista</Label>
-          <input type="number" step="0.05" className={inputClass}
-            value={params.peso_score_determinista}
-            onChange={(e) => onChange("peso_score_determinista", e.target.value)} />
-        </div>
-        <div className="flex flex-col gap-1">
-          <Label className="text-xs text-muted-foreground">Peso score LLM</Label>
-          <input type="number" step="0.05" className={inputClass}
-            value={params.peso_score_llm}
-            onChange={(e) => onChange("peso_score_llm", e.target.value)} />
-        </div>
-        <div className="flex flex-col gap-1">
-          <Label className="text-xs text-muted-foreground">Umbral correcto</Label>
-          <input type="number" step="0.05" className={inputClass}
-            value={params.umbral_score_correcto}
-            onChange={(e) => onChange("umbral_score_correcto", e.target.value)} />
-        </div>
-        <div className="flex flex-col gap-1">
-          <Label className="text-xs text-muted-foreground">Umbral reprocesar</Label>
-          <input type="number" step="0.05" className={inputClass}
-            value={params.umbral_score_reprocesar}
-            onChange={(e) => onChange("umbral_score_reprocesar", e.target.value)} />
-        </div>
-      </div>
-
-      <label className="flex items-center gap-2 text-sm text-foreground cursor-pointer">
-        <input type="checkbox" checked={params.usar_llm}
-          onChange={(e) => onChange("usar_llm", e.target.checked)} />
-        Usar LLM (desactivar para debug sin GPU)
-      </label>
-    </div>
-  )
+  num_instancias:            1,
 }
 
 function EtapaCorreccionTranscripciones() {
-  // ── Estado params determinista ──────────────────────────────────────────────
   const [detParams, setDetParams] = useState<CorrTranscrDetParams>(CORR_TRANSCR_DET_DEFAULTS)
 
-  // ── Estado params LLM por cuenta ────────────────────────────────────────────
-  const [llmParams, setLlmParams] = useState<Record<string, CorrTranscrLLMParams>>({
-    G: { ...CORR_TRANSCR_LLM_DEFAULTS },
-    M: { ...CORR_TRANSCR_LLM_DEFAULTS },
-    B: { ...CORR_TRANSCR_LLM_DEFAULTS },
-  })
-  const [presetIdx, setPresetIdx] = useState(0)
+  const [guardando,     setGuardando]     = useState(false)
+  const [ejecutando,    setEjecutando]    = useState(false)
+  const [cancelando,    setCancelando]    = useState(false)
+  const [limpiando,     setLimpiando]     = useState(false)
+  const [reseteando,    setReseteando]    = useState(false)
+  const [mensaje,       setMensaje]       = useState<string | null>(null)
 
-  // ── Estado params ganador ────────────────────────────────────────────────────
-  const [ganadorParams, setGanadorParams] = useState<CorrTranscrGanadorParams>(CORR_TRANSCR_GANADOR_DEFAULTS)
-
-  // ── UI ───────────────────────────────────────────────────────────────────────
-  const [guardando,      setGuardando]      = useState(false)
-  const [ejecutando,     setEjecutando]     = useState(false)
-  const [ejecutandoLLM,  setEjecutandoLLM]  = useState(false)
-  const [limpiando,      setLimpiando]      = useState(false)
-  const [reseteando,     setReseteando]     = useState(false)
-  const [mensaje,        setMensaje]        = useState<string | null>(null)
-
-  // ── Carga inicial ────────────────────────────────────────────────────────────
   useEffect(() => {
     getParametros("correccion_transcripciones")
       .then((res: { valor?: Partial<CorrTranscrDetParams> }) => {
@@ -1411,78 +1395,16 @@ function EtapaCorreccionTranscripciones() {
         setDetParams({ ...CORR_TRANSCR_DET_DEFAULTS, ...v })
       })
       .catch(() => {})
-
-    const cargarLLM = async () => {
-      const gruposActuales: Record<string, string> = { G: "GBM", M: "GBM", B: "GBM" }
-      const nuevosParams: Record<string, CorrTranscrLLMParams> = {
-        G: { ...CORR_TRANSCR_LLM_DEFAULTS },
-        M: { ...CORR_TRANSCR_LLM_DEFAULTS },
-        B: { ...CORR_TRANSCR_LLM_DEFAULTS },
-      }
-      for (const cuenta of ["G", "M", "B"]) {
-        try {
-          const res = await getParametros(`correccion_transcripciones_llm_${cuenta}`)
-          const v = res?.valor ?? {}
-          nuevosParams[cuenta] = { ...CORR_TRANSCR_LLM_DEFAULTS, ...v }
-          if (v.grupo) gruposActuales[cuenta] = v.grupo
-        } catch { /* usa defaults */ }
-      }
-      setLlmParams(nuevosParams)
-      const idx = detectarPresetCT(gruposActuales)
-      if (idx >= 0) setPresetIdx(idx)
-    }
-    cargarLLM()
-
-    getParametros("correccion_transcripciones_ganador")
-      .then((res: { valor?: Partial<CorrTranscrGanadorParams> }) => {
-        const v = res?.valor ?? {}
-        setGanadorParams({ ...CORR_TRANSCR_GANADOR_DEFAULTS, ...v })
-      })
-      .catch(() => {})
   }, [])
 
-  // ── Selección de preset ──────────────────────────────────────────────────────
-  const aplicarPreset = (idx: number) => {
-    setPresetIdx(idx)
-    const grupos = CT_PRESETS[idx].grupos
-    setLlmParams((prev) => {
-      const next = { ...prev }
-      for (const cuenta of ["G", "M", "B"] as const) {
-        next[cuenta] = { ...prev[cuenta], grupo: grupos[cuenta] }
-      }
-      return next
-    })
-  }
-
-  // ── Helpers ──────────────────────────────────────────────────────────────────
   const setDet = (key: keyof CorrTranscrDetParams, val: string | null) =>
     setDetParams((prev) => ({ ...prev, [key]: val === null ? null : Number(val) }))
 
-  const setLLM = (cuenta: string, key: keyof CorrTranscrLLMParams, val: string | boolean | null) =>
-    setLlmParams((prev) => ({
-      ...prev,
-      [cuenta]: {
-        ...prev[cuenta],
-        [key]: val === null ? null
-             : typeof val === "boolean" ? val
-             : isNaN(Number(val)) ? val
-             : Number(val),
-      },
-    }))
-
-  const setGanador = (key: keyof CorrTranscrGanadorParams, val: string) =>
-    setGanadorParams((prev) => ({ ...prev, [key]: Number(val) }))
-
-  // ── Guardado ─────────────────────────────────────────────────────────────────
   const handleGuardar = async () => {
     setGuardando(true)
     setMensaje(null)
     try {
       await actualizarParametros("correccion_transcripciones", detParams)
-      for (const cuenta of ["G", "M", "B"]) {
-        await actualizarParametros(`correccion_transcripciones_llm_${cuenta}`, llmParams[cuenta])
-      }
-      await actualizarParametros("correccion_transcripciones_ganador", ganadorParams)
       setMensaje("Guardado")
     } catch {
       setMensaje("Error al guardar")
@@ -1491,7 +1413,7 @@ function EtapaCorreccionTranscripciones() {
     }
   }
 
-  const handleEjecutarDet = async () => {
+  const handleEjecutar = async () => {
     setEjecutando(true)
     setMensaje(null)
     try {
@@ -1504,16 +1426,16 @@ function EtapaCorreccionTranscripciones() {
     }
   }
 
-  const handleEjecutarLLM = async () => {
-    setEjecutandoLLM(true)
+  const handleCancelar = async () => {
+    setCancelando(true)
     setMensaje(null)
     try {
-      await ejecutarEtapa("correccion_transcripciones_llm", "pendientes")
-      setMensaje("Scoring LLM iniciado")
+      const res = await cancelarEtapa("correccion_transcripciones")
+      setMensaje(res.cancelado ? "Cancelado" : res.mensaje)
     } catch {
-      setMensaje("Error al ejecutar LLM")
+      setMensaje("Error al cancelar")
     } finally {
-      setEjecutandoLLM(false)
+      setCancelando(false)
     }
   }
 
@@ -1522,9 +1444,9 @@ function EtapaCorreccionTranscripciones() {
     setMensaje(null)
     try {
       await limpiarTranscripciones()
-      setMensaje("Selección de ganador iniciada")
+      setMensaje("Limpiar iniciado")
     } catch {
-      setMensaje("Error al iniciar limpieza")
+      setMensaje("Error al limpiar")
     } finally {
       setLimpiando(false)
     }
@@ -1543,9 +1465,6 @@ function EtapaCorreccionTranscripciones() {
       setReseteando(false)
     }
   }
-
-  const grupos = CT_PRESETS[presetIdx >= 0 ? presetIdx : 0].grupos
-  const gruposUnicos = [...new Set(Object.values(grupos))]
 
   return (
     <div className="flex flex-col gap-6 pt-3">
@@ -1570,6 +1489,18 @@ function EtapaCorreccionTranscripciones() {
                 value={detParams.duracion_hasta ?? ""}
                 placeholder="sin límite"
                 onChange={(e) => setDet("duracion_hasta", e.target.value === "" ? null : e.target.value)} />
+            </div>
+            <div className="flex flex-col gap-1">
+              <Label className="text-xs text-muted-foreground">Instancias en paralelo (Gaspar)</Label>
+              <select
+                className={selectClass}
+                value={detParams.num_instancias}
+                onChange={(e) => setDet("num_instancias", e.target.value)}
+              >
+                {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
+                  <option key={n} value={n}>{n}</option>
+                ))}
+              </select>
             </div>
           </div>
 
@@ -1604,6 +1535,12 @@ function EtapaCorreccionTranscripciones() {
               <input type="number" step="0.01" className={inputClass}
                 value={detParams.umbral_speaker_dominance}
                 onChange={(e) => setDet("umbral_speaker_dominance", e.target.value)} />
+            </div>
+            <div className="flex flex-col gap-1">
+              <Label className="text-xs text-muted-foreground">Ratio audio cruzado mínimo</Label>
+              <input type="number" step="0.05" className={inputClass}
+                value={detParams.umbral_ratio_audio_cruzado}
+                onChange={(e) => setDet("umbral_ratio_audio_cruzado", e.target.value)} />
             </div>
           </div>
 
@@ -1648,86 +1585,19 @@ function EtapaCorreccionTranscripciones() {
         </div>
       </div>
 
-      {/* ── Scoring LLM ──────────────────────────────────────────────── */}
-      <div className="flex flex-col gap-3">
-        <p className="text-sm font-semibold text-foreground">Scoring LLM (GPU · 3 PCs)</p>
-
-        {/* Selector de preset */}
-        <div className="flex items-center gap-2">
-          <span className="text-xs text-muted-foreground">Grupos:</span>
-          {CT_PRESETS.map((preset, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => aplicarPreset(i)}
-              className={`px-3 py-1 rounded text-xs border transition-colors ${
-                presetIdx === i
-                  ? "bg-primary text-primary-foreground border-primary"
-                  : "bg-background text-foreground border-border hover:bg-muted"
-              }`}
-            >
-              {preset.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Panels por grupo único */}
-        <div className="grid grid-cols-1 gap-4">
-          {gruposUnicos.map((grupo) => {
-            const cuentas = (["G", "M", "B"] as const).filter((c) => grupos[c] === grupo)
-            // Toma los params de la primera cuenta del grupo
-            const cuenta0 = cuentas[0]
-            return (
-              <div key={grupo}>
-                <p className="text-xs text-muted-foreground mb-2">
-                  Grupo <strong>{grupo}</strong> — máquinas: {cuentas.join(", ")}
-                </p>
-                <GrupoLLMPanel
-                  cuenta={cuenta0}
-                  params={llmParams[cuenta0]}
-                  onChange={(key, val) => {
-                    // propaga a todas las cuentas del grupo
-                    for (const c of cuentas) setLLM(c, key, val)
-                  }}
-                />
-              </div>
-            )
-          })}
-        </div>
-      </div>
-
-      {/* ── Selección de ganador ─────────────────────────────────────── */}
-      <div className="flex flex-col gap-3">
-        <p className="text-sm font-semibold text-foreground">Selección de ganador</p>
-        <div className="border border-border rounded p-4 flex flex-col gap-3 max-w-sm">
-          <div className="flex flex-col gap-1">
-            <Label className="text-xs text-muted-foreground">Score mínimo → correcto</Label>
-            <input type="number" step="0.05" className={inputClass}
-              value={ganadorParams.umbral_score_correcto}
-              onChange={(e) => setGanador("umbral_score_correcto", e.target.value)} />
-          </div>
-          <div className="flex flex-col gap-1">
-            <Label className="text-xs text-muted-foreground">Score mínimo → reprocesar</Label>
-            <input type="number" step="0.05" className={inputClass}
-              value={ganadorParams.umbral_score_reprocesar}
-              onChange={(e) => setGanador("umbral_score_reprocesar", e.target.value)} />
-          </div>
-        </div>
-      </div>
-
       {/* ── Acciones ─────────────────────────────────────────────────── */}
       <div className="flex flex-wrap items-center gap-3 pt-1 border-t border-border">
         <Button size="sm" onClick={handleGuardar} disabled={guardando}>
           {guardando ? "Guardando..." : "Guardar"}
         </Button>
-        <Button onClick={handleEjecutarDet} disabled={ejecutando}>
-          {ejecutando ? "Ejecutando..." : "Ejecutar determinista"}
+        <Button onClick={handleEjecutar} disabled={ejecutando}>
+          {ejecutando ? "Ejecutando..." : "Ejecutar scoring"}
         </Button>
-        <Button onClick={handleEjecutarLLM} disabled={ejecutandoLLM}>
-          {ejecutandoLLM ? "Ejecutando..." : "Ejecutar LLM"}
+        <Button variant="outline" onClick={handleCancelar} disabled={cancelando}>
+          {cancelando ? "Cancelando..." : "Cancelar"}
         </Button>
         <Button variant="outline" onClick={handleLimpiar} disabled={limpiando}>
-          {limpiando ? "Seleccionando..." : "Seleccionar ganador"}
+          {limpiando ? "Limpiando..." : "Limpiar"}
         </Button>
         <Button variant="outline" onClick={handleResetear} disabled={reseteando}>
           {reseteando ? "Reseteando..." : "Resetear resultados"}

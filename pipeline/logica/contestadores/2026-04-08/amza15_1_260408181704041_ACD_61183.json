@@ -1,0 +1,53 @@
+{
+  "audio_id": "c8aefae5-fc55-499b-8e98-45460aa63a20",
+  "nombre_archivo": "amza15_1_260408181704041_ACD_61183",
+  "metadata_llamada": {
+    "agente": "MZA 15",
+    "campania": "MVS_MZA",
+    "empresa": "AZO",
+    "duracion_seg": 11,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola, buenas tardes."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Sí."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "¿Qué tal?"
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Mi nombre es Sofía."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Me comunico del área de cobertura de Movistar."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Me encuentro con Jimena."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.3113,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T14:59:55.953542+00:00"
+  }
+}

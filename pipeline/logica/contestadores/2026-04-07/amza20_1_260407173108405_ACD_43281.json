@@ -1,0 +1,33 @@
+{
+  "audio_id": "aa59036a-da47-4e81-bfd4-aac1245337ea",
+  "nombre_archivo": "amza20_1_260407173108405_ACD_43281",
+  "metadata_llamada": {
+    "agente": "MZA 20",
+    "campania": "MVS_MZA",
+    "empresa": "AZO",
+    "duracion_seg": 11,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Después del tono, deja tu mensaje."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Para finalizar, corta o marca la tecla numeral para medir."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.5528,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T15:01:22.692301+00:00"
+  }
+}

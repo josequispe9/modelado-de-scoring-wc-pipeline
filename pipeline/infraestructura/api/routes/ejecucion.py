@@ -5,6 +5,7 @@ import httpx
 import os
 import psycopg2
 from api import airflow_client
+from api.ssh_kill import matar_procesos
 
 router = APIRouter()
 
@@ -16,7 +17,6 @@ ETAPAS_DAG = {
     "seleccionar_ganador":             "pipeline_seleccionar_ganador",
     "transcripcion":                   "pipeline_transcripcion",
     "correccion_transcripciones":      "pipeline_correccion_transcripciones",
-    "correccion_transcripciones_llm":  "pipeline_correccion_transcripciones_llm",
     "analisis":                        "pipeline_analisis",
     "correccion_analisis":             "pipeline_correccion_analisis",
     "carga_datos":                     "pipeline_carga_datos",
@@ -25,14 +25,15 @@ ETAPAS_DAG = {
 Etapa = Literal[
     "descarga", "creacion_registros", "normalizacion",
     "correccion_normalizacion", "seleccionar_ganador", "transcripcion",
-    "correccion_transcripciones", "correccion_transcripciones_llm",
+    "correccion_transcripciones",
     "analisis", "correccion_analisis", "carga_datos"
 ]
 
 
 class FiltroEjecucion(BaseModel):
     filtro: Literal["pendientes", "reprocesar", "todos"] = "pendientes"
-    ids: Optional[list[str]] = None   # UUIDs específicos (opcional)
+    ids: Optional[list[str]] = None          # UUIDs específicos (opcional)
+    cuentas: Optional[list[str]] = None      # PCs a usar: ["G","M","B"] o subconjunto
 
 
 @router.post("/ejecutar")
@@ -52,6 +53,8 @@ def ejecutar_etapa(etapa: Etapa, body: FiltroEjecucion = FiltroEjecucion()):
     """
     dag_id = ETAPAS_DAG[etapa]
     conf = {"filtro": body.filtro, "ids": body.ids}
+    if body.cuentas is not None:
+        conf["cuentas"] = body.cuentas
     try:
         return airflow_client.trigger_dag(dag_id, conf=conf)
     except httpx.HTTPStatusError as e:
@@ -125,6 +128,7 @@ def resetear_correccion_transcripciones():
     return {"reseteados": afectados}
 
 
+
 @router.post("/etapa/{etapa}/pausar")
 def pausar_etapa(etapa: Etapa):
     """Pausa el DAG de una etapa para que no corra en el próximo schedule."""
@@ -133,3 +137,29 @@ def pausar_etapa(etapa: Etapa):
         return airflow_client.pausar_dag(dag_id)
     except httpx.HTTPStatusError as e:
         raise HTTPException(status_code=e.response.status_code, detail=str(e))
+
+
+@router.post("/etapa/{etapa}/cancelar")
+def cancelar_etapa(etapa: Etapa):
+    """
+    1. Cancela el último DAG run activo en Airflow (running/queued → failed).
+    2. Mata via SSH los procesos Python de la etapa en todas sus máquinas.
+    Los registros que queden en estado 'en_proceso' deben desbloquearse manualmente.
+    """
+    dag_id = ETAPAS_DAG[etapa]
+
+    # 1 — Cancelar DAG run en Airflow
+    try:
+        airflow_result = airflow_client.cancelar_ultimo_dag_run(dag_id)
+    except httpx.HTTPStatusError as e:
+        airflow_result = {"cancelado": False, "error": str(e)}
+
+    # 2 — Matar procesos en máquinas remotas
+    ssh_results = matar_procesos(etapa)
+
+    killed_total = sum(r.get("count", 0) for r in ssh_results)
+    return {
+        "airflow": airflow_result,
+        "ssh":     ssh_results,
+        "killed":  killed_total,
+    }

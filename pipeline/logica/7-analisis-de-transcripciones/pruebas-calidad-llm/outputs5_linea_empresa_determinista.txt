@@ -1,0 +1,43 @@
+RESULTADOS DETERMINISTAS LÍNEA DE EMPRESA — 2026-05-14 18:33:44
+Archivos         : 648
+Primeros N turnos: 40
+========================================================================
+
+  [amza21_1_260409190638197_ACD_59721.json]
+  Turnos: 13
+  Frase: "Sí, pero es corporativo el teléfono este, por eso."
+
+  [amza23_1_260414131353759_ACD_63269.json]
+  Turnos: 14
+  Frase: "Ah, pero tengo un plan de empresa."
+
+  [amza24_1_260409140712543_ACD_95135.json]
+  Turnos: 13
+  Frase: "No, porque es de la empresa."
+
+  [amza2_1_260409141149510_ACD_10491.json]
+  Turnos: 35
+  Frase: "Sí, pero es de empresa esto."
+
+  [amza51_1_260409102021568_ACD_90831.json]
+  Turnos: 40
+  Frase: "Y no me puedo cambiar porque tengo línea de cuerpo."
+
+  [amza51_1_260409133223582_ACD_86211.json]
+  Turnos: 21
+  Frase: "Por ahora te agradezco porque es corporativo, así que me lo paga mi jefe."
+
+  [amza52_1_260409170735783_ACD_05497.json]
+  Turnos: 16
+  Frase: "No, no, nadie lo sé, pero porque es corporativo ese teléfono."
+
+  [amza82_1_260409110458755_ACD_23159.json]
+  Turnos: 15
+  Frase: "Sí, pero no le puedo cambiar a ninguna compañía porque el teléfono es de donde trabajo yo."
+
+  [amza9_1_260409134910870_ACD_36159.json]
+  Turnos: 28
+  Frase: "Es correcto, es una línea corporativa, de la cual no tengo ningún tipo de poder."
+
+========================================================================
+RESUMEN: 9 líneas de empresa | 639 líneas personales

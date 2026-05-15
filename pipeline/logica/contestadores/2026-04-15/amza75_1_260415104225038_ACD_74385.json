@@ -1,0 +1,33 @@
+{
+  "audio_id": "25a1ea5b-c0a1-41c0-8cc1-89a11f8fcd53",
+  "nombre_archivo": "amza75_1_260415104225038_ACD_74385",
+  "metadata_llamada": {
+    "agente": "MZA 75",
+    "campania": "MVS_MZA",
+    "empresa": "AZO",
+    "duracion_seg": 10,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "no estoy disponible."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Deje su mensaje y más tarde me comunicaré."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.3054,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T14:59:31.714763+00:00"
+  }
+}

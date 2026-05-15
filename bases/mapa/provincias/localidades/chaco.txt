@@ -1,0 +1,109 @@
+Avia Terai	Localidad	Independencia	3.505	5.446	6.203	6.969
+Barranqueras	Localidad	San Fernando	42.572	50.738	54.698	59.655
+Barrio de los Pescadores	Localidad	Primero de Mayo	418	646	795	1.038
+Basail	Localidad	San Fernando	908	1.960	1.929	2.294
+Campo Largo	Localidad	Independencia	4.863	7.980	9.069	10.318
+Capitán Solari	Localidad	Sargento Cabral	682	1.655	1.888	2.257
+Charadai	Localidad	Tapenagá	1.154	1.346	1.519	1.531
+Charata	Localidad	Chacabuco	15.836	22.573	26.497	30.968
+Chorotis	Localidad	Fray Justo Santa María de Oro	372	462	941	735
+Ciervo Petiso	Localidad	Libertador General San Martín	386	619	786	1.022
+Colonia Aborigen	Localidad	Veinticinco de Mayo	751	1.045	1.272	1.269
+Colonia Baranda	Localidad	San Fernando	366	391	336	480
+Colonia Benítez	Localidad	Primero de Mayo	719	1.928	2.212	3.723
+Colonia Elisa	Localidad	Sargento Cabral	1.714	3.085	3.471	4.278
+Colonia José Mármol	Localidad	Independencia	...	...	...	60
+Colonia La Matanza	Localidad	Maipú	...	...	...	41
+Colonia Pegouriel	Localidad	Mayor Luis Jorge Fontana	...	...	...	285
+Colonia Popular	Localidad	Libertad	32	135	191	278
+Colonias Unidas	Localidad	Sargento Cabral	2.708	3.417	3.282	3.649
+Comandancia Frías	Localidad	General Güemes	...	...	...	988
+Concepción del Bermejo	Localidad	Almirante Brown	3.085	4.744	5.309	6.054
+Coronel Du Graty	Localidad	Mayor Luis Jorge Fontana	4.694	6.888	7.509	8.677
+Corzuela	Localidad	General Belgrano	4.997	8.105	10.335	11.915
+Cote Lai	Localidad	Tapenagá	749	1.233	1.323	1.434
+El Espinillo	Localidad	General Güemes	422	726	1.261	1.526
+El Naranjito	Localidad	San Fernando	...	...	...	224
+El Paraisal	Localidad	Quitilipi	...	...	...	5
+El Paraisal	Localidad	San Fernando	...	...	...	172
+El Pastoril	Localidad	Mayor Luis Jorge Fontana	...	...	...	909
+El Sauzal	Localidad	General Güemes	252	657	715	736
+El Sauzalito	Localidad	General Güemes	1.261	2.615	3.374	4.162
+Enrique Urién	Localidad	Mayor Luis Jorge Fontana	139	338	515	397
+Estación General Obligado	Localidad	Libertad	48	30	31	12
+Fontana	Localidad	San Fernando	14.436	26.745	32.027	40.561
+Fortín Belgrano	Localidad	General Güemes	...	...	...	454
+Fortín Las Chuñas	Localidad	Independencia	224	219	302	136
+Fortín Lavalle	Localidad	General Güemes	157	277	687	935
+Fuerte Esperanza	Localidad	General Güemes	138	895	1.376	1.886
+Gancedo	Localidad	Doce de Octubre	931	3.253	4.284	5.652
+General Capdevila	Localidad	Doce de Octubre	99	593	405	422
+General José de San Martín	Localidad	Libertador General San Martín	19.243	25.781	28.124	33.225
+General Pinedo	Localidad	Doce de Octubre	7.415	11.332	13.042	14.843
+General Vedia	Localidad	Bermejo	1.313	1.840	1.751	2.709
+Haumonia	Localidad	Tapenagá	81	77	77	63
+Hermoso Campo	Localidad	Dos de Abril	3.016	4.402	5.011	6.708
+Horquilla	Localidad	Tapenagá	93	151	122	181
+Ingeniero Barbet	Localidad	Sargento Cabral	104	246	277	261
+Isla del Cerrito	Localidad	Bermejo	978	1.514	1.758	2.208
+Itín	Localidad	Dos de Abril	156	446	441	617
+Juan José Castelli	Localidad	General Güemes	12.474	24.333	27.201	27.494
+Kilómetro 855	Localidad	Maipú	...	...	...	73
+Kilómetro 884	Localidad	Maipú	...	...	...	98
+La Clotilde	Localidad	O'Higgins	1.772	2.607	3.382	3.683
+La Curva	Localidad	Maipú	...	...	...	395
+La Eduvigis	Localidad	Libertador General San Martín	215	271	392	591
+La Escondida	Localidad	General Donovan	2.788	3.219	3.261	4.135
+Laguna Blanca	Localidad	Libertad	122	356	547	902
+Laguna Limpia	Localidad	Libertador General San Martín	433	1.186	1.207	1.476
+La Leonesa	Localidad	Bermejo	7.801	8.420	8.823	10.899
+Lapachito	Localidad	General Donovan	465	822	888	1.106
+La Sabana	Localidad	Tapenagá	206	267	242	206
+Las Breñas	Localidad	Nueve de Julio	14.116	19.544	22.953	27.002
+Las Garcitas	Localidad	Sargento Cabral	1.405	3.032	3.711	5.336
+Las Hacheras	Localidad	General Güemes	...	...	...	281
+Las Palmas	Localidad	Bermejo	5.253	5.434	4.914	5.963
+Las Piedritas	Localidad	Nueve de Julio	...	...	...	188
+La Tigra	Localidad	O'Higgins	1.462	2.544	2.866	4.007
+La Verde	Localidad	General Donovan	2.162	2.486	2.717	3.030
+Los Frentones	Localidad	Almirante Brown	1.990	4.712	5.520	6.563
+Lote 1	Localidad	Primero de Mayo	...	...	...	268
+Machagai	Localidad	Veinticinco de Mayo	11.998	18.346	21.997	27.653
+Makallé	Localidad	General Donovan	2.460	3.812	4.322	5.441
+Margarita Belén	Localidad	Primero de Mayo	2.388	4.591	5.701	7.642
+Mesón de Fierro	Localidad	Doce de Octubre	267	385	423	399
+Miraflores	Localidad	General Güemes	459	2.037	4.737	7.138
+Napalpí	Localidad	Veinticinco de Mayo	89	59	39	64
+Napenay	Localidad	Independencia	839	1.960	2.661	2.964
+Nueva Pompeya	Localidad	General Güemes	804	1.772	2.259	4.239
+Pampa Almirón	Localidad	Libertador General San Martín	466	1.037	1.278	1.337
+Pampa del Indio	Localidad	Libertador General San Martín	3.149	5.674	9.204	15.049
+Pampa del Infierno	Localidad	Almirante Brown	2.998	6.389	9.063	11.475
+Pampa Landriel	Localidad	Doce de Octubre	283	309	333	249
+Presidencia de la Plaza	Localidad	Presidencia de la Plaza	5.644	8.417	9.642	12.296
+Presidencia Roca	Localidad	Libertador General San Martín	2.205	3.720	4.201	4.654
+Presidencia Roque Sáenz Peña	Localidad	Comandante Fernández	63.135	76.794	89.882	96.866
+Puerto Bermejo Nuevo	Localidad	Bermejo	623	1.503	1.733	1.853
+Puerto Bermejo Viejo	Localidad	Bermejo	849	209	86	192
+Puerto Eva Perón	Localidad	Bermejo	177	531	609	483
+Puerto Lavalle	Localidad	General Güemes	24	35	...	94
+Puerto Tirol	Localidad	Libertad	6.372	7.855	8.819	10.841
+Puerto Vilelas	Localidad	San Fernando	6.067	7.617	8.278	10.489
+Quitilipi	Localidad	Quitilipi	14.055	20.737	24.517	27.349
+Resistencia	Localidad	San Fernando	229.212	274.490	290.723	296.913
+Río Muerto	Localidad	Almirante Brown	265	849	1.052	1.208
+Samuhú	Localidad	San Lorenzo	1.036	1.191	1.251	1.362
+San Bernardo	Localidad	O'Higgins	4.720	7.513	9.379	11.672
+Santa Sylvina	Localidad	Fray Justo Santa María de Oro	4.568	5.929	7.340	8.367
+Selvas del Río de Oro	Localidad	Libertador General San Martín	609	502	606	909
+Taco Pozo	Localidad	Almirante Brown	3.329	6.418	7.813	10.082
+Tartagal	Localidad	General Güemes	...	...	...	545
+Tres Isletas	Localidad	Maipú	8.318	14.096	16.976	21.170
+Tres Pozos	Localidad	General Güemes	...	...	...	560
+Venados Grandes	Localidad	Fray Justo Santa María de Oro	212	220	303	304
+Villa Ángela	Localidad	Mayor Luis Jorge Fontana	28.779	38.020	41.403	46.850
+Villa Berthet	Localidad	San Lorenzo	5.552	8.805	10.224	13.157
+Villa El Palmar	Localidad	Quitilipi	585	794	879	1.081
+Villa Río Bermejito	Localidad	General Güemes	555	692	3.752	5.200
+Wichi	Localidad	General Güemes	183	535	773	839
+Zaparinqui	Localidad	General Güemes	297	646	700	827

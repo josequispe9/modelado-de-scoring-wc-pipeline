@@ -1,0 +1,148 @@
+Alijilán	Localidad	Santa Rosa	977	1.303	1.396	1.435
+Amadores	Localidad	Paclín	116	179	172	281
+Amanao	Localidad	Andalgalá	98	48	29	30
+Ampolla	Localidad	Santa Rosa	...	...	...	209
+Ancasti	Localidad	Ancasti	215	305	361	421
+Andalgalá	Localidad	Andalgalá	9.005	11.411	12.600	14.311
+Andalhualá	Localidad	Santa María	321	339	241	180
+Anillaco	Localidad	Tinogasta	163	190	232	111
+Anquincila	Localidad	Ancasti	111	200	202	273
+Antofagasta de la Sierra	Localidad	Antofagasta de la Sierra	488	667	730	1.185
+Bañado de Ovanta	Localidad	Santa Rosa	711	971	1.096	1.300
+Barranca Larga	Localidad	Belén	259	314	330	293
+Belén	Localidad	Belén	8.231	11.003	12.256	15.172
+Capayán	Localidad	Capayán	541	701	636	673
+Casa de Piedra	Localidad	La Paz	173	172	251	287
+Catamarca (San Fernando del Valle de Catamarca)	Localidad	Capital	109.882	140.741	159.139	185.694
+Chañar Punco	Localidad	Santa María	1.356	1.710	1.736	1.966
+Chaquiago	Localidad	Andalgalá	829	1.069	1.096	939
+Choya	Localidad	Andalgalá	380	403	403	440
+Chuchucaruana	Localidad	Ambato	59	56	73	68
+Chumbicha	Localidad	Capayán	3.265	4.029	4.531	5.600
+Colana	Localidad	Pomán	416	490	478	538
+Colonia del Valle	Localidad	Capayán	563	543	854	953
+Colonia Nueva Coneta	Localidad	Capayán	1.193	1.497	1.951	2.797
+Colpes	Localidad	Ambato	64	62	75	64
+Colpes	Localidad	Pomán	515	695	774	774
+Concepción	Localidad	Capayán	355	410	387	534
+Cóndor Huasi	Localidad	Belén	210	251	254	302
+Coneta	Localidad	Capayán	506	617	653	816
+Copacabana	Localidad	Tinogasta	683	785	695	851
+Corral Quemado	Localidad	Belén	755	959	1.204	1.158
+El Alamito	Localidad	Andalgalá	425	651	734	859
+El Aybal	Localidad	La Paz	106	64	68	70
+El Bañado	Localidad	Capayán	137	163	158	223
+El Bañado	Localidad	La Paz	152	188	123	134
+El Bolsón	Localidad	Ambato	215	279	289	201
+El Cajón	Localidad	Santa María	117	156	141	167
+El Desmonte	Localidad	Santa María	171	180	144	165
+El Divisadero	Localidad	La Paz	101	53	70	97
+El Durazno	Localidad	Belén	249	369	378	318
+El Eje	Localidad	Belén	...	...	...	152
+El Lindero	Localidad	Andalgalá	678	785	741	807
+El Pajonal (Est. Pomán)	Localidad	Pomán	357	502	590	874
+El Peñón	Localidad	Antofagasta de la Sierra	162	224	263	347
+El Portezuelo	Localidad	Valle Viejo	337	344	410	438
+El Potrero	Localidad	Andalgalá	175	211	184	156
+El Puesto	Localidad	Santa María	163	214	200	138
+El Puesto	Localidad	Tinogasta	419	451	432	282
+El Quimilo	Localidad	La Paz	72	65	63	55
+El Rodeo	Localidad	Ambato	725	1.033	1.007	1.159
+El Salado	Localidad	Tinogasta	470	507	574	281
+Esquiú	Localidad	La Paz	855	1.023	1.019	1.145
+Famatanca	Localidad	Santa María	693	646	589	742
+Farallón Negro	Localidad	Belén	788	958	1.463	2
+Fiambalá	Localidad	Tinogasta	3.632	4.585	4.693	5.510
+Fuerte Quemado	Localidad	Santa María	399	444	459	525
+Guayamba	Localidad	El Alto	147	288	376	535
+Hualfín	Localidad	Belén	788	993	987	1.095
+Huaycama	Localidad	Ambato	142	170	152	183
+Huaycama	Localidad	Valle Viejo	186	174	158	235
+Huillapima	Localidad	Capayán	1.543	2.139	2.416	2.829
+Icaño	Localidad	La Paz	1.169	1.857	2.104	3.223
+Infanzón	Localidad	El Alto	59	55	62	66
+Isla Larga	Localidad	Ambato	...	...	...	45
+Jacipunco	Localidad	Belén	152	235	361	336
+La Candelaria	Localidad	Ancasti	79	88	77	77
+La Ciénaga	Localidad	Belén	...	...	...	323
+La Dorada	Localidad	La Paz	279	259	218	314
+La Estancita	Localidad	Capital	...	...	...	128
+La Guardia	Localidad	La Paz	405	540	493	543
+Laguna Blanca	Localidad	Belén	...	...	...	229
+La Higuera	Localidad	Paclín	239	268	236	241
+La Hoyada	Localidad	Santa María	107	161	120	90
+La Majada	Localidad	Ancasti	81	140	154	162
+La Merced	Localidad	Paclín	1.275	1.496	1.759	2.088
+La Puerta	Localidad	Ambato	557	752	706	861
+La Puntilla	Localidad	Belén	123	161	236	675
+Las Barrancas	Localidad	Belén	...	...	...	204
+Las Cañas	Localidad	Santa Rosa	134	202	177	270
+Las Chacritas	Localidad	Ambato	77	100	74	94
+Las Esquinas	Localidad	La Paz	137	93	136	99
+Las Esquinas	Localidad	Valle Viejo	...	...	...	170
+Las Juntas	Localidad	Ambato	212	322	304	460
+Las Juntas	Localidad	Belén	245	255	258	338
+Las Lajas	Localidad	Paclín	155	181	136	187
+Las Mojarras	Localidad	Santa María	613	1.005	959	1.256
+La Soledad	Localidad	Belén	...	...	...	168
+Las Palmas	Localidad	Capayán	...	...	...	47
+Las Palmitas	Localidad	La Paz	186	160	126	121
+Las Tejas	Localidad	Valle Viejo	128	248	351	532
+Las Tunas	Localidad	Santa Rosa	...	...	...	133
+La Toma	Localidad	Belén	...	...	...	100
+Lavalle	Localidad	Santa Rosa	484	786	792	943
+La Viña	Localidad	Paclín	70	162	129	114
+Londres	Localidad	Belén	1.844	2.134	2.456	3.004
+Los Altos	Localidad	Santa Rosa	2.393	3.207	4.490	5.609
+Los Ángeles	Localidad	Capayán	368	373	383	327
+Los Castillos	Localidad	Ambato	140	195	182	211
+Los Corrales	Localidad	El Alto	63	49	54	55
+Los Nacimientos	Localidad	Antofagasta de la Sierra	72	77	43	27
+Los Nacimientos	Localidad	Belén	234	239	215	165
+Los Talas	Localidad	Ambato	128	110	170	152
+Los Varela	Localidad	Ambato	256	408	443	469
+Manantiales	Localidad	Santa Rosa	358	496	659	637
+Medanitos	Localidad	Tinogasta	885	991	999	1.019
+Miraflores	Localidad	Capayán	851	1.073	1.650	1.763
+Monte Potrero	Localidad	Paclín	190	196	186	196
+Monte Redondo	Localidad	Santa Rosa	...	...	...	298
+Mutquín	Localidad	Pomán	928	1.075	1.075	1.116
+Palo Blanco	Localidad	Tinogasta	935	1.087	992	1.077
+Palo Labrado	Localidad	Paclín	146	184	223	221
+Pomán	Localidad	Pomán	1.577	2.259	2.856	3.200
+Pomancillo Este	Localidad	Fray Mamerto Esquiú	181	244	247	287
+Pomancillo Oeste	Localidad	Fray Mamerto Esquiú	235	250	254	348
+Pozo de Piedra	Localidad	Belén	...	...	...	471
+Puerta de Corral Quemado	Localidad	Belén	444	573	575	616
+Puerta de San José	Localidad	Belén	177	253	277	278
+Punta de Balasto	Localidad	Santa María	230	190	177	149
+Quirós	Localidad	La Paz	906	1.065	1.156	1.275
+Ramblones	Localidad	La Paz	64	69	68	45
+Recreo	Localidad	La Paz	6.789	10.147	11.847	14.714
+Rincón	Localidad	Pomán	555	554	523	651
+San Antonio	Localidad	La Paz	1.118	1.646	1.835	2.322
+San Antonio	Localidad	Paclín	249	280	266	186
+San Fernando	Localidad	Belén	...	...	...	450
+San Isidro	Localidad	Valle Viejo	15.948	22.173	25.674	31.972
+San José (incl. Collagasta)	Localidad	Fray Mamerto Esquiú	7.069	9.367	10.615	12.700
+San José (incl. La Loma)	Localidad	Santa María	2.422	3.315	3.289	3.923
+San Martín	Localidad	Capayán	347	309	426	408
+San Miguel	Localidad	Pomán	305	394	413	373
+San Pablo	Localidad	Capayán	97	161	139	149
+San Pedro	Localidad	Capayán	301	342	372	419
+San Pedro (San Pedro de Guasayán)	Localidad	Santa Rosa	586	689	830	691
+Santa Cruz	Localidad	Valle Viejo	118	131	122	243
+Santa María (incl. Loro Huasi)	Localidad	Santa María	8.449	12.269	13.195	16.545
+Saujil	Localidad	Pomán	1.347	1.927	2.368	2.946
+Saujil	Localidad	Tinogasta	213	320	339	314
+Siján	Localidad	Pomán	831	1.044	1.169	1.241
+Singuil	Localidad	Ambato	121	209	295	353
+Tapso	Localidad	El Alto	107	241	191	564
+Tinogasta	Localidad	Tinogasta	8.980	11.257	11.485	13.617
+Vilismán	Localidad	El Alto	76	136	112	100
+Villa Concepción del Alto	Localidad	El Alto	410	548	754	803
+Villa de Balcozna	Localidad	Paclín	147	274	210	354
+Villa Las Pirquitas	Localidad	Fray Mamerto Esquiú	686	758	740	1.179
+Villa Vil	Localidad	Belén	320	404	481	411
+Yapes	Localidad	Santa María	141	113	129	108
+Yerba Buena	Localidad	Ancasti	...	...	...	53

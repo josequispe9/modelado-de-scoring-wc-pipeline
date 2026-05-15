@@ -283,7 +283,8 @@ def normalizar(input_path: str, output_path: str, params: dict) -> bool:
 def actualizar_registro(conn, audio_id: str, etapa_actual_previa: str,
                         estado: str, object_key: str | None,
                         params: dict, error: str | None,
-                        duracion_seg: float | None = None) -> None:
+                        duracion_seg: float | None = None,
+                        duracion_original_seg: float | None = None) -> None:
     """
     Agrega un intento al array etapas.normalizacion (no reemplaza intentos previos).
 
@@ -305,7 +306,10 @@ def actualizar_registro(conn, audio_id: str, etapa_actual_previa: str,
             if k in params
         },
         "ubicacion": {"bucket": MINIO_BUCKET, "key": object_key} if object_key else None,
-        "metricas":  {"duracion_seg": duracion_seg} if duracion_seg is not None else None,
+        "metricas":  {
+            "duracion_seg":          duracion_seg,
+            "duracion_original_seg": duracion_original_seg,
+        } if duracion_seg is not None else None,
         "error":    error,
     }
 
@@ -408,10 +412,13 @@ def main():
                     errores += 1
                     continue
 
-            duracion = obtener_duracion(output_tmp)
+                duracion_original = obtener_duracion(input_tmp)
+                duracion          = obtener_duracion(output_tmp)
+
             actualizar_registro(conn, str(audio["id"]), etapa_actual_prev,
                                 "correcto", output_key, params, None,
-                                duracion_seg=duracion)
+                                duracion_seg=duracion,
+                                duracion_original_seg=duracion_original)
             log.info("OK: %s", nombre)
             procesados += 1
 

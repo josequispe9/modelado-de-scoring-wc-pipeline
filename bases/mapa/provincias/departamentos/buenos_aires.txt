@@ -1,0 +1,136 @@
+Adolfo Alsina	Partido	18.077	16.245	17.072	17.552
+Adolfo Gonzales Chaves	Partido	12.747	12.037	12.047	12.914
+Alberti	Partido	10.627	10.373	10.654	12.982
+Almirante Brown	Partido	450.698	515.556	552.902	584.827
+Arrecifes	Partido	24.593	27.279	29.044	32.215
+Avellaneda	Partido	344.991	328.980	342.677	367.554
+Ayacucho	Partido	19.634	19.669	20.337	21.977
+Azul	Partido	62.271	62.996	65.280	75.905
+Bahía Blanca	Partido	272.191	284.776	301.572	336.574
+Balcarce	Partido	41.194	42.039	43.823	48.982
+Baradero	Partido	28.500	29.562	32.761	40.002
+Benito Juárez	Partido	20.350	19.443	20.239	22.292
+Berazategui	Partido	244.929	287.913	324.244	358.712
+Berisso	Partido	74.761	80.092	88.470	100.930
+Bolívar	Partido	32.757	32.442	34.190	37.594
+Bragado	Partido	40.442	40.259	41.336	46.504
+Brandsen	Partido	18.424	22.515	26.367	32.448
+Campana	Partido	71.464	83.698	94.461	110.566
+Cañuelas	Partido	30.900	42.575	51.892	70.684
+Capitán Sarmiento Carlos	Partido	11.392	12.854	14.494	15.965
+Carlos Casares	Partido	20.126	21.125	22.237	23.100
+Carlos Tejedor	Partido	12.229	11.539	11.570	14.079
+Carmen de Areco	Partido	12.581	13.992	14.692	17.499
+Castelli	Partido	7.025	7.852	8.205	9.594
+Chacabuco	Partido	43.650	45.445	48.703	52.731
+Chascomús	Partido	31.419	34.536	37.630	42.452
+Chivilcoy	Partido	57.479	60.762	64.185	70.839
+Colón	Partido	21.192	23.179	24.890	27.504
+Coronel de Marina Leonardo Rosales	Partido	59.543	60.892	62.152	67.503
+Coronel Dorrego	Partido	17.741	16.522	15.825	15.968
+Coronel Pringles	Partido	22.905	23.794	22.933	24.420
+Coronel Suárez	Partido	35.710	36.828	38.320	42.110
+Daireaux	Partido	14.694	15.857	16.889	18.422
+Dolores	Partido	24.306	25.216	27.042	32.032
+Ensenada	Partido	48.237	51.448	56.729	63.997
+Escobar	Partido	128.421	178.155	213.619	256.268
+Esteban Echeverría	Partido	...	243.974	300.959	338.480
+Exaltación de la Cruz	Partido	17.072	24.167	29.805	40.159
+Ezeiza	Partido	...	118.807	163.722	201.511
+Florencio Varela	Partido	254.997	348.970	426.005	496.433
+Florentino Ameghino	Partido	7.516	8.171	8.869	10.790
+General Alvarado	Partido	30.385	34.391	39.594	45.526
+General Alvear	Partido	8.241	10.897	11.130	13.031
+General Arenales	Partido	15.102	14.876	14.903	16.350
+General Belgrano	Partido	13.941	15.381	17.365	20.791
+General Guido	Partido	2.857	2.771	2.816	3.174
+General Juan Madariaga	Partido	16.923	18.286	19.747	22.624
+General La Madrid	Partido	10.641	10.984	10.783	11.618
+General Las Heras	Partido	10.987	12.799	14.889	18.022
+General Lavalle	Partido	3.046	3.063	3.700	4.870
+General Paz	Partido	9.338	10.319	11.202	14.207
+General Pinto	Partido	11.610	11.129	11.261	12.941
+General Pueyrredón	Partido	532.845	564.056	618.989	667.082
+General Rodríguez	Partido	48.383	67.931	87.185	142.709
+General San Martín	Partido	406.809	403.107	414.196	450.575
+General Viamonte	Partido	17.744	17.641	18.078	22.649
+General Villegas	Partido	27.494	28.960	30.864	35.251
+Guaminí	Partido	12.284	11.257	11.826	11.801
+Hipólito Yrigoyen	Partido	9.038	8.819	9.585	10.661
+Hurlingham	Partido	...	172.245	181.241	185.641
+Ituzaingó	Partido	...	158.121	167.824	180.232
+José C. Paz	Partido	...	230.208	265.981	326.992
+Junín	Partido	84.295	88.664	90.305	103.787
+La Costa	Partido	38.603	60.483	69.633	100.689
+La Matanza	Partido	1.121.298	1.255.288	1.775.816	1.841.247
+Lanús	Partido	468.561	453.082	459.263	461.267
+La Plata	Partido	541.905	574.369	654.324	768.470
+Laprida	Partido	9.322	9.683	10.210	11.646
+Las Flores	Partido	21.980	23.551	23.871	27.239
+Leandro N. Alem	Partido	16.553	16.358	16.799	17.266
+Lezama (← Chascomús)	Partido	3.755	4.111	4.647	6.221
+Lincoln	Partido	40.592	41.127	41.808	45.506
+Lobería	Partido	17.647	17.008	17.523	18.243
+Lobos	Partido	30.788	33.141	36.172	41.760
+Lomas de Zamora	Partido	574.330	591.345	616.279	690.323
+Luján	Partido	80.645	93.992	106.273	111.008
+Magdalena	Partido	...	16.603	19.301	26.830
+Maipú	Partido	10.042	10.193	10.188	11.323
+Malvinas Argentinas	Partido	...	290.691	322.375	350.674
+Mar Chiquita	Partido	14.884	17.908	21.279	33.110
+Marcos Paz	Partido	29.104	43.400	54.181	67.011
+Mercedes	Partido	55.613	59.870	63.284	72.980
+Merlo	Partido	390.858	469.985	528.494	582.486
+Monte	Partido	15.479	17.488	21.034	24.868
+Monte Hermoso	Partido	3.605	5.602	6.499	8.465
+Moreno	Partido	287.715	380.503	452.505	576.632
+Morón	Partido	...	309.380	321.109	331.183
+Navarro	Partido	13.764	15.797	17.054	19.899
+Necochea	Partido	84.581	89.096	92.933	102.110
+Nueve de Julio (9 de Julio)	Partido	44.021	45.998	47.722	52.607
+Olavarría	Partido	98.014	103.961	111.708	125.751
+Patagones	Partido	27.469	27.938	30.207	37.646
+Pehuajó	Partido	38.151	38.400	39.776	44.783
+Pellegrini	Partido	5.797	6.030	5.887	7.143
+Pergamino	Partido	94.592	99.193	104.590	115.340
+Pila	Partido	2.969	3.318	3.640	4.642
+Pilar	Partido	...	232.463	299.077	394.754
+Pinamar	Partido	10.316	20.666	25.728	39.449
+Presidente Perón	Partido	...	60.191	81.141	102.106
+Puán	Partido	17.617	16.381	15.743	16.613
+Punta Indio	Partido	...	9.362	9.888	12.297
+Quilmes	Partido	511.234	518.788	582.943	633.391
+Ramallo	Partido	26.868	29.179	33.042	39.730
+Rauch	Partido	13.909	14.434	15.176	16.635
+Rivadavia	Partido	14.996	15.452	17.143	19.849
+Rojas	Partido	22.690	22.842	23.432	25.627
+Roque Pérez	Partido	9.639	10.902	12.513	13.977
+Saavedra	Partido	19.407	19.715	20.749	22.537
+Saladillo	Partido	26.200	29.600	32.103	35.656
+Salliqueló	Partido	8.445	8.682	8.644	9.427
+Salto	Partido	27.878	29.189	32.653	39.425
+San Andrés de Giles	Partido	18.302	20.829	23.027	26.510
+San Antonio de Areco	Partido	18.848	21.333	23.138	26.897
+San Cayetano	Partido	8.687	8.119	8.399	8.994
+San Fernando	Partido	144.763	151.131	163.240	171.616
+San Isidro	Partido	299.023	291.505	292.878	297.282
+San Miguel	Partido	...	253.086	276.190	328.835
+San Nicolás	Partido	132.918	137.867	145.857	167.824
+San Pedro	Partido	48.851	55.234	59.036	68.613
+San Vicente	Partido	...	44.529	59.478	98.215
+Suipacha	Partido	8.038	8.904	10.081	11.786
+Tandil	Partido	101.228	108.109	123.871	145.575
+Tapalqué	Partido	8.111	8.296	9.178	10.783
+Tigre	Partido	257.922	301.223	376.381	446.949
+Tordillo	Partido	1.444	1.742	1.764	2.542
+Tornquist	Partido	10.742	11.759	12.723	14.810
+Trenque Lauquen	Partido	35.289	40.181	43.021	49.309
+Tres Arroyos	Partido	56.679	57.244	57.110	62.426
+Tres de Febrero	Partido	349.376	336.467	340.071	364.176
+Tres Lomas	Partido	7.596	7.439	8.700	9.164
+Veinticinco de Mayo (25 de Mayo)	Partido	34.252	34.877	35.842	35.563
+Vicente López	Partido	289.505	274.082	269.420	282.281
+Villa Gesell	Partido	16.012	24.282	31.730	37.463
+Villarino	Partido	24.427	26.517	31.014	32.717
+Zárate	Partido	91.600	101.271	114.269	132.221
+Buenos Aires	Provincia	12.594.974	13.827.203	15.625.084	17.523.996

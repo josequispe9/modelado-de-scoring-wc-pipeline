@@ -1,0 +1,33 @@
+{
+  "audio_id": "5ccf1ca9-01ee-48a7-be48-626470a3aa80",
+  "nombre_archivo": "amza325_1_260414161936181_ACD_07785",
+  "metadata_llamada": {
+    "agente": "MZA 325",
+    "campania": "MVS_MZA",
+    "empresa": "AZO",
+    "duracion_seg": 12,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Después del tono, deja tu mensaje."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Para finalizar, cortá o marca la tecla numeral para más opciones."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.3083,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T15:00:55.115363+00:00"
+  }
+}

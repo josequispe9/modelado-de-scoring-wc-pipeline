@@ -1,0 +1,96 @@
+9 de Julio (Est. Pueblo 9 de Julio)	Localidad	San Roque	1.229	1.903	2.209	2.914
+Alvear	Localidad	General Alvear	6.064	6.934	6.732	7.965
+Bahía Carayá	Localidad	Ituzaingó	...	...	...	3
+Barrio Balneario	Localidad	Goya	...	...	...	29
+Barrio Paraíso del Paso	Localidad	San Cosme	...	...	...	5
+Barrio Santa Lucía	Localidad	Capital	...	...	...	123
+Barrio Santa Rosa	Localidad	Empedrado	...	...	...	64
+Bella Vista	Localidad	Bella Vista	21.192	25.393	29.071	35.546
+Bonpland	Localidad	Paso de los Libres	424	768	1.029	1.180
+Carolina	Localidad	Goya	221	288	420	1.200
+Carolina	Localidad	Goya	...	...	...	52
+Cazadores Correntinos	Localidad	Curuzú Cuatiá	382	473	456	637
+Cecilio Echavarría	Localidad	Lavalle	...	...	...	15
+Chavarría	Localidad	San Roque	1.767	2.031	2.506	3.176
+Colonia Carlos Pellegrini	Localidad	San Martín	513	683	890	1.039
+Colonia Libertad	Localidad	Monte Caseros	306	544	620	871
+Colonia Liebig	Localidad	Ituzaingó	1.380	2.194	2.429	3.130
+Colonia Pando	Localidad	San Roque	385	480	440	658
+Concepción del Yaguareté Corá	Localidad	Concepción	2.651	3.227	4.022	5.240
+Coronel Desiderio Sosa	Localidad	Santo Tomé	...	...	...	182
+Corrientes (incl. Laguna Brava)	Localidad	Capital	260.197	319.807	349.648	427.531
+Cruz de los Milagros	Localidad	Lavalle	61	84	143	554
+Curuzú Cuatiá	Localidad	Curuzú Cuatiá	28.806	31.875	34.470	40.925
+El Caimán	Localidad	San Miguel	...	...	...	586
+El Sombrero	Localidad	Empedrado	538	616	707	839
+Empedrado	Localidad	Empedrado	5.925	7.861	9.258	11.283
+Esquina	Localidad	Esquina	13.430	17.431	19.081	28.221
+Estación Libertad	Localidad	Monte Caseros	169	177	212	185
+Estación Torrent	Localidad	General Alvear	115	102	116	152
+Felipe Yofré	Localidad	Mercedes	1.288	1.477	1.435	2.017
+Garaví (José Rafael Gómez)	Localidad	Santo Tomé	422	789	861	992
+Garruchos	Localidad	Santo Tomé	665	788	803	813
+Gobernador Ingeniero Valentín Virasoro	Localidad	Santo Tomé	16.562	26.018	30.666	35.150
+Gobernador Juan E. Martínez	Localidad	Lavalle	927	1.437	1.831	2.651
+Goya	Localidad	Goya	56.840	66.709	71.606	88.949
+Guaviraví	Localidad	San Martín	529	612	699	906
+Ingenio Primer Correntino	Localidad	San Cosme	118	229	296	288
+Itá Ibaté	Localidad	General Paz	2.457	3.320	3.772	4.827
+Itatí	Localidad	Itatí	4.639	6.084	6.562	8.661
+Ituzaingó	Localidad	Ituzaingó	16.995	19.073	19.575	25.837
+Juan Pujol	Localidad	Monte Caseros	485	842	1.349	2.443
+La Cruz	Localidad	San Martín	5.032	6.025	7.133	8.858
+Lavalle	Localidad	Lavalle	1.412	2.345	2.990	5.672
+Lomas de Vallejos	Localidad	General Paz	394	512	358	630
+Loreto	Localidad	San Miguel	1.359	1.711	1.938	2.575
+Los Flotadores	Localidad	Esquina	...	...	...	25
+Manuel Derqui	Localidad	Empedrado	...	...	...	125
+Mariano Indalecio Loza (Estación Justino Solari)	Localidad	Mercedes	1.628	1.871	1.843	2.423
+Mburucuyá	Localidad	Mburucuyá	4.382	6.038	6.972	9.205
+Mercedes	Localidad	Mercedes	24.982	30.961	33.551	42.115
+Mocoretá	Localidad	Monte Caseros	3.096	4.732	5.974	8.482
+Monte Caseros	Localidad	Monte Caseros	19.589	22.273	23.470	29.332
+Nuestra Señora del Rosario de Caá Catí	Localidad	General Paz	3.646	4.007	4.738	6.054
+Pago de los Deseos	Localidad	Saladas	...	...	...	855
+Palmar Grande	Localidad	General Paz	344	480	536	745
+Parada Acuña	Localidad	Monte Caseros	248	207	159	113
+Parada Labougle	Localidad	Monte Caseros	...	...	492	503
+Parada Pucheta	Localidad	Paso de los Libres	245	257	328	511
+Paso de la Patria	Localidad	San Cosme	2.251	3.498	5.598	7.880
+Paso de los Libres	Localidad	Paso de los Libres	33.967	40.494	43.251	51.442
+Pedro Ramón Fernández (Est. Manuel F. Mantilla)	Localidad	San Roque	1.029	1.329	1.585	1.916
+Perugorría	Localidad	Curuzú Cuatiá	1.905	2.591	3.043	4.461
+Pueblo Libertador	Localidad	Esquina	...	...	932	2.243
+Puerto San Gará	Localidad	Ituzaingó	...	...	...	27
+Puerto Valle	Localidad	Ituzaingó	...	...	...	77
+Ramada Paso	Localidad	Itatí	104	348	556	1.230
+Riachuelo	Localidad	Capital	387	873	1.965	4.876
+Saladas	Localidad	Saladas	10.279	12.041	12.864	19.804
+San Alonso	Localidad	Santo Tomé	...	...	...	49
+San Antonio de Apipé Grande	Localidad	Ituzaingó	758	899	1.049	1.194
+San Antonio de Itatí (Berón de Astrada)	Localidad	Berón de Astrada	1.149	1.351	1.411	1.806
+San Carlos	Localidad	Ituzaingó	1.664	2.224	2.454	3.097
+San Cayetano	Localidad	Capital	...	617	872	1.324
+San Cosme	Localidad	San Cosme	1.408	1.989	2.563	3.523
+San Isidro	Localidad	Empedrado	...	...	...	34
+San Isidro	Localidad	Goya	...	...	...	551
+San Lorenzo	Localidad	Saladas	1.586	2.098	2.569	3.858
+San Luis del Palmar	Localidad	San Luis del Palmar	7.465	10.644	12.287	16.988
+San Miguel	Localidad	San Miguel	3.049	3.994	4.792	5.509
+San Roque	Localidad	San Roque	5.257	6.782	7.323	9.610
+Santa Ana de los Guácaras	Localidad	Capital	...	...	...	9
+Santa Ana de los Guácaras	Localidad	San Cosme	753	1.497	1.906	3.469
+Santa Lucía	Localidad	Lavalle	5.868	8.860	11.589	15.644
+Santa Rosa	Localidad	Concepción	2.321	4.746	7.143	10.831
+Santo Tomé	Localidad	Santo Tomé	17.263	20.166	23.299	28.843
+Sauce	Localidad	Sauce	5.648	6.564	7.014	8.550
+Tabay	Localidad	Concepción	305	1.227	1.687	2.220
+Tabay	Localidad	Concepción	...	...	...	88
+Tapebicuá	Localidad	Paso de los Libres	336	400	516	681
+Tatacuá	Localidad	Concepción	...	...	731	1.262
+Tres de Abril	Localidad	Bella Vista	...	...	...	86
+Villa Córdoba	Localidad	Lavalle	468	531	586	1.006
+Villa Olivari	Localidad	Ituzaingó	666	1.011	1.276	1.490
+Yahapé	Localidad	Berón de Astrada	187	206	462	505
+Yapeyú	Localidad	San Martín	1.182	1.650	1.736	2.198
+Yatay Ti Calle	Localidad	Lavalle	...	...	539	1.633

@@ -1,0 +1,18 @@
+Colón	Departamento	...	52.718	62.160	75.305
+Concordia	Departamento	...	157.291	170.033	198.802
+Diamante	Departamento	39.807	44.095	46.361	53.595
+Federación	Departamento	48.713	60.204	68.736	78.691
+Federal	Departamento	22.121	25.055	25.863	29.667
+Feliciano	Departamento	12.366	14.584	15.079	16.803
+Gualeguay	Departamento	43.026	48.147	51.883	57.303
+Gualeguaychú	Departamento	89.726	101.350	109.461	126.147
+Islas del Ibicuy	Departamento	10.692	11.498	12.077	14.000
+La Paz	Departamento	61.896	66.158	66.903	75.407
+Nogoyá	Departamento	37.230	38.840	39.026	43.195
+Paraná	Departamento	276.160	319.614	339.930	391.696
+San Salvador	Departamento	...	16.118	17.357	20.854
+Tala	Departamento	24.217	25.892	25.665	31.309
+Uruguay	Departamento	86.198	94.070	100.728	116.356
+Victoria	Departamento	30.126	34.097	35.767	40.652
+Villaguay	Departamento	...	48.416	48.965	55.796
+Entre Ríos	Provincia	1.020.257	1.158.147	1.235.994	1.425.578

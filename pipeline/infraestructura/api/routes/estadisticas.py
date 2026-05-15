@@ -10,22 +10,93 @@ from fastapi import APIRouter, Query
 from typing import Optional
 import psycopg2
 import psycopg2.extras
+import psycopg2.pool
 import os
+import time
+import threading
+import functools
 
 router = APIRouter()
 
 FECHA_EXPR = "CASE WHEN left(split_part(nombre_archivo, '_', 3), 6) ~ '^\\d{6}$' THEN to_date(left(split_part(nombre_archivo, '_', 3), 6), 'YYMMDD') ELSE NULL END"
 
+# ─── Connection pool ──────────────────────────────────────────────────────────
+# Reutiliza conexiones en lugar de abrir una nueva por cada request.
+_pool: psycopg2.pool.ThreadedConnectionPool | None = None
+_pool_lock = threading.Lock()
+
+def _get_pool() -> psycopg2.pool.ThreadedConnectionPool:
+    global _pool
+    if _pool is None:
+        with _pool_lock:
+            if _pool is None:   # double-checked: evita race condition en primer acceso
+                _pool = psycopg2.pool.ThreadedConnectionPool(
+                    minconn=2, maxconn=15, dsn=os.environ["SCORING_DB_URL"]
+                )
+    return _pool
+
+class _conn_ctx:
+    """Context manager que toma/devuelve una conexión del pool."""
+    def __enter__(self):
+        self.conn = _get_pool().getconn()
+        return self.conn
+    def __exit__(self, exc_type, *_):
+        if exc_type is not None:
+            # Rollback para limpiar cualquier transacción abierta antes de devolver
+            try:
+                self.conn.rollback()
+            except Exception:
+                pass
+        try:
+            _get_pool().putconn(self.conn)
+        except Exception:
+            # Si el pool fue recreado (ej. reload de uvicorn), cerrar directamente
+            try:
+                self.conn.close()
+            except Exception:
+                pass
 
 def get_conn():
-    return psycopg2.connect(os.environ["SCORING_DB_URL"])
+    return _conn_ctx()
 
+
+# ─── TTL cache ────────────────────────────────────────────────────────────────
+_CACHE_TTL = 60  # segundos — ajustar según frecuencia de actualización
+_cache: dict = {}
+
+def ttl_cache(fn):
+    """Cache de 60 s para endpoints de estadísticas. La clave incluye los parámetros de fecha."""
+    @functools.wraps(fn)
+    def wrapper(*args, **kwargs):
+        key = (fn.__name__, kwargs.get("fecha_desde"), kwargs.get("fecha_hasta"))
+        now = time.monotonic()
+        if key in _cache:
+            result, ts = _cache[key]
+            if now - ts < _CACHE_TTL:
+                return result
+        result = fn(*args, **kwargs)
+        _cache[key] = (result, now)
+        return result
+    return wrapper
+
+
+# ─── Helpers ──────────────────────────────────────────────────────────────────
 
 def get_params(conn, clave: str) -> dict:
     with conn.cursor() as cur:
         cur.execute("SELECT valor FROM pipeline_params WHERE clave = %s", (clave,))
         row = cur.fetchone()
     return row[0] if row and row[0] else {}
+
+
+def get_params_multi(conn, claves: list[str]) -> dict[str, dict]:
+    """Un solo roundtrip para múltiples claves de pipeline_params."""
+    with conn.cursor() as cur:
+        cur.execute(
+            "SELECT clave, valor FROM pipeline_params WHERE clave = ANY(%s)",
+            (claves,),
+        )
+        return {row[0]: (row[1] or {}) for row in cur.fetchall()}
 
 
 def fecha_conds(fecha_desde: Optional[str], fecha_hasta: Optional[str]) -> tuple[str, list]:
@@ -45,6 +116,7 @@ def fecha_conds(fecha_desde: Optional[str], fecha_hasta: Optional[str]) -> tuple
 # ─── Global ───────────────────────────────────────────────────────────────────
 
 @router.get("/estadisticas/global")
+@ttl_cache
 def estadisticas_global(
     fecha_desde: Optional[str] = Query(None),
     fecha_hasta: Optional[str] = Query(None),
@@ -138,16 +210,18 @@ def estadisticas_global(
 # ─── Etapa 1 ──────────────────────────────────────────────────────────────────
 
 @router.get("/estadisticas/etapa1")
+@ttl_cache
 def estadisticas_etapa1(
     fecha_desde: Optional[str] = Query(None),
     fecha_hasta: Optional[str] = Query(None),
 ):
     and_fecha, params = fecha_conds(fecha_desde, fecha_hasta)
     with get_conn() as conn:
-        # Stats guardadas por el scraping (último run por cuenta)
-        stats_G = get_params(conn, "descarga_stats_G")
-        stats_M = get_params(conn, "descarga_stats_M")
-        stats_B = get_params(conn, "descarga_stats_B")
+        # Un solo roundtrip para los 3 params
+        p = get_params_multi(conn, ["descarga_stats_G", "descarga_stats_M", "descarga_stats_B"])
+        stats_G = p.get("descarga_stats_G", {})
+        stats_M = p.get("descarga_stats_M", {})
+        stats_B = p.get("descarga_stats_B", {})
 
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
             cur.execute(f"""
@@ -187,6 +261,7 @@ def estadisticas_etapa1(
 # ─── Etapa 3 ──────────────────────────────────────────────────────────────────
 
 @router.get("/estadisticas/etapa3")
+@ttl_cache
 def estadisticas_etapa3(
     fecha_desde: Optional[str] = Query(None),
     fecha_hasta: Optional[str] = Query(None),
@@ -228,6 +303,7 @@ def estadisticas_etapa3(
 # ─── Etapa 4 ──────────────────────────────────────────────────────────────────
 
 @router.get("/estadisticas/etapa4")
+@ttl_cache
 def estadisticas_etapa4(
     fecha_desde: Optional[str] = Query(None),
     fecha_hasta: Optional[str] = Query(None),
@@ -338,6 +414,7 @@ def estadisticas_etapa4(
 # ─── Etapa 5 ──────────────────────────────────────────────────────────────────
 
 @router.get("/estadisticas/etapa5")
+@ttl_cache
 def estadisticas_etapa5(
     fecha_desde: Optional[str] = Query(None),
     fecha_hasta: Optional[str] = Query(None),
@@ -364,58 +441,44 @@ def estadisticas_etapa5(
 # ─── Etapa 6 ──────────────────────────────────────────────────────────────────
 
 @router.get("/estadisticas/etapa6")
+@ttl_cache
 def estadisticas_etapa6(
     fecha_desde: Optional[str] = Query(None),
     fecha_hasta: Optional[str] = Query(None),
 ):
     and_fecha, params = fecha_conds(fecha_desde, fecha_hasta)
     with get_conn() as conn:
-      p6 = get_params(conn, "correccion_transcripciones")
-      with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
-        cur.execute(f"""
-            SELECT
-                kv.value->>'clasificacion'                           AS clasificacion,
-                (kv.value->>'score_determinista')::float            AS score_det,
-                (kv.value->>'score_llm')::float                     AS score_llm,
-                (kv.value->>'score_total')::float                   AS score_total,
-                kv.value->>'coherencia_llm'                         AS coherencia_llm,
-                (kv.value->'metricas'->>'avg_logprob')::float       AS avg_logprob,
-                (kv.value->'metricas'->>'total_words')::float       AS total_words,
-                (kv.value->'metricas'->>'low_score_ratio')::float   AS low_score_ratio,
-                (kv.value->'metricas'->>'speaker_dominance')::float AS speaker_dominance,
-                kv.value->>'error'                                  AS motivo_invalido,
-                kv.value->>'vendedor'                               AS vendedor,
-                kv.value->>'cliente'                                AS cliente
-            FROM audio_pipeline_jobs apj,
-                 jsonb_each(COALESCE(apj.etapas->'correccion_transcripciones', '{{}}'::jsonb)) AS kv
-            WHERE kv.key != 'ganador'
-              AND kv.value->>'clasificacion' IS NOT NULL
-              {and_fecha}
-        """, params)
-        rows = [dict(r) for r in cur.fetchall()]
+        p6 = get_params(conn, "correccion_transcripciones")
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(f"""
+                SELECT
+                    kv.value->>'clasificacion_determinista'              AS clasificacion,
+                    (kv.value->>'score_determinista')::float             AS score_det,
+                    (kv.value->'metricas'->>'avg_logprob')::float        AS avg_logprob,
+                    (kv.value->'metricas'->>'total_words')::float        AS total_words,
+                    (kv.value->'metricas'->>'low_score_ratio')::float    AS low_score_ratio,
+                    (kv.value->'metricas'->>'speaker_dominance')::float  AS speaker_dominance,
+                    kv.value->>'error'                                   AS motivo_invalido
+                FROM audio_pipeline_jobs apj,
+                     jsonb_each(COALESCE(apj.etapas->'correccion_transcripciones', '{{}}'::jsonb)) AS kv
+                WHERE kv.key != 'ganador'
+                  AND kv.value->>'clasificacion_determinista' IS NOT NULL
+                  {and_fecha}
+            """, params)
+            rows = [dict(r) for r in cur.fetchall()]
 
     conteos          = {"correcto": 0, "reprocesar": 0, "invalido": 0}
-    coherencia_cnt   : dict = {}
     causas_invalido  : dict = {}
     avg_logprob_vals = []
     total_words_vals = []
     low_score_vals   = []
     speaker_dom_vals = []
-    score_llm_vals   = []
-    score_total_vals = []
-    scatter_det_llm  = []
-    roles_ok         = 0
-    total_con_llm    = 0
+    score_det_vals   = []
 
     for r in rows:
         clf = r["clasificacion"]
         if clf in conteos:
             conteos[clf] += 1
-
-        if r["coherencia_llm"]:
-            coh = r["coherencia_llm"]
-            coherencia_cnt[coh] = coherencia_cnt.get(coh, 0) + 1
-            total_con_llm += 1
 
         if clf == "invalido" and r["motivo_invalido"]:
             m = r["motivo_invalido"]
@@ -425,6 +488,8 @@ def estadisticas_etapa6(
                 cat = "pocas palabras"
             elif "avg_logprob" in m:
                 cat = "logprob bajo"
+            elif "audio cruzado" in m:
+                cat = "audio cruzado"
             elif "speaker_dominance" in m:
                 cat = "un speaker domina"
             elif "low_score_ratio" in m:
@@ -441,29 +506,68 @@ def estadisticas_etapa6(
             low_score_vals.append(r["low_score_ratio"])
         if r["speaker_dominance"] is not None:
             speaker_dom_vals.append(r["speaker_dominance"])
-        if r["score_llm"] is not None:
-            score_llm_vals.append(r["score_llm"])
-        if r["score_total"] is not None:
-            score_total_vals.append(r["score_total"])
-        if r["score_det"] is not None and r["score_llm"] is not None:
-            scatter_det_llm.append({"x": r["score_det"], "y": r["score_llm"]})
-        if r["vendedor"] not in (None, "desconocido") or r["cliente"] not in (None, "desconocido"):
-            roles_ok += 1
+        if r["score_det"] is not None:
+            score_det_vals.append(r["score_det"])
 
     return {
         "conteos":           conteos,
-        "coherencia":        coherencia_cnt,
         "causas_invalido":   causas_invalido,
         "avg_logprob":       avg_logprob_vals,
         "total_words":       total_words_vals,
         "low_score_ratio":   low_score_vals,
         "speaker_dominance": speaker_dom_vals,
-        "score_llm":         score_llm_vals,
-        "score_total":       score_total_vals,
-        "scatter_det_llm":   scatter_det_llm,
-        "pct_roles":         round(roles_ok / total_con_llm, 4) if total_con_llm > 0 else 0.0,
+        "score_determinista": score_det_vals,
         "umbrales": {
             "correcto":   p6.get("umbral_score_correcto",   0.75),
             "reprocesar": p6.get("umbral_score_reprocesar", 0.40),
         },
+    }
+
+
+# ─── Calendario ───────────────────────────────────────────────────────────────
+
+@router.get("/estadisticas/calendario")
+@ttl_cache
+def estadisticas_calendario(
+    fecha_desde: Optional[str] = Query(None),
+    fecha_hasta: Optional[str] = Query(None),
+):
+    """
+    Conteo de audios por día extraído del nombre_archivo (formato YYMMDD).
+    Solo devuelve los días que tienen datos; el frontend rellena los vacíos.
+    Ignora filas con nombre_archivo malformado (FECHA_EXPR IS NULL).
+    """
+    and_fecha, params = fecha_conds(fecha_desde, fecha_hasta)
+
+    query = f"""
+        SELECT
+            {FECHA_EXPR} AS fecha,
+            COUNT(*)     AS cantidad
+        FROM audio_pipeline_jobs
+        WHERE {FECHA_EXPR} IS NOT NULL
+          {and_fecha}
+        GROUP BY 1
+        ORDER BY 1
+    """
+
+    with get_conn() as conn, conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+        cur.execute(query, params)
+        rows = cur.fetchall()
+
+    dias = [
+        {"fecha": str(row["fecha"]), "cantidad": row["cantidad"]}
+        for row in rows
+    ]
+
+    total          = sum(d["cantidad"] for d in dias)
+    dias_con_datos = len(dias)
+    fecha_min      = dias[0]["fecha"]  if dias else None
+    fecha_max      = dias[-1]["fecha"] if dias else None
+
+    return {
+        "dias":           dias,
+        "total":          total,
+        "dias_con_datos": dias_con_datos,
+        "fecha_min":      fecha_min,
+        "fecha_max":      fecha_max,
     }

@@ -1,0 +1,19 @@
+Ángel Vicente Peñaloza	Departamento	2.848	3.127	3.073	3.185
+Arauco	Departamento	11.173	13.720	15.418	16.257
+Capital	Departamento	105.996	146.411	180.995	211.651
+Castro Barros	Departamento	3.265	4.322	4.268	5.810
+Chamical	Departamento	10.723	13.383	14.160	15.666
+Chilecito	Departamento	31.616	42.248	49.432	58.798
+Famatina	Departamento	5.302	6.371	5.863	7.002
+General Belgrano	Departamento	5.848	7.161	7.370	7.618
+General Felipe Varela	Departamento	8.214	9.939	9.648	11.372
+General Juan Facundo Quiroga	Departamento	3.738	4.546	4.108	4.017
+General Lamadrid	Departamento	1.430	1.717	1.734	1.886
+General Ortiz de Ocampo	Departamento	6.496	7.331	7.145	7.349
+General San Martín	Departamento	3.934	4.956	4.944	5.019
+Independencia	Departamento	2.174	2.405	2.427	2.401
+Rosario Vera Peñaloza	Departamento	10.852	13.299	14.054	15.783
+Sanagasta	Departamento	1.668	2.165	2.345	3.038
+San Blas de los Sauces	Departamento	3.145	4.048	3.927	4.314
+Vinchina	Departamento	2.307	2.834	2.731	2.699
+La Rioja	Provincia	220.729	289.983	333.642	383.865

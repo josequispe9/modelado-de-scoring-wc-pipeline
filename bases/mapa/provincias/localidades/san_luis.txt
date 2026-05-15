@@ -1,0 +1,96 @@
+Aguadita del Portezuelo	Localidad	La Capital	...	...	...	718
+Alto Pelado	Localidad	La Capital	74	170	119	179
+Alto Pencoso	Localidad	La Capital	179	244	272	376
+Anchorena	Localidad	Gobernador Dupuy	481	614	631	810
+Arizona	Localidad	Gobernador Dupuy	706	995	1.040	976
+Bagual	Localidad	Gobernador Dupuy	87	208	230	275
+Balde	Localidad	La Capital	486	492	589	701
+Barrio 272 Viviendas	Localidad	Junín	...	...	...	776
+Batavia	Localidad	Gobernador Dupuy	249	328	349	467
+Beazley	Localidad	La Capital	817	803	957	801
+Buena Esperanza	Localidad	Gobernador Dupuy	1.873	2.531	2.933	4.004
+Candelaria	Localidad	Ayacucho	1.669	2.269	2.729	3.923
+Carpintería	Localidad	Junín	325	560	1.788	4.143
+Cazador	Localidad	La Capital	142	70	100	137
+Chosmes	Localidad	La Capital	42	41	47	125
+Concarán	Localidad	Chacabuco	3.330	4.530	5.119	6.311
+Cortaderas	Localidad	Chacabuco	413	661	822	3.188
+Daniel Donovan	Localidad	La Capital	...	...	...	151
+Daniel Donovan	Localidad	La Capital	...	...	...	115
+Desaguadero	Localidad	La Capital	...	60	96	196
+El Milagro	Localidad	Belgrano	...	...	...	176
+El Trapiche (incl. La Bajada, Río Grande)	Localidad	Coronel Pringles	739	1.214	1.446	2.604
+El Volcán	Localidad	La Capital	769	1.419	1.775	2.787
+Estancia Grande	Localidad	Coronel Pringles	...	...	53	463
+Fortín El Patria	Localidad	Gobernador Dupuy	264	400	480	635
+Fortuna	Localidad	Gobernador Dupuy	679	827	82	977
+Fraga	Localidad	Coronel Pringles	602	1.021	1.127	1.448
+Jarilla	Localidad	La Capital	52	60	46	207
+Juana Koslay	Localidad	La Capital	4.186	8.689	12.467	19.422
+Juan Jorba	Localidad	General Pedernera	132	150	201	318
+Juan Llerena	Localidad	General Pedernera	281	266	272	380
+Juan Wenceslao Gez	Localidad	La Capital	...	...	...	87
+Justo Daract	Localidad	General Pedernera	8.676	9.680	10.135	11.724
+La Calera	Localidad	Belgrano	712	615	598	766
+La Carolina	Localidad	Coronel Pringles	159	201	251	374
+Lafinur	Localidad	Junín	99	159	201	197
+La Florida	Localidad	Coronel Pringles	250	340	297	323
+La Majada	Localidad	Ayacucho	...	97	...	102
+La Maroma	Localidad	Gobernador Dupuy	...	32	14	15
+La Punilla	Localidad	General Pedernera	106	167	192	360
+La Punta	Localidad	La Capital	...	...	13.182	21.144
+Las Aguadas	Localidad	Libertador General San Martín	45	61	100	122
+Las Barranquitas	Localidad	Coronel Pringles	...	...	...	111
+Las Chacras	Localidad	Libertador General San Martín	90	122	176	148
+Las Lagunas	Localidad	Libertador General San Martín	...	72	111	178
+La Toma	Localidad	Coronel Pringles	5.601	6.663	7.374	8.584
+Lavaisse	Localidad	General Pedernera	66	65	68	88
+La Vertiente	Localidad	Libertador General San Martín	13	82	98	155
+Leandro N. Alem	Localidad	Ayacucho	280	291	379	466
+Los Cajones	Localidad	Junín	...	388	431	483
+Los Manantiales (Villa General Roca)	Localidad	Belgrano	172	196	162	290
+Los Molles	Localidad	Belgrano	...	...	...	529
+Los Molles	Localidad	Junín	272	497	732	1.506
+Los Overos	Localidad	Gobernador Dupuy	...	...	24	23
+Los Puquios	Localidad	La Capital	...	...	...	214
+Los Puquios	Localidad	La Capital	...	...	...	41
+Luján	Localidad	Ayacucho	1.575	1.896	2.016	2.559
+Martín de Loyola	Localidad	Gobernador Dupuy	55	113	78	67
+Mosmota	Localidad	La Capital	49	12	9	38
+Nación Ranquel	Localidad	General Pedernera	...	...	57	65
+Nahuel Mapá	Localidad	Gobernador Dupuy	105	71	66	71
+Naschel	Localidad	Chacabuco	2.191	3.157	3.543	4.216
+Navia	Localidad	Gobernador Dupuy	82	138	205	313
+Nogolí	Localidad	Belgrano	399	556	739	1.221
+Nueva Galia	Localidad	Gobernador Dupuy	784	1.199	1.353	1.727
+Papagayos	Localidad	Chacabuco	147	275	433	665
+Paso de las Carretas	Localidad	Coronel Pringles	...	...	...	22
+Paso Grande	Localidad	Libertador General San Martín	330	422	427	532
+Potrerillo	Localidad	Libertador General San Martín	...	71	40	45
+Potrero de los Funes	Localidad	La Capital	410	944	1.698	3.953
+Quines	Localidad	Ayacucho	4.784	6.128	7.459	9.398
+Renca	Localidad	Chacabuco	140	168	178	315
+Riocito	Localidad	Coronel Pringles	36	115	83	177
+Río Juan Gómez	Localidad	Ayacucho	...	72	...	141
+Saladillo	Localidad	Coronel Pringles	160	269	275	417
+Salinas del Bebedero	Localidad	La Capital	357	87	76	104
+San Francisco del Monte de Oro	Localidad	Ayacucho	3.011	3.295	3.732	5.097
+San Jerónimo	Localidad	La Capital	122	331	330	473
+San José del Morro	Localidad	General Pedernera	56	100	91	158
+San Luis	Localidad	La Capital	110.136	153.322	169.947	206.114
+San Martín	Localidad	Libertador General San Martín	645	705	697	982
+San Pablo	Localidad	Chacabuco	197	160	192	202
+Santa Rosa del Conlara	Localidad	Junín	3.232	4.489	5.511	7.182
+Suyuque Nuevo	Localidad	La Capital	...	...	...	433
+Talita	Localidad	Junín	70	90	50	149
+Tilisarao	Localidad	Chacabuco	4.097	5.478	6.256	6.663
+Unión	Localidad	Gobernador Dupuy	1.556	2.341	2.462	3.037
+Villa de la Quebrada	Localidad	Belgrano	238	400	523	1.176
+Villa del Carmen	Localidad	Chacabuco	423	613	751	886
+Villa de Merlo (Merlo)	Localidad	Junín	6.266	11.473	17.644	24.143
+Villa de Praga	Localidad	Libertador General San Martín	79	146	181	322
+Villa Larca	Localidad	Chacabuco	467	720	957	2.217
+Villa Mercedes	Localidad	General Pedernera	77.077	96.781	111.391	132.076
+Villa Reynolds	Localidad	General Pedernera	603	408	647	782
+Villa Salles	Localidad	General Pedernera	85	88	76	75
+Zanjitas	Localidad	La Capital	140	131	201	215

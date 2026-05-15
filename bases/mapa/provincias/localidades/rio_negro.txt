@@ -1,0 +1,151 @@
+Aguada Cecilio	Localidad	Valcheta	144	119	155	98
+Aguada de Guerra	Localidad	Veinticinco de Mayo	140	175	126	224
+Aguada Guzmán	Localidad	El Cuy	160	117	110	141
+Allen	Localidad	General Roca	18.774	20.733	22.859	27.707
+Arroyo Los Berros	Localidad	Valcheta	235	161	168	138
+Arroyo Ventana	Localidad	Valcheta	70	31	30	55
+Bahía Creek	Localidad	Adolfo Alsina	2	4	5	54
+Barda del Medio	Localidad	General Roca	925	1.234	1.651	1.627
+Barrio Alta Barda	Localidad	General Roca	...	...	...	296
+Barrio Blanco	Localidad	General Roca	...	39	61	50
+Barrio Buenos Aires Chico	Localidad	General Roca	...	...	...	61
+Barrio Calle Ciega Nº 6	Localidad	General Roca	...	28	23	20
+Barrio Calle Ciega Nº 10	Localidad	General Roca	...	69	52	56
+Barrio Canale	Localidad	General Roca	187	106	66	49
+Barrio Ceferino	Localidad	General Roca	...	...	...	182
+Barrio Chacra Monte	Localidad	General Roca	574	1.293	1.900	3.657
+Barrio Colonia Conesa	Localidad	Conesa	...	80	129	21
+Barrio Costa Este	Localidad	General Roca	...	227	267	374
+Barrio Costa Oeste	Localidad	General Roca	424	716	834	1.141
+Barrio Destacamento	Localidad	General Roca	...	...	40	66
+Barrio El Labrador	Localidad	General Roca	...	252	263	53
+Barrio El Maruchito	Localidad	General Roca	...	67	51	35
+Barrio El Petróleo	Localidad	General Roca	...	82	84	174
+Barrio Emergente	Localidad	General Roca	...	...	44	55
+Barrio Esperanza	Localidad	Pichi Mahuida	...	...	67	125
+Barrio Fátima	Localidad	General Roca	...	...	136	494
+Barrio Frontera	Localidad	General Roca	...	46	69	39
+Barrio Guerrico	Localidad	General Roca	...	52	52	109
+Barrio Isla 10	Localidad	General Roca	...	301	312	355
+Barrio La Barda	Localidad	General Roca	...	78	71	27
+Barrio La Costa (in: Municipio Ingeniero Huergo)	Localidad	General Roca	...	77	95	57
+Barrio La Defensa	Localidad	General Roca	...	118	209	434
+Barrio La Herminia	Localidad	General Roca	...	...	...	93
+Barrio la Herradura	Localidad	General Roca	...	...	49	73
+Barrio La Luna	Localidad	General Roca	...	...	...	87
+Barrio La Pasarela	Localidad	General Roca	...	...	...	83
+Barrio Luisillo	Localidad	General Roca	...	...	52	82
+Barrio Mar del Plata	Localidad	General Roca	...	41	35	46
+Barrio María Elvira	Localidad	General Roca	...	122	162	902
+Barrio Moño Azul	Localidad	General Roca	...	...	39	24
+Barrio Norte (Municipio de Cinco Saltos)	Localidad	General Roca	...	51	34	4
+Barrio Pinar	Localidad	General Roca	...	...	38	157
+Barrio Planta Compresora de Gas	Localidad	Conesa	...	...	20	19
+Barrio Porvenir	Localidad	General Roca	...	44	39	69
+Barrio Santa Lucía	Localidad	General Roca	...	...	163	213
+Barrio Santa Rita	Localidad	General Roca	126	242	258	241
+Barrio Unión	Localidad	General Roca	...	96	106	91
+Blancura Centro	Localidad	Pilcaniyeu	...	...	...	6
+Catriel	Localidad	General Roca	15.796	14.720	17.584	23.839
+Cerro Policía	Localidad	El Cuy	259	231	252	217
+Cervantes	Localidad	General Roca	1.819	2.669	3.252	4.226
+Chelforó	Localidad	Avellaneda	214	82	71	86
+Chichinales	Localidad	General Roca	1.545	2.363	3.057	3.594
+Chimpay	Localidad	Avellaneda	1.268	3.003	4.025	4.311
+Choele Choel	Localidad	Avellaneda	8.122	8.997	10.146	13.013
+Cinco Saltos	Localidad	General Roca	18.931	18.250	22.790	26.399
+Cipolletti	Localidad	General Roca	60.224	66.384	77.713	95.524
+Clemente Onelli	Localidad	Veinticinco de Mayo	130	135	114	127
+Colán Conhué	Localidad	Veinticinco de Mayo	97	95	76	68
+Colonia Juliá y Echarren	Localidad	Pichi Mahuida	867	917	936	892
+Colonia Suiza	Localidad	Bariloche	79	86	150	139
+Comallo	Localidad	Pilcaniyeu	1.125	1.251	1.497	1.635
+Comicó	Localidad	Nueve de Julio	104	166	82	100
+Cona Niyeu	Localidad	Nueve de Julio	217	211	217	158
+Contralmirante Cordero	Localidad	General Roca	862	876	1.000	717
+Coronel Belisle	Localidad	Avellaneda	746	1.553	1.764	1.768
+Corralito	Localidad	Pilcaniyeu	...	...	...	2
+Costa Blanco	Localidad	General Roca	...	...	...	110
+Darwin	Localidad	Avellaneda	742	997	1.148	1.479
+Dina Huapi	Localidad	Pilcaniyeu	849	2.043	3.469	5.491
+El Bolsón	Localidad	Bariloche	9.987	13.560	17.061	21.287
+El Caín	Localidad	Veinticinco de Mayo	209	236	176	326
+El Cóndor	Localidad	Adolfo Alsina	138	428	746	1.896
+El Cuy	Localidad	El Cuy	463	479	498	510
+El Empalme	Localidad	San Antonio	...	...	81	81
+El Foyel	Localidad	Bariloche	99	96	155	8
+El Juncal	Localidad	Adolfo Alsina	64	61	83	86
+El Pescadero	Localidad	Adolfo Alsina	...	...	...	10
+El Sótano	Localidad	San Antonio	...	...	...	76
+Ferri	Localidad	General Roca	674	737	1.385	1.884
+Fuerte San Javier	Localidad	Adolfo Alsina	372	392	530	1.302
+General Conesa	Localidad	Conesa	4.643	5.007	5.484	6.432
+General Enrique Godoy	Localidad	General Roca	2.379	2.944	3.112	4.359
+General Fernández Oro (incl. Barrio Costa Linda)	Localidad	General Roca	3.973	5.263	7.082	14.675
+General Roca (incl. Barrio La Ribera, Barrio Apycar, Barrio Mosconi)	Localidad	General Roca	62.900	70.848	82.568	102.750
+Guardia Mitre	Localidad	Adolfo Alsina	527	582	856	724
+Ingeniero Jacobacci	Localidad	Veinticinco de Mayo	5.414	5.719	6.261	8.088
+Ingeniero Luis A. Huergo	Localidad	General Roca	4.449	5.145	6.227	7.760
+Ingeniero Otto Krause	Localidad	General Roca	66	156	295	537
+Juventud Unida	Localidad	Pichi Mahuida	...	...	63	92
+Lago Moreno	Localidad	Bariloche	...	...	...	58
+Laguna Blanca	Localidad	Pilcaniyeu	42	68	102	16
+La Lobería	Localidad	Adolfo Alsina	0	16	1	8
+Lamarque	Localidad	Avellaneda	4.842	6.813	7.686	9.282
+Las Cartas	Localidad	Bariloche	...	...	...	89
+Las Grutas	Localidad	San Antonio	760	2.741	4.807	6.377
+Las Perlas	Localidad	El Cuy	266	928	2.182	4.184
+Los Menucos	Localidad	Veinticinco de Mayo	2.283	2.689	5.187	4.214
+Los Repollos	Localidad	Bariloche	...	...	...	170
+Loteo Costa de Río	Localidad	Adolfo Alsina	...	20	665	168
+Luis Beltrán	Localidad	Avellaneda	4.422	5.116	5.603	6.313
+Mainqué	Localidad	General Roca	1.277	1.524	1.848	2.470
+Mallín Ahogado	Localidad	Bariloche	...	...	65	223
+Mamuel Choique	Localidad	Ñorquincó	194	126	243	98
+Maquinchao	Localidad	Veinticinco de Mayo	1.918	2.179	2.494	2.926
+Mencué	Localidad	El Cuy	310	304	311	318
+Ministro Ramos Mexía	Localidad	Nueve de Julio	583	778	973	1.101
+Nahuel Niyeu	Localidad	Valcheta	59	59	32	27
+Naupa Huen	Localidad	El Cuy	138	185	170	281
+Ñirihuau	Localidad	Pilcaniyeu	125	125	261	397
+Ñorquincó	Localidad	Ñorquincó	509	444	565	565
+Ojos de Agua	Localidad	Ñorquincó	81	51	69	40
+Paraje Arroyón (Bajo San Cayetano)	Localidad	General Roca	...	158	462	845
+Paso Córdova (Paso Córdoba)	Localidad	El Cuy	...	40	48	21
+Paso Córdova (Paso Córdoba)	Localidad	General Roca	668	837	1.024	574
+Península Ruca Co	Localidad	General Roca	65	161	158	314
+Pichi Mahuida	Localidad	Pichi Mahuida	...	...	46	9
+Pilcaniyeu	Localidad	Pilcaniyeu	613	727	757	698
+Pilquiniyeu	Localidad	Veinticinco de Mayo	85	76	46	54
+Pilquiniyeu del Limay	Localidad	Pilcaniyeu	...	61	106	46
+Playas Doradas	Localidad	San Antonio	6	52	194	442
+Pomona	Localidad	Avellaneda	425	547	737	809
+Pozo Salado	Localidad	Adolfo Alsina	1	0	5	280
+Prahuaniyeu	Localidad	Nueve de Julio	129	139	147	165
+Puente Cero (Barrio Las Angustias)	Localidad	General Roca	230	578	653	971
+Puerto San Antonio Este	Localidad	San Antonio	174	280	381	421
+Punta Colorada	Localidad	San Antonio	7	12	4	4
+Rincón Treneta (Treneta)	Localidad	Nueve de Julio	138	104	27	116
+Río Chico (Est. Cerro Mesa)	Localidad	Ñorquincó	419	375	282	310
+Río Colorado	Localidad	Pichi Mahuida	10.330	11.314	11.733	14.461
+Río Villegas	Localidad	Bariloche	99	101	75	42
+Saco Viejo	Localidad	San Antonio	...	...	8	28
+Salto Andersen	Localidad	Pichi Mahuida	...	...	16	1
+San Antonio Oeste	Localidad	San Antonio	11.520	13.753	16.265	19.483
+San Carlos de Bariloche (incl. Arelauquen, Barrio El Pilar, Villa Los Coihues)	Localidad	Bariloche	79.498	91.851	112.205	134.978
+Sargento Vidal	Localidad	General Roca	729	740	814	697
+Sierra Colorada	Localidad	Nueve de Julio	1.224	1.373	1.542	1.690
+Sierra Grande	Localidad	San Antonio	11.192	6.764	7.404	8.399
+Sierra Pailemán	Localidad	Valcheta	63	86	74	35
+Valcheta	Localidad	Valcheta	3.413	3.555	3.867	3.591
+Valle Azul	Localidad	El Cuy	...	496	726	715
+Viedma	Localidad	Adolfo Alsina	40.398	46.948	52.789	57.341
+Villa Alberdi	Localidad	General Roca	612	607	693	965
+Villa Catedral	Localidad	Bariloche	86	85	88	181
+Villa del Parque	Localidad	General Roca	237	393	432	445
+Villa Llanquín	Localidad	Pilcaniyeu	...	68	113	207
+Villa Manzano	Localidad	General Roca	1.754	1.890	2.697	2.150
+Villa Mascardi	Localidad	Bariloche	...	...	59	92
+Villa Regina	Localidad	General Roca	24.472	27.516	30.028	30.491
+Villa San Isidro	Localidad	General Roca	480	577	607	387
+Yaminué	Localidad	Nueve de Julio	108	126	92	109

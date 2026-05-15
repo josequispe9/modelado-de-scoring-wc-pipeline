@@ -121,11 +121,8 @@ INSERT INTO pipeline_params (clave, valor) VALUES
     ('transcripcion_G',                     '{}'),
     ('transcripcion_M',                     '{}'),
     ('transcripcion_B',                     '{}'),
-    -- Etapa 6 — corrección de transcripciones (una por PC + ganador)
-    ('correccion_transcripciones_llm_G',    '{}'),
-    ('correccion_transcripciones_llm_M',    '{}'),
-    ('correccion_transcripciones_llm_B',    '{}'),
-    ('correccion_transcripciones_ganador',  '{}'),
+    -- Etapa 6 — corrección de transcripciones (determinista)
+    ('correccion_transcripciones',          '{}'),
     -- Etapa 7 — análisis (una por tipo de análisis)
     ('analisis_A',                          '{}'),
     ('analisis_B',                          '{}'),

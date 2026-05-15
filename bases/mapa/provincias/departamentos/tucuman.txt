@@ -1,0 +1,18 @@
+Burruyacú	Departamento	29.064	32.936	36.951	45.476
+Capital	Departamento	473.271	527.607	548.866	590.342
+Chicligasta	Departamento	63.553	75.133	80.735	92.608
+Cruz Alta	Departamento	131.860	162.240	180.499	228.077
+Famaillá	Departamento	26.641	30.951	34.542	42.702
+Graneros	Departamento	11.834	13.063	13.551	15.540
+Juan Bautista Alberdi	Departamento	24.368	28.206	30.237	34.766
+La Cocha	Departamento	14.614	17.683	19.002	21.218
+Leales	Departamento	47.311	51.090	54.949	66.392
+Lules	Departamento	44.698	57.235	68.474	93.552
+Monteros	Departamento	51.863	58.442	63.641	77.551
+Río Chico	Departamento	46.160	52.925	56.847	64.962
+Simoca	Departamento	30.524	29.932	30.876	36.973
+Tafí del Valle	Departamento	11.449	13.883	14.933	22.440
+Tafí Viejo	Departamento	79.306	108.017	121.638	172.986
+Trancas	Departamento	11.977	15.473	17.371	23.494
+Yerba Buena	Departamento	43.612	63.707	75.076	102.741
+Tucumán	Provincia	1.142.105	1.338.523	1.448.188	1.731.820

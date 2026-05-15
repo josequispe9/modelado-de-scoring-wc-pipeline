@@ -1,0 +1,89 @@
+Banco Payaguá	Localidad	Laishi	...	347	374	397
+Bartolomé de las Casas	Localidad	Patiño	...	122	...	186
+Boca Riacho Pilagás	Localidad	Formosa	...	...	...	182
+Buena Vista	Localidad	Pilagás	525	789	887	1.399
+Campo del Cielo	Localidad	Patiño	...	...	...	246
+Campo Grande	Localidad	Matacos	...	...	...	5
+Campo Tres Pozos	Localidad	Patiño	...	...	...	203
+Clorinda	Localidad	Pilcomayo	37.592	47.004	52.837	56.528
+Colonia Campo Villafañe (Mayor Vicente Villafañe)	Localidad	Pirané	2.590	3.720	4.494	6.334
+Colonia Javier Muñiz	Localidad	Patiño	...	...	...	496
+Colonia Pastoril	Localidad	Formosa	944	808	933	1.137
+Colonia Sarmiento	Localidad	Patiño	...	156	173	117
+Colonia Sudamérica	Localidad	Pilcomayo	...	...	...	154
+Colonia Unión Escuela	Localidad	Patiño	...	...	...	139
+Comandante Fontana	Localidad	Patiño	4.803	5.655	6.615	7.583
+Comunidad Aborigen Bartolomé de las Casas	Localidad	Patiño	...	...	...	1.002
+Comunidad Aborigen Laká Wichi	Localidad	Patiño	...	...	...	323
+Comunidad Aborigen Wichi Oblitaj	Localidad	Ramón Lista	...	...	...	163
+El Breal	Localidad	Ramón Lista	...	...	...	548
+El Chorro (General Mosconi)	Localidad	Ramón Lista	1.141	1.279	1.902	2.275
+El Colorado	Localidad	Pirané	10.326	12.780	14.228	16.470
+El Espinillo	Localidad	Pilagás	1.774	3.534	4.060	5.144
+El Potrillo	Localidad	Ramón Lista	...	2.350	3.371	3.101
+El Quebracho	Localidad	Ramón Lista	...	...	415	663
+El Quemado	Localidad	Bermejo	...	...	...	164
+El Recreo	Localidad	Patiño	...	110	346	131
+Estanislao del Campo	Localidad	Patiño	3.375	4.055	4.523	6.135
+Formosa (incl. Villa del Carmen)	Localidad	Formosa	147.636	200.644	226.196	260.325
+Fortín Cabo 1º Lugones	Localidad	Patiño	599	1.000	1.351	1.717
+Fortín Sargento 1º Leyes	Localidad	Patiño	...	42	133	120
+Fortín Soledad	Localidad	Bermejo	...	...	370	365
+General Lucio Victorio Mansilla	Localidad	Laishi	1.590	2.337	2.802	3.007
+Gran Guardia	Localidad	Formosa	837	1.024	916	1.391
+Guadalcazar	Localidad	Bermejo	...	...	146	351
+Herradura	Localidad	Laishi	1.533	2.333	2.660	3.352
+Ibarreta	Localidad	Patiño	6.437	8.687	9.429	11.013
+Ingeniero Guillermo Nicasio Juárez	Localidad	Matacos	6.547	10.357	12.798	15.485
+Juan G. Bazán	Localidad	Patiño	...	128	413	408
+La Brea	Localidad	Ramón Lista	...	...	...	280
+Laguna Blanca	Localidad	Pilcomayo	4.916	6.508	7.411	10.123
+Laguna Gallo	Localidad	Pilagás	...	...	261	439
+Laguna Naick Neck	Localidad	Pilcomayo	1.271	2.115	2.479	3.178
+Laguna Yema	Localidad	Bermejo	1.600	2.744	3.617	5.157
+La Libertad	Localidad	Bermejo	...	...	...	130
+Lamadrid	Localidad	Bermejo	...	...	63	314
+La Rinconada	Localidad	Bermejo	...	...	745	545
+Las Cañitas	Localidad	Ramón Lista	...	...	...	494
+Las Lomitas	Localidad	Patiño	8.188	10.354	12.399	17.150
+Loro Cué	Localidad	Pilagás	...	...	...	113
+Los Chiriguanos	Localidad	Bermejo	719	926	1.225	1.612
+Los Matacos	Localidad	Pirané	...	...	...	51
+Lote 8	Localidad	Ramón Lista	...	...	...	1.416
+Lucero Cué	Localidad	Pilcomayo	...	...	...	188
+María Cristina	Localidad	Ramón Lista	...	...	...	1.363
+Mariano Boedo	Localidad	Formosa	...	373	373	493
+Misión Pozo Yacaré	Localidad	Matacos	...	...	...	302
+Misión San Andrés	Localidad	Ramón Lista	...	...	...	443
+Misión Tacaaglé	Localidad	Pilagás	1.328	2.034	2.244	2.709
+Mojón de Fierro	Localidad	Formosa	763	990	1.131	1.517
+Monte Lindo	Localidad	Pirané	...	...	...	328
+Palmar Largo	Localidad	Ramón Lista	...	...	...	79
+Palma Sola	Localidad	Pilcomayo	...	210	212	309
+Palo Santo	Localidad	Pirané	4.389	5.624	6.379	7.969
+Pirané	Localidad	Pirané	14.199	19.124	20.335	23.509
+Portón Negro	Localidad	Pilagás	...	392	417	377
+Posta Cambio Zalazar	Localidad	Patiño	...	356	603	841
+Pozo del Mortero	Localidad	Bermejo	...	302	528	759
+Pozo del Tigre	Localidad	Patiño	2.487	3.948	4.517	6.916
+Pozo de Maza	Localidad	Bermejo	329	510	736	969
+Pozo La Chiva	Localidad	Ramón Lista	...	...	...	439
+Puerto Pilcomayo	Localidad	Pilcomayo	606	236	669	1.091
+Riacho He-Hé	Localidad	Pilcomayo	2.813	3.566	4.304	5.422
+Riacho Negro	Localidad	Pilcomayo	...	692	720	874
+Río Muerto	Localidad	Bermejo	...	...	...	323
+San Francisco de Laishi	Localidad	Laishi	3.080	4.384	4.628	5.440
+San Hilario	Localidad	Formosa	444	630	583	860
+San Martín Dos	Localidad	Patiño	2.311	3.237	3.119	3.949
+San Martín I	Localidad	Patiño	...	85	66	96
+Santa Isabel	Localidad	Bermejo	...	...	...	4
+Siete Palmas	Localidad	Pilcomayo	624	881	863	1.269
+Subteniente Perín	Localidad	Patiño	434	883	1.163	1.520
+Sumayén	Localidad	Bermejo	...	...	...	251
+Tatané	Localidad	Laishi	...	673	1.056	1.292
+Tres Lagunas	Localidad	Pilagás	612	1.237	1.598	1.789
+Vaca Perdida	Localidad	Bermejo	...	...	224	405
+Villa Escolar	Localidad	Laishi	841	1.261	1.290	1.872
+Villa General Güemes	Localidad	Patiño	2.381	3.310	3.907	4.305
+Villa General Manuel Belgrano	Localidad	Patiño	3.556	4.381	4.676	5.385
+Villa Kilómetro 213 (Villa Dos Trece)	Localidad	Pirané	2.435	3.397	4.675	6.443

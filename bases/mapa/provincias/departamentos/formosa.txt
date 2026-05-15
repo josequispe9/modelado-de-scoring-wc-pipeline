@@ -1,0 +1,10 @@
+Bermejo	Departamento	10.143	12.710	14.046	15.644
+Formosa	Departamento	159.545	210.071	234.354	269.589
+Laishi	Departamento	13.581	16.227	17.063	19.303
+Matacos	Departamento	8.355	12.133	14.375	17.032
+Patiño	Departamento	58.472	64.830	68.581	81.819
+Pilagás	Departamento	17.378	17.523	18.399	19.116
+Pilcomayo	Departamento	67.012	78.114	85.024	94.383
+Pirané	Departamento	57.277	64.023	64.566	72.804
+Ramón Lista	Departamento	6.650	10.928	13.754	17.729
+Formosa	Provincia	398.413	486.559	530.162	607.419

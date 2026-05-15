@@ -1,0 +1,185 @@
+1º de Mayo (Primero de Mayo)	Localidad	Cainguás	336	404	403	435
+25 de Mayo (Villa Veinticinco de Mayo)	Localidad	Veinticinco de Mayo	1.742	2.374	3.838	5.467
+9 de Julio Kilómetro 20 (Nueve de Julio Kilómetro 20)	Localidad	Eldorado	724	1.224	1.528	2.333
+9 de Julio Kilómetro 28 (Nueve de Julio Kilómetro 28)	Localidad	Eldorado	457	410	339	256
+Alba Posse	Localidad	Veinticinco de Mayo	453	481	486	610
+Aldea Perutí	Localidad	Libertador General San Martín	...	...	...	703
+Alicia Alta	Localidad	Veinticinco de Mayo	...	...	277	459
+Alicia Baja	Localidad	Veinticinco de Mayo	...	...	219	231
+Almafuerte	Localidad	Leandro N. Alem	45	209	297	417
+Apóstoles	Localidad	Apóstoles	15.881	22.395	24.083	30.278
+Aristóbulo del Valle	Localidad	Cainguás	6.118	8.562	12.375	14.608
+Arroyo del Medio	Localidad	Leandro N. Alem	32	156	350	488
+Azara	Localidad	Apóstoles	1.190	2.391	3.165	4.382
+Barra Concepción	Localidad	Concepción	...	115	39	16
+Barrio 20 de Junio	Localidad	San Ignacio	...	...	...	145
+Barrio Bernardino Rivadavia (Dos de Mayo Núcleo III)	Localidad	Cainguás	555	556	739	1.575
+Barrio Cuatro Bocas	Localidad	Montecarlo	...	...	336	368
+Barrio del Lago	Localidad	Candelaria	...	...	69	339
+Barrio El Francés	Localidad	San Ignacio	...	...	...	90
+Barrio Escuela 461	Localidad	Oberá	...	...	411	356
+Barrio Escuela 461	Localidad	Oberá	...	...	...	17
+Barrio Escuela 633	Localidad	Oberá	...	...	719	822
+Barrio Guatambú	Localidad	Montecarlo	...	...	305	407
+Barrio Itá	Localidad	Montecarlo	...	...	581	461
+Barrio Rural	Localidad	Apóstoles	...	...	291	39
+Barrio San Isidro	Localidad	Guaraní	...	...	...	618
+Barrio Santa Teresita	Localidad	Montecarlo	...	...	...	71
+Barrio Tungoil	Localidad	San Ignacio	...	...	199	137
+Bernardo de Irigoyen	Localidad	General Manuel Belgrano	3.685	5.526	6.492	9.591
+Bonpland	Localidad	Candelaria	1.113	1.552	1.842	2.295
+Caá Yarí	Localidad	Leandro N. Alem	21	135	122	73
+Caburei	Localidad	General Manuel Belgrano	...	...	225	224
+Campo Grande	Localidad	Cainguás	3.923	5.293	6.547	9.245
+Campo Ramón	Localidad	Oberá	790	1.477	1.235	1.841
+Campo Viera	Localidad	Oberá	4.098	5.994	7.099	7.395
+Candelaria	Localidad	Candelaria	6.280	10.674	13.777	17.460
+Capioví	Localidad	Libertador General San Martín	2.336	3.335	3.495	4.077
+Capioviciño	Localidad	Libertador General San Martín	...	...	501	709
+Caraguatay	Localidad	Montecarlo	753	1.191	1.440	1.420
+Cerro Azul	Localidad	Leandro N. Alem	1.700	2.412	3.049	4.001
+Cerro Corá	Localidad	Candelaria	276	437	684	1.176
+Cerro Moreno	Localidad	Cainguás	...	...	...	234
+Colonia 9 de Julio	Localidad	Veinticinco de Mayo	...	...	...	506
+Colonia Acaraguá	Localidad	Veinticinco de Mayo	...	...	...	493
+Colonia Alberdi	Localidad	Oberá	453	562	759	1.065
+Colonia Aurora	Localidad	Veinticinco de Mayo	459	667	832	1.205
+Colonia Finlandesa	Localidad	Oberá	...	...	...	468
+Colonia Gisela	Localidad	San Ignacio	...	...	...	312
+Colonia Gisela	Localidad	San Ignacio	...	...	...	38
+Colonia Julio U. Martín	Localidad	Oberá	...	...	...	741
+Colonia Polana	Localidad	San Ignacio	...	97	109	6
+Colonia Victoria	Localidad	Eldorado	864	1.135	1.461	2.198
+Colonia Wanda	Localidad	Iguazú	7.505	11.799	13.901	16.254
+Comandante Andresito (Almirante Brown)	Localidad	General Manuel Belgrano	4.969	8.338	11.482	14.097
+Concepción de la Sierra	Localidad	Concepción	3.999	5.340	6.332	6.933
+Corpus Christi	Localidad	San Ignacio	1.771	2.031	2.475	2.803
+Cruce Caballero	Localidad	San Pedro	...	319	408	312
+Domingo Savio	Localidad	San Ignacio	...	186	307	275
+Dos Arroyos	Localidad	Leandro N. Alem	104	196	233	616
+Dos de Mayo	Localidad	Cainguás	3.046	4.032	6.504	8.984
+Dos Hermanas	Localidad	General Manuel Belgrano	736	1.443	1.956	2.883
+El Alcázar	Localidad	Libertador General San Martín	2.082	2.773	3.034	3.285
+Eldorado	Localidad	Eldorado	37.052	47.556	57.323	68.722
+El Salto	Localidad	Oberá	138	191	207	267
+El Soberbio	Localidad	Guaraní	2.276	3.732	5.065	7.153
+Escuela 357	Localidad	San Pedro	...	...	...	316
+Estación Apóstoles	Localidad	Apóstoles	799	2.248	2.627	2.819
+Fachinal	Localidad	Capital	...	...	...	371
+Florentino Ameghino	Localidad	San Javier	66	184	110	262
+Fracrán	Localidad	Guaraní	...	492	471	767
+Garuhapé	Localidad	Libertador General San Martín	2.145	4.095	5.325	6.661
+Garupá	Localidad	Capital	...	6.014	13.595	22.975
+General Alvear	Localidad	Oberá	...	...	130	287
+General Urquiza	Localidad	San Ignacio	253	247	372	489
+Gobernador López	Localidad	Leandro N. Alem	407	714	1.010	1.235
+Gobernador Roca	Localidad	San Ignacio	1.808	2.450	3.007	3.693
+Guaraní	Localidad	Oberá	1.449	2.101	2.824	3.593
+Helvecia (Barrio Eva Perón)	Localidad	San Ignacio	80	278	273	302
+Hipólito Yrigoyen	Localidad	San Ignacio	417	766	1.271	1.638
+Integración	Localidad	General Manuel Belgrano	47	123	191	365
+Itacaruaré	Localidad	San Javier	670	837	1.108	1.809
+Jardín América	Localidad	San Ignacio	15.171	21.189	22.762	25.532
+Juan Manuel de Rosas	Localidad	General Manuel Belgrano	...	...	...	9
+Kilómetro 130	Localidad	General Manuel Belgrano	...	...	...	310
+Kilómetro 17	Localidad	Cainguás	...	...	439	283
+Kilómetro 26	Localidad	Leandro N. Alem	...	...	...	200
+Kilómetro 74	Localidad	Guaraní	...	...	...	815
+Kilómetro 84	Localidad	Guaraní	...	...	...	438
+La Africana	Localidad	Oberá	...	...	...	676
+La Corita	Localidad	Concepción	94	249	279	334
+Laguna Azul	Localidad	General Manuel Belgrano	...	...	...	113
+Laguna Azul	Localidad	San Pedro	...	...	...	429
+Laharrague	Localidad	Montecarlo	194	793	791	576
+Leandro N. Alem	Localidad	Leandro N. Alem	15.621	20.111	23.339	27.287
+Loreto	Localidad	Candelaria	123	216	309	663
+Los Helechos	Localidad	Oberá	51	211	344	965
+Los Teales	Localidad	Libertador General San Martín	...	...	...	312
+Los Teales	Localidad	San Ignacio	...	...	...	101
+Mai Bao	Localidad	Veinticinco de Mayo	...	...	...	144
+Margarita	Localidad	Guaraní	...	...	...	77
+María Magdalena (Colonia Delicia)	Localidad	Eldorado	1.327	1.842	2.525	3.202
+Mártires	Localidad	Candelaria	140	370	530	842
+Mbopicuá	Localidad	Libertador General San Martín	248	302	254	510
+Mojón Grande	Localidad	San Javier	266	537	630	581
+Montecarlo	Localidad	Montecarlo	12.417	16.300	18.827	21.178
+Nemesio Parma	Localidad	Capital	...	323	960	3.829
+Nueva Delicia	Localidad	Eldorado	...	...	817	1.217
+Oasis	Localidad	San Ignacio	605	847	821	601
+Oberá	Localidad	Oberá	40.068	51.503	63.960	74.634
+Olegario V. Andrade	Localidad	Leandro N. Alem	179	272	441	961
+Panambí	Localidad	Oberá	469	1.005	700	826
+Panambí Kilómetro 15	Localidad	Oberá	...	...	163	347
+Panambí Kilómetro 8	Localidad	Oberá	460	705	1.422	2.031
+Paraíso	Localidad	San Pedro	64	544	975	1.626
+Paraje Aristóbulo Chico	Localidad	Veinticinco de Mayo	...	...	...	150
+Paraje Dorado	Localidad	Veinticinco de Mayo	...	...	...	395
+Paraje Itá Chica	Localidad	Oberá	...	...	...	195
+Paraje La Reserva	Localidad	Oberá	...	...	...	94
+Paraje Los Cedros	Localidad	San Javier	...	...	...	464
+Paraje Monyolito	Localidad	Apóstoles	...	...	...	388
+Paraje Ruta 6	Localidad	Oberá	...	...	...	392
+Paraje Sargento Cabral	Localidad	Oberá	...	...	...	245
+Paraje Teyú Cuaré	Localidad	San Ignacio	...	...	...	32
+Pastoreo	Localidad	San Ignacio	...	...	...	303
+Picada 37	Localidad	Guaraní	...	...	...	266
+Piñalito Norte	Localidad	General Manuel Belgrano	...	...	179	453
+Piñalito Sur	Localidad	San Pedro	...	72	107	46
+Pindapoy	Localidad	Apóstoles	615	629	732	989
+Piray Kilómetro 18	Localidad	Montecarlo	348	410	300	603
+Posadas	Localidad	Capital	201.663	252.981	275.028	322.554
+Posadas (Expansión) (incl. Barrio Nuevo Garupa)	Localidad	Capital	...	20.966	31.221	39.712
+Pozo Azul	Localidad	San Pedro	...	...	...	3.548
+Primavera	Localidad	Veinticinco de Mayo	...	...	...	568
+Profundidad	Localidad	Candelaria	75	272	385	507
+Pueblo Illia	Localidad	Cainguás	117	305	348	475
+Pueblo Nuevo	Localidad	Eldorado	...	...	651	822
+Puerto Andresito	Localidad	General Manuel Belgrano	...	...	219	427
+Puerto Deseado	Localidad	General Manuel Belgrano	...	...	179	331
+Puerto Esperanza	Localidad	Iguazú	10.313	13.749	15.204	17.796
+Puerto Iguazú	Localidad	Iguazú	27.984	31.515	41.062	53.786
+Puerto Leoni	Localidad	Libertador General San Martín	916	952	1.114	1.294
+Puerto Libertad	Localidad	Iguazú	4.937	5.576	5.765	6.135
+Puerto Mado	Localidad	Eldorado	160	351	342	383
+Puerto Nuevo	Localidad	San Ignacio	...	...	...	24
+Puerto Pinares	Localidad	Eldorado	890	1.196	2.743	2.714
+Puerto Piray	Localidad	Montecarlo	4.840	7.182	7.430	8.541
+Puerto Rico	Localidad	Libertador General San Martín	12.124	14.520	15.995	20.120
+Puerto Santa Ana	Localidad	Candelaria	...	318	53	298
+Rincón de Azara (Puerto Azara)	Localidad	Apóstoles	282	277	252	230
+Roca Chica	Localidad	San Ignacio	274	471	667	608
+Ruiz de Montoya	Localidad	Libertador General San Martín	1.061	1.227	1.672	1.985
+Salto Encantado	Localidad	Cainguás	1.940	2.401	3.543	4.466
+San Alberto	Localidad	Libertador General San Martín	...	491	838	955
+San Alfonso	Localidad	Guaraní	...	...	...	254
+San Antonio	Localidad	General Manuel Belgrano	1.635	2.508	3.665	5.456
+San Cayetano	Localidad	Iguazú	...	...	...	324
+San Francisco de Asís	Localidad	Veinticinco de Mayo	321	408	603	830
+San Gotardo	Localidad	Libertador General San Martín	589	457	273	257
+San Ignacio	Localidad	San Ignacio	4.491	6.312	7.772	11.378
+San Javier	Localidad	San Javier	6.446	8.500	9.058	12.859
+San José	Localidad	Apóstoles	3.339	4.599	5.338	6.645
+San Martín	Localidad	Oberá	571	734	815	1.431
+San Miguel (Garuhapé-Mi)	Localidad	Libertador General San Martín	1.391	1.468	1.486	1.166
+San Pedro	Localidad	San Pedro	6.333	8.605	10.397	12.094
+Santa Ana	Localidad	Candelaria	2.870	3.924	4.985	7.127
+Santa María	Localidad	Concepción	117	165	199	190
+Santa Rita	Localidad	Veinticinco de Mayo	948	1.153	1.433	2.273
+Santiago de Liniers	Localidad	Eldorado	...	...	541	657
+Santo Pipó	Localidad	San Ignacio	1.687	3.152	3.109	4.199
+San Vicente	Localidad	Guaraní	8.683	14.793	21.068	29.231
+Sargento Cabral	Localidad	Guaraní	...	...	...	288
+Tacuara	Localidad	San Ignacio	...	...	...	408
+Tarumá	Localidad	Montecarlo	579	660	810	883
+Tobuna	Localidad	San Pedro	253	357	350	416
+Tres Capones	Localidad	Apóstoles	41	225	485	601
+Valle Hermoso	Localidad	Eldorado	289	359	626	381
+Villa Akerman	Localidad	Libertador General San Martín	255	368	489	402
+Villa Bonita	Localidad	Oberá	800	1.329	1.664	2.666
+Villa Cooperativa	Localidad	Iguazú	...	...	55	127
+Villa Libertad (in: Municipio Caá Yarí)	Localidad	Leandro N. Alem	...	...	1.008	1.141
+Villa Parodi	Localidad	Montecarlo	175	241	204	242
+Villa Parodi	Localidad	Montecarlo	...	...	...	85
+Villa Roulet	Localidad	Eldorado	617	722	811	1.064
+Villa Urrutia	Localidad	Libertador General San Martín	...	...	123	22
+Yacutinga	Localidad	San Ignacio	...	...	...	678

@@ -1,0 +1,23 @@
+RESULTADOS DETERMINISTAS PROBLEMA DE SEÑAL — 2026-05-14 19:17:09
+Archivos         : 648
+Primeros N turnos: 40
+========================================================================
+
+  [amza14_1_260409181654654_ACD_80085.json]
+  Turnos: 28
+  Frase: "Te digo porque hay lugares donde no tengo señal con Movistar y con Claro sí."
+
+  [amza322_1_260409101800820_ACD_83739.json]
+  Turnos: 13
+  Frase: "Ah, no, no me interesa, soy Movistar, porque donde vivo no hay señal."
+
+  [amza86_1_260409135915768_ACD_69661.json]
+  Turnos: 16
+  Frase: "Te agradezco, porque en la zona donde vivo no tengo señal de movistar."
+
+  [amza8_1_260409111555446_ACD_60335.json]
+  Turnos: 8
+  Frase: "Es que Modestar no tiene señal donde yo trabajo."
+
+========================================================================
+RESUMEN: 4 con problema de señal | 644 sin problema

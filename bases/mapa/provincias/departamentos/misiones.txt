@@ -1,0 +1,18 @@
+Apóstoles	Departamento	28.925	38.028	42.249	50.597
+Cainguás	Departamento	44.137	47.271	53.403	59.953
+Candelaria	Departamento	15.121	22.290	27.040	35.318
+Capital	Departamento	218.685	284.279	324.756	392.919
+Concepción	Departamento	8.251	9.085	9.577	10.348
+Eldorado	Departamento	55.861	67.726	78.221	91.728
+General Manuel Belgrano	Departamento	24.552	33.488	42.902	45.570
+Guaraní	Departamento	42.948	57.818	67.897	77.160
+Iguazú	Departamento	57.623	66.539	82.227	100.096
+Leandro N. Alem	Departamento	35.182	41.670	45.075	49.797
+Libertador General San Martín	Departamento	37.722	42.440	46.561	52.428
+Montecarlo	Departamento	30.062	34.073	36.745	38.669
+Oberá	Departamento	83.399	95.667	107.501	121.701
+San Ignacio	Departamento	46.301	55.038	57.728	63.394
+San Javier	Departamento	17.693	19.187	20.906	23.503
+San Pedro	Departamento	18.031	23.736	31.051	34.801
+Veinticinco de Mayo (25 de Mayo)	Departamento	24.422	27.187	27.754	30.891
+Misiones	Provincia	788.915	965.522	1.101.593	1.278.873

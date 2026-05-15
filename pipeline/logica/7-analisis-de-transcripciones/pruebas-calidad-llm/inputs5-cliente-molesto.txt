@@ -1,0 +1,35 @@
+# =============================================================================
+# inputs5-cliente-molesto.txt — Detectar clientes que insultan durante la llamada
+# Mala experiencia y estafa se tratan como objeciones en otra pasada.
+# =============================================================================
+
+[pasada_insulto]
+descripcion = Detectar si el cliente insulta al vendedor o a Movistar durante la llamada.
+segmento = todo_40
+min_turnos = 2
+max_tokens = 30
+contexto = transcripcion
+schema = {"type":"object","properties":{"insulta":{"type":"string","enum":["si","no"]}},"required":["insulta"]}
+few_shot =
+Conversación: DESCONOCIDO: Hola, ¿sos de Movistar? DESCONOCIDO: De Movistar, exacto. DESCONOCIDO: Es una re puta que te parió, flaco.
+Respuesta: {"insulta": "si"}
+
+Conversación: DESCONOCIDO: Te llamo de Movistar. DESCONOCIDO: No, loco, me tienen los huevos llenos, déjenme de joder.
+Respuesta: {"insulta": "si"}
+
+Conversación: DESCONOCIDO: Hola, te llamo de Movistar. DESCONOCIDO: No, váyase a cagar, Movistar.
+Respuesta: {"insulta": "si"}
+
+Conversación: DESCONOCIDO: Te llamo para ofrecerte una promo. DESCONOCIDO: No, porque me cagaron y no quiero volver más.
+Respuesta: {"insulta": "no"}
+
+Conversación: DESCONOCIDO: Te llamo de Movistar para ofrecerte un descuento. DESCONOCIDO: No me interesa, gracias.
+Respuesta: {"insulta": "no"}
+
+Conversación: DESCONOCIDO: ¿Actualmente estás en Claro? DESCONOCIDO: Sí, y estoy conforme. No me interesa cambiar.
+Respuesta: {"insulta": "no"}
+prompt =
+Determina si el cliente usa insultos o lenguaje ofensivo durante la llamada.
+Responde "si" solo si el cliente insulta directamente al vendedor o a la empresa con groserías.
+Responde "no" si el cliente rechaza la oferta, está enojado pero sin insultar, o menciona mala experiencia sin groserías.
+conversaciones_dir = ejemplos_transcripciones

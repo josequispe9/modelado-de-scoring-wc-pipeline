@@ -1,0 +1,181 @@
+7 de Abril (Siete de Abril)	Localidad	Burruyacú	436	439	492	922
+Acheral	Localidad	Monteros	1.726	2.093	2.683	3.678
+Aguilares	Localidad	Río Chico	26.657	31.201	32.908	39.311
+Alderetes	Localidad	Cruz Alta	19.497	32.531	41.947	65.975
+Alpachiri	Localidad	Chicligasta	529	659	1.838	2.045
+Alto de la Cocha	Localidad	La Cocha	...	...	...	176
+Alto Verde	Localidad	Chicligasta	1.775	2.463	2.341	3.349
+Amaicha del Valle	Localidad	Tafí del Valle	880	1.139	1.327	2.643
+Amberes	Localidad	Monteros	...	...	...	348
+Ampimpa	Localidad	Tafí del Valle	...	...	...	311
+Arcadia (incl. Barrio San Roque)	Localidad	Chicligasta	1.656	2.460	2.665	5.582
+Atahona	Localidad	Simoca	337	381	399	818
+Bajo Grande	Localidad	Cruz Alta	...	...	...	504
+Banda del Río Salí	Localidad	Cruz Alta	51.815	60.081	63.226	75.043
+Barrio Malvinas	Localidad	Tafí del Valle	...	...	...	217
+Barrio San Felipe	Localidad	Lules	...	1.492	2.157	11.546
+Barrio San Jorge	Localidad	Burruyacú	...	242	394	835
+Barrio San Martín	Localidad	Burruyacú	...	...	...	240
+Barrio Santa Emilia	Localidad	Chicligasta	...	...	...	774
+Barrio Santa Rita	Localidad	Tafí Viejo	...	...	...	1.154
+Bella Vista	Localidad	Leales	11.089	12.996	14.791	20.051
+Benjamín Paz	Localidad	Trancas	...	...	...	1.960
+Boca del Tigre	Localidad	Burruyacú	...	...	...	1.073
+Boca del Tigre	Localidad	Cruz Alta	...	...	...	329
+Campo de Herrera	Localidad	Famaillá	...	970	890	1.358
+Capitán Cáceres	Localidad	Monteros	384	458	513	1.047
+Cevil Redondo (Villa Carmela)	Localidad	Yerba Buena	6.093	10.780	14.728	21.176
+Choromoro	Localidad	Trancas	320	428	471	1.067
+Chuscha	Localidad	Trancas	...	...	...	1.099
+Colalao del Valle	Localidad	Tafí del Valle	506	579	632	964
+Colombres	Localidad	Cruz Alta	3.459	3.480	5.086	6.325
+Colonia 1	Localidad	Río Chico	...	...	...	249
+Colonia 6	Localidad	Río Chico	...	...	...	157
+Colonia 10	Localidad	Río Chico	...	...	...	9
+Colonia 14	Localidad	Río Chico	...	...	...	152
+Colonia 17	Localidad	Río Chico	...	...	...	328
+Colonia Mayo (- Barrio La Milagrosa)	Localidad	Cruz Alta	...	782	909	1.181
+Concepción	Localidad	Chicligasta	37.853	45.989	49.782	55.913
+Cruce Río Colorado	Localidad	Leales	...	...	...	263
+Delfín Gallo	Localidad	Cruz Alta	6.218	7.776	8.828	10.613
+Domingo Millán	Localidad	La Cocha	...	...	...	552
+El Bracho	Localidad	Cruz Alta	369	466	613	970
+El Cadillal	Localidad	Tafí Viejo	...	626	865	2.770
+El Cajón	Localidad	Burruyacú	...	...	...	317
+El Cercado	Localidad	Monteros	...	...	...	963
+El Cevilar	Localidad	Cruz Alta	...	...	...	1.070
+El Chañar	Localidad	Burruyacú	1.396	1.974	2.395	4.517
+El Corralito	Localidad	La Cocha	...	...	...	616
+El Empalme	Localidad	Cruz Alta	...	...	...	541
+El Empalme	Localidad	Cruz Alta	...	...	...	905
+El Manantial	Localidad	Lules	10.126	12.570	14.582	21.053
+El Molino	Localidad	Chicligasta	...	...	...	1.242
+El Mollar	Localidad	Tafí del Valle	1.286	1.655	1.906	4.613
+El Naranjito	Localidad	Cruz Alta	...	...	...	477
+El Naranjo	Localidad	Burruyacú	...	154	238	396
+El Polear	Localidad	Río Chico	...	...	...	650
+El Porvenir	Localidad	Leales	...	...	...	587
+El Puestito	Localidad	Burruyacú	...	...	...	316
+El Rodeo	Localidad	Burruyacú	...	...	...	590
+El Rodeo	Localidad	Tafí del Valle	...	...	...	833
+El Sacrificio	Localidad	La Cocha	...	...	...	1.487
+El Siambón	Localidad	Tafí Viejo	...	...	...	657
+El Timbó	Localidad	Burruyacú	...	...	...	642
+Esquina	Localidad	Leales	...	...	...	574
+Estación Aráoz	Localidad	Leales	905	1.227	1.315	2.276
+Famaillá (incl. Barrio Casa Rosada)	Localidad	Famaillá	17.822	21.799	24.065	33.095
+Garmendia	Localidad	Burruyacú	1.807	2.353	3.059	3.596
+Gastona Norte	Localidad	Chicligasta	...	...	...	603
+Gastona Sud	Localidad	Chicligasta	...	...	...	1.106
+Gastonilla	Localidad	Chicligasta	...	...	...	571
+Gobernador Piedrabuena (Piedrabuena)	Localidad	Burruyacú	363	359	471	933
+Graneros	Localidad	Graneros	1.477	1.990	2.375	4.065
+Huasa Pampa Norte	Localidad	La Cocha	...	...	...	588
+Huasa Pampa Sur	Localidad	La Cocha	...	...	...	237
+Iltico	Localidad	Chicligasta	...	765	466	522
+Ingenio Fronterita	Localidad	Famaillá	177	53	13	75
+Juan Bautista Alberdi	Localidad	Juan Bautista Alberdi	14.446	17.263	18.430	27.345
+La Angostura	Localidad	Burruyacú	...	...	...	302
+La Cañada	Localidad	Burruyacú	...	...	...	448
+La Cañada	Localidad	Graneros	...	...	...	525
+La Cocha	Localidad	La Cocha	4.107	5.637	6.578	8.562
+La Costa	Localidad	Tafí del Valle	...	...	...	260
+La Cruz	Localidad	Burruyacú	...	...	...	480
+La Esperanza	Localidad	Tafí Viejo	...	...	...	1.581
+La Florida	Localidad	Cruz Alta	4.314	5.297	5.959	5.002
+Lamadrid	Localidad	Graneros	2.471	2.654	2.841	3.237
+La Ramada	Localidad	Burruyacú	941	1.300	1.409	2.293
+La Ramada de Abajo	Localidad	Burruyacú	...	...	...	153
+La Reducción	Localidad	Lules	1.503	4.749	5.029	8.035
+La Salina	Localidad	Burruyacú	...	...	...	772
+Las Carreras	Localidad	Tafí del Valle	...	...	...	398
+Las Cejas	Localidad	Cruz Alta	1.545	1.638	1.826	2.718
+Las Piedritas	Localidad	Cruz Alta	...	...	...	420
+Las Siringuillas	Localidad	Tafí del Valle	...	...	...	22
+Las Talas	Localidad	Leales	...	...	...	387
+Las Talitas (Villa Mariano Moreno - El Colmenar)	Localidad	Tafí Viejo	31.866	48.655	52.960	68.921
+La Tipa	Localidad	Río Chico	...	...	...	1.141
+La Trinidad	Localidad	Chicligasta	3.699	4.064	4.274	6.584
+La Tuquita	Localidad	Tafí Viejo	...	...	...	142
+Los Aguirre	Localidad	Lules	...	...	...	3.977
+Los Bulacio	Localidad	Cruz Alta	...	...	...	957
+Los Costilla	Localidad	Monteros	...	...	...	481
+Los Gómez	Localidad	Leales	...	...	...	689
+Los Guchea	Localidad	Chicligasta	...	...	...	447
+Los Laureles Sur	Localidad	Famaillá	...	...	...	171
+Los Nogales (incl. Barrio Mutual San Martín, Barrio El Cruce)	Localidad	Tafí Viejo	...	1.889	1.752	5.188
+Los Pereyra	Localidad	Cruz Alta	...	...	...	495
+Los Pizarros	Localidad	La Cocha	...	...	...	1.171
+Los Puestos	Localidad	Leales	...	244	274	357
+Los Ralos	Localidad	Cruz Alta	5.959	7.662	9.429	11.431
+Los Romano	Localidad	Leales	...	...	...	502
+Los Sarmiento	Localidad	Río Chico	2.110	2.703	3.010	4.575
+Los Sosa	Localidad	Monteros	...	...	...	320
+Los Sueldos	Localidad	Leales	...	...	...	451
+Los Villagra	Localidad	Cruz Alta	...	...	...	401
+Los Zazos	Localidad	Tafí del Valle	...	...	...	742
+Macomitas	Localidad	Burruyacú	...	535	481	1.034
+Mancopa	Localidad	Leales	...	...	...	1.124
+Manuela Pedraza	Localidad	Simoca	...	...	...	535
+Manuel García Fernández	Localidad	Leales	843	1.003	1.061	1.412
+Medina (Villa de Medinas)	Localidad	Chicligasta	947	1.331	1.549	1.442
+Monteagudo	Localidad	Simoca	722	815	880	1.523
+Monte Bello	Localidad	Río Chico	...	...	...	786
+Monteros	Localidad	Monteros	19.804	22.236	23.274	31.001
+Nueva Trinidad	Localidad	Simoca	84	173	214	486
+Pacará	Localidad	Cruz Alta	507	780	830	1.066
+Padilla	Localidad	Famaillá	...	...	...	762
+Paso de las Lanzas	Localidad	Burruyacú	...	...	...	172
+Pueblo Independencia (Santa Rosa y Los Rojo)	Localidad	Monteros	2.618	3.260	3.530	5.056
+Raco	Localidad	Tafí Viejo	...	...	...	1.754
+Ranchillos	Localidad	Cruz Alta	4.456	5.758	6.892	8.844
+Río Chico	Localidad	Río Chico	...	680	758	901
+Río Colorado	Localidad	Leales	932	1.029	1.077	2.287
+Río Nío	Localidad	Burruyacú	...	...	...	521
+Río Seco	Localidad	Monteros	4.039	4.785	5.131	7.401
+Rumi Punco	Localidad	La Cocha	...	...	...	1.177
+San Andrés	Localidad	Cruz Alta	...	928	3.153	9.293
+San Gabriel	Localidad	Famaillá	...	...	...	446
+San Isidro de Lules (Lules)	Localidad	Lules	14.195	17.878	21.088	27.229
+San Javier	Localidad	Tafí Viejo	...	...	...	804
+San José de Buena Vista	Localidad	Leales	...	...	...	498
+San José de La Cocha	Localidad	La Cocha	112	125	123	497
+San Miguel de Tucumán (Est. Tucumán)	Localidad	Capital	470.809	527.150	548.866	587.289
+San Pablo (Ingenio San Pablo)	Localidad	Lules	6.564	8.139	9.620	14.555
+San Pedro de Colalao	Localidad	Trancas	1.433	2.389	3.065	5.443
+San Pedro Mártir	Localidad	Simoca	...	...	...	417
+San Ramón	Localidad	Leales	...	...	...	254
+Santa Ana	Localidad	Río Chico	3.926	4.723	7.871	10.704
+Santa Cruz	Localidad	Simoca	228	265	187	457
+Santa Lucía	Localidad	Monteros	3.994	4.929	5.704	6.997
+Santa Rosa de Leales	Localidad	Leales	1.448	1.756	1.934	3.153
+Sargento Moya	Localidad	Monteros	403	536	575	727
+Simoca	Localidad	Simoca	6.217	7.339	8.351	12.836
+Soldado Maldonado	Localidad	Monteros	447	609	805	1.010
+Tacanas	Localidad	Leales	...	...	...	647
+Taco Ralo	Localidad	Graneros	984	1.220	1.241	1.595
+Tafí del Valle	Localidad	Tafí del Valle	2.504	3.300	3.403	7.901
+Tafí Viejo (incl. Diagonal Norte, Barrio Lomas de Tafí, Barrio Parada 14, Barrio U.T.A. II, Villa Las Flores)	Localidad	Tafí Viejo	36.117	46.356	53.971	85.043
+Tapia	Localidad	Trancas	...	...	...	1.117
+Taruca Pampa	Localidad	Burruyacú	...	...	...	1.276
+Teniente Berdina	Localidad	Monteros	474	730	907	1.254
+Timbó Nuevo	Localidad	Burruyacú	...	...	...	449
+Timbó Viejo	Localidad	Burruyacú	...	...	...	543
+Villa Belgrano	Localidad	Juan Bautista Alberdi	1.047	1.085	1.205	1.946
+Villa Benjamín Aráoz	Localidad	Burruyacú	556	1.099	1.409	2.262
+Villa Burruyacú	Localidad	Burruyacú	966	1.770	2.168	2.972
+Villa Chicligasta	Localidad	Simoca	249	231	291	1.427
+Villa Clodomiro Hileret	Localidad	Río Chico	642	702	699	1.322
+Villa de Leales	Localidad	Leales	812	1.230	1.237	2.890
+Villa de Trancas	Localidad	Trancas	2.103	3.391	4.429	7.151
+Villa Fiad (- Ingenio Leales; incl. Pala Pala)	Localidad	Leales	2.511	3.195	3.459	5.261
+Villa Nougués	Localidad	Lules	...	...	...	115
+Villa Padre Monti	Localidad	Burruyacú	...	169	200	393
+Villa Quinteros	Localidad	Monteros	2.997	3.646	4.240	6.826
+Villa Regina	Localidad	Leales	...	...	...	861
+Villa San Javier	Localidad	Yerba Buena	...	...	...	833
+Vipos	Localidad	Trancas	...	...	...	51
+Yánima	Localidad	La Cocha	...	...	...	400
+Yerba Buena	Localidad	Lules	...	...	...	2.314
+Yerba Buena (- Marcos Paz)	Localidad	Yerba Buena	34.901	50.827	59.095	79.240
+Zavalía	Localidad	Monteros	...	...	...	402

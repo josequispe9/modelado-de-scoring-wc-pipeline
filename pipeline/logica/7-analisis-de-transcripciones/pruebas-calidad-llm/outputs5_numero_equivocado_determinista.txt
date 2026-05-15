@@ -1,0 +1,63 @@
+RESULTADOS DETERMINISTAS NÚMERO EQUIVOCADO — 2026-05-14 17:58:16
+Archivos         : 648
+Primeros N turnos: 20
+========================================================================
+
+  [amza14_1_260409181815781_ACD_82035.json]
+  Turnos: 5
+  Frase: "No, equivocado."
+
+  [amza15_1_260409163650372_ACD_57085.json]
+  Turnos: 8
+  Frase: "No, equivocado."
+
+  [amza15_1_260409185703931_ACD_43641.json]
+  Turnos: 6
+  Frase: "No, equivocado."
+
+  [amza20_1_260409180606851_ACD_62419.json]
+  Turnos: 10
+  Frase: "No, señor, equivocado."
+
+  [amza312_1_260409102036709_ACD_91497.json]
+  Turnos: 6
+  Frase: "No, equivocado."
+
+  [amza312_1_260409115134581_ACD_64729.json]
+  Turnos: 8
+  Frase: "No, estás equivocado, hablo con José Guillén."
+
+  [amza31_1_260409141700794_ACD_25797.json]
+  Turnos: 9
+  Frase: "Es un vivero, equivocado."
+
+  [amza32_1_260409142227852_ACD_38751.json]
+  Turnos: 7
+  Frase: "No, no, equivocado."
+
+  [amza48_1_260409120244097_ACD_87623.json]
+  Turnos: 4
+  Frase: "No, equivocado."
+
+  [amza4_1_260409131917496_ACD_47847.json]
+  Turnos: 9
+  Frase: "No, estás equivocado."
+
+  [amza60_1_260409182535652_ACD_93265.json]
+  Turnos: 19
+  Frase: "No, equivocado."
+
+  [amza61_1_260409112827828_ACD_03117.json]
+  Turnos: 5
+  Frase: "No, equivocado."
+
+  [amza71_1_260407112510554_ACD_77785.json]
+  Turnos: 8
+  Frase: "No, equivocado."
+
+  [amza82_1_260409135915768_ACD_69669.json]
+  Turnos: 13
+  Frase: "No, equivocado."
+
+========================================================================
+RESUMEN: 14 números equivocados | 634 normales

@@ -1,0 +1,37 @@
+{
+  "audio_id": "7512a866-4d92-4a23-8900-aafb5ec43100",
+  "nombre_archivo": "amza60_1_260407102751982_ACD_13339",
+  "metadata_llamada": {
+    "agente": "MZA 60",
+    "campania": "MVS_MZA",
+    "empresa": "AZO",
+    "duracion_seg": 11,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola, buen día, ¿con Silvana?"
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola, ¿me escucha?"
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Después del tono, deja tu mensaje."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.4611,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T14:57:57.287701+00:00"
+  }
+}

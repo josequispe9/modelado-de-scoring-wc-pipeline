@@ -1,0 +1,41 @@
+{
+  "audio_id": "b9e82e61-9add-465c-adf3-3917ebc85f14",
+  "nombre_archivo": "amza16_1_260409124744955_ACD_60205",
+  "metadata_llamada": {
+    "agente": "MZA 16",
+    "campania": "MVS_MZA",
+    "empresa": "AZO",
+    "duracion_seg": 9,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola, buenos días."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hablo con Ariadna."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Después del tono, deja tu mensaje."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Para finalizar."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.5519,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T14:58:27.585110+00:00"
+  }
+}

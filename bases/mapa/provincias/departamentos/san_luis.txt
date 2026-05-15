@@ -1,0 +1,10 @@
+Ayacucho	Departamento	15.251	16.906	19.087	23.913
+Belgrano	Departamento	4.001	3.881	3.985	5.583
+Chacabuco	Departamento	15.150	18.410	20.744	26.557
+Coronel Pringles	Departamento	11.368	12.571	13.157	16.049
+General Pedernera	Departamento	90.932	110.814	125.899	148.875
+Gobernador Dupuy	Departamento	9.361	11.120	11.779	14.343
+Junín	Departamento	13.452	20.271	28.933	40.361
+La Capital (Juan Martín de Pueyrredón)	Departamento	121.004	168.771	204.019	261.697
+Libertador General San Martín	Departamento	5.939	5.189	4.707	4.691
+San Luis	Provincia	286.458	367.933	432.310	542.069

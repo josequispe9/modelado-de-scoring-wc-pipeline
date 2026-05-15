@@ -34,4 +34,8 @@ DEFAULTS = {
     # Clasificación final
     "umbral_score_correcto":     0.75,
     "umbral_score_reprocesar":   0.40,
+
+    # Filtro audio cruzado: si la suma de duración de segmentos WhisperX es menor
+    # a este % de la duración del audio normalizado → invalido "audio cruzado"
+    "umbral_ratio_audio_cruzado": 0.40,
 }

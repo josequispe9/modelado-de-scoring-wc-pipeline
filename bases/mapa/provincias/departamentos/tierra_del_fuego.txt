@@ -1,0 +1,6 @@
+Antártida Argentina	Departamento	142	163	190	81
+Islas del Atlántico Sur	Departamento	0	0	17	...
+Río Grande	Departamento	39.371	53.930	67.093	99.241
+Tolhuin (← Río Grande, Ushuaia)	Departamento	445	1.201	2.949	6.039
+Ushuaia	Departamento	29.411	45.785	56.956	80.371
+Tierra del Fuego	Provincia	69.369	101.079	127.205	185.732

@@ -1,0 +1,23 @@
+Atreucó	Departamento	9.857	10.134	10.153	11.138
+Caleu Caleu	Departamento	2.021	2.075	2.313	2.611
+Capital	Departamento	78.022	96.920	105.312	119.632
+Catriló	Departamento	6.193	6.728	7.293	8.235
+Chalileo	Departamento	2.093	2.517	2.985	2.885
+Chapaleufú	Departamento	9.944	10.787	11.620	12.334
+Chical Co	Departamento	1.212	1.595	1.502	1.466
+Conhelo	Departamento	14.070	14.591	14.077	15.186
+Curacó	Departamento	878	886	1.040	1.116
+Guatraché	Departamento	9.425	9.306	8.831	9.517
+Hucal	Departamento	7.938	7.838	7.540	7.787
+Lihuel Calel	Departamento	592	547	439	443
+Limay Mahuida	Departamento	586	475	503	423
+Loventué	Departamento	8.021	8.649	8.619	9.322
+Maracó	Departamento	44.153	54.699	59.024	69.514
+Puelén	Departamento	6.811	7.757	9.468	11.654
+Quemú Quemú	Departamento	8.723	8.756	8.663	8.460
+Rancul	Departamento	9.943	10.648	10.668	11.133
+Realicó	Departamento	14.056	15.302	16.227	17.470
+Toay	Departamento	6.860	9.256	12.409	18.029
+Trenel	Departamento	5.470	5.324	5.426	5.702
+Utracán	Departamento	13.128	14.504	14.839	17.802
+La Pampa	Provincia	259.996	299.294	318.951	361.859

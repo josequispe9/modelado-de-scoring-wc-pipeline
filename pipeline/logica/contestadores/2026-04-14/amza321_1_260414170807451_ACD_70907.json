@@ -1,0 +1,37 @@
+{
+  "audio_id": "612d8b4e-45f7-4239-bd5a-988f9d5b3d24",
+  "nombre_archivo": "amza321_1_260414170807451_ACD_70907",
+  "metadata_llamada": {
+    "agente": "MZA 321",
+    "campania": "MVS_MZA",
+    "empresa": "AZO",
+    "duracion_seg": 8,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola, buenas tardes."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Después de tono, deja tu mensaje."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Para finalizar, cortá."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.4601,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T15:00:47.238125+00:00"
+  }
+}

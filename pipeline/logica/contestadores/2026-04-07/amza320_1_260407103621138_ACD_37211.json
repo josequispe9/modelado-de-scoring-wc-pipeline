@@ -1,0 +1,45 @@
+{
+  "audio_id": "a5359867-c8a6-4cde-afae-f055c20dbf1b",
+  "nombre_archivo": "amza320_1_260407103621138_ACD_37211",
+  "metadata_llamada": {
+    "agente": "MZA 320",
+    "campania": "MVS_MZA",
+    "empresa": "AZO",
+    "duracion_seg": 10,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola, buenos días."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "¿Me contacto con Axel?"
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Sí."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola, soy Keri."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Quería brindarte unos descuentitos para su línea móvil."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.391,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T14:57:36.201603+00:00"
+  }
+}

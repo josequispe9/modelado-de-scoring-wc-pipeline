@@ -1,0 +1,33 @@
+{
+  "audio_id": "854a8b9d-f834-4934-9362-2bb3cc148d3d",
+  "nombre_archivo": "amza19_1_260406145447323_ACD_11917",
+  "metadata_llamada": {
+    "agente": "MZA 19",
+    "campania": "MVS_MZA",
+    "empresa": "AZO",
+    "duracion_seg": 8,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola, buen día, hablo con Fabio."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Después del tono, deja tu mensaje."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.5509,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T14:57:44.294991+00:00"
+  }
+}

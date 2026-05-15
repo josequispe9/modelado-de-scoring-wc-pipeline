@@ -1,0 +1,20 @@
+Belgrano	Departamento	38.818	41.449	44.788	48.781
+Caseros	Departamento	76.690	79.096	82.100	86.912
+Castellanos	Departamento	141.994	162.165	178.092	190.577
+Constitución	Departamento	79.419	83.045	86.910	93.441
+Garay	Departamento	16.253	19.913	20.890	24.927
+General López	Departamento	172.054	182.113	191.024	201.574
+General Obligado	Departamento	145.265	166.436	176.410	197.986
+Iriondo	Departamento	62.838	65.486	66.675	74.504
+La Capital	Departamento	441.982	489.505	525.093	572.265
+Las Colonias	Departamento	86.046	95.202	104.946	115.740
+Nueve de Julio (9 de Julio)	Departamento	27.285	28.273	29.832	30.995
+Rosario	Departamento	1.079.359	1.121.441	1.193.605	1.348.725
+San Cristóbal	Departamento	63.353	64.935	68.878	72.801
+San Javier	Departamento	26.369	29.912	30.959	33.274
+San Jerónimo	Departamento	69.739	77.253	80.840	87.307
+San Justo	Departamento	36.887	40.379	40.904	46.665
+San Lorenzo	Departamento	129.875	142.097	157.255	194.580
+San Martín	Departamento	57.118	60.698	63.842	67.827
+Vera	Departamento	47.078	51.303	51.494	56.027
+Santa Fe	Provincia	2.798.422	3.000.701	3.194.537	3.544.908

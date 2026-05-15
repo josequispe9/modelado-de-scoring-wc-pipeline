@@ -1,0 +1,57 @@
+{
+  "audio_id": "f851639d-0c51-4e4f-98b1-bedd42ba4037",
+  "nombre_archivo": "amza303_1_260407162606290_ACD_73063",
+  "metadata_llamada": {
+    "agente": "MZA 303",
+    "campania": "MVS_MZA",
+    "empresa": "AZO",
+    "duracion_seg": 12,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Buenas tardes."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "¿Carlos?"
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola, sí."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Sí, él habla."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Carlos, me voy a recibir termina."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Has sido seleccionado por un descuento en tu línea móvil."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Me aseguro que eso es claro, eso es cierto."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.5228,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T15:00:28.730159+00:00"
+  }
+}

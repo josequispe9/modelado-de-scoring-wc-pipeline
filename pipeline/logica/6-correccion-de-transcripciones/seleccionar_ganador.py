@@ -67,12 +67,15 @@ def obtener_params() -> dict:
         with psycopg2.connect(SCORING_DB_URL) as conn:
             with conn.cursor() as cur:
                 cur.execute(
-                    "SELECT valor FROM pipeline_params WHERE clave = 'correccion_transcripciones_ganador'"
+                    "SELECT valor FROM pipeline_params WHERE clave = 'correccion_transcripciones'"
                 )
                 row = cur.fetchone()
         if row and row[0]:
             params = DEFAULTS_GANADOR.copy()
-            params.update(row[0])
+            params.update({
+                k: v for k, v in row[0].items()
+                if k in DEFAULTS_GANADOR
+            })
             log.info("Params ganador cargados desde Postgres")
             return params
     except Exception as e:
@@ -84,8 +87,6 @@ def obtener_params() -> dict:
 def obtener_audios_pendientes(conn) -> list[dict]:
     """
     Retorna audios con etapa_actual='correccion_transcripciones' y sin ganador aún.
-    Solo incluye audios donde todos los grupos evaluados ya tienen score_total
-    (es decir, ya corrió correccion_llm.py para cada grupo).
     """
     query = """
         SELECT
@@ -118,17 +119,15 @@ def fecha_desde_nombre(nombre: str) -> str:
         return datetime.now().strftime("%Y-%m-%d")
 
 
-def todos_evaluados_con_llm(transcripcion: list, correccion: dict) -> bool:
+def todos_evaluados(transcripcion: list, correccion: dict) -> bool:
     """
     Verifica que todos los grupos con estado='correcto' en el array transcripcion
-    ya tienen score_total en correccion_transcripciones (ambas fases completadas).
+    ya tienen clasificacion_determinista calculada.
     """
     grupos_transcriptos = {e["grupo"] for e in transcripcion if e.get("estado") == "correcto"}
     for grupo in grupos_transcriptos:
         entrada = correccion.get(grupo, {})
-        if entrada.get("clasificacion_determinista") == "invalido":
-            continue  # invalidos no necesitan score_total
-        if entrada.get("score_total") is None:
+        if entrada.get("clasificacion_determinista") is None:
             return False
     return True
 
@@ -136,20 +135,20 @@ def todos_evaluados_con_llm(transcripcion: list, correccion: dict) -> bool:
 # ─── Selección del ganador ────────────────────────────────────────────────────
 def elegir_ganador(correccion: dict) -> tuple[str, dict] | None:
     """
-    Elige el grupo con mayor score_total.
-    Prioriza clasificacion='correcto' sobre 'reprocesar'. Ignora 'invalido'.
+    Elige el grupo con mayor score_determinista.
+    Prioriza 'correcto' sobre 'reprocesar'. Ignora 'invalido'.
     """
     grupos = {k: v for k, v in correccion.items() if k != "ganador"}
     candidatos = {
         k: v for k, v in grupos.items()
-        if v.get("clasificacion") in ("correcto", "reprocesar")
+        if v.get("clasificacion_determinista") in ("correcto", "reprocesar")
     }
     if not candidatos:
         return None
 
-    correctos = {k: v for k, v in candidatos.items() if v.get("clasificacion") == "correcto"}
+    correctos = {k: v for k, v in candidatos.items() if v.get("clasificacion_determinista") == "correcto"}
     elegibles = correctos if correctos else candidatos
-    grupo_ganador = max(elegibles, key=lambda k: elegibles[k].get("score_total") or 0.0)
+    grupo_ganador = max(elegibles, key=lambda k: elegibles[k].get("score_determinista") or 0.0)
     return grupo_ganador, elegibles[grupo_ganador]
 
 
@@ -208,7 +207,7 @@ def construir_json_salida(audio: dict, data: dict, entrada_ganadora: dict,
         "procesamiento": {
             "grupo_ganador":        grupo_ganador,
             "modelo_transcripcion": metadata_whisper.get("modelo"),
-            "score_total":          entrada_ganadora.get("score_total"),
+            "score_total":          entrada_ganadora.get("score_total") or entrada_ganadora.get("score_determinista"),
             "coherencia_llm":       entrada_ganadora.get("coherencia_llm"),
             "fecha_formateado":     datetime.now(timezone.utc).isoformat(),
         },
@@ -260,8 +259,8 @@ def main():
                 sin_ganador += 1
                 continue
 
-            if not todos_evaluados_con_llm(transcripcion, correccion):
-                log.info("Grupos aún sin score_total para %s — omitiendo", nombre)
+            if not todos_evaluados(transcripcion, correccion):
+                log.info("Grupos aún sin clasificacion_determinista para %s — omitiendo", nombre)
                 incompletos += 1
                 continue
 
@@ -272,11 +271,11 @@ def main():
                 continue
 
             grupo_ganador, entrada_ganadora = resultado
-            estado_final = entrada_ganadora.get("clasificacion", "correcto")
+            estado_final = entrada_ganadora.get("clasificacion_determinista", "correcto")
 
-            log.info("Ganador: %s → grupo=%s score_total=%.4f → %s",
+            log.info("Ganador: %s → grupo=%s score_det=%.4f → %s",
                      nombre, grupo_ganador,
-                     entrada_ganadora.get("score_total", 0.0),
+                     entrada_ganadora.get("score_determinista", 0.0),
                      estado_final)
 
             # ── Descargar JSON de transcripcion del grupo ganador ─────────────
@@ -329,6 +328,18 @@ def main():
 
             marcar_ganador(conn, audio_id, grupo_ganador, output_key, estado_final)
             procesados += 1
+
+            # ── Borrar transcripciones-raw de los grupos perdedores ───────────
+            for grupo, entrada in correccion.items():
+                if grupo == "ganador" or grupo == grupo_ganador:
+                    continue
+                key_perdedor = (entrada.get("ubicacion_transcripcion") or {}).get("key")
+                if key_perdedor:
+                    try:
+                        minio_client.remove_object(MINIO_BUCKET, key_perdedor)
+                        log.info("Borrado perdedor: %s", key_perdedor)
+                    except S3Error as e:
+                        log.warning("No se pudo borrar %s: %s", key_perdedor, e)
 
     log.info("Finalizado — seleccionados: %d | sin_ganador: %d | incompletos: %d",
              procesados, sin_ganador, incompletos)

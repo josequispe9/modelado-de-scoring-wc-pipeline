@@ -1,0 +1,29 @@
+{
+  "audio_id": "b9a675f3-eeac-4d58-b4a2-be6e924cb11e",
+  "nombre_archivo": "amza14_1_260415131959852_MIT_01972",
+  "metadata_llamada": {
+    "agente": "MZA 14",
+    "campania": "MVS_MZA_OUT",
+    "empresa": "AZO",
+    "duracion_seg": 26,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "La persona con la que intentas comunicarte no puede recibir..."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.3049,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T14:59:26.158111+00:00"
+  }
+}

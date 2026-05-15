@@ -1,0 +1,26 @@
+Almirante Brown	Departamento	20.645	29.086	34.075	37.851
+Bermejo	Departamento	23.046	24.215	25.052	28.144
+Chacabuco	Departamento	23.015	27.813	30.590	34.598
+Comandante Fernández	Departamento	77.619	88.164	96.944	101.960
+Doce de Octubre (12 de Octubre)	Departamento	...	20.149	22.281	23.222
+Dos de Abril (2 de Abril)	Departamento	...	7.435	7.432	8.319
+Fray Justo Santa María de Oro	Departamento	...	10.485	11.826	10.653
+General Belgrano	Departamento	10.030	10.470	11.988	12.807
+General Donovan	Departamento	11.456	13.385	13.490	15.096
+General Güemes	Departamento	43.762	62.227	67.132	68.525
+Independencia	Departamento	18.403	20.620	22.411	21.996
+Libertad	Departamento	8.800	10.822	12.158	13.807
+Libertador General San Martín	Departamento	47.917	54.470	59.147	65.686
+Maipú	Departamento	24.933	24.747	25.288	26.416
+Mayor Luis Jorge Fontana	Departamento	48.904	53.550	55.080	59.965
+Nueve de Julio (9 de Julio)	Departamento	24.654	26.955	28.555	30.258
+O'Higgins	Departamento	20.661	19.231	20.131	21.579
+Presidencia de la Plaza	Departamento	10.828	12.231	12.499	13.956
+Primero de Mayo (1º de Mayo)	Departamento	6.975	9.131	10.322	14.279
+Quitilipi	Departamento	29.895	32.083	34.081	32.642
+San Fernando	Departamento	298.572	365.637	390.874	416.140
+San Lorenzo	Departamento	13.394	14.252	14.702	16.062
+Sargento Cabral	Departamento	12.828	15.030	15.889	18.793
+Tapenagá	Departamento	3.605	4.188	4.097	4.059
+Veinticinco de Mayo (25 de Mayo)	Departamento	24.223	28.070	29.215	32.793
+Chaco	Provincia	839.677	984.446	1.055.259	1.129.606

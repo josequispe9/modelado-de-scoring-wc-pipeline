@@ -319,7 +319,12 @@ def main():
                 log.warning("Sin ubicacion en normalizacion para %s [grupo=%s]", nombre, grupo)
                 continue
 
-            duracion_original = (norm_entry.get("metricas") or {}).get("duracion_seg", 0)
+            metricas_norm     = norm_entry.get("metricas") or {}
+            duracion_original = (
+                metricas_norm.get("duracion_original_seg")
+                or metricas_norm.get("duracion_seg")
+                or 0
+            )
             fecha_inicio      = datetime.now(timezone.utc).isoformat()
 
             log.info("Evaluando: %s [grupo=%s]", nombre, grupo)

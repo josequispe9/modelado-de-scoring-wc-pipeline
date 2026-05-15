@@ -1,0 +1,26 @@
+Bella Vista	Departamento	30.966	35.350	37.181	44.406
+Berón de Astrada	Departamento	2.280	2.294	2.461	2.826
+Capital	Departamento	268.080	328.868	358.223	439.270
+Concepción	Departamento	14.856	18.411	21.113	26.282
+Curuzú Cuatiá	Departamento	39.922	42.075	44.384	51.532
+Empedrado	Departamento	13.188	14.721	15.109	17.968
+Esquina	Departamento	26.157	30.372	30.802	39.185
+General Alvear	Departamento	7.493	8.147	7.926	9.145
+General Paz	Departamento	13.764	14.775	14.836	17.020
+Goya	Departamento	78.894	87.349	89.959	106.371
+Itatí	Departamento	7.228	8.774	9.171	12.010
+Ituzaingó	Departamento	28.685	30.565	31.150	38.837
+Lavalle	Departamento	19.457	26.250	28.759	40.448
+Mburucuyá	Departamento	8.188	9.012	9.252	11.568
+Mercedes	Departamento	33.948	39.206	40.667	49.882
+Monte Caseros	Departamento	29.390	33.684	36.338	45.670
+Paso de los Libres	Departamento	41.129	46.326	48.642	56.989
+Saladas	Departamento	19.747	21.470	22.244	29.198
+San Cosme	Departamento	9.598	13.189	14.381	19.706
+San Luis del Palmar	Departamento	14.336	16.513	17.590	21.459
+San Martín	Departamento	11.017	12.236	13.140	15.187
+San Miguel	Departamento	9.169	10.252	10.572	12.713
+San Roque	Departamento	16.039	17.951	18.366	22.715
+Santo Tomé	Departamento	43.360	54.050	61.297	71.927
+Sauce	Departamento	8.703	9.151	9.032	10.382
+Corrientes	Provincia	795.594	930.991	992.595	1.212.696

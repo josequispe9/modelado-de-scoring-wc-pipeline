@@ -1,0 +1,2603 @@
+RESULTADOS — 2026-05-14 19:59:05
+Modelo : Qwen/Qwen2.5-3B-Instruct-AWQ
+Inputs : inputs5-cliente-molesto.txt
+========================================================================
+
+╔══ TEST: pasada_insulto
+║  Descripcion : Detectar si el cliente insulta al vendedor o a Movistar durante la llamada.
+║  Segmento    : todo_40
+║  Contexto    : transcripcion
+║  Archivos    : 648
+╚═══════════════════════════════════════════════════════════════════════
+
+  [amza10_1_260401115650338_ACD_44761.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~241 tokens  |  1.43s
+  {"insulta": "no"}
+
+  [amza10_1_260409104155927_ACD_53133.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~232 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza10_1_260409115706779_ACD_75569.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~238 tokens  |  0.27s
+  {"insulta": "no"}
+
+  [amza10_1_260409121148596_ACD_08073.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~271 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza10_1_260409125849088_ACD_88619.json]
+  Turnos conv: 20  |  turnos al LLM: 20  |  ~307 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza10_1_260409132716813_ACD_71915.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~260 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza10_1_260409133916517_ACD_05793.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~242 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza13_1_260409105412110_ACD_87503.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~221 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza13_1_260409120103657_ACD_84461.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~233 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza13_1_260409140321880_ACD_82831.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~217 tokens  |  0.13s
+  {"insulta": "si"}
+
+  [amza14_1_260401185943227_ACD_89789.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~248 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza14_1_260407192303818_ACD_82365.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~239 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza14_1_260409112151778_ACD_82065.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~231 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza14_1_260409135016965_ACD_40357.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~229 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza14_1_260409135202373_ACD_46705.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~244 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza14_1_260409140116629_ACD_75877.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~227 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza14_1_260409143412782_ACD_70141.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~226 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza14_1_260409163850594_ACD_59631.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~237 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza14_1_260409170334947_ACD_01063.json]
+  Turnos conv: 23  |  turnos al LLM: 23  |  ~377 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza14_1_260409171007613_ACD_08713.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~232 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza14_1_260409181654654_ACD_80085.json]
+  Turnos conv: 28  |  turnos al LLM: 28  |  ~374 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza14_1_260409181815781_ACD_82035.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~211 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza14_1_260409182214853_ACD_87563.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~233 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza14_1_260409191330649_ACD_70757.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~289 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza14_1_260409192831821_ACD_95009.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~243 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza14_1_260409195241456_ACD_16653.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~241 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza14_1_260409202227756_ACD_41021.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~214 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza14_1_260409202714891_ACD_45037.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~231 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza14_1_260413140822361_MIT_01948.json]
+  Turnos conv: 2  |  turnos al LLM: 2  |  ~211 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza14_1_260413182841571_ACD_82711.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~231 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza15_1_260407160203355_ACD_39391.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~231 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza15_1_260409134017862_ACD_08535.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~238 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza15_1_260409142734563_ACD_51549.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~231 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza15_1_260409163650372_ACD_57085.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~243 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza15_1_260409171057738_ACD_09197.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~267 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza15_1_260409173341750_ACD_25875.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~233 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza15_1_260409181333185_ACD_74573.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~221 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza15_1_260409183717734_ACD_12751.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~225 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza15_1_260409183944381_ACD_16835.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~244 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza15_1_260409184646730_ACD_27461.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~243 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza15_1_260409185703931_ACD_43641.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~219 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza15_1_260409185733931_ACD_44439.json]
+  Turnos conv: 21  |  turnos al LLM: 21  |  ~357 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza15_1_260409190231685_ACD_52875.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~226 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza15_1_260409191405682_ACD_71601.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~239 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza15_1_260409193830735_ACD_04911.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~229 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza15_1_260409195011139_ACD_14533.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~230 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza15_1_260409200633220_ACD_28095.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~217 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza15_1_260413164606260_ACD_70491.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~225 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza15_1_260414164244437_ACD_36307.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~215 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza15_1_260414184952500_ACD_58617.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~269 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza16_1_260407181141559_ACD_79153.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~236 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza16_1_260409124503701_ACD_55019.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~212 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza16_1_260409124628829_ACD_57459.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~273 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza16_1_260409124744955_ACD_60205.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~212 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza16_1_260409134829870_ACD_33837.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~230 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza16_1_260409141525511_ACD_21425.json]
+  Turnos conv: 2  |  turnos al LLM: 2  |  ~207 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza16_1_260409142001389_ACD_33223.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~225 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza16_1_260409143347732_ACD_68915.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~255 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza16_1_260409164618063_ACD_70987.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~233 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza16_1_260409164724315_ACD_72947.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~231 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza16_1_260409165401773_ACD_84581.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~226 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza16_1_260409170410104_ACD_01649.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~291 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza16_1_260409171751415_ACD_13499.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~228 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza16_1_260409182931125_ACD_99685.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~265 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza16_1_260409192923699_MIT_01985.json]
+  OMITIDO: menos de 2 turnos  (1 turnos)
+
+  [amza18_1_260409111039870_ACD_42803.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~209 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza18_1_260409121440317_ACD_17513.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~270 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza18_1_260409172451155_ACD_17285.json]
+  Turnos conv: 17  |  turnos al LLM: 17  |  ~295 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza18_1_260409172717866_ACD_19227.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~217 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza18_1_260409180641945_ACD_63413.json]
+  Turnos conv: 24  |  turnos al LLM: 24  |  ~421 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza18_1_260409180852423_ACD_67029.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~231 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza18_1_260409181408394_ACD_75523.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~244 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza18_1_260409181714657_ACD_80549.json]
+  Turnos conv: 21  |  turnos al LLM: 21  |  ~312 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza18_1_260409191410682_ACD_71745.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~227 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza18_1_260409202438264_ACD_42861.json]
+  Turnos conv: 16  |  turnos al LLM: 16  |  ~274 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza19_1_260409103639125_ACD_38261.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~248 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza19_1_260409104604902_ACD_63989.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~236 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza19_1_260409133544744_ACD_95043.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~235 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza19_1_260409134534118_ACD_24475.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~233 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza19_1_260409164638141_ACD_71609.json]
+  Turnos conv: 16  |  turnos al LLM: 16  |  ~272 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza19_1_260409164950770_ACD_77403.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~257 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza19_1_260409172823995_ACD_20395.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~248 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza19_1_260409182630779_ACD_94799.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~277 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza19_1_260409192511062_ACD_90051.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~233 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza19_1_260409192636564_ACD_92235.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~321 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza1_1_260409101936240_ACD_88345.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~255 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza1_1_260409103629094_ACD_37911.json]
+  Turnos conv: 28  |  turnos al LLM: 28  |  ~439 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza1_1_260409124523702_ACD_55523.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~246 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza1_1_260409124638829_ACD_57847.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~261 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza1_1_260409141054431_ACD_07413.json]
+  Turnos conv: 16  |  turnos al LLM: 16  |  ~286 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza1_1_260409164527703_ACD_69669.json]
+  Turnos conv: 22  |  turnos al LLM: 22  |  ~309 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza1_1_260409165131317_ACD_80139.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~255 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza1_1_260409182450407_ACD_92129.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~223 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza20_1_260409165431852_ACD_85371.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~232 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza20_1_260409172159498_ACD_15643.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~226 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza20_1_260409173917378_ACD_31473.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~222 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza20_1_260409180505771_ACD_60973.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~223 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza20_1_260409180606851_ACD_62419.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~255 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza20_1_260409185303379_ACD_36819.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~232 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza20_1_260409190025430_ACD_49607.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~222 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza20_1_260409190834753_ACD_62739.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~233 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza20_1_260409191035304_ACD_66335.json]
+  Turnos conv: 20  |  turnos al LLM: 20  |  ~271 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza20_1_260409193238062_ACD_99211.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~235 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza20_1_260409195336585_ACD_17287.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~261 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza20_1_260409195748152_ACD_20901.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~232 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza20_1_260409202026101_ACD_39525.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~220 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza20_1_260414191854199_ACD_95797.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~262 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza21_1_260409134138238_ACD_12533.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~237 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza21_1_260409170038914_ACD_97005.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~231 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza21_1_260409190613103_ACD_58931.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~211 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza21_1_260409190638197_ACD_59721.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~282 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza21_1_260414184035622_ACD_47965.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~209 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza22_1_260407121705583_ACD_07919.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~240 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza22_1_260409111715869_ACD_65067.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~232 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza22_1_260409120038516_ACD_83759.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~278 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza22_1_260409124643829_ACD_58033.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~231 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza22_1_260409125351460_ACD_75335.json]
+  Turnos conv: 22  |  turnos al LLM: 22  |  ~333 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza22_1_260409134731870_MIT_01981.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~221 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza22_1_260409135945878_ACD_71213.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~383 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza22_1_260409142016389_ACD_33709.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~215 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza22_1_260409145648512_ACD_38697.json]
+  Turnos conv: 16  |  turnos al LLM: 16  |  ~289 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza22_1_260413112840430_ACD_40897.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~220 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza23_1_260409114718226_ACD_56373.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~248 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza23_1_260409120213987_ACD_86707.json]
+  Turnos conv: 22  |  turnos al LLM: 22  |  ~374 tokens  |  1.15s
+  {"insulta": "no"}
+
+  [amza23_1_260409121906728_ACD_32851.json]
+  Turnos conv: 17  |  turnos al LLM: 17  |  ~336 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza23_1_260409132802157_ACD_74151.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~245 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza23_1_260409140748733_ACD_97161.json]
+  Turnos conv: 22  |  turnos al LLM: 22  |  ~331 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza23_1_260409145222150_ACD_27415.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~232 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza23_1_260409163750514_ACD_58425.json]
+  Turnos conv: 27  |  turnos al LLM: 27  |  ~391 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza23_1_260409164306893_ACD_65845.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~240 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza23_1_260409191025257_ACD_65955.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~254 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza23_1_260413124528250_ACD_10569.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~222 tokens  |  0.12s
+  {"insulta": "no"}
+
+  [amza23_1_260414131353759_ACD_63269.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~270 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza24_1_260409102620571_ACD_08151.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~209 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza24_1_260409110448724_ACD_22469.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~257 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza24_1_260409132556356_ACD_67973.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~221 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza24_1_260409133750157_ACD_01673.json]
+  Turnos conv: 20  |  turnos al LLM: 20  |  ~287 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza24_1_260409140712543_ACD_95135.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~249 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza24_1_260409145453026_ACD_33985.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~231 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza25_1_260409103523625_ACD_34677.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~242 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza25_1_260409105804900_ACD_99919.json]
+  Turnos conv: 24  |  turnos al LLM: 24  |  ~359 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza25_1_260409120354411_ACD_90195.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~263 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza25_1_260409125803056_ACD_86739.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~228 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza25_1_260409131912480_ACD_47537.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~228 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza25_1_260409133715028_ACD_99711.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~243 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza25_1_260409135835409_ACD_67229.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~231 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza25_1_260409140005957_ACD_72197.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~247 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza25_1_260409144806520_ACD_14969.json]
+  Turnos conv: 20  |  turnos al LLM: 20  |  ~309 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza26_1_260409191555932_ACD_74237.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~257 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza26_1_260409192853511_MIT_01994.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~280 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza26_1_260414133840253_ACD_27675.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~208 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza27_1_260407181717303_ACD_86949.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~239 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza27_1_260409111339154_ACD_52309.json]
+  Turnos conv: 21  |  turnos al LLM: 21  |  ~328 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza27_1_260409114517849_ACD_51755.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~228 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza27_1_260409133223582_ACD_86167.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~238 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza27_1_260409170244853_ACD_99955.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~246 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza27_1_260409170334947_ACD_01037.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~211 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza27_1_260414105702074_ACD_66065.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~272 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza28_1_260409113058408_ACD_10645.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~240 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza28_1_260409131012847_ACD_21049.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~290 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza28_1_260409133529665_ACD_94313.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~221 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza28_1_260409135117216_ACD_43919.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~218 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza28_1_260409135910753_ACD_69501.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~291 tokens  |  0.16s
+  {"insulta": "si"}
+
+  [amza28_1_260409141946389_ACD_32561.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~230 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza28_1_260409142940237_ACD_56855.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~268 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza28_1_260409144701020_ACD_11333.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~223 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza29_1_260409161154459_ACD_21593.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~227 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza29_1_260409162557598_ACD_42227.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~223 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza29_1_260409162652880_ACD_43571.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~245 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza29_1_260409171353077_ACD_11091.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~242 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza29_1_260409180832392_ACD_66461.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~253 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza2_1_260409110327519_ACD_17883.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~273 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza2_1_260409115948344_ACD_81811.json]
+  Turnos conv: 23  |  turnos al LLM: 23  |  ~332 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza2_1_260409141149510_ACD_10491.json]
+  Turnos conv: 35  |  turnos al LLM: 35  |  ~427 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza303_1_260407120305323_ACD_72675.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~237 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza303_1_260409100811535_ACD_57133.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~242 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza303_1_260409102600414_ACD_07259.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~251 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza303_1_260409111936433_ACD_74617.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~254 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza303_1_260409115354961_ACD_69181.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~240 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza303_1_260409124810081_ACD_61105.json]
+  Turnos conv: 17  |  turnos al LLM: 17  |  ~300 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza304_1_260407201235751_ACD_26181.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~232 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza304_1_260409100239858_ACD_46731.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~238 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza304_1_260409104818356_ACD_70191.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~274 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza304_1_260409114804402_ACD_58079.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~251 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza304_1_260409120148814_ACD_85927.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~262 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza304_1_260409131238458_ACD_28267.json]
+  Turnos conv: 17  |  turnos al LLM: 17  |  ~290 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza304_1_260409140331880_ACD_83629.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~247 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza304_1_260409141234589_ACD_13041.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~259 tokens  |  0.24s
+  {"insulta": "no"}
+
+  [amza304_1_260409141610684_ACD_23515.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~249 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza304_1_260409155123696_ACD_91735.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~228 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza304_1_260409164046255_ACD_62467.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~255 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza304_1_260409170510277_ACD_02949.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~325 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza304_1_260409195818340_ACD_21203.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~303 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza304_1_260409200020458_ACD_22821.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~245 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza305_1_260409110302394_ACD_16677.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~235 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza305_1_260409110358566_ACD_19651.json]
+  Turnos conv: 35  |  turnos al LLM: 35  |  ~401 tokens  |  0.24s
+  {"insulta": "no"}
+
+  [amza305_1_260409110834463_ACD_35151.json]
+  Turnos conv: 19  |  turnos al LLM: 19  |  ~295 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza305_1_260409134619322_ACD_26725.json]
+  Turnos conv: 18  |  turnos al LLM: 18  |  ~345 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza307_1_260409182911031_ACD_99197.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~253 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza307_1_260409184039744_ACD_18271.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~236 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza307_1_260409184516297_ACD_25125.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~252 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza307_1_260409201431682_ACD_34733.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~234 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza307_1_260414170331821_ACD_65239.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~274 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza308_1_260407130324568_ACD_67603.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~236 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza309_1_260409103147434_ACD_23621.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~270 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza309_1_260409104015223_ACD_48809.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~283 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza309_1_260409120003438_ACD_82395.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~251 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza309_1_260409120505864_ACD_92817.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~250 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza309_1_260409120803259_ACD_98957.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~257 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza309_1_260409132405723_ACD_62707.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~257 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza309_1_260409133052988_ACD_82111.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~270 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza309_1_260409133203488_ACD_85129.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~262 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza309_1_260409135112200_ACD_43487.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~287 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza309_1_260414112149739_ACD_35007.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~215 tokens  |  3.95s
+  {"insulta": "no"}
+
+  [amza30_1_260409102248866_ACD_98079.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~239 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza30_1_260409105432266_ACD_88795.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~265 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza30_1_260409120923307_ACD_01789.json]
+  Turnos conv: 18  |  turnos al LLM: 18  |  ~283 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza30_1_260409145214855_MIT_01971.json]
+  Turnos conv: 33  |  turnos al LLM: 33  |  ~425 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza30_1_260409161908050_ACD_31983.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~229 tokens  |  0.26s
+  {"insulta": "no"}
+
+  [amza30_1_260409172049212_ACD_15091.json]
+  Turnos conv: 24  |  turnos al LLM: 24  |  ~376 tokens  |  0.24s
+  {"insulta": "no"}
+
+  [amza30_1_260409172405864_ACD_16797.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~248 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza30_1_260409181659657_ACD_80211.json]
+  Turnos conv: 25  |  turnos al LLM: 25  |  ~357 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza30_1_260409183027214_MIT_01990.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~276 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza30_1_260409183246535_ACD_04409.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~255 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza30_1_260409183351661_ACD_06665.json]
+  Turnos conv: 20  |  turnos al LLM: 20  |  ~322 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza30_1_260409190528054_ACD_57755.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~228 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza30_1_260429102517478_ACD_00267.json]
+  Turnos conv: 25  |  turnos al LLM: 25  |  ~314 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza310_1_260409155742499_ACD_99825.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~234 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza310_1_260409162335846_ACD_38635.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~263 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza310_1_260409171052738_ACD_09087.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~231 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza310_1_260409191530852_ACD_73623.json]
+  Turnos conv: 2  |  turnos al LLM: 2  |  ~224 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza310_1_260409201808805_ACD_37609.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~257 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza311_1_260508131912681_ACD_01013.json]
+  OMITIDO: menos de 2 turnos  (0 turnos)
+
+  [amza312_1_260409101555040_ACD_77537.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~245 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza312_1_260409102036709_ACD_91497.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~217 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza312_1_260409102519992_ACD_05359.json]
+  Turnos conv: 17  |  turnos al LLM: 17  |  ~311 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza312_1_260409103433171_ACD_32179.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~238 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza312_1_260409110202206_ACD_13021.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~286 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza312_1_260409111710869_ACD_64871.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~246 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza312_1_260409114829419_ACD_58715.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~212 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza312_1_260409115134581_ACD_64729.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~269 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza312_1_260409120208940_ACD_86599.json]
+  Turnos conv: 17  |  turnos al LLM: 17  |  ~289 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza312_1_260409125055333_ACD_67465.json]
+  Turnos conv: 25  |  turnos al LLM: 25  |  ~405 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza312_1_260409131952672_ACD_49589.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~246 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza312_1_260409132446020_ACD_64543.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~246 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza312_1_260409133128379_ACD_83749.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~227 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza312_1_260409143919653_ACD_86195.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~207 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza312_1_260409145317275_ACD_29821.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~280 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza315_1_260409102555383_ACD_07093.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~258 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza315_1_260409133921580_ACD_05907.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~254 tokens  |  0.24s
+  {"insulta": "no"}
+
+  [amza319_1_260407162927908_ACD_78053.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~238 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza31_1_260409102021568_ACD_90825.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~226 tokens  |  0.24s
+  {"insulta": "no"}
+
+  [amza31_1_260409110011563_ACD_06421.json]
+  Turnos conv: 26  |  turnos al LLM: 26  |  ~362 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza31_1_260409120048532_ACD_84133.json]
+  Turnos conv: 16  |  turnos al LLM: 16  |  ~291 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza31_1_260409125612274_ACD_81527.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~257 tokens  |  0.24s
+  {"insulta": "no"}
+
+  [amza31_1_260409130205434_ACD_97703.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~236 tokens  |  0.25s
+  {"insulta": "no"}
+
+  [amza31_1_260409135705126_ACD_62211.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~334 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza31_1_260409141700794_ACD_25797.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~237 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza31_1_260409145432948_ACD_33187.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~245 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza31_1_260414134950937_MIT_01971.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~209 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza321_1_260407111314670_ACD_43147.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~235 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza321_1_260409104321631_ACD_57043.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~247 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza321_1_260409112438451_ACD_90779.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~239 tokens  |  0.24s
+  {"insulta": "no"}
+
+  [amza321_1_260409112618765_ACD_95959.json]
+  Turnos conv: 28  |  turnos al LLM: 28  |  ~426 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza321_1_260409114156050_ACD_42291.json]
+  Turnos conv: 21  |  turnos al LLM: 21  |  ~306 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza321_1_260414170807451_ACD_70907.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~209 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza322_1_260407133022505_ACD_43221.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~241 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza322_1_260409100405109_ACD_49171.json]
+  Turnos conv: 32  |  turnos al LLM: 32  |  ~518 tokens  |  0.27s
+  {"insulta": "no"}
+
+  [amza322_1_260409101248736_ACD_67319.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~263 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza322_1_260409101800820_ACD_83739.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~317 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza322_1_260414134251568_ACD_44105.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~264 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza322_1_260414144421102_ACD_13589.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~271 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza322_1_260506104027850_ACD_60943.json]
+  OMITIDO: menos de 2 turnos  (0 turnos)
+
+  [amza323_1_260409120642055_ACD_96131.json]
+  Turnos conv: 34  |  turnos al LLM: 34  |  ~381 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza323_1_260409120943307_ACD_02475.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~259 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza323_1_260409140854107_ACD_00899.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~269 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza323_1_260409143121648_ACD_61799.json]
+  Turnos conv: 16  |  turnos al LLM: 16  |  ~273 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza323_1_260409184903039_ACD_31093.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~240 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza323_1_260409193011948_ACD_97143.json]
+  Turnos conv: 29  |  turnos al LLM: 29  |  ~421 tokens  |  0.25s
+  {"insulta": "no"}
+
+  [amza323_1_260413160029299_ACD_04373.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~232 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza324_1_260409110408582_ACD_20299.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~244 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza324_1_260409113404569_ACD_19809.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~234 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza324_1_260409130822096_ACD_15575.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~266 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza324_1_260413130512192_ACD_61355.json]
+  Turnos conv: 2  |  turnos al LLM: 2  |  ~213 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza325_1_260409130300623_ACD_00165.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~264 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza325_1_260409131102973_ACD_23355.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~245 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza325_1_260414171128691_ACD_73813.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~292 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza326_1_260409112822828_ACD_02765.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~253 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza326_1_260409140221755_ACD_79285.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~258 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza326_1_260409145157087_ACD_26275.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~259 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza326_1_260409145432948_ACD_33173.json]
+  Turnos conv: 23  |  turnos al LLM: 23  |  ~351 tokens  |  -0.74s
+  {"insulta": "no"}
+
+  [amza326_1_260429101950783_ACD_82369.json]
+  Turnos conv: 20  |  turnos al LLM: 20  |  ~358 tokens  |  2.54s
+  {"insulta": "no"}
+
+  [amza327_1_260409110332519_ACD_18157.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~270 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza327_1_260409134253724_ACD_16231.json]
+  Turnos conv: 24  |  turnos al LLM: 24  |  ~316 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza327_1_260409141319827_ACD_15523.json]
+  OMITIDO: menos de 2 turnos  (1 turnos)
+
+  [amza327_1_260409141720888_ACD_26599.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~304 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza327_1_260409144405453_ACD_01961.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~294 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza327_1_260409164815394_ACD_74663.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~241 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza327_1_260409180032768_ACD_54977.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~283 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza327_1_260409180707024_ACD_64173.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~285 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza327_1_260409181223067_ACD_72759.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~290 tokens  |  0.21s
+  {"insulta": "si"}
+
+  [amza327_1_260409191245554_ACD_69657.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~225 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza327_1_260409191600932_ACD_74395.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~248 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza327_1_260414134722430_ACD_61025.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~208 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza32_1_260409110136940_ACD_11621.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~261 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza32_1_260409113218816_ACD_14679.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~268 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza32_1_260409113454944_ACD_22213.json]
+  Turnos conv: 28  |  turnos al LLM: 28  |  ~467 tokens  |  0.25s
+  {"insulta": "no"}
+
+  [amza32_1_260409130240592_ACD_99327.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~244 tokens  |  0.24s
+  {"insulta": "no"}
+
+  [amza32_1_260409135950878_ACD_71483.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~259 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza32_1_260409142031474_ACD_34287.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~211 tokens  |  0.22s
+  {"insulta": "si"}
+
+  [amza32_1_260409142227852_ACD_38751.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~225 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza32_1_260409143609142_ACD_76287.json]
+  Turnos conv: 16  |  turnos al LLM: 16  |  ~297 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza32_1_260409145056899_ACD_23193.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~262 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza34_2_260413141504104_ACD_53491.json]
+  Turnos conv: 2  |  turnos al LLM: 2  |  ~206 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza35_1_260407184042325_ACD_20957.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~234 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza38_1_260407133508860_ACD_57101.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~235 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza38_1_260409114221144_ACD_43563.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~229 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza38_1_260409114744292_ACD_57285.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~239 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza38_1_260409120526927_ACD_93629.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~250 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza38_1_260409121238815_ACD_10709.json]
+  Turnos conv: 17  |  turnos al LLM: 17  |  ~292 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza38_1_260409132752126_ACD_73777.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~242 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza38_1_260409134544228_ACD_24975.json]
+  Turnos conv: 31  |  turnos al LLM: 31  |  ~425 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza38_1_260409144124935_ACD_93067.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~290 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza39_1_260409115119579_ACD_64049.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~238 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza39_1_260409121631444_ACD_24105.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~234 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza39_1_260409124638829_ACD_57825.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~246 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza39_1_260409132012859_ACD_50709.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~283 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza39_1_260409134303786_ACD_16817.json]
+  Turnos conv: 19  |  turnos al LLM: 19  |  ~367 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza39_1_260409141109478_ACD_08291.json]
+  Turnos conv: 23  |  turnos al LLM: 23  |  ~358 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza39_1_260409141540574_ACD_22107.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~220 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza39_1_260409143302685_ACD_66893.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~230 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza39_1_260409143724394_ACD_80207.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~272 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza39_1_260409150049281_ACD_46949.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~235 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza3_1_260409102137115_ACD_94597.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~215 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza3_1_260409133644903_ACD_98151.json]
+  Turnos conv: 19  |  turnos al LLM: 19  |  ~355 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza3_1_260409140522133_ACD_89637.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~232 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza3_1_260409143734394_ACD_80767.json]
+  Turnos conv: 21  |  turnos al LLM: 21  |  ~362 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza40_1_260407141304037_ACD_71861.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~238 tokens  |  0.25s
+  {"insulta": "no"}
+
+  [amza40_1_260409162933897_ACD_47805.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~267 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza40_1_260409165446899_ACD_85829.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~215 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza40_1_260409183727781_ACD_13011.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~232 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza46_1_260409104737387_ACD_68113.json]
+  Turnos conv: 23  |  turnos al LLM: 23  |  ~354 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza46_1_260409111229028_ACD_48539.json]
+  Turnos conv: 16  |  turnos al LLM: 16  |  ~287 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza46_1_260409141440378_ACD_19369.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~290 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza46_1_260409144916898_ACD_18323.json]
+  Turnos conv: 2  |  turnos al LLM: 2  |  ~214 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza47_1_260409104010191_ACD_48651.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~268 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza47_1_260409105754866_ACD_99161.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~255 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza47_1_260409120339301_ACD_89527.json]
+  Turnos conv: 20  |  turnos al LLM: 20  |  ~330 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza48_1_260401122158115_MIT_01979.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~216 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza48_1_260401182003329_ACD_15713.json]
+  Turnos conv: 2  |  turnos al LLM: 2  |  ~213 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza48_1_260409120244097_ACD_87623.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~216 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza49_1_260409105618111_ACD_94333.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~235 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza49_1_260409121118533_ACD_06567.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~233 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza49_1_260409130105011_ACD_94949.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~248 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza49_1_260409135313624_ACD_50011.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~234 tokens  |  0.21s
+  {"insulta": "si"}
+
+  [amza49_1_260414142012485_ACD_54729.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~213 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza4_1_260409110358566_ACD_19693.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~229 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza4_1_260409115019546_ACD_62287.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~233 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza4_1_260409115913281_ACD_80525.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~238 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza4_1_260409125909338_ACD_89693.json]
+  Turnos conv: 32  |  turnos al LLM: 32  |  ~382 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza4_1_260409131917496_ACD_47847.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~227 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza50_1_260409133805236_ACD_02199.json]
+  Turnos conv: 17  |  turnos al LLM: 17  |  ~306 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza51_1_260409102021568_ACD_90831.json]
+  Turnos conv: 40  |  turnos al LLM: 40  |  ~461 tokens  |  0.24s
+  {"insulta": "no"}
+
+  [amza51_1_260409112438451_ACD_90789.json]
+  Turnos conv: 18  |  turnos al LLM: 18  |  ~342 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza51_1_260409133223582_ACD_86211.json]
+  Turnos conv: 21  |  turnos al LLM: 21  |  ~300 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza51_1_260409170630484_ACD_04379.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~311 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza51_1_260409190508053_ACD_57167.json]
+  Turnos conv: 23  |  turnos al LLM: 23  |  ~337 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza51_1_260409194116448_ACD_07293.json]
+  Turnos conv: 18  |  turnos al LLM: 18  |  ~293 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza51_1_260409194840835_ACD_13477.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~246 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza51_1_260409194946074_ACD_14281.json]
+  Turnos conv: 28  |  turnos al LLM: 28  |  ~454 tokens  |  0.24s
+  {"insulta": "no"}
+
+  [amza52_1_260409101318955_ACD_68643.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~274 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza52_1_260409160524200_ACD_11871.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~245 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza52_1_260409170735783_ACD_05497.json]
+  Turnos conv: 16  |  turnos al LLM: 16  |  ~291 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza52_1_260409183632667_ACD_11329.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~246 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza52_1_260409191928488_ACD_80453.json]
+  Turnos conv: 35  |  turnos al LLM: 35  |  ~434 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza52_1_260414133454563_ACD_16301.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~299 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza53_1_260409163249964_MIT_01999.json]
+  Turnos conv: 2  |  turnos al LLM: 2  |  ~209 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza53_1_260409182102504_ACD_85699.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~217 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza53_1_260409183712703_ACD_12547.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~322 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza54_1_260409132017863_ACD_50941.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~267 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza54_1_260409133519619_ACD_93793.json]
+  Turnos conv: 31  |  turnos al LLM: 31  |  ~464 tokens  |  0.24s
+  {"insulta": "no"}
+
+  [amza55_1_260409170450230_ACD_02515.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~237 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza55_1_260409182926125_ACD_99521.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~228 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza55_1_260409184200745_ACD_20323.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~247 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza55_1_260409201020970_ACD_31257.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~256 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza58_1_260401165106744_ACD_06597.json]
+  Turnos conv: 2  |  turnos al LLM: 2  |  ~213 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza58_1_260409102303913_ACD_98813.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~227 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza58_1_260409105754866_ACD_99157.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~237 tokens  |  0.14s
+  {"insulta": "si"}
+
+  [amza58_1_260409133906455_ACD_05247.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~258 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza58_1_260409134343990_ACD_19015.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~276 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza58_1_260409140316880_ACD_82539.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~299 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza58_1_260409141510503_ACD_20831.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~247 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza58_1_260409144054904_ACD_91247.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~228 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza58_1_260409160118300_ACD_04935.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~284 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza58_1_260409164930660_ACD_76815.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~274 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza58_1_260409165431852_ACD_85355.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~257 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza58_1_260409200716777_MIT_01998.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~277 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza59_1_260407130129113_ACD_63347.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~230 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza59_1_260409121756570_ACD_28781.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~279 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza59_1_260409134814745_ACD_32909.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~277 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza59_1_260409140236755_ACD_80247.json]
+  Turnos conv: 17  |  turnos al LLM: 17  |  ~323 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza5_1_260401111205059_ACD_91051.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~220 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza5_1_260409114005596_ACD_36939.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~226 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza5_1_260409130832143_ACD_15921.json]
+  Turnos conv: 23  |  turnos al LLM: 23  |  ~341 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza5_1_260409164830441_ACD_75101.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~236 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza5_1_260409165808130_ACD_92271.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~224 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza5_1_260409184109744_ACD_18919.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~221 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza5_1_260414122044734_MIT_01984.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~222 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza60_1_260409111911370_ACD_73321.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~218 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza60_1_260409112312997_ACD_86493.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~286 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza60_1_260409135117216_ACD_43907.json]
+  Turnos conv: 25  |  turnos al LLM: 25  |  ~326 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza60_1_260409141615699_ACD_23725.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~241 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza60_1_260409144540752_ACD_06777.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~235 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza60_1_260409160827777_MIT_01981.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~282 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza60_1_260409171448202_ACD_11639.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~236 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza60_1_260409180435767_ACD_60265.json]
+  Turnos conv: 16  |  turnos al LLM: 16  |  ~320 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza60_1_260409182310030_ACD_89235.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~255 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza60_1_260409182535652_ACD_93265.json]
+  Turnos conv: 19  |  turnos al LLM: 19  |  ~371 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza60_1_260409182720811_ACD_96167.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~236 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza60_1_260409183042214_MIT_01983.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~228 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza60_1_260409184139745_ACD_19861.json]
+  Turnos conv: 24  |  turnos al LLM: 24  |  ~371 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza60_1_260409185940227_ACD_48301.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~232 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza60_1_260409201051049_ACD_31695.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~243 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza60_1_260409201231469_ACD_33103.json]
+  Turnos conv: 25  |  turnos al LLM: 25  |  ~379 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza60_1_260409201955039_ACD_39133.json]
+  Turnos conv: 33  |  turnos al LLM: 33  |  ~541 tokens  |  0.26s
+  {"insulta": "no"}
+
+  [amza61_1_260409101524862_ACD_75787.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~214 tokens  |  0.21s
+  {"insulta": "si"}
+
+  [amza61_1_260409112016527_ACD_76955.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~233 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza61_1_260409112827828_ACD_03117.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~234 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza61_1_260409120918307_ACD_01425.json]
+  Turnos conv: 31  |  turnos al LLM: 31  |  ~460 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza61_1_260409130716846_ACD_12393.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~254 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza61_1_260409142433265_ACD_43517.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~281 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza61_1_260413121450830_MIT_01976.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~221 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza61_1_260413134334855_ACD_65463.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~217 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza62_1_260409120434771_ACD_91659.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~228 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza62_1_260409130721892_ACD_12683.json]
+  Turnos conv: 23  |  turnos al LLM: 23  |  ~301 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza62_1_260409131711916_ACD_41529.json]
+  Turnos conv: 22  |  turnos al LLM: 22  |  ~340 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza62_1_260409132616513_ACD_69281.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~226 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza62_1_260409133308942_ACD_88099.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~258 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza62_1_260409144816599_ACD_15449.json]
+  Turnos conv: 23  |  turnos al LLM: 23  |  ~319 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza63_1_260409103844706_ACD_44307.json]
+  Turnos conv: 28  |  turnos al LLM: 28  |  ~377 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza63_1_260409113304410_ACD_17001.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~289 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza63_1_260409120108688_ACD_84655.json]
+  Turnos conv: 16  |  turnos al LLM: 16  |  ~336 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza64_1_260414133629782_ACD_20771.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~210 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza66_1_260409110031596_ACD_07805.json]
+  Turnos conv: 31  |  turnos al LLM: 31  |  ~472 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza66_1_260409131636650_ACD_39887.json]
+  Turnos conv: 18  |  turnos al LLM: 18  |  ~378 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza66_1_260409141700794_ACD_25715.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~296 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza67_1_260401163054234_ACD_70779.json]
+  Turnos conv: 2  |  turnos al LLM: 2  |  ~213 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza67_1_260409100956921_ACD_60589.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~216 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza67_1_260409141951389_ACD_32675.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~235 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza67_1_260409142122506_ACD_36389.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~243 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza67_1_260409144250264_ACD_97921.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~231 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza67_1_260409165607236_ACD_88295.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~236 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza67_1_260409170048977_ACD_97251.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~256 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza67_1_260409173907378_ACD_31275.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~278 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza67_1_260409182906031_ACD_99109.json]
+  Turnos conv: 33  |  turnos al LLM: 33  |  ~448 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza67_1_260409184641683_ACD_27371.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~236 tokens  |  1.21s
+  {"insulta": "no"}
+
+  [amza67_1_260409185915179_ACD_47581.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~306 tokens  |  2.53s
+  {"insulta": "no"}
+
+  [amza67_1_260409200146660_ACD_23919.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~254 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza67_1_260414132423652_ACD_89405.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~283 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza68_1_260407122227960_ACD_18205.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~239 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza68_1_260409130746924_ACD_13927.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~294 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza68_1_260409131847480_ACD_46399.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~268 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza68_1_260409132043235_ACD_52265.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~324 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza68_1_260414103140387_ACD_01159.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~217 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza6_1_260409110202206_ACD_13025.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~242 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza6_1_260409113434740_ACD_21189.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~232 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza6_1_260409135132248_ACD_44803.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~232 tokens  |  0.25s
+  {"insulta": "no"}
+
+  [amza6_1_260409140642434_ACD_93673.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~228 tokens  |  0.24s
+  {"insulta": "no"}
+
+  [amza6_1_260409141816060_ACD_29039.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~229 tokens  |  0.24s
+  {"insulta": "no"}
+
+  [amza6_1_260409142056521_ACD_35283.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~230 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza6_1_260409143201650_ACD_63639.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~230 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza6_1_260409145437948_ACD_33431.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~257 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza70_1_260409102655868_ACD_09623.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~273 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza70_1_260409105809900_ACD_00021.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~290 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza70_1_260409115249770_ACD_67013.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~233 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza70_1_260409145026899_ACD_21797.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~267 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza70_1_260409145458073_ACD_34243.json]
+  Turnos conv: 32  |  turnos al LLM: 32  |  ~390 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza71_1_260407112510554_ACD_77785.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~243 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza71_1_260409144300280_ACD_98383.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~244 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza71_1_260409161802704_ACD_30457.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~269 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza71_1_260429101013282_ACD_53473.json]
+  Turnos conv: 20  |  turnos al LLM: 20  |  ~318 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza73_1_260409115109548_ACD_63807.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~237 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza73_1_260409133851361_ACD_04577.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~218 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza73_1_260409135117216_ACD_43883.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~237 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza73_1_260409140016378_ACD_72635.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~228 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza74_1_260407134928526_ACD_95797.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~233 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza74_1_260409105246515_ACD_82905.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~223 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza74_1_260409125909338_ACD_89631.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~243 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza74_1_260409133740110_ACD_01183.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~215 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza74_1_260409140813919_ACD_98583.json]
+  Turnos conv: 26  |  turnos al LLM: 26  |  ~402 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza75_1_260409113725338_ACD_29603.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~231 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza75_1_260409120304206_ACD_88435.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~224 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza75_1_260409160218449_ACD_06627.json]
+  Turnos conv: 20  |  turnos al LLM: 20  |  ~303 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza75_1_260409171453233_ACD_11763.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~272 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza75_1_260409171553237_ACD_12449.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~226 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza75_1_260409171921858_ACD_14369.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~236 tokens  |  0.24s
+  {"insulta": "no"}
+
+  [amza75_1_260409182239936_ACD_88371.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~249 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza75_1_260409185723931_ACD_44173.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~291 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza75_1_260409185839955_ACD_46537.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~229 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza76_1_260409104301600_ACD_56239.json]
+  Turnos conv: 20  |  turnos al LLM: 20  |  ~351 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza76_1_260409125642508_ACD_82803.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~239 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza76_1_260409125747962_ACD_86047.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~254 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza76_1_260409140106629_ACD_75281.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~223 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza76_1_260409161515978_ACD_26481.json]
+  Turnos conv: 32  |  turnos al LLM: 32  |  ~448 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza76_1_260409163620177_ACD_56471.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~239 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza76_1_260409170755908_ACD_05863.json]
+  Turnos conv: 2  |  turnos al LLM: 2  |  ~234 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza76_1_260409172451155_ACD_17281.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~309 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza77_1_260409112528593_ACD_93321.json]
+  Turnos conv: 24  |  turnos al LLM: 24  |  ~333 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza77_1_260409120058626_ACD_84389.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~256 tokens  |  0.24s
+  {"insulta": "no"}
+
+  [amza77_1_260409120143813_ACD_85721.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~241 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza77_1_260409130927425_ACD_18803.json]
+  Turnos conv: 18  |  turnos al LLM: 18  |  ~317 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza77_1_260409134318864_ACD_17613.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~249 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza77_1_260409144711035_ACD_11967.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~346 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza77_1_260414140110467_ACD_03829.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~273 tokens  |  0.19s
+  {"insulta": "si"}
+
+  [amza79_1_260409104903513_ACD_72057.json]
+  Turnos conv: 19  |  turnos al LLM: 19  |  ~313 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza79_1_260409110653993_ACD_29039.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~260 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza79_1_260409114351395_ACD_47935.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~242 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza79_1_260409134809745_ACD_32623.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~260 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza79_2_260409142559391_ACD_47403.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~237 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza7_1_260409105552986_ACD_92889.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~239 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza7_1_260409130822096_ACD_15501.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~234 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza7_1_260409134108034_ACD_11117.json]
+  Turnos conv: 2  |  turnos al LLM: 2  |  ~209 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza7_1_260409134539181_ACD_24797.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~225 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza7_1_260409134629322_ACD_27137.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~231 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza7_1_260409143924653_ACD_86535.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~225 tokens  |  0.24s
+  {"insulta": "no"}
+
+  [amza7_1_260413125234313_ACD_26031.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~213 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza7_1_260414114047717_ACD_81629.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~211 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza80_1_260409102514914_ACD_05103.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~237 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza80_1_260409121008309_ACD_03471.json]
+  Turnos conv: 16  |  turnos al LLM: 16  |  ~390 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza80_1_260409121345128_ACD_14445.json]
+  Turnos conv: 22  |  turnos al LLM: 22  |  ~309 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza80_1_260409130917347_ACD_18203.json]
+  Turnos conv: 20  |  turnos al LLM: 20  |  ~310 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza80_1_260409131711916_ACD_41647.json]
+  Turnos conv: 28  |  turnos al LLM: 28  |  ~394 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza80_1_260409134113081_ACD_11367.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~238 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza80_1_260409140929250_ACD_02767.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~217 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza80_1_260409143503891_ACD_72763.json]
+  Turnos conv: 21  |  turnos al LLM: 21  |  ~308 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza80_1_260414114655257_ACD_97317.json]
+  Turnos conv: 16  |  turnos al LLM: 16  |  ~260 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza81_1_260407144244233_ACD_54019.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~236 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza81_1_260407144621722_ACD_64177.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~235 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza81_1_260409134549259_ACD_25163.json]
+  Turnos conv: 35  |  turnos al LLM: 35  |  ~474 tokens  |  0.24s
+  {"insulta": "no"}
+
+  [amza81_1_260409161134454_ACD_21039.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~220 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza81_1_260409163920688_ACD_60521.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~249 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza81_1_260409181143004_ACD_71837.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~226 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza81_1_260409182921125_ACD_99469.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~230 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza81_1_260409183351661_ACD_06655.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~245 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza81_1_260409184240792_ACD_21353.json]
+  Turnos conv: 32  |  turnos al LLM: 32  |  ~381 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza81_1_260409184746918_ACD_29083.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~230 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza81_1_260409185438541_ACD_39429.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~263 tokens  |  0.17s
+  {"insulta": "si"}
+
+  [amza82_1_260409102519992_ACD_05357.json]
+  Turnos conv: 17  |  turnos al LLM: 17  |  ~289 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza82_1_260409103603876_ACD_36781.json]
+  Turnos conv: 18  |  turnos al LLM: 18  |  ~371 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza82_1_260409110458755_ACD_23159.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~287 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza82_1_260409114909420_ACD_60181.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~244 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza82_1_260409131133082_ACD_24847.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~293 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza82_1_260409133404196_ACD_90561.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~292 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza82_1_260409135257608_ACD_49311.json]
+  Turnos conv: 31  |  turnos al LLM: 31  |  ~376 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza82_1_260409135915768_ACD_69669.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~286 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza82_1_260409141044376_ACD_06857.json]
+  Turnos conv: 22  |  turnos al LLM: 22  |  ~362 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza82_1_260413143534749_ACD_09145.json]
+  Turnos conv: 2  |  turnos al LLM: 2  |  ~213 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza84_1_260409105316687_ACD_84455.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~237 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza84_1_260409110914651_ACD_38009.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~238 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza84_1_260409113620288_ACD_26357.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~238 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza84_1_260409134022862_ACD_08887.json]
+  Turnos conv: 23  |  turnos al LLM: 23  |  ~343 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza84_1_260409142302900_ACD_40163.json]
+  Turnos conv: 21  |  turnos al LLM: 21  |  ~365 tokens  |  0.22s
+  {"insulta": "no"}
+
+  [amza84_1_260409145317275_ACD_29891.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~340 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza85_1_260409101459706_ACD_74367.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~249 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza85_1_260409112338154_ACD_87971.json]
+  Turnos conv: 23  |  turnos al LLM: 23  |  ~361 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza85_1_260409134213472_ACD_14275.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~258 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza85_1_260409135945878_ACD_71271.json]
+  Turnos conv: 26  |  turnos al LLM: 26  |  ~441 tokens  |  0.25s
+  {"insulta": "no"}
+
+  [amza85_1_260409142925221_ACD_56293.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~235 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza85_1_260409181845896_ACD_82639.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~234 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza85_1_260409183316613_ACD_05477.json]
+  Turnos conv: 40  |  turnos al LLM: 40  |  ~435 tokens  |  0.25s
+  {"insulta": "no"}
+
+  [amza85_1_260409183632667_ACD_11365.json]
+  Turnos conv: 2  |  turnos al LLM: 2  |  ~213 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza85_1_260409184245792_ACD_21479.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~223 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza86_1_260409130405796_ACD_03207.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~262 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza86_1_260409130516093_ACD_06409.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~271 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza86_1_260409135915768_ACD_69661.json]
+  Turnos conv: 16  |  turnos al LLM: 16  |  ~338 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza87_1_260401160554973_ACD_27929.json]
+  Turnos conv: 2  |  turnos al LLM: 2  |  ~213 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza87_1_260409104630980_ACD_64925.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~274 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza87_1_260409132827221_ACD_75481.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~242 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza87_1_260409133449493_ACD_92547.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~253 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza87_1_260409134920871_ACD_36849.json]
+  Turnos conv: 33  |  turnos al LLM: 33  |  ~478 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza87_1_260409162727959_ACD_44437.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~304 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza87_1_260409181022715_ACD_69671.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~276 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza87_1_260409191832315_ACD_78653.json]
+  Turnos conv: 33  |  turnos al LLM: 33  |  ~463 tokens  |  0.24s
+  {"insulta": "si"}
+
+  [amza87_1_260409200513087_ACD_26913.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~234 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza87_1_260409201727663_ACD_37031.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~223 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza87_1_260413131219834_ACD_80681.json]
+  Turnos conv: 2  |  turnos al LLM: 2  |  ~210 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza88_1_260409143859652_ACD_85269.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~259 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza88_1_260414110324069_ACD_85327.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~211 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza89_1_260407113630049_ACD_07641.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~234 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza89_1_260409110658993_ACD_29465.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~287 tokens  |  0.2s
+  {"insulta": "no"}
+
+  [amza89_1_260409111710869_ACD_64855.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~239 tokens  |  0.26s
+  {"insulta": "no"}
+
+  [amza89_1_260409130325639_ACD_01381.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~240 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza8_1_260409110613992_ACD_26831.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~237 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza8_1_260409111555446_ACD_60335.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~251 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza8_1_260409112641890_ACD_96973.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~241 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza8_1_260409114809418_ACD_58141.json]
+  Turnos conv: 16  |  turnos al LLM: 16  |  ~348 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza8_1_260409115807983_ACD_77971.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~236 tokens  |  0.21s
+  {"insulta": "no"}
+
+  [amza8_1_260409121259815_ACD_12135.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~242 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza8_1_260409124503701_ACD_55027.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~225 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza8_1_260409125446788_ACD_77911.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~228 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza8_1_260409125934463_ACD_90577.json]
+  Turnos conv: 16  |  turnos al LLM: 16  |  ~293 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza8_1_260409144630909_ACD_09547.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~237 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza8_1_260409164653189_ACD_72075.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~246 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza8_1_260409164739348_ACD_73469.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~256 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza8_1_260409170620482_ACD_04141.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~227 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza8_1_260409181544074_MIT_01990.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~211 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza8_1_260409182600732_ACD_93995.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~228 tokens  |  0.23s
+  {"insulta": "no"}
+
+  [amza8_1_260409182745905_ACD_96845.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~249 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza8_1_260409185308379_ACD_36933.json]
+  Turnos conv: 38  |  turnos al LLM: 38  |  ~401 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza8_1_260414115231256_ACD_09955.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~215 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza90_1_260401192534859_ACD_35617.json]
+  Turnos conv: 2  |  turnos al LLM: 2  |  ~213 tokens  |  0.12s
+  {"insulta": "no"}
+
+  [amza90_1_260409102645837_ACD_09075.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~296 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza90_1_260409104848435_ACD_71469.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~251 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza90_1_260409130536094_ACD_07443.json]
+  Turnos conv: 27  |  turnos al LLM: 27  |  ~451 tokens  |  0.19s
+  {"insulta": "no"}
+
+  [amza90_1_260409132043235_ACD_52173.json]
+  Turnos conv: 12  |  turnos al LLM: 12  |  ~274 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza90_1_260409134012862_ACD_08379.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~258 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza90_1_260409135343749_ACD_51361.json]
+  Turnos conv: 21  |  turnos al LLM: 21  |  ~313 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza90_1_260409172214545_ACD_15773.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~276 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza90_1_260409180450767_ACD_60597.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~232 tokens  |  2.53s
+  {"insulta": "no"}
+
+  [amza90_1_260409182841031_ACD_98385.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~232 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza90_1_260409192409993_ACD_88249.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~255 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza92_1_260409102906620_ACD_15771.json]
+  Turnos conv: 8  |  turnos al LLM: 8  |  ~234 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza92_1_260409111605462_ACD_61021.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~275 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza92_1_260409140056551_ACD_74873.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~220 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza93_1_260409103227622_ACD_25583.json]
+  Turnos conv: 6  |  turnos al LLM: 6  |  ~245 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza93_1_260409103332936_ACD_29215.json]
+  Turnos conv: 9  |  turnos al LLM: 9  |  ~248 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza93_1_260409135202373_ACD_46527.json]
+  Turnos conv: 21  |  turnos al LLM: 21  |  ~379 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza93_1_260409142538312_ACD_46249.json]
+  Turnos conv: 3  |  turnos al LLM: 3  |  ~220 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza93_1_260409185910179_ACD_47473.json]
+  Turnos conv: 18  |  turnos al LLM: 18  |  ~351 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza93_1_260409195151328_ACD_15911.json]
+  Turnos conv: 21  |  turnos al LLM: 21  |  ~308 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza93_1_260409195924466_ACD_22111.json]
+  Turnos conv: 19  |  turnos al LLM: 19  |  ~292 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza99_1_260407181617177_ACD_85585.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~233 tokens  |  0.12s
+  {"insulta": "no"}
+
+  [amza99_1_260409121611444_ACD_22823.json]
+  Turnos conv: 17  |  turnos al LLM: 17  |  ~287 tokens  |  0.15s
+  {"insulta": "si"}
+
+  [amza99_1_260409125521976_ACD_79387.json]
+  Turnos conv: 5  |  turnos al LLM: 5  |  ~221 tokens  |  0.17s
+  {"insulta": "no"}
+
+  [amza99_1_260409131353850_ACD_32069.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~226 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza99_1_260409132007828_ACD_50507.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~245 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza99_1_260409132736985_ACD_73069.json]
+  Turnos conv: 11  |  turnos al LLM: 11  |  ~277 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza99_1_260409133841361_ACD_04019.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~240 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza99_1_260409135021997_ACD_40565.json]
+  Turnos conv: 19  |  turnos al LLM: 19  |  ~298 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza99_1_260409145753747_ACD_41269.json]
+  Turnos conv: 7  |  turnos al LLM: 7  |  ~228 tokens  |  0.12s
+  {"insulta": "no"}
+
+  [amza99_1_260414133955785_ACD_32245.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~281 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza99_1_260414142805218_ACD_73007.json]
+  Turnos conv: 4  |  turnos al LLM: 4  |  ~212 tokens  |  0.14s
+  {"insulta": "no"}
+
+  [amza99_1_260414143717384_ACD_94845.json]
+  Turnos conv: 13  |  turnos al LLM: 13  |  ~279 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza9_1_260409115219675_ACD_66107.json]
+  Turnos conv: 10  |  turnos al LLM: 10  |  ~254 tokens  |  0.13s
+  {"insulta": "no"}
+
+  [amza9_1_260409124905082_ACD_63193.json]
+  Turnos conv: 20  |  turnos al LLM: 20  |  ~307 tokens  |  0.16s
+  {"insulta": "no"}
+
+  [amza9_1_260409134910870_ACD_36159.json]
+  Turnos conv: 28  |  turnos al LLM: 28  |  ~372 tokens  |  0.18s
+  {"insulta": "no"}
+
+  [amza9_1_260409141620731_ACD_23907.json]
+  Turnos conv: 14  |  turnos al LLM: 14  |  ~274 tokens  |  0.15s
+  {"insulta": "no"}
+
+  [amza9_1_260409143624142_ACD_77023.json]
+  Turnos conv: 15  |  turnos al LLM: 15  |  ~259 tokens  |  0.15s
+  {"insulta": "no"}
+
+  RESUMEN: 644 OK | 4 omitidos | 0 errores
+────────────────────────────────────────────────────────────────────────
+

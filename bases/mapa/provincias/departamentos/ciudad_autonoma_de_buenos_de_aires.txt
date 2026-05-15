@@ -1,0 +1,63 @@
+Comuna 1	Comuna	200.689	171.985	205.886	223.554
+Constitución	Barrio	47.102	41.894	44.107	43.838
+Monserrat	Barrio	46.745	39.175	39.914	41.435
+Puerto Madero (incl. Área Reserva Ecológica)	Barrio	...	406	6.726	10.935
+Retiro	Barrio	43.231	38.635	65.413	67.177
+San Nicolás	Barrio	34.914	28.667	29.273	36.421
+San Telmo	Barrio	28.204	23.198	20.453	21.195
+Comuna 2	Comuna	198.647	165.494	157.932	161.645
+Recoleta	Barrio	198.647	165.494	157.932	160.609
+Comuna 3	Comuna	200.275	184.015	187.537	196.240
+Balvanera	Barrio	151.302	137.521	138.926	143.659
+San Cristóbal	Barrio	48.973	46.494	48.611	49.878
+Comuna 4	Comuna	215.223	215.046	218.245	229.240
+Barracas	Barrio	73.581	73.377	89.452	97.982
+La Boca	Barrio	46.277	43.413	45.113	44.205
+Nueva Pompeya	Barrio	53.407	60.465	42.695	44.180
+Parque Patricios	Barrio	41.958	37.791	40.985	40.657
+Comuna 5	Comuna	188.342	173.769	179.005	194.271
+Almagro	Barrio	140.111	128.206	131.699	142.769
+Boedo	Barrio	48.231	45.563	47.306	49.680
+Comuna 6	Comuna	183.740	170.309	176.076	203.043
+Caballito	Barrio	183.740	170.309	176.076	201.764
+Comuna 7	Comuna	198.489	197.333	220.591	215.896
+Flores	Barrio	139.214	142.695	164.310	151.440
+Parque Chacabuco	Barrio	59.275	54.638	56.281	61.822
+Comuna 8	Comuna	151.078	161.642	187.237	204.367
+Villa Lugano	Barrio	100.866	108.170	126.374	136.747
+Villa Riachuelo	Barrio	14.812	13.995	14.084	15.581
+Villa Soldati	Barrio	35.400	39.477	46.779	51.560
+Comuna 9	Comuna	161.518	155.967	161.797	169.063
+Liniers	Barrio	44.909	42.083	44.132	47.093
+Mataderos	Barrio	64.697	62.206	64.436	67.455
+Parque Avellaneda	Barrio	51.912	51.678	53.229	53.360
+Comuna 10	Comuna	167.671	163.209	166.022	173.004
+Floresta	Barrio	39.273	37.247	37.575	36.846
+Monte Castro	Barrio	33.129	32.782	33.623	35.825
+Vélez Sársfield	Barrio	36.056	34.084	35.081	34.811
+Versalles	Barrio	14.211	13.556	13.822	16.024
+Villa Luro	Barrio	30.753	31.859	32.502	34.645
+Villa Real	Barrio	14.249	13.681	13.419	13.745
+Comuna 11	Comuna	199.049	189.666	189.832	204.601
+Villa del Parque	Barrio	59.718	55.502	55.273	61.236
+Villa Devoto	Barrio	71.518	67.712	66.521	71.602
+Villa General Mitre	Barrio	35.164	34.204	33.325	34.250
+Villa Santa Rita	Barrio	32.649	32.248	34.713	34.817
+Comuna 12	Comuna	198.185	191.122	200.116	236.887
+Coghlan	Barrio	18.997	18.021	18.604	20.803
+Saavedra	Barrio	52.219	48.956	50.295	53.665
+Villa Pueyrredón	Barrio	40.274	38.558	39.654	46.603
+Villa Urquiza	Barrio	86.695	85.587	91.563	114.293
+Comuna 13	Comuna	250.224	228.226	231.331	264.385
+Belgrano	Barrio	140.090	126.816	126.831	142.129
+Colegiales	Barrio	58.810	52.391	52.551	55.242
+Núñez	Barrio	51.324	49.019	51.949	64.959
+Comuna 14	Comuna	256.927	225.245	225.970	248.635
+Palermo	Barrio	256.927	225.245	225.970	247.252
+Comuna 15	Comuna	195.346	183.110	182.574	196.876
+Agronomía (incl. Parque Chas)	Barrio	35.582	32.889	31.401	32.505
+Chacarita	Barrio	27.172	25.778	27.761	31.321
+La Paternal	Barrio	19.639	19.058	19.717	21.092
+Villa Crespo	Barrio	90.106	83.646	81.959	87.877
+Villa Ortúzar	Barrio	22.847	21.256	21.736	22.470
+Ciudad Autónoma de Buenos Aires	Distrito federal	2.965.403	2.776.138	2.890.151	3.121.707

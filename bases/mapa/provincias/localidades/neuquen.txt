@@ -1,0 +1,77 @@
+Aeropuerto Chapelco	Localidad	Lácar	...	...	...	78
+Aguada San Roque	Localidad	Añelo	...	...	135	165
+Aluminé	Localidad	Aluminé	2.537	3.461	4.591	5.770
+Andacollo	Localidad	Minas	1.414	2.321	2.481	3.542
+Añelo	Localidad	Añelo	893	1.543	2.449	6.304
+Arroyito	Localidad	Confluencia	48	81	90	521
+Bahía Bonita	Localidad	Confluencia	...	...	...	67
+Bahía de Playas	Localidad	Confluencia	...	...	...	8
+Bajada del Agrio	Localidad	Picunches	443	656	792	1.009
+Barrancas	Localidad	Pehuenches	451	813	938	1.290
+Butalón Norte	Localidad	Minas	...	...	...	20
+Buta Ranquil	Localidad	Pehuenches	735	1.621	2.443	2.986
+Caviahue	Localidad	Ñorquín	382	390	607	1.053
+Centenario	Localidad	Confluencia	20.758	27.049	33.164	48.101
+Chocón Medio	Localidad	Picún Leufú	...	...	...	20
+Chorriaca	Localidad	Loncopué	...	180	403	386
+Chos Malal	Localidad	Chos Malal	8.529	11.361	13.092	15.593
+Cochico	Localidad	Chos Malal	...	...	...	132
+Copahue	Localidad	Ñorquín	33	51	1	6
+Cutral Có	Localidad	Confluencia	33.463	33.718	35.465	40.305
+El Alamito	Localidad	Chos Malal	...	...	...	206
+El Cholar	Localidad	Ñorquín	417	308	734	938
+El Cristo	Localidad	Zapala	...	...	...	36
+El Huecú	Localidad	Ñorquín	784	1.172	1.391	1.494
+El Sauce	Localidad	Picún Leufú	...	...	71	114
+Guañacos	Localidad	Minas	...	...	...	4
+Huinganco	Localidad	Minas	441	607	733	945
+Junín de los Andes	Localidad	Huiliches	7.333	10.302	12.621	18.450
+La Buitrera	Localidad	Picunches	363	412	432	571
+La Península	Localidad	Confluencia	...	...	...	16
+Las Coloradas	Localidad	Catán Lil	608	818	873	1.081
+Las Lajas	Localidad	Picunches	3.780	4.078	4.464	5.903
+Las Ovejas	Localidad	Minas	685	976	1.128	1.584
+Loncopué	Localidad	Loncopué	3.064	4.266	4.877	6.217
+Los Barreales	Localidad	Confluencia	...	...	...	13
+Los Carrizos (Villa del Nahueve)	Localidad	Minas	...	...	197	114
+Los Catutos	Localidad	Zapala	214	281	229	354
+Los Chihuidos	Localidad	Añelo	...	...	...	106
+Los Menucos (Villa del Curi Leuvú)	Localidad	Chos Malal	...	103	148	155
+Los Miches	Localidad	Minas	79	125	201	272
+Manzano Amargo	Localidad	Minas	...	344	334	615
+Mariano Moreno	Localidad	Zapala	1.715	1.982	2.660	3.049
+Mari Menuco	Localidad	Confluencia	33	132	82	199
+Moquehue	Localidad	Aluminé	...	...	270	489
+Neuquén	Localidad	Confluencia	167.296	201.868	231.198	287.787
+Octavio Pico	Localidad	Pehuenches	...	107	113	145
+Parque Diana	Localidad	Lácar	...	...	...	43
+Paso Aguerre	Localidad	Picún Leufú	71	177	207	175
+Picún Leufú	Localidad	Picún Leufú	2.056	2.687	3.144	3.781
+Piedra del Águila	Localidad	Collón Curá	2.805	3.364	3.669	3.937
+Pilo Lil	Localidad	Catán Lil	...	...	...	164
+Plaza Huincul	Localidad	Confluencia	11.248	12.050	13.172	15.920
+Plottier	Localidad	Confluencia	16.283	22.874	32.390	52.291
+Quili Malal	Localidad	Picunches	...	...	23	88
+Ramón M. Castro	Localidad	Zapala	78	111	125	149
+Rincón de los Sauces	Localidad	Pehuenches	3.475	10.071	18.691	24.249
+San Martín de los Andes	Localidad	Lácar	14.842	22.432	27.956	37.108
+San Patricio del Chañar	Localidad	Añelo	1.907	3.961	6.474	9.264
+Santo Tomás	Localidad	Collón Curá	165	238	219	379
+Sauzal Bonito	Localidad	Confluencia	...	...	...	40
+Senillosa	Localidad	Confluencia	4.860	5.770	7.542	9.534
+Taquimilán	Localidad	Ñorquín	212	370	558	738
+Tricao Malal	Localidad	Chos Malal	271	351	533	900
+Varvarco	Localidad	Minas	107	268	445	503
+Villa del Sol	Localidad	Confluencia	...	...	...	65
+Villa El Chocón (incl. Barrio Llequen)	Localidad	Confluencia	693	949	1.133	1.572
+Villa Huechulafquen	Localidad	Huiliches	...	...	...	91
+Villa La Angostura	Localidad	Los Lagos	3.056	7.325	11.063	14.246
+Villa Lago Meliquina	Localidad	Lácar	...	...	105	219
+Villa Lolog	Localidad	Huiliches	...	...	...	213
+Villa Pehuenia	Localidad	Aluminé	...	298	700	1.347
+Villa Tenis Club Neuquén	Localidad	Confluencia	...	...	...	16
+Villa Traful	Localidad	Los Lagos	169	405	356	681
+Vista Alegre Norte (incl. Barrio Ruca Luhé)	Localidad	Confluencia	784	817	1.005	1.824
+Vista Alegre Sur	Localidad	Confluencia	1.001	1.204	1.513	1.958
+Yacht Club Neuquén	Localidad	Confluencia	...	...	...	25
+Zapala	Localidad	Zapala	26.809	31.231	32.097	40.508

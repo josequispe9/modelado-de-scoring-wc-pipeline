@@ -1,0 +1,166 @@
+Abdón Castro Tolay	Localidad	Cochinoca	199	229	279	277
+Abralaite	Localidad	Cochinoca	...	53	56	50
+Abra Pampa	Localidad	Cochinoca	5.398	7.496	8.705	10.899
+Agua de Castilla	Localidad	Cochinoca	...	...	96	85
+Aguas Calientes	Localidad	El Carmen	178	1.723	2.563	3.529
+Aparzo	Localidad	Humahuaca	...	...	52	110
+Arrayanal	Localidad	San Pedro	953	918	855	735
+Arroyo Colorado	Localidad	San Pedro	331	354	378	357
+Bananal	Localidad	Ledesma	...	439	689	949
+Bárcena	Localidad	Tumbaya	137	158	139	270
+Barrio El Milagro (La Ovejería)	Localidad	El Carmen	...	418	1.321	1.442
+Barrio ODIJ (Barrio La Unión)	Localidad	El Carmen	534	633	700	1.151
+Barrio Parque La Ciénega	Localidad	El Carmen	...	...	...	50
+Barrios	Localidad	Yavi	68	192	187	177
+Bermejito	Localidad	Ledesma	0	234	145	10
+Caimancito	Localidad	Ledesma	4.499	5.362	5.336	6.190
+Calilegua	Localidad	Ledesma	4.146	4.888	5.997	12.169
+Cangrejillos	Localidad	Yavi	189	169	181	157
+Carahunco	Localidad	Palpalá	...	145	162	183
+Casabindo	Localidad	Cochinoca	95	155	118	143
+Casa Colorada	Localidad	Rinconada	...	...	59	38
+Casira	Localidad	Santa Catalina	158	109	176	311
+Caspalá	Localidad	Valle Grande	107	177	225	219
+Catua	Localidad	Susques	219	368	427	442
+Centro Forestal	Localidad	Palpalá	562	474	402	420
+Cerro Colorado	Localidad	Yavi	...	...	...	2
+Chalicán	Localidad	Ledesma	1.093	1.015	1.062	1.221
+Cianzo	Localidad	Humahuaca	...	...	76	75
+Ciénega de Paicone	Localidad	Santa Catalina	135	255	278	322
+Cieneguillas	Localidad	Santa Catalina	204	268	286	326
+Cochinoca	Localidad	Cochinoca	85	75	67	99
+Coctaca	Localidad	Humahuaca	246	187	141	164
+Colonia San José	Localidad	Tilcara	...	236	274	238
+Comunidad Coquena	Localidad	Tumbaya	...	...	...	154
+Coranzuli	Localidad	Susques	324	412	333	229
+Corral Blanco	Localidad	Yavi	...	...	...	50
+Coyaguaima	Localidad	Rinconada	...	...	83	81
+Cusi Cusi	Localidad	Santa Catalina	189	359	243	238
+Don Emilio	Localidad	San Pedro	548	482	446	497
+El Acheral	Localidad	San Pedro	105	231	246	198
+El Aguilar	Localidad	Humahuaca	2.975	3.155	2.264	1.013
+El Angosto	Localidad	Santa Catalina	...	...	25	73
+El Carmen	Localidad	El Carmen	8.542	12.295	13.623	20.042
+El Ceibal	Localidad	San Antonio	...	189	176	847
+El Cóndor	Localidad	Yavi	167	157	146	99
+El Fuerte	Localidad	Santa Bárbara	421	509	512	626
+El Moreno	Localidad	Tumbaya	146	281	154	330
+El Piquete	Localidad	Santa Bárbara	1.660	2.182	2.521	3.069
+El Puesto	Localidad	San Pedro	1.330	1.055	1.166	287
+El Quemado	Localidad	San Pedro	49	52	35	48
+El Talar	Localidad	Santa Bárbara	2.703	2.709	2.901	3.053
+El Toro	Localidad	Susques	61	212	121	228
+Fraile Pintado	Localidad	Ledesma	10.217	11.878	13.300	15.359
+Guerrero	Localidad	Doctor Manuel Belgrano	...	421	518	806
+Hipólito Yrigoyen (Est. Iturbe)	Localidad	Humahuaca	304	514	456	382
+Hornaditas de la Cordillera	Localidad	Yavi	...	...	...	28
+Huacalera	Localidad	Tilcara	444	767	712	1.120
+Huáncar	Localidad	Susques	128	201	133	371
+Humahuaca	Localidad	Humahuaca	6.158	7.985	10.256	14.865
+Inti Cancha	Localidad	Yavi	...	...	...	22
+Jama	Localidad	Susques	...	...	67	166
+Juella	Localidad	Tilcara	154	188	200	172
+La Almona	Localidad	Doctor Manuel Belgrano	...	34	42	53
+La Ciénega	Localidad	Santa Catalina	...	79	95	168
+La Esperanza (incl. Miraflores, Parapetí)	Localidad	San Pedro	3.769	3.587	3.221	6.331
+Lagunillas de Farallón	Localidad	Rinconada	...	149	264	142
+La Intermedia	Localidad	Yavi	77	128	178	226
+La Manga	Localidad	San Pedro	220	161	190	81
+La Mendieta (incl. Sauzal)	Localidad	San Pedro	3.596	3.743	4.051	4.428
+La Ovejería	Localidad	El Carmen	...	...	...	2.677
+La Quiaca	Localidad	Yavi	11.499	13.761	16.874	22.078
+La Redonda	Localidad	Cochinoca	...	...	45	42
+Las Pampitas	Localidad	El Carmen	...	...	...	1.798
+Las Peras	Localidad	Tilcara	...	...	...	81
+La Toma	Localidad	San Antonio	...	...	...	171
+León	Localidad	Doctor Manuel Belgrano	210	431	630	628
+Libertad	Localidad	Ledesma	0	47	138	8
+Libertador General San Martín (Est. Ledesma)	Localidad	Ledesma	41.135	43.701	46.642	47.209
+Liviara	Localidad	Rinconada	...	63	46	65
+Llulluchayoc	Localidad	Yavi	...	104	91	64
+Lobaton	Localidad	San Pedro	...	...	...	137
+Loma Blanca	Localidad	Rinconada	...	...	134	151
+Loma Hermosa	Localidad	San Antonio	...	...	...	88
+Los Alisos	Localidad	San Antonio	...	...	61	974
+Los Ávalos	Localidad	El Carmen	...	...	...	44
+Los Lapachos (Est. Maquinista Veró)	Localidad	El Carmen	607	701	864	1.038
+Los Paños	Localidad	San Antonio	...	...	...	121
+Loteo Navea (Los Alisos)	Localidad	San Antonio	...	734	930	1.582
+Lozano (Ap. Chañi)	Localidad	Doctor Manuel Belgrano	819	1.139	1.388	3.247
+Maimará	Localidad	Tilcara	1.907	2.240	3.353	5.244
+Manantiales	Localidad	El Carmen	...	253	326	653
+Misarrumi	Localidad	Santa Catalina	...	108	36	15
+Miyuyoc	Localidad	Humahuaca	...	...	...	34
+Monterrico (incl. Loteo San Vicente)	Localidad	El Carmen	6.356	9.167	11.802	17.275
+Nuestra Señora del Rosario	Localidad	San Antonio	...	...	40	40
+Nuevo Pirquitas (Mina Pirquitas)	Localidad	Rinconada	...	147	672	149
+Ocloyas	Localidad	Doctor Manuel Belgrano	67	82	70	52
+Olaroz Chico	Localidad	Susques	...	183	226	290
+Oratorio	Localidad	Santa Catalina	115	89	96	75
+Orosmayo	Localidad	Rinconada	...	...	82	43
+Paicone	Localidad	Santa Catalina	51	120	64	89
+Palca de Aparzo	Localidad	Humahuaca	...	...	144	83
+Palma Sola	Localidad	Santa Bárbara	1.414	3.302	3.791	4.726
+Palos Blancos	Localidad	San Pedro	218	168	81	126
+Palpalá (Est. Gral. Manuel N. Savio)	Localidad	Palpalá	39.822	45.184	50.183	63.758
+Pampa Blanca	Localidad	El Carmen	627	1.992	2.720	4.541
+Pampichuela	Localidad	Valle Grande	86	159	130	163
+Pastos Chicos	Localidad	Susques	100	104	104	176
+Paulina	Localidad	Ledesma	0	15	429	151
+Perico	Localidad	El Carmen	25.749	36.320	44.750	56.629
+Piedritas	Localidad	San Pedro	346	234	181	194
+Puente Lavayén	Localidad	Santa Bárbara	266	288	213	410
+Puesto del Marquéz	Localidad	Cochinoca	197	299	255	328
+Puesto Sey	Localidad	Susques	75	150	94	139
+Puesto Viejo	Localidad	El Carmen	1.121	1.334	1.372	2.402
+Pumahuasi	Localidad	Yavi	138	190	233	290
+Purmamarca	Localidad	Tumbaya	339	510	891	1.018
+Quebraleña	Localidad	Cochinoca	...	...	53	97
+Quera	Localidad	Cochinoca	...	...	34	46
+Rachaite	Localidad	Cochinoca	...	...	...	49
+Rinconada	Localidad	Rinconada	372	364	351	395
+Rinconadillas	Localidad	Cochinoca	...	189	189	155
+Rodeito	Localidad	San Pedro	187	749	1.879	1.574
+Rodero	Localidad	Humahuaca	...	...	30	67
+Rosario de Río Grande (Barro Negro)	Localidad	San Pedro	552	484	591	438
+San Antonio	Localidad	San Antonio	811	1.316	1.430	2.050
+San Antonio	Localidad	San Pedro	465	338	325	204
+San Francisco	Localidad	Valle Grande	241	320	504	560
+San Francisco de Alfarcito	Localidad	Cochinoca	...	57	169	96
+San Isidro	Localidad	El Carmen	...	73	93	427
+San Juancito	Localidad	El Carmen	190	94	45	37
+San Juan de Dios	Localidad	San Pedro	...	...	...	132
+San Juan de Oros	Localidad	Santa Catalina	...	56	27	15
+San Juan de Quillaqués	Localidad	Susques	110	75	72	43
+San Lucas	Localidad	San Pedro	...	134	326	446
+San Miguel de Colorados	Localidad	Tumbaya	...	...	28	47
+San Miguel de Colorados (Pozo Colorado)	Localidad	Tumbaya	...	...	...	99
+San Pedro (Est. San Pedro de Jujuy)	Localidad	San Pedro	49.785	55.220	59.131	70.785
+San Salvador de Jujuy (Est. Jujuy)	Localidad	Doctor Manuel Belgrano	178.748	231.229	257.970	308.950
+Santa Ana	Localidad	Valle Grande	156	341	416	385
+Santa Ana de la Puna	Localidad	Cochinoca	...	...	41	34
+Santa Catalina	Localidad	Santa Catalina	302	332	305	277
+Santa Clara	Localidad	Santa Bárbara	2.316	3.607	4.298	5.834
+Santo Domingo	Localidad	Rinconada	...	...	...	79
+Santuario de Tres Pozos	Localidad	Cochinoca	...	164	152	335
+Sauzalito	Localidad	Cochinoca	...	...	...	55
+Suripugio	Localidad	Yavi	...	...	...	28
+Susques	Localidad	Susques	1.093	1.140	1.611	1.374
+Tambillos	Localidad	Cochinoca	...	...	122	22
+Tesorero	Localidad	Doctor Manuel Belgrano	...	...	82	55
+Tilcara	Localidad	Tilcara	2.976	4.358	4.691	5.140
+Timón Cruz	Localidad	Santa Catalina	...	...	...	9
+Tres Cruces	Localidad	Humahuaca	604	431	376	527
+Tumbaya	Localidad	Tumbaya	220	321	428	523
+Tusaquillas	Localidad	Cochinoca	65	93	134	117
+Uquía (Est. Senador Pérez)	Localidad	Humahuaca	369	525	508	766
+Valle Colorado	Localidad	Valle Grande	177	250	146	184
+Valle Grande	Localidad	Valle Grande	405	528	538	570
+Varas (Palca de Varas)	Localidad	Humahuaca	...	...	103	183
+Vinalito	Localidad	Santa Bárbara	331	630	757	898
+Volcán	Localidad	Tumbaya	1.036	1.048	1.121	1.362
+Yala	Localidad	Doctor Manuel Belgrano	1.354	1.923	1.953	3.086
+Yavi	Localidad	Yavi	274	250	378	347
+Yavi Chico	Localidad	Yavi	...	77	33	184
+Yoscaba	Localidad	Santa Catalina	10	20	34	52
+Yuto	Localidad	Ledesma	4.829	6.147	6.301	7.751

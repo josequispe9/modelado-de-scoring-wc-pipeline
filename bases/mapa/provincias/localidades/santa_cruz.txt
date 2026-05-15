@@ -1,0 +1,28 @@
+28 de Noviembre (Veintiocho de Noviembre)	Localidad	Güer Aike	3.317	4.686	6.145	9.478
+Bajo Caracoles	Localidad	Río Chico	48	31	33	40
+Caleta Olivia	Localidad	Deseado	27.899	36.077	51.733	56.310
+Cañadón Seco	Localidad	Deseado	701	734	879	921
+Chimen Aike	Localidad	Güer Aike	...	...	...	61
+Comandante Luis Piedrabuena	Localidad	Corpen Aike	3.348	4.176	6.405	9.278
+El Calafate	Localidad	Lago Argentino	3.101	6.410	16.655	22.844
+El Chaltén	Localidad	Lago Argentino	41	371	1.627	1.861
+El Turbio (Est. Gobernador Mayer)	Localidad	Güer Aike	71	22	55	85
+Esperanza	Localidad	Güer Aike	...	...	...	49
+Fitz Roy	Localidad	Deseado	165	174	326	424
+Gobernador Gregores	Localidad	Río Chico	1.847	2.519	4.497	5.343
+Jaramillo	Localidad	Deseado	196	216	420	383
+Julia Dufour	Localidad	Güer Aike	416	246	293	493
+Lago Posadas (Hipólito Yrigoyen)	Localidad	Río Chico	117	171	266	662
+Las Heras	Localidad	Deseado	6.328	9.303	17.821	24.728
+Los Antiguos	Localidad	Lago Buenos Aires	1.206	2.047	3.363	4.655
+Nuestra Señora de los Dolores de Koluel Kaike (Koluel Kaike)	Localidad	Deseado	201	146	250	393
+Perito Moreno	Localidad	Lago Buenos Aires	2.875	3.588	4.617	7.812
+Pico Truncado	Localidad	Deseado	12.757	14.985	20.889	25.194
+Puerto Deseado	Localidad	Deseado	7.093	10.237	14.183	16.747
+Puerto San Julián	Localidad	Magallanes	5.114	6.143	7.894	12.493
+Puerto Santa Cruz	Localidad	Corpen Aike	2.858	3.397	4.431	5.390
+Río Gallegos	Localidad	Güer Aike	64.640	79.144	95.796	115.524
+Río Turbio (Yacimientos Río Turbio)	Localidad	Güer Aike	6.746	6.650	8.814	11.077
+Rospentek	Localidad	Güer Aike	607	519	677	252
+Tellier	Localidad	Deseado	40	56	58	79
+Tres Lagos	Localidad	Lago Argentino	176	186	282	408

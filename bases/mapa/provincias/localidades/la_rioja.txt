@@ -1,0 +1,71 @@
+Aicuñá	Localidad	General Felipe Varela	196	221	219	237
+Aimogasta (incl. Arauco)	Localidad	Arauco	8.287	11.141	13.101	14.223
+Alto Carrizal	Localidad	Famatina	200	219	200	163
+Amaná	Localidad	Independencia	274	210	148	86
+Ambil	Localidad	General Ortiz de Ocampo	217	283	214	252
+Aminga	Localidad	Castro Barros	569	820	833	1.190
+Angulos	Localidad	Famatina	138	137	127	106
+Anillaco	Localidad	Castro Barros	857	1.365	1.573	2.219
+Anjullón	Localidad	Castro Barros	442	511	418	534
+Antinaco	Localidad	Famatina	104	89	102	142
+Bajo Carrizal	Localidad	Famatina	194	200	150	144
+Bañado de los Pantanos	Localidad	Arauco	351	489	534	353
+Campanas	Localidad	Famatina	723	991	892	992
+Castro Barros	Localidad	General Belgrano	130	115	116	76
+Chamical	Localidad	Chamical	9.055	11.831	12.919	14.758
+Chañar	Localidad	General Belgrano	785	968	903	859
+Chañarmuyo	Localidad	Famatina	181	252	268	318
+Chepes	Localidad	Rosario Vera Peñaloza	7.138	9.781	11.039	13.146
+Chilecito	Localidad	Chilecito	22.485	29.453	33.724	39.327
+Chuquis	Localidad	Castro Barros	224	261	236	236
+Colonia Anguinán	Localidad	Chilecito	189	173	225	73
+Colonia Malligasta	Localidad	Chilecito	365	486	482	582
+Colonia Ortiz de Ocampo	Localidad	General Ortiz de Ocampo	335	236	152	107
+Colonia Vichigasta	Localidad	Chilecito	260	300	272	76
+Desiderio Tello	Localidad	Rosario Vera Peñaloza	543	716	733	714
+Estación Mazán	Localidad	Arauco	479	437	407	319
+Famatina	Localidad	Famatina	1.934	2.492	2.466	3.215
+Guanchín	Localidad	Chilecito	222	224	284	317
+Guandacol	Localidad	General Felipe Varela	2.094	2.651	2.525	3.131
+Jagüé	Localidad	Vinchina	285	346	230	195
+La Cuadra	Localidad	Famatina	149	184	122	142
+La Rioja	Localidad	Capital	103.727	143.684	178.872	208.638
+Loma Blanca	Localidad	General Belgrano	579	678	731	685
+Los Molinos	Localidad	Castro Barros	266	294	244	306
+Los Palacios	Localidad	General Felipe Varela	460	597	512	525
+Malanzán	Localidad	General Juan Facundo Quiroga	747	1.220	1.335	1.354
+Malligasta	Localidad	Chilecito	1.094	1.443	1.668	2.207
+Milagro	Localidad	General Ortiz de Ocampo	2.709	3.355	3.494	3.939
+Miranda	Localidad	Chilecito	169	257	171	249
+Nácate	Localidad	General Juan Facundo Quiroga	212	385	359	320
+Nonogasta	Localidad	Chilecito	3.307	5.486	6.937	8.116
+Olpas	Localidad	General Ortiz de Ocampo	162	175	178	173
+Olta	Localidad	General Belgrano	2.863	4.052	4.547	5.134
+Pagancillo	Localidad	General Felipe Varela	775	951	861	1.027
+Patquía	Localidad	Independencia	1.303	1.593	1.808	1.908
+Pinchas	Localidad	Castro Barros	325	442	390	417
+Pituil	Localidad	Famatina	834	1.008	849	1.046
+Plaza Vieja	Localidad	Famatina	268	289	250	203
+Polco	Localidad	Chamical	71	70	80	106
+Portezuelo	Localidad	General Juan Facundo Quiroga	622	894	1.017	1.170
+Punta de los Llanos	Localidad	Ángel Vicente Peñaloza	482	530	532	571
+Salicas (- San Blas)	Localidad	San Blas de los Sauces	3.074	4.027	3.918	4.287
+San Antonio	Localidad	General Juan Facundo Quiroga	154	231	149	107
+San Nicolás	Localidad	Chilecito	28	53	153	185
+Sañogasta	Localidad	Chilecito	1.453	1.701	1.805	2.164
+San Pedro	Localidad	Castro Barros	299	332	298	464
+Santa Cruz	Localidad	Famatina	241	230	221	212
+Santa Florentina	Localidad	Chilecito	32	66	129	253
+Santa Rita de Catuna	Localidad	General Ortiz de Ocampo	949	1.349	1.695	2.012
+Santa Vera Cruz	Localidad	Castro Barros	115	117	123	278
+Santo Domingo	Localidad	Famatina	141	132	93	94
+Tama	Localidad	Ángel Vicente Peñaloza	825	1.070	1.164	1.389
+Termas de Santa Teresita	Localidad	Arauco	...	...	124	213
+Tilimuqui	Localidad	Chilecito	223	303	279	311
+Ulapes	Localidad	General San Martín	1.521	2.711	3.205	3.527
+Vichigasta	Localidad	Chilecito	1.477	2.061	3.016	4.252
+Villa Castelli	Localidad	General Lamadrid	1.272	1.650	1.697	1.834
+Villa Mazán	Localidad	Arauco	1.775	1.227	1.090	1.057
+Villa Sanagasta	Localidad	Sanagasta	1.574	2.074	2.275	2.925
+Villa San José de Vinchina	Localidad	Vinchina	1.871	2.318	2.401	2.405
+Villa Unión	Localidad	General Felipe Varela	3.695	4.713	4.931	5.921

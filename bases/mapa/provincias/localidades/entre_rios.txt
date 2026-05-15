@@ -1,0 +1,210 @@
+1º de Mayo (Primero de Mayo)	Localidad	Uruguay	424	533	696	971
+Alcaraz (Pueblo Arrúa)	Localidad	La Paz	1.774	2.115	2.410	2.712
+Aldea Asunción	Localidad	Gualeguay	289	303	263	295
+Aldea Brasilera	Localidad	Diamante	573	709	895	1.109
+Aldea Grapschental	Localidad	Diamante	...	...	25	50
+Aldea María Luisa	Localidad	Paraná	437	637	773	1.065
+Aldea Protestante	Localidad	Diamante	481	545	519	550
+Aldea Salto	Localidad	Diamante	121	96	102	136
+Aldea San Antonio	Localidad	Gualeguaychú	507	791	1.091	1.361
+Aldea San Antonio	Localidad	Paraná	...	...	...	107
+Aldea San Francisco	Localidad	Diamante	54	57	42	34
+Aldea San Gregorio	Localidad	Colón	...	...	...	25
+Aldea San Juan	Localidad	Gualeguaychú	...	226	179	87
+Aldea San Juan	Localidad	Paraná	...	...	66	11
+Aldea San Rafael	Localidad	Paraná	80	101	144	107
+Aldea Santa María	Localidad	Paraná	228	269	302	343
+Aldea Santa Rosa	Localidad	Paraná	...	64	71	121
+Aldea Spatzenkutter	Localidad	Diamante	263	275	355	424
+Aldea Valle María	Localidad	Diamante	1.119	1.627	2.149	2.863
+Altamirano Sur	Localidad	Tala	...	57	62	92
+Antelo	Localidad	Victoria	207	178	211	210
+Arroyo Barú	Localidad	Colón	431	509	489	638
+Arroyo Clé	Localidad	Tala	90	111	119	163
+Barrio Coelho	Localidad	Concordia	...	...	...	224
+Barrio Parque El Morajú	Localidad	Nogoyá	...	...	...	93
+Barrio San José	Localidad	Diamante	...	...	...	10
+Barrio Yuquerí Chico (Estancia Grande, Colonia Yeruá)	Localidad	Concordia	...	352	578	803
+Basavilbaso	Localidad	Uruguay	8.421	9.005	9.485	10.308
+Betbeder	Localidad	Nogoyá	175	213	145	274
+Bovril	Localidad	La Paz	5.957	7.608	8.577	9.389
+Brazo Largo	Localidad	Islas del Ibicuy	...	...	...	15
+Calabacilla	Localidad	Concordia	481	676	879	1.269
+Camino al Ñandubaysal	Localidad	Gualeguaychú	...	...	...	69
+Caseros	Localidad	Uruguay	1.269	1.755	1.948	2.515
+Ceibas	Localidad	Islas del Ibicuy	348	1.360	1.730	2.320
+Cerrito	Localidad	Paraná	3.189	4.365	5.310	6.123
+Chajarí	Localidad	Federación	20.816	28.303	32.734	39.392
+Clodomiro Ledesma	Localidad	Concordia	93	95	124	126
+Colón	Localidad	Colón	15.623	19.288	23.150	29.328
+Colonia Alemana	Localidad	Federación	...	92	137	392
+Colonia Avellaneda	Localidad	Paraná	1.045	2.049	2.970	9.036
+Colonia Avigdor	Localidad	La Paz	363	380	474	567
+Colonia Ayuí	Localidad	Concordia	436	366	1.724	2.128
+Colonia Crespo	Localidad	Paraná	...	...	69	101
+Colonia Elía	Localidad	Uruguay	485	991	741	1.094
+Colonia Ensayo	Localidad	Diamante	45	85	255	687
+Colonia Hugues	Localidad	Colón	...	60	74	94
+Colonia La Argentina	Localidad	Federación	...	69	207	215
+Colonia Nueva	Localidad	Paraná	...	...	...	254
+Concepción del Uruguay	Localidad	Uruguay	55.919	64.954	72.528	85.560
+Concordia	Localidad	Concordia	117.865	138.099	149.450	175.683
+Conscripto Bernardi	Localidad	Federal	1.081	1.292	1.339	1.668
+Crespo	Localidad	Paraná	13.584	17.465	19.536	23.586
+Cuchilla Redonda	Localidad	Gualeguaychú	...	...	...	40
+Diamante	Localidad	Diamante	15.842	18.285	19.142	20.470
+Don Cristóbal II	Localidad	Nogoyá	273	120	29	317
+Durazno	Localidad	Tala	155	288	294	411
+El Cimarrón (Aldea San Isidro)	Localidad	Federal	...	139	336	366
+El Palenque	Localidad	Paraná	67	142	155	222
+El Pingo	Localidad	Paraná	559	679	766	1.006
+El Quebracho	Localidad	La Paz	...	...	...	245
+El Ramblón	Localidad	Paraná	...	...	82	106
+El Solar	Localidad	La Paz	...	110	194	255
+Enrique Carbó	Localidad	Gualeguaychú	728	708	750	1.004
+Estación Camps	Localidad	Diamante	59	59	171	180
+Estación Escriña	Localidad	Gualeguaychú	...	...	47	37
+Estación Lazo	Localidad	Gualeguay	161	123	175	124
+Estación Raíces	Localidad	Villaguay	140	171	138	202
+Estación Sosa	Localidad	Paraná	293	479	495	497
+Estación Yeruá	Localidad	Concordia	212	333	316	342
+Estación Yuquerí	Localidad	Concordia	...	...	190	188
+Estancia Grande	Localidad	Concordia	...	...	...	446
+Faustino M. Parera (Estación Parera)	Localidad	Gualeguaychú	184	190	158	153
+Febre	Localidad	Nogoyá	50	104	121	131
+Federación	Localidad	Federación	9.073	12.260	16.658	19.185
+Federal	Localidad	Federal	11.244	14.478	16.075	19.598
+General Almada	Localidad	Gualeguaychú	228	194	144	122
+General Alvear (Puerto Alvear)	Localidad	Diamante	...	407	438	494
+General Campos	Localidad	San Salvador	2.227	2.810	2.994	3.442
+General Galarza	Localidad	Gualeguay	3.404	3.964	4.741	5.512
+General Racedo (El Carmen)	Localidad	Diamante	273	386	514	589
+General Ramírez	Localidad	Diamante	6.676	8.181	8.868	10.552
+General Roca (Colonia General Roca)	Localidad	Concordia	...	359	640	721
+Gilbert	Localidad	Gualeguaychú	753	829	996	963
+Gobernador Echagüe	Localidad	Tala	215	173	201	239
+Gobernador Mansilla	Localidad	Tala	1.592	1.812	2.046	2.651
+Gobernador Sola	Localidad	Tala	510	479	491	522
+Gualeguay	Localidad	Gualeguay	30.389	35.963	40.507	43.909
+Gualeguaychú	Localidad	Gualeguaychú	64.372	74.164	80.614	94.278
+Gualeguaycito	Localidad	Federación	...	...	...	123
+Guardamonte	Localidad	Tala	121	135	101	121
+Hambis	Localidad	Colón	72	87	58	56
+Hasenkamp	Localidad	Paraná	3.317	4.214	4.805	5.486
+Hernandarias	Localidad	Paraná	3.588	4.604	5.373	6.228
+Herrera	Localidad	Uruguay	777	895	1.251	1.653
+Hocker	Localidad	Colón	86	91	98	136
+Ibicuy	Localidad	Islas del Ibicuy	3.380	3.823	4.520	5.142
+Ingeniero Miguel Sajaroff	Localidad	Villaguay	295	380	399	433
+Irazusta	Localidad	Gualeguaychú	441	331	298	349
+Jubileo	Localidad	Villaguay	534	653	631	758
+La Clarita	Localidad	Colón	471	448	436	573
+La Criolla	Localidad	Concordia	932	1.307	1.543	2.087
+La Florida	Localidad	Federación	...	...	...	170
+Lago Salto Grande	Localidad	Concordia	...	...	...	98
+La Juanita	Localidad	Diamante	...	...	22	17
+La Muela	Localidad	Federación	...	...	...	16
+La Paz	Localidad	La Paz	16.577	22.722	24.307	28.434
+La Picada	Localidad	Paraná	352	445	564	602
+La Providencia	Localidad	La Paz	...	...	...	85
+Larroque	Localidad	Gualeguaychú	4.696	5.435	6.180	7.295
+Las Colinas	Localidad	Paraná	...	...	...	75
+Las Cuevas	Localidad	Diamante	...	...	...	80
+Las Delicias	Localidad	Federal	...	...	...	372
+Las Garzas (Pueblo Bellocq)	Localidad	Paraná	201	215	282	336
+Las Guachas	Localidad	Tala	...	95	66	59
+Las Jaulas	Localidad	Diamante	...	...	44	60
+Las Masitas	Localidad	Diamante	...	...	...	112
+Las Moscas	Localidad	Uruguay	454	476	383	379
+La Verbena	Localidad	Feliciano	...	...	...	31
+Líbaros	Localidad	Uruguay	219	215	230	191
+Los Cerros	Localidad	Victoria	...	...	...	92
+Los Charrúas	Localidad	Concordia	1.842	2.581	3.306	3.414
+Los Conquistadores	Localidad	Federación	920	1.047	1.177	1.413
+Lucas González	Localidad	Nogoyá	3.790	4.207	4.364	4.676
+Maciá	Localidad	Tala	4.347	5.260	5.870	7.854
+María Grande	Localidad	Paraná	5.679	6.873	7.557	9.058
+Mazaruca	Localidad	Islas del Ibicuy	...	...	...	111
+Médanos	Localidad	Islas del Ibicuy	388	426	574	554
+Molino Doll	Localidad	Victoria	123	84	139	148
+Ñancay	Localidad	Islas del Ibicuy	...	93	...	114
+Nogoyá	Localidad	Nogoyá	18.831	21.339	22.824	26.786
+Nueva Escocia	Localidad	Concordia	269	373	453	611
+Nueva Vizcaya	Localidad	Federal	297	354	379	353
+Ombú	Localidad	La Paz	...	...	...	245
+Oro Verde	Localidad	Paraná	804	2.403	4.116	7.332
+Osvaldo Magnasco	Localidad	Concordia	599	892	1.241	1.445
+Paraje Las Tunas (Las Tunas)	Localidad	Paraná	...	59	101	104
+Paraje La Tacuara	Localidad	Victoria	...	...	...	36
+Paraje La Virgen	Localidad	Diamante	...	72	59	90
+Paraná	Localidad	Paraná	207.041	235.967	247.139	268.191
+Paso de la Laguna	Localidad	Villaguay	...	142	348	444
+Paso Telégrafo	Localidad	La Paz	...	...	...	262
+Pastor Britos	Localidad	Gualeguaychú	...	...	96	102
+Pedernal	Localidad	Concordia	315	409	516	689
+Picada Berón	Localidad	La Paz	...	...	...	39
+Piedras Blancas	Localidad	La Paz	1.045	1.268	1.362	1.607
+Pronunciamiento	Localidad	Uruguay	808	892	976	1.521
+Pueblo Brugo	Localidad	Paraná	555	590	802	1.076
+Pueblo Cazes	Localidad	Colón	163	216	205	194
+Pueblo General Belgrano	Localidad	Gualeguaychú	471	1.352	2.030	3.886
+Pueblo General Paz	Localidad	Paraná	...	...	...	101
+Pueblo Liebig	Localidad	Colón	603	632	670	1.504
+Puerto Algarrobo	Localidad	La Paz	...	...	...	82
+Puerto Curtiembre (Pueblo General San Martín)	Localidad	Paraná	238	301	296	324
+Puerto Esquina	Localidad	Victoria	...	...	...	16
+Puerto Las Cuevas	Localidad	Diamante	197	455	585	775
+Puerto Ruiz	Localidad	Gualeguay	298	362	347	418
+Puerto Yeruá	Localidad	Concordia	671	1.070	1.274	1.629
+Punta Bonita	Localidad	Concordia	...	...	...	99
+Punta del Monte	Localidad	Gualeguay	...	...	...	79
+Rincón del Doll	Localidad	Victoria	...	...	...	341
+Rincón de Nogoyá	Localidad	Victoria	...	...	...	60
+Rincón de Nogoyá Sur	Localidad	Victoria	...	...	...	109
+Rocamora	Localidad	Uruguay	303	209	281	341
+Rosario del Tala	Localidad	Tala	11.530	12.747	12.801	15.969
+Ruta Provincial 11 Km 140 (Entre Comunas)	Localidad	Victoria	...	...	...	15
+San Benito	Localidad	Paraná	2.788	6.466	9.105	16.664
+San Cipriano	Localidad	Uruguay	...	...	...	188
+San Gustavo	Localidad	La Paz	906	1.094	1.325	1.698
+San Jaime de la Frontera	Localidad	Federación	3.189	3.817	4.143	4.616
+San José	Localidad	Colón	10.535	13.406	16.336	18.672
+San José de Feliciano	Localidad	Feliciano	6.478	8.958	10.282	12.049
+San Justo	Localidad	Uruguay	914	1.093	1.337	1.851
+San Marcial (Est. Gobernador Urquiza)	Localidad	Uruguay	655	614	639	684
+San Pedro	Localidad	Federación	222	362	264	334
+San Ramírez	Localidad	La Paz	...	...	...	74
+San Ramón (Colonia Peña)	Localidad	Federación	...	103	58	83
+San Salvador	Localidad	San Salvador	6.025	11.237	12.733	15.484
+Santa Ana	Localidad	Federación	622	804	905	1.089
+Santa Anita	Localidad	Uruguay	865	1.004	1.187	1.494
+Santa Elena	Localidad	La Paz	17.065	17.658	17.791	19.973
+Santa María y Las Margaritas	Localidad	Federación	...	...	...	126
+San Víctor	Localidad	Feliciano	174	211	325	279
+Sauce de Luna	Localidad	Federal	2.174	2.806	2.845	3.148
+Sauce Montrull	Localidad	Paraná	258	425	746	1.391
+Sauce Pinto	Localidad	Paraná	33	59	107	89
+Seguí	Localidad	Paraná	3.049	3.398	3.695	4.359
+Sir Leonard	Localidad	La Paz	192	245	281	352
+Tabossi	Localidad	Paraná	844	1.056	1.322	1.597
+Tezanos Pinto	Localidad	Paraná	72	74	189	74
+Ubajay	Localidad	Colón	1.078	1.847	3.234	2.746
+Urdinarrain	Localidad	Gualeguaychú	6.580	7.525	8.580	9.799
+Viale	Localidad	Paraná	6.972	7.638	9.383	10.897
+Victoria	Localidad	Victoria	22.931	28.883	30.623	34.965
+Villa Aranguren	Localidad	Nogoyá	1.007	1.356	1.571	1.936
+Villa Clara	Localidad	Villaguay	2.236	2.627	2.726	3.131
+Villa del Rosario	Localidad	Federación	1.490	2.289	2.720	3.602
+Villa Domínguez	Localidad	Villaguay	1.262	1.775	1.791	1.751
+Villa Elisa	Localidad	Colón	6.108	8.351	10.266	11.369
+Villa Fontana	Localidad	Paraná	134	180	160	181
+Villa Gobernador Luis F. Etchevehere	Localidad	Paraná	125	210	215	291
+Villaguay	Localidad	Villaguay	23.546	29.103	32.881	39.406
+Villa Libertador San Martín	Localidad	Diamante	3.808	5.015	6.312	8.269
+Villa Mantero	Localidad	Uruguay	1.186	1.578	1.427	1.603
+Villa Paranacito	Localidad	Islas del Ibicuy	1.035	1.612	1.940	2.561
+Villa Sabá Z. Hernández (Hernández)	Localidad	Nogoyá	1.345	1.570	1.510	1.882
+Villa Urquiza	Localidad	Paraná	323	624	661	1.012
+XX de Septiembre	Localidad	Nogoyá	175	183	178	259
+Yacaré	Localidad	La Paz	...	...	...	208
+Yeso Oeste	Localidad	La Paz	...	...	...	184

@@ -1,0 +1,45 @@
+{
+  "audio_id": "a7e84c1b-99f5-47e2-a028-b448b3424c64",
+  "nombre_archivo": "amza74_1_260409133740110_ACD_01183",
+  "metadata_llamada": {
+    "agente": "MZA 74",
+    "campania": "MVS_MZA",
+    "empresa": "AZO",
+    "duracion_seg": 10,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola, ¿qué tal?"
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Buen día."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hablo con Marcio."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Después del tono, deja tu mensaje."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Para finalizar."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.4984,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T14:59:59.068536+00:00"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "audio_id": "07896ab5-78c4-4ea4-b56e-c9e442749ffc",
+  "nombre_archivo": "amza303_1_260407164850372_ACD_07973",
+  "metadata_llamada": {
+    "agente": "MZA 303",
+    "campania": "MVS_MZA",
+    "empresa": "AZO",
+    "duracion_seg": 16,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola, ¿qué tal, Estudio?"
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola, Diana y Jelen."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "¿Qué tal?"
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Buenas, mi nombre es Isla Urbina, soy de la parte de beneficios de Monstar y tenemos un 75% de descuento en tu línea móvil."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.5617,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T15:01:07.223143+00:00"
+  }
+}

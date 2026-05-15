@@ -1,0 +1,6 @@
+Country Club San Justo	Localidad	Río Grande	...	...	...	71
+Laguna Escondida	Localidad	Ushuaia	46	71	129	24
+Puerto Almanza	Localidad	Ushuaia	...	...	...	85
+Río Grande	Localidad	Río Grande	38.137	52.681	66.475	97.611
+Tolhuin	Localidad	Tolhuin	445	1.201	2.626	5.606
+Ushuaia	Localidad	Ushuaia	29.166	45.430	56.593	79.409

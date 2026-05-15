@@ -1,0 +1,16 @@
+Biedma	Departamento	45.494	58.677	82.883	103.173
+Cushamen	Departamento	13.885	17.134	20.919	28.209
+Escalante	Departamento	129.229	143.689	186.583	215.453
+Florentino Ameghino	Departamento	1.166	1.484	1.627	1.786
+Futaleufú	Departamento	30.782	37.540	43.076	50.316
+Gaiman	Departamento	8.209	9.612	11.141	12.639
+Gastre	Departamento	1.900	1.508	1.427	1.195
+Languiñeo	Departamento	3.321	3.017	3.085	2.884
+Mártires	Departamento	805	977	778	754
+Paso de Indios	Departamento	1.883	1.905	1.867	1.886
+Rawson	Departamento	100.243	115.829	131.313	145.763
+Río Senguer	Departamento	6.172	6.194	5.979	6.366
+Sarmiento	Departamento	7.663	8.724	11.396	14.596
+Tehuelches	Departamento	4.801	5.159	5.390	5.978
+Telsen	Departamento	1.636	1.788	1.644	1.623
+Chubut	Provincia	357.189	413.237	509.108	592.621

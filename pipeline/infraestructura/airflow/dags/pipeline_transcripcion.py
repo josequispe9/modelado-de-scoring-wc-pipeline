@@ -11,10 +11,15 @@ SELECT FOR UPDATE SKIP LOCKED — igual que la etapa 3.
 
 Triggereado manualmente desde el dashboard via:
     POST /pipeline/etapa/transcripcion/ejecutar
+
+conf opcional:
+    {"cuentas": ["G", "M"]}   → solo Gaspar y Melchor
+    {}  o sin conf             → las 3 PCs
 """
 from datetime import datetime
 
 from airflow import DAG
+from airflow.operators.python import ShortCircuitOperator
 from airflow.providers.ssh.operators.ssh import SSHOperator
 
 # ─── Configuración por PC ─────────────────────────────────────────────────────
@@ -43,7 +48,7 @@ SCRIPT = r"pipeline\logica\5-transcripcion-de-audios\transcribir_audios.py"
 
 with DAG(
     dag_id="pipeline_transcripcion",
-    description="Transcribe audios con WhisperX en las 3 PCs en paralelo",
+    description="Transcribe audios con WhisperX en las PCs seleccionadas en paralelo",
     schedule=None,       # solo ejecución manual
     start_date=datetime(2026, 1, 1),
     catchup=False,
@@ -51,7 +56,19 @@ with DAG(
 ) as dag:
 
     for cuenta, cfg in WORKERS.items():
-        SSHOperator(
+
+        def _check_cuenta(cuenta=cuenta, **context):
+            conf    = context["dag_run"].conf or {}
+            cuentas = conf.get("cuentas")
+            return cuentas is None or cuenta in cuentas
+
+        check = ShortCircuitOperator(
+            task_id=f"check_{cuenta}",
+            python_callable=_check_cuenta,
+            ignore_downstream_trigger_rules=True,
+        )
+
+        transcripcion = SSHOperator(
             task_id=f"transcripcion_{cuenta}",
             ssh_conn_id=cfg["conn_id"],
             command=(
@@ -63,3 +80,5 @@ with DAG(
             conn_timeout=15,
             cmd_timeout=14400,   # 4 horas — transcribir es lento
         )
+
+        check >> transcripcion

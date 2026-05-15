@@ -1,0 +1,33 @@
+{
+  "audio_id": "fe58cbdd-c66d-459f-84b6-b0eb09057f17",
+  "nombre_archivo": "amza14_1_260414124845703_MIT_01967",
+  "metadata_llamada": {
+    "agente": "MZA 14",
+    "campania": "MVS_MZA_OUT",
+    "empresa": "AZO",
+    "duracion_seg": 19,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Bienvenido al buzón de voz claro de 2, 6, 1, 5, 4, 6, 7, 1, 2, 7."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Después del tono, deja tu mensaje."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.3113,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T15:00:34.541620+00:00"
+  }
+}

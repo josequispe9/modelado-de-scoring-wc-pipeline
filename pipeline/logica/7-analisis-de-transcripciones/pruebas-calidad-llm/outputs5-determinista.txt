@@ -1,0 +1,35 @@
+RESULTADOS DETERMINISTAS INSULTOS — 2026-05-14 17:02:19
+Archivos         : 648
+Primeros N turnos: 40
+========================================================================
+
+  [amza13_1_260409140321880_ACD_82831.json]
+  Turnos: 4
+  Frase: "Es una re puta que te parió, flaco."
+
+  [amza327_1_260409181223067_ACD_72759.json]
+  Turnos: 15
+  Frase: "Están muertos de hambre, están... Chao."
+
+  [amza32_1_260409142031474_ACD_34287.json]
+  Turnos: 4
+  Frase: "Mándate la reconcha de tu hermana."
+
+  [amza49_1_260409135313624_ACD_50011.json]
+  Turnos: 4
+  Frase: "Oh, loco, me tienen los huevos llenos, déjenme de joder."
+
+  [amza58_1_260409105754866_ACD_99157.json]
+  Turnos: 8
+  Frase: "No, déjeme romper las pelotas, gracias."
+
+  [amza61_1_260409101524862_ACD_75787.json]
+  Turnos: 5
+  Frase: "Se van a romper las pelotas."
+
+  [amza77_1_260414140110467_ACD_03829.json]
+  Turnos: 14
+  Frase: "No, no, no, váyase a cagar, Movistar."
+
+========================================================================
+RESUMEN: 7 con insultos | 641 sin insultos

@@ -1,0 +1,17 @@
+Ambato	Departamento	3.582	4.525	4.463	5.129
+Ancasti	Departamento	2.598	3.082	2.917	3.302
+Andalgalá	Departamento	14.052	17.102	18.132	19.678
+Antofagasta de la Sierra	Departamento	973	1.282	1.436	2.022
+Belén	Departamento	20.939	25.475	27.843	30.569
+Capayán	Departamento	12.056	14.137	16.085	19.885
+Capital	Departamento	110.189	141.260	159.703	186.947
+El Alto	Departamento	2.981	3.400	3.570	4.375
+Fray Mamerto Esquiú	Departamento	8.216	10.658	11.896	14.625
+La Paz	Departamento	16.143	21.061	22.638	26.370
+Paclín	Departamento	3.524	4.290	4.185	4.725
+Pomán	Departamento	7.484	9.543	10.776	12.260
+Santa María	Departamento	16.949	22.127	22.548	26.929
+Santa Rosa	Departamento	8.531	10.349	12.034	13.322
+Tinogasta	Departamento	18.767	22.570	22.360	25.395
+Valle Viejo	Departamento	17.250	23.707	27.242	34.029
+Catamarca	Provincia	264.234	334.568	367.828	429.562

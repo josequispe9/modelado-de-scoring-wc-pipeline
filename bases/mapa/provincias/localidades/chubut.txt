@@ -1,0 +1,77 @@
+28 de Julio	Localidad	Gaiman	...	109	237	234
+Aldea Apeleg	Localidad	Río Senguer	95	119	126	127
+Aldea Beleiro	Localidad	Río Senguer	179	172	176	199
+Aldea Epulef	Localidad	Languiñeo	153	150	247	166
+Aldea Escolar (Los Rápidos)	Localidad	Futaleufú	195	375	359	581
+Alto Río Senguer	Localidad	Río Senguer	1.356	1.454	1.570	1.585
+Arroyo El Pedregoso	Localidad	Cushamen	...	...	...	822
+Arroyo Verde	Localidad	Biedma	...	41	59	25
+Astra	Localidad	Escalante	351	219	341	329
+Bahía Bustamante	Localidad	Escalante	164	11	25	7
+Barrio Aldea Casa Blanca	Localidad	Rawson	...	...	...	119
+Barrio Rodas Park	Localidad	Rawson	...	...	...	139
+Blancuntre	Localidad	Gastre	49	76	82	63
+Buenos Aires Chico	Localidad	Cushamen	197	259	253	275
+Buen Pasto	Localidad	Sarmiento	106	151	105	88
+Camarones	Localidad	Florentino Ameghino	828	1.079	1.296	1.634
+Carrenleufú	Localidad	Languiñeo	240	287	317	320
+Cerro Centinela	Localidad	Futaleufú	...	...	...	70
+Cerro Cóndor	Localidad	Paso de Indios	75	83	67	43
+Cholila	Localidad	Cushamen	846	1.286	1.658	2.206
+Colán Conhué	Localidad	Languiñeo	125	212	262	227
+Comodoro Rivadavia	Localidad	Escalante	124.104	135.632	175.196	199.369
+Corcovado	Localidad	Futaleufú	1.229	1.644	1.820	1.611
+Costa del Chubut	Localidad	Cushamen	...	...	56	32
+Cushamen Centro	Localidad	Cushamen	403	580	740	961
+Diadema Argentina	Localidad	Escalante	1.108	1.058	1.317	1.398
+Dique Florentino Ameghino	Localidad	Gaiman	189	224	156	182
+Doctor Oscar Atilio Viglione (Frontera de Río Pico)	Localidad	Tehuelches	113	81	44	184
+Doctor Ricardo Rojas	Localidad	Río Senguer	294	263	219	234
+Dolavon	Localidad	Gaiman	2.126	2.494	2.887	3.538
+Don Emilio	Localidad	Rawson	...	...	...	37
+El Blanco	Localidad	Cushamen	...	...	...	341
+El Escorial	Localidad	Gastre	...	51	89	50
+El Hoyo	Localidad	Cushamen	590	955	1.477	2.481
+El Maitén	Localidad	Cushamen	2.687	3.391	4.011	4.490
+El Mirasol	Localidad	Mártires	77	85	57	39
+Epuyén	Localidad	Cushamen	297	534	1.038	1.278
+Esquel	Localidad	Futaleufú	22.978	28.089	32.343	36.624
+Facundo	Localidad	Río Senguer	140	151	185	255
+Fofo Cahuel	Localidad	Cushamen	...	...	67	5
+Gaiman	Localidad	Gaiman	3.205	4.292	4.730	6.376
+Gan Gan	Localidad	Telsen	478	587	661	756
+Garayalde	Localidad	Florentino Ameghino	...	16	18	25
+Gastre	Localidad	Gastre	444	557	602	608
+Gobernador Costa	Localidad	Tehuelches	1.690	1.958	2.251	2.600
+Gualjaina	Localidad	Cushamen	506	648	1.183	1.038
+José de San Martín	Localidad	Tehuelches	1.365	1.453	1.612	1.592
+Lago Blanco	Localidad	Río Senguer	222	234	194	227
+Lago Epuyén	Localidad	Cushamen	359	377	392	494
+Lago Puelo	Localidad	Cushamen	911	2.090	3.129	10.054
+Lago Rosario	Localidad	Futaleufú	194	456	87	127
+Lagunita Salada	Localidad	Gastre	98	141	129	154
+La Herradura	Localidad	Escalante	...	...	...	88
+Las Plumas	Localidad	Mártires	341	605	480	579
+Leleque	Localidad	Cushamen	41	83	116	30
+Los Altares	Localidad	Paso de Indios	107	123	230	202
+Los Cipreses	Localidad	Futaleufú	90	115	179	125
+Paso de Indios	Localidad	Paso de Indios	872	1.087	1.264	1.365
+Paso del Sapo	Localidad	Languiñeo	322	384	472	500
+Playa Magagna	Localidad	Rawson	6	60	76	169
+Playa Unión	Localidad	Rawson	1.164	3.379	6.775	10.446
+Puerto Madryn	Localidad	Biedma	44.916	57.614	81.315	97.625
+Puerto Pirámides	Localidad	Biedma	104	429	565	507
+Quintas del Mirador	Localidad	Biedma	46	177	626	3.655
+Rada Tilly	Localidad	Escalante	2.934	6.208	9.098	13.481
+Rawson	Localidad	Rawson	19.161	22.493	24.616	27.157
+Reserva Área Protegida El Doradillo	Localidad	Biedma	...	...	54	778
+Río Mayo	Localidad	Río Senguer	2.651	2.939	2.791	3.164
+Río Pico	Localidad	Tehuelches	948	1.055	1.055	1.150
+Sarmiento	Localidad	Sarmiento	6.908	8.028	10.858	13.892
+Tecka	Localidad	Languiñeo	1.014	955	1.237	1.251
+Telsen	Localidad	Telsen	411	486	544	574
+Trelew	Localidad	Rawson	78.194	88.305	97.915	104.657
+Trevelín	Localidad	Futaleufú	3.828	4.856	6.353	8.831
+Villa Futalaufquen	Localidad	Futaleufú	...	106	28	120
+Villa Lago Rivadavia	Localidad	Cushamen	...	...	...	131
+Yala Laubat	Localidad	Gastre	73	44	37	36

@@ -66,3 +66,6 @@ Thumbs.db
 # TXT en scripts_aux
 bases/scripts_aux/**/*.txt
 bases/scripts_aux/info_tramites_encontrados/
+
+# Ejemplos de transcripciones (archivos locales de prueba)
+pipeline/logica/7-analisis-de-transcripciones/pruebas-calidad-llm/ejemplos_transcripciones/*.json

@@ -1,0 +1,412 @@
+Aarón Castellanos (Est. Castellanos)	Localidad	General López	333	313	236	287
+Acébal	Localidad	Rosario	4.083	4.627	4.969	5.557
+Aguará Grande	Localidad	San Cristóbal	...	169	96	82
+Albarellos	Localidad	Rosario	272	268	253	329
+Alcorta	Localidad	Constitución	6.907	7.038	7.450	7.591
+Aldao (Est. Casablanca)	Localidad	Castellanos	1.196	1.351	1.576	1.720
+Aldao	Localidad	San Lorenzo	449	441	587	777
+Alejandra	Localidad	San Javier	1.828	2.574	2.962	3.457
+Álvarez	Localidad	Rosario	4.171	4.928	5.417	6.713
+Alvear	Localidad	Rosario	1.148	1.481	2.402	3.481
+Ambrosetti	Localidad	San Cristóbal	626	865	905	958
+Amenábar	Localidad	General López	1.168	1.392	1.605	1.759
+Ángel Gallardo	Localidad	La Capital	271	519	856	1.597
+Angélica	Localidad	Castellanos	1.121	1.211	1.298	1.329
+Angeloni	Localidad	San Justo	31	79	62	72
+Arbilla	Localidad	Rosario	245	311	427	2.666
+Arequito	Localidad	Caseros	6.247	6.472	6.533	7.109
+Arminda	Localidad	Rosario	303	301	288	280
+Armstrong	Localidad	Belgrano	8.879	9.951	11.181	12.632
+Arocena	Localidad	San Jerónimo	1.282	1.351	1.608	1.693
+Arroyo Aguiar	Localidad	La Capital	595	668	751	986
+Arroyo Ceibal	Localidad	General Obligado	291	574	622	810
+Arroyo Leyes	Localidad	La Capital	35	1.594	2.420	4.257
+Arroyo Seco	Localidad	Rosario	16.755	19.047	20.620	22.954
+Arrufo	Localidad	San Cristóbal	1.371	1.630	1.764	1.941
+Arteaga	Localidad	Caseros	2.653	2.792	3.089	3.210
+Ataliva	Localidad	Castellanos	1.285	1.520	1.680	2.015
+Aurelia	Localidad	Castellanos	92	123	113	77
+Avellaneda (Est. Ewald)	Localidad	General Obligado	14.285	19.402	23.341	26.457
+Balneario La Verde	Localidad	San Cristóbal	...	10	8	25
+Balneario Monje	Localidad	San Jerónimo	174	269	391	141
+Barrancas	Localidad	San Jerónimo	4.031	4.382	4.650	5.055
+Barrio Arroyo del Medio	Localidad	Constitución	...	225	310	372
+Barrio Caima	Localidad	San Jerónimo	1.150	1.541	1.655	1.300
+Barrio Cicarelli	Localidad	Iriondo	26	39	28	11
+Barrio El Pacaá (- Barrio Comipini)	Localidad	San Jerónimo	...	161	12	240
+Barrio Mitre	Localidad	Constitución	324	544	816	1.432
+Barrios Acapulco y Veracruz	Localidad	Castellanos	933	1.391	1.790	1.588
+Bauer y Sigel	Localidad	Castellanos	217	275	290	232
+Bella Italia	Localidad	Castellanos	215	617	1.070	1.768
+Berabevú	Localidad	Caseros	2.180	2.205	2.225	2.059
+Berna	Localidad	General Obligado	569	707	629	744
+Bernardo de Irigoyen (Est. Irigoyen)	Localidad	San Jerónimo	1.505	1.670	1.566	1.550
+Bigand	Localidad	Caseros	4.011	4.525	4.939	5.393
+Bombal	Localidad	Constitución	2.907	3.076	3.137	3.408
+Bouquet	Localidad	Belgrano	995	1.157	1.230	1.219
+Bustinza	Localidad	Iriondo	1.039	1.178	1.098	1.287
+Cabal	Localidad	La Capital	30	28	54	44
+Cacique Ariacaiquín	Localidad	San Javier	144	168	142	198
+Cafferata	Localidad	General López	1.373	1.448	1.449	1.045
+Calchaquí	Localidad	Vera	7.455	9.043	9.651	12.285
+Campo Andino	Localidad	La Capital	186	302	313	330
+Campo Hardy	Localidad	General Obligado	...	...	...	304
+Campo Siete Provincias	Localidad	General Obligado	...	...	...	53
+Cañada de Gómez	Localidad	Iriondo	27.500	28.965	29.205	31.916
+Cañada del Ucle	Localidad	General López	840	854	698	885
+Cañada Ombú	Localidad	Vera	463	574	518	507
+Cañada Rica	Localidad	Constitución	613	637	641	641
+Cañada Rosquín	Localidad	San Martín	4.310	4.806	5.008	5.254
+Candioti	Localidad	La Capital	638	835	888	1.018
+Capitán Bermúdez	Localidad	San Lorenzo	25.944	26.914	29.218	30.569
+Capivara	Localidad	San Cristóbal	60	98	102	113
+Carcarañá	Localidad	San Lorenzo	14.016	15.203	16.277	17.265
+Carlos Pellegrini	Localidad	San Martín	4.164	4.591	4.971	5.695
+Carmen	Localidad	General López	1.662	1.687	1.611	1.627
+Carmen del Sauce	Localidad	Rosario	380	486	531	744
+Carreras	Localidad	General López	2.038	2.077	1.906	1.914
+Carrizales (Est. Clarke)	Localidad	Iriondo	982	1.038	1.041	1.056
+Casalegno	Localidad	San Jerónimo	130	161	158	137
+Casas	Localidad	San Martín	545	612	729	650
+Casilda	Localidad	Caseros	28.580	31.127	34.703	38.415
+Castelar	Localidad	San Martín	499	560	614	574
+Castellanos	Localidad	Castellanos	133	179	226	211
+Cavour	Localidad	Las Colonias	60	111	137	233
+Cayastá	Localidad	Garay	1.501	2.043	3.367	4.172
+Cayastacito	Localidad	San Justo	287	343	329	394
+Centeno	Localidad	San Jerónimo	2.604	2.934	2.870	2.857
+Cepeda	Localidad	Constitución	310	288	349	255
+Ceres	Localidad	San Cristóbal	12.000	13.063	14.499	15.795
+Chabás	Localidad	Caseros	6.373	6.798	6.871	7.009
+Chañar Ladeado	Localidad	Caseros	5.279	5.442	5.415	5.259
+Chapuy	Localidad	General López	406	484	571	724
+Chovet	Localidad	General López	1.889	1.934	2.101	1.954
+Christophersen	Localidad	General López	314	518	499	699
+Classon	Localidad	Iriondo	310	476	484	607
+Colmena	Localidad	Vera	96	57	141	139
+Colonia Ana	Localidad	San Cristóbal	17	10	16	29
+Colonia Belgrano	Localidad	San Martín	891	929	908	1.157
+Colonia Bicha	Localidad	Castellanos	107	151	187	222
+Colonia Bossi	Localidad	San Cristóbal	...	87	111	174
+Colonia Cello	Localidad	Castellanos	158	128	118	109
+Colonia Dolores	Localidad	San Justo	347	457	502	711
+Colonia Durán	Localidad	San Javier	121	139	183	182
+Colonia Margarita	Localidad	Castellanos	169	239	269	248
+Colonia Mascías	Localidad	Garay	...	...	...	499
+Colonia Médici	Localidad	Iriondo	23	23	13	13
+Colonia Nueva	Localidad	Las Colonias	...	...	...	136
+Colonia Raquel	Localidad	Castellanos	45	101	123	97
+Colonia Rosa	Localidad	San Cristóbal	306	466	562	643
+Colonia San Joaquín	Localidad	Garay	...	...	...	183
+Colonia San José	Localidad	Las Colonias	...	...	...	16
+Colonia San José	Localidad	San Javier	...	...	...	46
+Colonia Tacurales	Localidad	Castellanos	...	...	...	73
+Colonia Teresa	Localidad	San Javier	...	...	...	466
+Constanza	Localidad	San Cristóbal	98	111	129	136
+Coronda	Localidad	San Jerónimo	12.685	15.164	16.873	17.959
+Coronel Arnold	Localidad	San Lorenzo	737	843	857	940
+Coronel Bogado	Localidad	Rosario	2.101	2.342	2.204	2.349
+Coronel Fraga	Localidad	Castellanos	264	312	330	312
+Coronel Rodolfo S. Domínguez	Localidad	Rosario	601	736	796	1.137
+Correa	Localidad	Iriondo	4.717	5.294	5.792	6.048
+Crispi	Localidad	San Martín	180	203	267	228
+Cuatro Esquinas	Localidad	Rosario	175	177	174	169
+Cululú	Localidad	Las Colonias	95	98	97	106
+Curupaity	Localidad	San Cristóbal	119	198	220	179
+Desvío Arijón	Localidad	San Jerónimo	585	838	946	1.272
+Díaz	Localidad	San Jerónimo	1.454	1.635	1.721	1.685
+Diego de Alvear	Localidad	General López	1.797	1.898	1.855	1.930
+Egusquiza	Localidad	Castellanos	230	296	279	357
+El Araza	Localidad	General Obligado	232	469	550	688
+El Caramelo	Localidad	Rosario	...	184	155	1.262
+El Carmen de Avellaneda	Localidad	General Obligado	...	...	...	16
+Elisa	Localidad	Las Colonias	1.092	1.358	1.490	1.623
+Elortondo	Localidad	General López	5.582	5.679	5.632	5.795
+El Rabón	Localidad	General Obligado	...	526	865	1.240
+El Sombrerito	Localidad	General Obligado	...	...	...	162
+El Trébol	Localidad	San Martín	8.679	9.882	11.086	12.050
+Emilia	Localidad	La Capital	413	667	691	770
+Empalme San Carlos	Localidad	Las Colonias	52	101	125	164
+Empalme Villa Constitución	Localidad	Constitución	5.156	5.723	6.241	7.015
+Esmeralda	Localidad	Castellanos	503	568	594	590
+Esperanza	Localidad	Las Colonias	28.630	33.672	40.145	45.433
+Estación Clucellas	Localidad	Castellanos	702	683	782	861
+Estación Kilómetro 403	Localidad	General Obligado	...	...	...	109
+Estación Kilómetro 501	Localidad	Castellanos	...	...	...	11
+Estación Saguier	Localidad	Castellanos	94	122	105	108
+Esteban Rams	Localidad	Nueve de Julio	242	220	169	194
+Esther	Localidad	San Justo	32	50	41	57
+Eusebia y Carolina	Localidad	Castellanos	599	733	746	753
+Eustolia	Localidad	Castellanos	19	12	22	17
+Felicia	Localidad	Las Colonias	1.412	1.641	1.788	2.109
+Fighiera	Localidad	Rosario	3.685	3.952	4.034	5.138
+Firmat	Localidad	General López	17.086	17.908	19.785	20.371
+Flor de Oro	Localidad	General Obligado	...	...	...	189
+Florencia	Localidad	General Obligado	2.497	3.088	5.982	6.689
+Fortín Charrúa	Localidad	Vera	...	...	...	79
+Fortín Olmos	Localidad	Vera	1.440	1.852	1.991	2.292
+Franck	Localidad	Las Colonias	2.748	4.128	5.109	6.292
+Fray Luis Beltrán	Localidad	San Lorenzo	11.812	14.293	15.176	18.399
+Frontera	Localidad	Castellanos	7.976	9.352	10.520	9.787
+Fuentes	Localidad	San Lorenzo	2.160	2.532	2.791	2.663
+Funes	Localidad	Rosario	8.270	14.552	23.281	38.183
+Gaboto	Localidad	San Jerónimo	1.885	2.483	2.788	3.488
+Gálvez	Localidad	San Jerónimo	16.814	18.176	19.061	19.838
+Garabato	Localidad	Vera	616	989	995	1.082
+Garibaldi	Localidad	Castellanos	120	142	142	169
+Gato Colorado	Localidad	Nueve de Julio	576	1.009	998	830
+General Gelly	Localidad	Constitución	657	707	610	610
+General Lagos	Localidad	Rosario	1.729	2.616	3.419	4.589
+Gessler	Localidad	San Jerónimo	735	805	857	1.065
+Gobernador Crespo	Localidad	San Justo	3.578	4.764	5.335	6.283
+Gödeken	Localidad	Caseros	1.522	1.569	1.652	1.877
+Godoy	Localidad	Constitución	1.168	1.142	1.189	1.218
+Golondrina	Localidad	Vera	344	399	563	386
+Granadero Baigorria	Localidad	Rosario	21.915	32.249	36.994	44.098
+Gregoria Pérez de Denis (Est. El Nochero)	Localidad	Nueve de Julio	981	1.255	1.358	1.560
+Grutly	Localidad	Las Colonias	521	539	545	561
+Guadalupe Norte	Localidad	General Obligado	85	479	654	1.293
+Helvecia	Localidad	Garay	4.680	5.933	5.756	7.727
+Hersilia	Localidad	San Cristóbal	2.602	2.771	2.780	3.033
+Hipatía	Localidad	Las Colonias	158	274	310	275
+Huanqueros	Localidad	San Cristóbal	606	666	665	638
+Hughes	Localidad	General López	3.499	4.142	4.598	4.698
+Humberto Primo	Localidad	Castellanos	4.116	4.518	4.751	5.379
+Humboldt	Localidad	Las Colonias	2.642	3.269	3.999	4.575
+Ibarlucea	Localidad	Rosario	582	1.303	3.698	8.258
+Ingeniero Chanourdie	Localidad	General Obligado	170	268	319	353
+Intiyaco	Localidad	Vera	800	1.071	1.132	1.017
+Irigoyen	Localidad	San Jerónimo	860	949	950	966
+Jacinto L. Aráuz	Localidad	Las Colonias	53	84	106	97
+Josefina	Localidad	Castellanos	491	627	676	915
+Juan Bernabé Molina	Localidad	Constitución	1.455	1.363	1.265	1.266
+Juncal	Localidad	Constitución	954	955	941	894
+Kilómetro 101	Localidad	Rosario	39	26	36	575
+Kilómetro 115	Localidad	Vera	127	177	182	73
+Kilómetro 12	Localidad	Vera	...	...	...	134
+Kilómetro 302	Localidad	Vera	...	...	...	112
+Labordeboy	Localidad	General López	991	982	928	1.036
+La Brava	Localidad	San Javier	366	370	329	481
+La Cabral	Localidad	San Cristóbal	156	126	161	188
+La Chispa	Localidad	General López	343	368	352	476
+La Criolla (Est. Cañadita)	Localidad	San Justo	1.581	1.862	1.963	2.277
+La Gallareta	Localidad	Vera	2.229	2.150	2.189	2.264
+Laguna Paiva	Localidad	La Capital	11.771	11.405	12.334	13.491
+La Isleta	Localidad	General Obligado	187	364	210	109
+Landeta	Localidad	San Martín	1.048	1.197	1.357	1.320
+Lanteri	Localidad	General Obligado	719	907	907	1.778
+La Pelada	Localidad	Las Colonias	743	957	1.037	1.172
+La Penca y Caraguatá	Localidad	San Justo	123	134	141	201
+La Reserva	Localidad	General Obligado	...	...	...	77
+Larguía	Localidad	Iriondo	46	218	54	168
+Larrechea	Localidad	San Jerónimo	388	518	487	552
+La Rubia	Localidad	San Cristóbal	308	312	299	345
+La Sarita	Localidad	General Obligado	...	150	483	194
+Las Avispas	Localidad	San Cristóbal	...	45	46	35
+Las Bandurrias	Localidad	San Martín	98	154	172	200
+Las Garzas	Localidad	General Obligado	861	1.023	1.123	1.452
+Las Palmas	Localidad	General Obligado	...	...	...	191
+Las Palmeras	Localidad	San Cristóbal	501	481	545	558
+Las Parejas	Localidad	Belgrano	9.609	10.971	12.375	14.186
+Las Petacas	Localidad	San Martín	842	912	872	828
+Las Rosas	Localidad	Belgrano	10.983	12.071	13.068	13.953
+Las Toscas	Localidad	General Obligado	7.220	10.004	10.838	11.587
+Las Tunas	Localidad	Las Colonias	186	295	360	442
+La Vanguardia	Localidad	Constitución	471	395	385	361
+Lazzarino	Localidad	General López	371	324	350	363
+Lehmann	Localidad	Castellanos	1.489	1.873	2.416	3.102
+Llambí Campbell	Localidad	La Capital	1.678	2.071	2.260	2.449
+Logroño	Localidad	Nueve de Julio	443	660	630	639
+Loma Alta	Localidad	San Jerónimo	82	120	225	122
+López (Est. San Martín de Tours)	Localidad	San Jerónimo	1.055	1.259	1.368	1.450
+Los Amores	Localidad	Vera	685	1.131	1.052	1.021
+Los Cardos	Localidad	San Martín	967	1.217	1.310	1.246
+Los Laureles	Localidad	General Obligado	344	411	364	764
+Los Molinos	Localidad	Caseros	1.714	1.798	1.832	1.901
+Los Muchachos (- La Alborada)	Localidad	Rosario	...	75	129	695
+Los Nogales	Localidad	Caseros	140	142	152	146
+Los Quirquinchos	Localidad	Caseros	2.478	2.521	2.462	2.202
+Los Sembrados	Localidad	Castellanos	...	...	...	195
+Los Tábanos	Localidad	Vera	...	...	...	229
+Los Zapallos	Localidad	Garay	271	515	873	1.179
+Lucio V. López	Localidad	Iriondo	319	349	485	439
+Luis Palacios (Est. La Salada)	Localidad	San Lorenzo	705	799	836	1.377
+Maciel	Localidad	San Jerónimo	4.862	5.166	5.634	5.885
+Maggiolo	Localidad	General López	1.714	1.766	1.701	1.823
+Malabrigo	Localidad	General Obligado	5.039	6.123	6.734	8.160
+Manucho	Localidad	La Capital	...	...	...	63
+Marcelino Escalada	Localidad	San Justo	1.474	1.709	1.646	1.728
+Margarita	Localidad	Vera	2.310	3.009	3.534	3.695
+María Juana	Localidad	Castellanos	4.228	4.483	4.853	4.740
+María Luisa	Localidad	Las Colonias	432	473	579	589
+María Susana	Localidad	San Martín	2.869	3.147	3.197	3.307
+María Teresa	Localidad	General López	3.180	3.395	3.523	3.767
+Matilde	Localidad	Las Colonias	551	684	754	768
+Máximo Paz (Est. Paz)	Localidad	Constitución	3.554	3.427	3.441	3.112
+Melincué (Est. San Urbano)	Localidad	General López	2.101	2.118	2.139	2.403
+Miguel Torres	Localidad	General López	389	362	373	464
+Moisés Ville	Localidad	San Cristóbal	2.483	2.432	2.318	2.317
+Monigotes	Localidad	San Cristóbal	332	395	347	359
+Monje	Localidad	San Jerónimo	1.710	1.849	1.838	2.070
+Montefiore	Localidad	Nueve de Julio	108	132	146	174
+Monte Flores	Localidad	Rosario	98	72	166	266
+Montes de Oca	Localidad	Belgrano	2.534	2.609	2.655	2.692
+Monte Vera	Localidad	La Capital	2.822	4.112	5.726	6.737
+Moussy	Localidad	General Obligado	...	...	...	327
+Murphy	Localidad	General López	3.056	3.312	3.630	3.881
+Ñanducita	Localidad	San Cristóbal	63	56	79	85
+Naré	Localidad	San Justo	297	347	341	244
+Nelson	Localidad	La Capital	3.653	3.884	4.206	4.406
+Nicanor Molinas	Localidad	General Obligado	...	...	...	111
+Nueva Lehmann	Localidad	Castellanos	66	85	90	136
+Nuevo Torino	Localidad	Las Colonias	331	384	425	532
+Oliveros	Localidad	Iriondo	2.803	3.621	3.800	4.954
+Palacios	Localidad	San Cristóbal	240	317	245	291
+Paraje 29	Localidad	Vera	371	223	185	150
+Paraje Chaco Chico	Localidad	La Capital	...	119	139	199
+Paraje La Costa	Localidad	La Capital	...	17	67	82
+Paraje San Manuel	Localidad	General Obligado	...	311	164	410
+Pavón	Localidad	Constitución	757	827	876	1.026
+Pavón Arriba	Localidad	Constitución	1.543	1.783	1.834	2.049
+Pedro Gómez Cello	Localidad	San Justo	537	606	554	470
+Pérez	Localidad	Rosario	20.131	23.578	26.448	32.066
+Peyrano	Localidad	Constitución	2.529	2.565	2.517	2.446
+Piamonte	Localidad	San Martín	3.160	3.317	3.336	3.539
+Pilar	Localidad	Las Colonias	3.932	3.995	4.705	5.037
+Piñero (Est. Erasto)	Localidad	Rosario	440	517	1.146	1.077
+Plaza Clucellas	Localidad	Castellanos	1.288	1.382	1.530	1.849
+Plaza Matilde	Localidad	Las Colonias	45	32	29	42
+Plaza Saguier	Localidad	Castellanos	188	237	262	303
+Pozo Borrado	Localidad	Nueve de Julio	666	1.030	980	816
+Pozo de los Indios	Localidad	Vera	...	500	440	442
+Presidente Roca	Localidad	Castellanos	309	438	524	644
+Progreso	Localidad	Las Colonias	1.604	1.868	2.118	2.510
+Providencia	Localidad	Las Colonias	621	632	663	717
+Pueblo Andino	Localidad	Iriondo	1.403	1.543	1.784	2.557
+Pueblo Esther	Localidad	Rosario	2.305	4.557	6.789	12.552
+Pueblo Luis Berli	Localidad	Vera	...	...	...	22
+Pueblo Marini	Localidad	Castellanos	44	46	51	65
+Pueblo Muñoz (Est. Bernard)	Localidad	Rosario	537	477	497	515
+Pueblo Santa Lucía	Localidad	Vera	239	229	185	26
+Pueblo Uranga	Localidad	Rosario	762	864	856	820
+Puerto Aragón	Localidad	San Jerónimo	152	247	213	218
+Puerto Arroyo Seco	Localidad	Rosario	144	260	413	754
+Puerto General San Martín	Localidad	San Lorenzo	8.906	10.500	13.243	17.965
+Puerto Reconquista	Localidad	General Obligado	545	938	1.144	1.342
+Pujato	Localidad	San Lorenzo	3.015	3.254	3.370	3.415
+Pujato Norte	Localidad	Las Colonias	...	...	...	404
+Rafaela	Localidad	Castellanos	67.230	82.416	91.571	101.470
+Ramayón	Localidad	San Justo	441	518	550	637
+Ramona	Localidad	Castellanos	1.341	1.527	1.694	1.846
+Reconquista	Localidad	General Obligado	52.371	63.490	70.549	84.939
+Recreo	Localidad	La Capital	7.626	10.714	12.774	17.754
+Ricardone	Localidad	San Lorenzo	628	1.475	2.570	5.828
+Rincón Potrero	Localidad	La Capital	3	274	589	508
+Roldán	Localidad	San Lorenzo	9.013	11.252	14.113	30.493
+Romang	Localidad	San Javier	5.545	7.037	7.755	8.455
+Rosario	Localidad	Rosario	907.718	908.163	948.312	1.030.069
+Rueda	Localidad	Constitución	448	495	471	534
+Rufino	Localidad	General López	17.540	18.063	18.727	18.870
+Saladero Mariano Cabal	Localidad	Garay	342	551	588	678
+Salto Grande	Localidad	Iriondo	1.798	1.973	1.944	2.386
+San Agustín	Localidad	Las Colonias	384	452	630	863
+San Antonio	Localidad	Castellanos	234	243	272	251
+San Antonio de Obligado	Localidad	General Obligado	1.549	2.262	2.579	2.650
+San Bernardo	Localidad	Nueve de Julio	...	...	228	263
+San Bernardo	Localidad	San Justo	15	10	27	13
+San Carlos Centro	Localidad	Las Colonias	8.868	10.068	10.717	12.080
+San Carlos Norte	Localidad	Las Colonias	556	682	812	1.145
+San Carlos Sud	Localidad	Las Colonias	1.559	1.710	1.927	2.468
+San Cristóbal	Localidad	San Cristóbal	13.991	13.645	14.389	15.003
+Sancti Spiritu	Localidad	General López	3.338	3.397	3.433	3.455
+San Eduardo	Localidad	General López	1.167	1.072	928	984
+San Eugenio	Localidad	San Jerónimo	58	64	79	99
+San Fabián	Localidad	San Jerónimo	614	737	820	963
+Sanford	Localidad	Caseros	1.769	1.865	1.810	1.963
+San Francisco de Santa Fe	Localidad	General López	377	264	279	291
+San Genaro (incl. San Genaro Norte)	Localidad	San Jerónimo	7.159	8.266	8.731	9.398
+San Gregorio	Localidad	General López	3.371	3.754	4.291	5.094
+San Guillermo	Localidad	San Cristóbal	4.303	5.453	6.747	8.691
+San Javier	Localidad	San Javier	9.694	12.949	13.604	15.180
+San Jerónimo del Sauce	Localidad	Las Colonias	711	723	742	795
+San Jerónimo Norte	Localidad	Las Colonias	4.891	5.449	5.962	7.021
+San Jerónimo Sud	Localidad	San Lorenzo	2.392	2.512	2.641	2.972
+San Jorge	Localidad	San Martín	14.108	16.303	17.615	19.254
+San José de la Esquina	Localidad	Caseros	6.224	6.532	6.775	6.609
+San José del Rincón	Localidad	La Capital	4.738	8.480	10.176	13.996
+San Justo	Localidad	San Justo	18.228	21.078	21.624	25.920
+San Lorenzo	Localidad	San Lorenzo	40.535	43.039	45.958	50.719
+San Mariano	Localidad	Las Colonias	248	241	218	214
+San Martín de las Escobas	Localidad	San Martín	1.745	2.047	2.299	2.736
+San Martín Norte	Localidad	San Justo	299	488	563	878
+San Ricardo	Localidad	Iriondo	...	...	...	7
+Santa Clara de Buena Vista	Localidad	Las Colonias	2.102	2.439	2.540	2.829
+Santa Clara de Saguier	Localidad	Castellanos	2.118	2.275	2.117	1.990
+Santa Fe	Localidad	La Capital	348.325	368.668	391.164	404.916
+Santa Felicia	Localidad	Vera	...	...	...	9
+Santa Isabel	Localidad	General López	4.230	4.424	4.266	4.506
+Santa Margarita	Localidad	Nueve de Julio	682	992	993	976
+Santa Rosa de Calchines	Localidad	Garay	1.909	2.882	3.435	5.693
+Santa Teresa	Localidad	Constitución	2.881	3.108	3.039	3.183
+Santo Domingo	Localidad	Las Colonias	1.029	1.340	1.470	1.574
+Santo Tomé	Localidad	La Capital	43.928	58.277	65.684	74.910
+Santurce	Localidad	San Cristóbal	36	41	32	31
+San Vicente	Localidad	Castellanos	5.183	5.384	5.655	5.902
+Sa Pereira	Localidad	Las Colonias	1.189	1.317	1.533	1.379
+Sargento Cabral	Localidad	Constitución	915	952	1.007	953
+Sarmiento	Localidad	Las Colonias	911	1.049	1.098	1.316
+Sastre	Localidad	San Martín	5.165	5.090	5.425	5.586
+Sauce Viejo	Localidad	La Capital	2.641	6.505	7.953	14.194
+Schiffner	Localidad	San Martín	...	...	...	69
+Serodino	Localidad	Iriondo	2.761	2.975	3.263	3.873
+Silva (Est. Abipones)	Localidad	San Justo	222	278	360	355
+Soldini	Localidad	Rosario	1.583	1.990	2.577	3.873
+Soledad	Localidad	San Cristóbal	915	1.057	1.083	937
+Stephenson	Localidad	Constitución	96	82	54	63
+Suardi	Localidad	San Cristóbal	3.906	5.165	6.080	7.172
+Sunchales	Localidad	Castellanos	15.521	17.676	20.537	23.379
+Susana	Localidad	Castellanos	605	791	1.002	1.717
+Tacuarendí (Emb. Kilómetro 421)	Localidad	General Obligado	1.130	2.301	2.586	2.575
+Tacural	Localidad	Castellanos	962	1.118	1.169	1.267
+Tartagal (Est. El Tajamar)	Localidad	Vera	1.196	1.593	1.599	1.662
+Teodelina	Localidad	General López	4.641	5.479	5.933	6.363
+Theobald	Localidad	Constitución	110	175	421	454
+Timbúes	Localidad	San Lorenzo	1.959	2.702	3.694	5.406
+Toba	Localidad	Vera	123	248	266	373
+Tortugas	Localidad	Belgrano	1.922	2.081	2.234	2.305
+Tostado	Localidad	Nueve de Julio	11.775	13.446	14.582	16.448
+Totoras	Localidad	Iriondo	7.284	7.987	9.054	10.876
+Traill	Localidad	San Martín	98	78	65	115
+Venado Tuerto	Localidad	General López	58.784	68.426	75.437	81.966
+Vera (Est. Gobernador Vera)	Localidad	Vera	16.206	17.823	19.185	21.419
+Vera y Pintado (Est. Guaraníes)	Localidad	San Justo	913	1.028	997	1.150
+Vicente A. Echeverría (Ibarlucea)	Localidad	San Lorenzo	...	...	30	148
+Videla	Localidad	San Justo	1.742	1.870	2.027	2.270
+Vila	Localidad	Castellanos	1.313	1.373	1.405	1.408
+Villa Adela	Localidad	General Obligado	...	...	...	16
+Villa Amelia	Localidad	Rosario	729	769	835	988
+Villa Ana	Localidad	General Obligado	2.407	2.920	2.696	2.767
+Villa Cañás	Localidad	General López	8.191	8.708	8.821	9.404
+Villa Constitución	Localidad	Constitución	41.161	44.144	47.374	52.204
+Villada	Localidad	Caseros	1.291	1.244	1.213	1.205
+Villa del Plata	Localidad	Rosario	61	166	259	616
+Villa Divisa de Mayo	Localidad	General López	...	...	...	24
+Villa Eloísa	Localidad	Iriondo	2.810	2.916	2.820	3.039
+Villa Elvira	Localidad	San Lorenzo	81	141	297	833
+Villa Gobernador Gálvez	Localidad	Rosario	63.078	74.658	80.769	92.147
+Villa Guillermina	Localidad	General Obligado	3.017	4.238	4.555	4.953
+Villa Josefina	Localidad	Castellanos	110	116	112	110
+Villa La Ribera (Comuna Oliveros)	Localidad	Iriondo	136	171	82	231
+Villa La Ribera (Comuna Pueblo Andino)	Localidad	Iriondo	...	311	326	1.565
+Villa Laura (Est. Constituyentes)	Localidad	La Capital	198	239	268	309
+Villa Minetti	Localidad	Nueve de Julio	2.602	3.989	4.876	6.022
+Villa Mugueta	Localidad	San Lorenzo	2.295	2.283	2.139	2.146
+Villa Ocampo	Localidad	General Obligado	11.780	14.119	15.037	15.993
+Villa San José	Localidad	Castellanos	126	191	220	278
+Villa Saralegui	Localidad	San Cristóbal	269	394	513	430
+Villa Trinidad	Localidad	San Cristóbal	1.609	2.256	2.606	3.259
+Virginia	Localidad	Castellanos	172	261	151	174
+Wheelwright	Localidad	General López	5.177	5.756	5.733	5.959
+Wildermuth (Est. Granadero B. Bustos)	Localidad	San Martín	75	86	155	97
+Zavalla	Localidad	Rosario	3.914	4.390	4.966	6.591
+Zenón Pereyra	Localidad	Castellanos	1.612	1.692	1.637	2.034

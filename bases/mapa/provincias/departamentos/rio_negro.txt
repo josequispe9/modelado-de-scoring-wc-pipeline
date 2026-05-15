@@ -1,0 +1,14 @@
+Adolfo Alsina	Departamento	44.465	50.701	57.678	64.482
+Avellaneda	Departamento	27.324	32.308	35.323	41.352
+Bariloche	Departamento	94.640	109.826	133.500	162.088
+Conesa	Departamento	6.187	6.291	7.069	7.429
+El Cuy	Departamento	3.486	4.252	5.280	6.960
+General Roca	Departamento	264.582	281.653	320.921	380.525
+Ñorquincó	Departamento	2.356	2.079	1.736	1.452
+Nueve de Julio (9 de Julio)	Departamento	3.474	3.501	3.475	3.719
+Pichi Mahuida	Departamento	13.351	14.026	14.107	16.551
+Pilcaniyeu	Departamento	4.963	6.114	7.428	9.373
+San Antonio	Departamento	24.216	23.972	29.284	35.800
+Valcheta	Departamento	5.091	4.946	7.101	4.319
+Veinticinco de Mayo (25 de Mayo)	Departamento	12.637	13.153	15.743	16.718
+Río Negro	Provincia	506.772	552.822	638.645	750.768

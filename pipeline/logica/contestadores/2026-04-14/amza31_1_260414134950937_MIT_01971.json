@@ -1,0 +1,41 @@
+{
+  "audio_id": "c4d20737-15be-4098-a167-bb7d96626824",
+  "nombre_archivo": "amza31_1_260414134950937_MIT_01971",
+  "metadata_llamada": {
+    "agente": "MZA 31",
+    "campania": "MVS_MZA_OUT",
+    "empresa": "AZO",
+    "duracion_seg": 10,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Bienvenido al buzón de voz claro."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Veo."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Sí, yo también."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Ringo."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.3054,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T14:58:10.396634+00:00"
+  }
+}

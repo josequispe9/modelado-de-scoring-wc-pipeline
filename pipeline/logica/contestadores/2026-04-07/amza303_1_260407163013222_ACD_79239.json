@@ -1,0 +1,53 @@
+{
+  "audio_id": "54fb3b6d-b860-4a08-b763-891fb113515a",
+  "nombre_archivo": "amza303_1_260407163013222_ACD_79239",
+  "metadata_llamada": {
+    "agente": "MZA 303",
+    "campania": "MVS_MZA",
+    "empresa": "AZO",
+    "duracion_seg": 14,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "¿Hola?"
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Sí."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Me presento, mi nombre es Intermina."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Tengo un descuento exclusivo para tu línea móvil el día de hoy."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Serás usuario de Movistar."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Y el 75% de descuento."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.443,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T14:58:38.766835+00:00"
+  }
+}

@@ -1,0 +1,17 @@
+Aluminé	Departamento	4.946	6.308	8.306	10.244
+Añelo	Departamento	4.668	7.554	10.786	18.166
+Catán Lil	Departamento	2.408	2.469	2.155	2.676
+Chos Malal	Departamento	11.109	14.185	15.256	18.368
+Collón Curá	Departamento	7.865	4.395	4.532	4.835
+Confluencia	Departamento	265.123	314.793	362.673	468.794
+Huiliches	Departamento	9.679	12.700	14.725	20.973
+Lácar	Departamento	17.085	24.670	29.748	39.596
+Loncopué	Departamento	5.206	6.457	6.925	7.698
+Los Lagos	Departamento	4.181	8.654	11.998	15.555
+Minas	Departamento	5.577	7.072	7.234	9.267
+Ñorquín	Departamento	4.136	4.628	4.692	5.609
+Pehuenches	Departamento	6.538	13.765	24.087	29.753
+Picunches	Departamento	5.812	6.427	7.022	8.495
+Picún Leufú	Departamento	3.333	4.272	4.578	5.087
+Zapala	Departamento	31.167	35.806	36.549	45.698
+Neuquén	Provincia	388.833	474.155	551.266	710.814

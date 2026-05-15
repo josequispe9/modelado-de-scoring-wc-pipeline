@@ -1,0 +1,37 @@
+{
+  "audio_id": "fae839d8-e6e9-42d8-a937-a33aa45b3993",
+  "nombre_archivo": "amza93_1_260407185005191_ACD_33631",
+  "metadata_llamada": {
+    "agente": "MZA 93",
+    "campania": "MVS_MZA",
+    "empresa": "AZO",
+    "duracion_seg": 10,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Hola, buenas tardes."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "¿Habla con Valeria?"
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Después del tono, deja tu mensaje."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.4601,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T14:57:41.811955+00:00"
+  }
+}

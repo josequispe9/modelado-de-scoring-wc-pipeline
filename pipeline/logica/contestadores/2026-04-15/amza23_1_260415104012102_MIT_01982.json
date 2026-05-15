@@ -1,0 +1,33 @@
+{
+  "audio_id": "644a6259-042d-4962-bbf3-76692b83bd5a",
+  "nombre_archivo": "amza23_1_260415104012102_MIT_01982",
+  "metadata_llamada": {
+    "agente": "MZA 23",
+    "campania": "MVS_MZA_OUT",
+    "empresa": "AZO",
+    "duracion_seg": 11,
+    "tipificacion": "Contestador",
+    "clase_tipificacion": "No Exitoso"
+  },
+  "roles": {
+    "vendedor": null,
+    "cliente": null
+  },
+  "conversacion": [
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "El Maciel y el Rodrigo."
+    },
+    {
+      "rol": "DESCONOCIDO",
+      "texto": "Bienvenido al buzón de voz claro de dos."
+    }
+  ],
+  "procesamiento": {
+    "grupo_ganador": "GBM",
+    "modelo_transcripcion": "large-v3",
+    "score_total": 0.5514,
+    "coherencia_llm": "dudoso",
+    "fecha_formateado": "2026-05-07T14:58:05.939020+00:00"
+  }
+}
