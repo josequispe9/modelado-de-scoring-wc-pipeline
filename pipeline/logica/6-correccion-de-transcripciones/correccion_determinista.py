@@ -17,10 +17,10 @@ Requiere:
     - pip install minio psycopg2-binary python-dotenv
 """
 
+import io
 import json
 import logging
 import os
-import tempfile
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -270,34 +270,31 @@ def actualizar_registro(conn, audio_id: str, etapa_actual_previa: str,
     }
 
     with conn.cursor() as cur:
-        cur.execute(
-            "SELECT etapas->'correccion_transcripciones' FROM audio_pipeline_jobs WHERE id = %s",
-            (audio_id,)
-        )
-        row = cur.fetchone()
-        correccion = row[0] if row and row[0] else {}
-        if not isinstance(correccion, dict):
-            correccion = {}
-
-        correccion[grupo] = resultado_grupo
-
         if etapa_actual_previa == "transcripcion":
             cur.execute("""
                 UPDATE audio_pipeline_jobs
-                SET etapas       = jsonb_set(etapas, '{correccion_transcripciones}', %s::jsonb),
-                    etapa_actual = 'correccion_transcripciones',
+                SET etapas        = jsonb_set(
+                                        COALESCE(etapas, '{}'::jsonb),
+                                        %s,
+                                        %s::jsonb
+                                    ),
+                    etapa_actual  = 'correccion_transcripciones',
                     estado_global = %s,
                     fecha_ultima_actualizacion = now()
                 WHERE id = %s
-            """, (json.dumps(correccion), clasificacion, audio_id))
+            """, ([f"correccion_transcripciones", grupo], json.dumps(resultado_grupo), clasificacion, audio_id))
         else:
             cur.execute("""
                 UPDATE audio_pipeline_jobs
-                SET etapas       = jsonb_set(etapas, '{correccion_transcripciones}', %s::jsonb),
+                SET etapas        = jsonb_set(
+                                        COALESCE(etapas, '{}'::jsonb),
+                                        %s,
+                                        %s::jsonb
+                                    ),
                     estado_global = %s,
                     fecha_ultima_actualizacion = now()
                 WHERE id = %s
-            """, (json.dumps(correccion), clasificacion, audio_id))
+            """, ([f"correccion_transcripciones", grupo], json.dumps(resultado_grupo), clasificacion, audio_id))
 
     conn.commit()
 
@@ -335,29 +332,29 @@ def main():
             fecha_inicio = datetime.now(timezone.utc).isoformat()
             log.info("Evaluando: %s [grupo=%s]", nombre, grupo)
 
-            with tempfile.TemporaryDirectory() as tmp:
-                json_tmp = str(Path(tmp) / "transcripcion.json")
-
+            try:
+                response = minio_client.get_object(MINIO_BUCKET, input_key)
+                data = json.loads(response.read())
+            except S3Error as e:
+                log.error("Error descargando %s: %s", input_key, e)
+                actualizar_registro(conn, audio_id, etapa_actual_prev,
+                                    grupo, 0.0, "invalido", {}, input_key,
+                                    fecha_inicio, f"descarga fallida: {e}")
+                errores += 1
+                continue
+            except Exception as e:
+                log.error("Error leyendo JSON %s: %s", input_key, e)
+                actualizar_registro(conn, audio_id, etapa_actual_prev,
+                                    grupo, 0.0, "invalido", {}, input_key,
+                                    fecha_inicio, f"json invalido: {e}")
+                errores += 1
+                continue
+            finally:
                 try:
-                    minio_client.fget_object(MINIO_BUCKET, input_key, json_tmp)
-                except S3Error as e:
-                    log.error("Error descargando %s: %s", input_key, e)
-                    actualizar_registro(conn, audio_id, etapa_actual_prev,
-                                        grupo, 0.0, "invalido", {}, input_key,
-                                        fecha_inicio, f"descarga fallida: {e}")
-                    errores += 1
-                    continue
-
-                try:
-                    with open(json_tmp, encoding="utf-8") as f:
-                        data = json.load(f)
-                except Exception as e:
-                    log.error("Error leyendo JSON %s: %s", input_key, e)
-                    actualizar_registro(conn, audio_id, etapa_actual_prev,
-                                        grupo, 0.0, "invalido", {}, input_key,
-                                        fecha_inicio, f"json invalido: {e}")
-                    errores += 1
-                    continue
+                    response.close()
+                    response.release_conn()
+                except Exception:
+                    pass
 
             metricas = calcular_metricas(data)
             duracion_seg       = audio.get("duracion_conversacion_seg")

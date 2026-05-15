@@ -257,34 +257,29 @@ def actualizar_registro(conn, audio_id: str, etapa_actual_previa: str,
     }
 
     with conn.cursor() as cur:
-        cur.execute(
-            "SELECT etapas->'correccion_normalizacion' FROM audio_pipeline_jobs WHERE id = %s",
-            (audio_id,)
-        )
-        row = cur.fetchone()
-        correccion = row[0] if row and row[0] else {}
-        if not isinstance(correccion, dict):
-            correccion = {}
-
-        correccion[grupo] = resultado_grupo
-        if "ganador" not in correccion:
-            correccion["ganador"] = None
-
         if etapa_actual_previa == "normalizacion":
             cur.execute("""
                 UPDATE audio_pipeline_jobs
-                SET etapas        = jsonb_set(etapas, '{correccion_normalizacion}', %s::jsonb),
+                SET etapas        = jsonb_set(
+                                        COALESCE(etapas, '{}'::jsonb),
+                                        %s,
+                                        %s::jsonb
+                                    ),
                     etapa_actual  = 'correccion_normalizacion',
                     estado_global = %s
                 WHERE id = %s
-            """, (json.dumps(correccion), clasificacion, audio_id))
+            """, (["correccion_normalizacion", grupo], json.dumps(resultado_grupo), clasificacion, audio_id))
         else:
             cur.execute("""
                 UPDATE audio_pipeline_jobs
-                SET etapas        = jsonb_set(etapas, '{correccion_normalizacion}', %s::jsonb),
+                SET etapas        = jsonb_set(
+                                        COALESCE(etapas, '{}'::jsonb),
+                                        %s,
+                                        %s::jsonb
+                                    ),
                     estado_global = %s
                 WHERE id = %s
-            """, (json.dumps(correccion), clasificacion, audio_id))
+            """, (["correccion_normalizacion", grupo], json.dumps(resultado_grupo), clasificacion, audio_id))
 
     conn.commit()
 
