@@ -295,6 +295,7 @@ const ETAPAS_ORD = [
   "correccion_normalizacion",
   "transcripcion",
   "correccion_transcripciones",
+  "analisis",
 ]
 const ETAPAS_LBL: Record<string, string> = {
   descarga:                   "E1 Descarga",
@@ -302,6 +303,7 @@ const ETAPAS_LBL: Record<string, string> = {
   correccion_normalizacion:   "E4 Correc. Norm.",
   transcripcion:              "E5 Transcripción",
   correccion_transcripciones: "E6 Correc. Transcr.",
+  analisis:                   "E7 Análisis",
 }
 const ESTADOS_BARRAS = [
   { key: "correcto",   label: "correcto",   color: C.correcto   },

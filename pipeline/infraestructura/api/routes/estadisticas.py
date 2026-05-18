@@ -129,12 +129,13 @@ def estadisticas_global(
     - descarga / normalizacion: estado del propio campo en etapas
     - correccion_normalizacion: estado_global de audios que tienen esa clave
     - transcripcion: estado del último elemento del array
-    - correccion_transcripciones: estado_global de audios que tienen esa clave
+    - correccion_transcripciones: estado del ganador (correcto/reprocesar/invalido)
+    - analisis: estado_global de audios que tienen la clave analisis en el JSONB
     """
     and_fecha, params = fecha_conds(fecha_desde, fecha_hasta)
 
     # params se repite una vez por cada bloque del UNION ALL que usa {and_fecha}
-    all_params = params * 5
+    all_params = params * 6
 
     query = f"""
         SELECT etapa, estado, COUNT(*) AS cantidad
@@ -184,10 +185,27 @@ def estadisticas_global(
 
             UNION ALL
 
-            -- Correccion transcripciones
-            SELECT 'correccion_transcripciones', estado_global
+            -- Correccion transcripciones: estado del ganador si existe, sino estado_global
+            SELECT 'correccion_transcripciones',
+                   CASE
+                     WHEN etapas->'correccion_transcripciones' ? 'ganador'
+                          AND (etapas->'correccion_transcripciones'->'ganador') IS NOT NULL
+                     THEN 'correcto'
+                     ELSE estado_global
+                   END
             FROM audio_pipeline_jobs
             WHERE etapas ? 'correccion_transcripciones' {and_fecha}
+
+            UNION ALL
+
+            -- Analisis: estado del sub-análisis más avanzado (determinista o llm)
+            SELECT 'analisis',
+                   COALESCE(
+                     etapas->'analisis'->'determinista'->>'estado',
+                     etapas->'analisis'->'llm'->>'estado'
+                   )
+            FROM audio_pipeline_jobs
+            WHERE etapas ? 'analisis' {and_fecha}
         ) sub
         WHERE estado IS NOT NULL
         GROUP BY etapa, estado

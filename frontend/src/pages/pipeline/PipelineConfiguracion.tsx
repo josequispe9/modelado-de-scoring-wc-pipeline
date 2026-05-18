@@ -7,7 +7,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
-import { getParametros, actualizarParametros, ejecutarEtapa, cancelarEtapa, limpiarAudiosNormalizacion, resetearCorreccionNormalizacion, limpiarTranscripciones, resetearCorreccionTranscripciones } from "@/api/pipeline"
+import { getParametros, actualizarParametros, ejecutarEtapa, cancelarEtapa, limpiarAudiosNormalizacion, resetearCorreccionNormalizacion, limpiarTranscripciones, resetearCorreccionTranscripciones, ejecutarAnalisisDeterminista, ejecutarAnalisisLlm, pausarAnalisisDeterminista, pausarAnalisisLlm } from "@/api/pipeline"
 
 // ── Tipos ──────────────────────────────────────────────────────────────────────
 
@@ -1608,6 +1608,331 @@ function EtapaCorreccionTranscripciones() {
   )
 }
 
+// ── Etapa 7A: Análisis Determinista ───────────────────────────────────────────
+
+const SCRIPTS_DETERMINISTA = [
+  "cliente_molesto",
+  "contestador",
+  "linea_empresa",
+  "numero_equivocado",
+  "rellamado",
+  "vinculado_titular",
+  "ya_tiene_movistar",
+]
+
+const ESTADOS_ANALISIS = ["correcto", "reprocesar"]
+
+type AnalisisDeterministaParams = {
+  scripts: string[]
+  estados: string[]
+}
+
+const ANALISIS_DET_DEFAULTS: AnalisisDeterministaParams = {
+  scripts: [...SCRIPTS_DETERMINISTA],
+  estados: ["correcto"],
+}
+
+function EtapaAnalisisDeterminista() {
+  const [params,     setParams]     = useState<AnalisisDeterministaParams>(ANALISIS_DET_DEFAULTS)
+  const [guardando,  setGuardando]  = useState(false)
+  const [ejecutando, setEjecutando] = useState(false)
+  const [pausando,   setPausando]   = useState(false)
+  const [mensaje,    setMensaje]    = useState<string | null>(null)
+
+  useEffect(() => {
+    getParametros("analisis_determinista")
+      .then((res: { valor?: Partial<AnalisisDeterministaParams> }) => {
+        const v = res?.valor ?? {}
+        setParams({
+          scripts: Array.isArray(v.scripts) ? v.scripts : [...SCRIPTS_DETERMINISTA],
+          estados: Array.isArray(v.estados) ? v.estados : ["correcto"],
+        })
+      })
+      .catch(() => setMensaje("Error al cargar parámetros"))
+  }, [])
+
+  const toggleScript = (script: string) =>
+    setParams((prev) => ({
+      ...prev,
+      scripts: prev.scripts.includes(script)
+        ? prev.scripts.filter((s) => s !== script)
+        : [...prev.scripts, script],
+    }))
+
+  const toggleEstado = (estado: string) =>
+    setParams((prev) => ({
+      ...prev,
+      estados: prev.estados.includes(estado)
+        ? prev.estados.filter((e) => e !== estado)
+        : [...prev.estados, estado],
+    }))
+
+  const handleGuardar = async () => {
+    setGuardando(true)
+    setMensaje(null)
+    try {
+      await actualizarParametros("analisis_determinista", params)
+      setMensaje("Guardado")
+    } catch {
+      setMensaje("Error al guardar")
+    } finally {
+      setGuardando(false)
+    }
+  }
+
+  const handleEjecutar = async () => {
+    setEjecutando(true)
+    setMensaje(null)
+    try {
+      await ejecutarAnalisisDeterminista()
+      setMensaje("Ejecución iniciada")
+    } catch {
+      setMensaje("Error al ejecutar")
+    } finally {
+      setEjecutando(false)
+    }
+  }
+
+  const handlePausar = async () => {
+    setPausando(true)
+    setMensaje(null)
+    try {
+      await pausarAnalisisDeterminista()
+      setMensaje("Pausado")
+    } catch {
+      setMensaje("Error al pausar")
+    } finally {
+      setPausando(false)
+    }
+  }
+
+  return (
+    <div className="flex flex-col gap-4 pt-3">
+      <div className="flex gap-4 flex-wrap">
+
+        <div className="flex-1 min-w-0 border border-border rounded p-4 flex flex-col gap-3">
+          <p className="text-sm font-medium text-foreground">Scripts seleccionados</p>
+          <div className="flex flex-col gap-1.5">
+            {SCRIPTS_DETERMINISTA.map((script) => (
+              <label key={script} className="flex items-center gap-2 text-sm text-foreground cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={params.scripts.includes(script)}
+                  onChange={() => toggleScript(script)}
+                />
+                {script}
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex-1 min-w-0 border border-border rounded p-4 flex flex-col gap-3">
+          <p className="text-sm font-medium text-foreground">Estados a procesar</p>
+          <div className="flex flex-col gap-1.5">
+            {ESTADOS_ANALISIS.map((estado) => (
+              <label key={estado} className="flex items-center gap-2 text-sm text-foreground cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={params.estados.includes(estado)}
+                  onChange={() => toggleEstado(estado)}
+                />
+                {estado}
+              </label>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
+      <div className="flex items-center gap-3 pt-1 border-t border-border">
+        <Button size="sm" onClick={handleGuardar} disabled={guardando}>
+          {guardando ? "Guardando..." : "Guardar"}
+        </Button>
+        <Button onClick={handleEjecutar} disabled={ejecutando}>
+          {ejecutando ? "Ejecutando..." : "Ejecutar"}
+        </Button>
+        <Button variant="outline" onClick={handlePausar} disabled={pausando}>
+          {pausando ? "Pausando..." : "Pausar"}
+        </Button>
+        {mensaje && <span className="text-xs text-muted-foreground">{mensaje}</span>}
+      </div>
+    </div>
+  )
+}
+
+// ── Etapa 7B: Análisis LLM ────────────────────────────────────────────────────
+
+const SCRIPTS_LLM = ["problema_senal"]
+
+type AnalisisLlmParams = {
+  scripts:                  string[]
+  estados:                  string[]
+  modelo:                   string
+  gpu_memory_utilization:   number
+}
+
+const ANALISIS_LLM_DEFAULTS: AnalisisLlmParams = {
+  scripts:                  [...SCRIPTS_LLM],
+  estados:                  ["correcto"],
+  modelo:                   "Qwen/Qwen2.5-7B-Instruct-AWQ",
+  gpu_memory_utilization:   0.85,
+}
+
+function EtapaAnalisisLlm() {
+  const [params,     setParams]     = useState<AnalisisLlmParams>(ANALISIS_LLM_DEFAULTS)
+  const [guardando,  setGuardando]  = useState(false)
+  const [ejecutando, setEjecutando] = useState(false)
+  const [pausando,   setPausando]   = useState(false)
+  const [mensaje,    setMensaje]    = useState<string | null>(null)
+
+  useEffect(() => {
+    getParametros("analisis_llm")
+      .then((res: { valor?: Partial<AnalisisLlmParams> }) => {
+        const v = res?.valor ?? {}
+        setParams({
+          scripts:                Array.isArray(v.scripts) ? v.scripts : [...SCRIPTS_LLM],
+          estados:                Array.isArray(v.estados) ? v.estados : ["correcto"],
+          modelo:                 typeof v.modelo === "string" ? v.modelo : "Qwen/Qwen2.5-7B-Instruct-AWQ",
+          gpu_memory_utilization: typeof v.gpu_memory_utilization === "number" ? v.gpu_memory_utilization : 0.85,
+        })
+      })
+      .catch(() => setMensaje("Error al cargar parámetros"))
+  }, [])
+
+  const toggleScript = (script: string) =>
+    setParams((prev) => ({
+      ...prev,
+      scripts: prev.scripts.includes(script)
+        ? prev.scripts.filter((s) => s !== script)
+        : [...prev.scripts, script],
+    }))
+
+  const toggleEstado = (estado: string) =>
+    setParams((prev) => ({
+      ...prev,
+      estados: prev.estados.includes(estado)
+        ? prev.estados.filter((e) => e !== estado)
+        : [...prev.estados, estado],
+    }))
+
+  const handleGuardar = async () => {
+    setGuardando(true)
+    setMensaje(null)
+    try {
+      await actualizarParametros("analisis_llm", params)
+      setMensaje("Guardado")
+    } catch {
+      setMensaje("Error al guardar")
+    } finally {
+      setGuardando(false)
+    }
+  }
+
+  const handleEjecutar = async () => {
+    setEjecutando(true)
+    setMensaje(null)
+    try {
+      await ejecutarAnalisisLlm()
+      setMensaje("Ejecución iniciada")
+    } catch {
+      setMensaje("Error al ejecutar")
+    } finally {
+      setEjecutando(false)
+    }
+  }
+
+  const handlePausar = async () => {
+    setPausando(true)
+    setMensaje(null)
+    try {
+      await pausarAnalisisLlm()
+      setMensaje("Pausado")
+    } catch {
+      setMensaje("Error al pausar")
+    } finally {
+      setPausando(false)
+    }
+  }
+
+  return (
+    <div className="flex flex-col gap-4 pt-3">
+      <div className="flex gap-4 flex-wrap">
+
+        <div className="flex-1 min-w-0 border border-border rounded p-4 flex flex-col gap-3">
+          <p className="text-sm font-medium text-foreground">Scripts seleccionados</p>
+          <div className="flex flex-col gap-1.5">
+            {SCRIPTS_LLM.map((script) => (
+              <label key={script} className="flex items-center gap-2 text-sm text-foreground cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={params.scripts.includes(script)}
+                  onChange={() => toggleScript(script)}
+                />
+                {script}
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex-1 min-w-0 border border-border rounded p-4 flex flex-col gap-3">
+          <p className="text-sm font-medium text-foreground">Estados a procesar</p>
+          <div className="flex flex-col gap-1.5">
+            {ESTADOS_ANALISIS.map((estado) => (
+              <label key={estado} className="flex items-center gap-2 text-sm text-foreground cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={params.estados.includes(estado)}
+                  onChange={() => toggleEstado(estado)}
+                />
+                {estado}
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex-1 min-w-0 border border-border rounded p-4 flex flex-col gap-3">
+          <p className="text-sm font-medium text-foreground">Modelo y GPU</p>
+          <div className="flex flex-col gap-1">
+            <Label className="text-xs text-muted-foreground">Modelo</Label>
+            <input
+              type="text"
+              className={inputClass}
+              value={params.modelo}
+              onChange={(e) => setParams((prev) => ({ ...prev, modelo: e.target.value }))}
+            />
+          </div>
+          <div className="flex flex-col gap-1">
+            <Label className="text-xs text-muted-foreground">GPU memory utilization (0.1 – 1.0)</Label>
+            <input
+              type="number"
+              min={0.1}
+              max={1.0}
+              step={0.05}
+              className={inputClass}
+              value={params.gpu_memory_utilization}
+              onChange={(e) => setParams((prev) => ({ ...prev, gpu_memory_utilization: Number(e.target.value) }))}
+            />
+          </div>
+        </div>
+
+      </div>
+
+      <div className="flex items-center gap-3 pt-1 border-t border-border">
+        <Button size="sm" onClick={handleGuardar} disabled={guardando}>
+          {guardando ? "Guardando..." : "Guardar"}
+        </Button>
+        <Button onClick={handleEjecutar} disabled={ejecutando}>
+          {ejecutando ? "Ejecutando..." : "Ejecutar"}
+        </Button>
+        <Button variant="outline" onClick={handlePausar} disabled={pausando}>
+          {pausando ? "Pausando..." : "Pausar"}
+        </Button>
+        {mensaje && <span className="text-xs text-muted-foreground">{mensaje}</span>}
+      </div>
+    </div>
+  )
+}
+
 // ── Container colapsable genérico ──────────────────────────────────────────────
 
 function EtapaContainer({
@@ -1664,7 +1989,16 @@ export default function PipelineConfiguracion() {
           {id === "correccion_normalizacion"   && <EtapaCorreccionNormalizacion />}
           {id === "transcripcion"              && <EtapaTranscripcion />}
           {id === "correccion_transcripciones" && <EtapaCorreccionTranscripciones />}
-          {id === "analisis"                   && <p className="pt-3 text-sm text-muted-foreground">Pendiente de implementación</p>}
+          {id === "analisis"                   && (
+            <div className="flex flex-col gap-3 pt-3">
+              <EtapaContainer label="7A. Análisis Determinista">
+                <EtapaAnalisisDeterminista />
+              </EtapaContainer>
+              <EtapaContainer label="7B. Análisis LLM">
+                <EtapaAnalisisLlm />
+              </EtapaContainer>
+            </div>
+          )}
           {id === "correccion_analisis"        && <p className="pt-3 text-sm text-muted-foreground">Pendiente de implementación</p>}
         </EtapaContainer>
       ))}

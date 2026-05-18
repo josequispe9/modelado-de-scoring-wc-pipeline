@@ -269,28 +269,37 @@ def actualizar_registro(conn, audio_id: str, etapa_actual_previa: str,
         "error":                       error,
     }
 
+    # jsonb_set con path de dos niveles no crea el nivel intermedio si no existe.
+    # Se usa jsonb_set anidado: primero garantizar la clave 'correccion_transcripciones',
+    # luego escribir el grupo dentro.
+    jsonb_expr = """
+        jsonb_set(
+            jsonb_set(
+                COALESCE(etapas, '{}'::jsonb),
+                '{correccion_transcripciones}',
+                COALESCE(etapas->'correccion_transcripciones', '{}'),
+                true
+            ),
+            %s,
+            %s::jsonb,
+            true
+        )
+    """
+
     with conn.cursor() as cur:
         if etapa_actual_previa == "transcripcion":
-            cur.execute("""
+            cur.execute(f"""
                 UPDATE audio_pipeline_jobs
-                SET etapas        = jsonb_set(
-                                        COALESCE(etapas, '{}'::jsonb),
-                                        %s,
-                                        %s::jsonb
-                                    ),
+                SET etapas        = {jsonb_expr},
                     etapa_actual  = 'correccion_transcripciones',
                     estado_global = %s,
                     fecha_ultima_actualizacion = now()
                 WHERE id = %s
             """, ([f"correccion_transcripciones", grupo], json.dumps(resultado_grupo), clasificacion, audio_id))
         else:
-            cur.execute("""
+            cur.execute(f"""
                 UPDATE audio_pipeline_jobs
-                SET etapas        = jsonb_set(
-                                        COALESCE(etapas, '{}'::jsonb),
-                                        %s,
-                                        %s::jsonb
-                                    ),
+                SET etapas        = {jsonb_expr},
                     estado_global = %s,
                     fecha_ultima_actualizacion = now()
                 WHERE id = %s

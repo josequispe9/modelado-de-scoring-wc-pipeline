@@ -19,6 +19,8 @@ ETAPAS_DAG = {
     "correccion_transcripciones":      "pipeline_correccion_transcripciones",
     "analisis":                        "pipeline_analisis",
     "correccion_analisis":             "pipeline_correccion_analisis",
+    "analisis_determinista":           "pipeline_analisis_determinista",
+    "analisis_llm":                    "pipeline_analisis_llm",
     "carga_datos":                     "pipeline_carga_datos",
 }
 
@@ -26,7 +28,9 @@ Etapa = Literal[
     "descarga", "creacion_registros", "normalizacion",
     "correccion_normalizacion", "seleccionar_ganador", "transcripcion",
     "correccion_transcripciones",
-    "analisis", "correccion_analisis", "carga_datos"
+    "analisis", "correccion_analisis",
+    "analisis_determinista", "analisis_llm",
+    "carga_datos"
 ]
 
 

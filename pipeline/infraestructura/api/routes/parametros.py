@@ -16,6 +16,8 @@ CLAVES_VALIDAS = {
     "correccion_transcripciones",
     "analisis_A", "analisis_B",
     "correccion_analisis_A", "correccion_analisis_B",
+    "analisis_determinista",
+    "analisis_llm",
 }
 
 DEFAULTS_POR_CLAVE = {

@@ -1,0 +1,35 @@
+# =============================================================================
+# inputs9-problema-senal.txt — Detectar clientes con problemas de señal no resueltos
+# El cliente menciona que Movistar no tiene señal/cobertura en su zona
+# y ese problema nunca fue corregido, bloqueando cualquier posible venta.
+# =============================================================================
+
+[pasada_problema_senal]
+descripcion = Detectar si el cliente menciona problemas de señal o cobertura de Movistar no resueltos en su zona.
+segmento = todo_40
+min_turnos = 2
+max_tokens = 30
+contexto = transcripcion
+schema = {"type":"object","properties":{"problema_senal":{"type":"string","enum":["si","no"]}},"required":["problema_senal"]}
+few_shot =
+Conversación: DESCONOCIDO: Te llamo de Movistar para ofrecerte un descuento. DESCONOCIDO: No, porque en la zona donde vivo no tengo señal de Movistar.
+Respuesta: {"problema_senal": "si"}
+
+Conversación: DESCONOCIDO: ¿Ha corroborado la cobertura? DESCONOCIDO: Hoy lo corroboré porque ya sé que no hay. No llega acá.
+Respuesta: {"problema_senal": "si"}
+
+Conversación: DESCONOCIDO: ¿Por qué no te interesa Movistar? DESCONOCIDO: Porque hay lugares donde no tengo señal de Movistar y con Claro sí tengo.
+Respuesta: {"problema_senal": "si"}
+
+Conversación: DESCONOCIDO: Te llamo de Movistar. DESCONOCIDO: Ah, no, Movistar no me va acá donde yo vivo.
+Respuesta: {"problema_senal": "si"}
+
+Conversación: DESCONOCIDO: Te llamo para ofrecerte una promo. DESCONOCIDO: No me interesa, estoy conforme con Claro, gracias.
+Respuesta: {"problema_senal": "no"}
+
+Conversación: DESCONOCIDO: ¿Por qué no querés volver a Movistar? DESCONOCIDO: Tuve problemas de facturación y de atención al cliente.
+Respuesta: {"problema_senal": "no"}
+prompt =
+Determina si el cliente menciona problemas de señal o cobertura de Movistar que le impiden usar o volver a Movistar.
+Responde "si" si el cliente menciona cualquiera de estos casos: no tiene señal de Movistar en su zona o en lugares donde la necesita, verificó la cobertura y no llega, se fue de Movistar por mala señal que nunca mejoró, o Movistar no le funciona donde vive o trabaja.
+Responde "no" si el cliente rechaza la oferta por precio, facturación, atención, o simplemente no le interesa sin mencionar señal o cobertura.

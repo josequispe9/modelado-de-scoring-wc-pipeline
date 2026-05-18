@@ -93,6 +93,7 @@ def obtener_audios_pendientes(conn) -> list[dict]:
             id, nombre_archivo, etapas,
             duracion_conversacion_seg,
             agente, campania, empresa, tipificacion, clase_tipificacion,
+            numero_telefono,
             etapas->'correccion_transcripciones' AS correccion,
             etapas->'transcripcion'              AS transcripcion
         FROM audio_pipeline_jobs
@@ -195,6 +196,7 @@ def construir_json_salida(audio: dict, data: dict, entrada_ganadora: dict,
             "duracion_seg":       audio.get("duracion_conversacion_seg"),
             "tipificacion":       audio.get("tipificacion"),
             "clase_tipificacion": audio.get("clase_tipificacion"),
+            "numero_telefono":    audio.get("numero_telefono"),
         },
 
         "roles": {

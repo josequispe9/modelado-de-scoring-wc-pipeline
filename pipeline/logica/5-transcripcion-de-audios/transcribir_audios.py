@@ -181,7 +181,7 @@ def obtener_siguiente_audio(conn, grupo: str, estados: list,
 
     query = f"""
         SELECT id, nombre_archivo, etapa_actual, estado_global, etapas,
-               duracion_conversacion_seg, duracion_audio_seg
+               duracion_conversacion_seg, duracion_audio_seg, numero_telefono
         FROM audio_pipeline_jobs
         WHERE ({where_estado})
           AND estado_global != 'en_proceso'
@@ -271,7 +271,7 @@ def transcribir(audio_path: str, whisper_model, align_model, align_metadata,
 
 
 # ─── Serialización ────────────────────────────────────────────────────────────
-def construir_json_output(result: dict, params: dict) -> dict:
+def construir_json_output(result: dict, params: dict, numero_telefono: str | None = None) -> dict:
     """
     Construye el JSON a guardar en MinIO.
     Incluye los segmentos con speaker labels y metadata del procesamiento.
@@ -289,6 +289,7 @@ def construir_json_output(result: dict, params: dict) -> dict:
             "max_speakers_param":      params.get("max_speakers"),
             "num_hablantes_detectados": len(hablantes),
             "num_segmentos":           len(segmentos),
+            "numero_telefono":         numero_telefono,
         },
     }
 
@@ -431,7 +432,7 @@ def main():
                     torch.cuda.empty_cache()
                     continue
 
-                output_json = construir_json_output(result, params)
+                output_json = construir_json_output(result, params, audio.get("numero_telefono"))
                 metricas = {
                     "num_segmentos":            output_json["metadata"]["num_segmentos"],
                     "num_hablantes_detectados": output_json["metadata"]["num_hablantes_detectados"],

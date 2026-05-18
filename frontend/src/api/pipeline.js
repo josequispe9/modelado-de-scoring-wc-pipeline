@@ -128,3 +128,17 @@ export const getCalendarioAudios = (fechaDesde, fechaHasta) => {
     if (fechaHasta) params.append("fecha_hasta", fechaHasta)
     return fetch(`${base}/pipeline/estadisticas/calendario${params.toString() ? "?" + params : ""}`).then(r => r.json())
 }
+
+// ── Etapa 7 — Análisis ────────────────────────────────────────────────────────
+
+export const ejecutarAnalisisDeterminista = () =>
+    ejecutarEtapa("analisis_determinista", "todos")
+
+export const ejecutarAnalisisLlm = () =>
+    ejecutarEtapa("analisis_llm", "todos")
+
+export const pausarAnalisisDeterminista = () =>
+    pausarEtapa("analisis_determinista")
+
+export const pausarAnalisisLlm = () =>
+    pausarEtapa("analisis_llm")

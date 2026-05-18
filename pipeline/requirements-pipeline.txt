@@ -1,9 +1,0 @@
-pandas
-selenium
-python-dotenv
-requests
-minio
-psycopg2-binary
-librosa
-soundfile
-numpy
